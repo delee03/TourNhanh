@@ -96,8 +96,8 @@
         margin: 25,
         nav : true,
         navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
+            '<i class="fa-solid fa-arrow-left"></i>',
+            '<i class="fa-solid fa-arrow-right"></i>'
         ],
         responsiveClass: true,
         responsive: {
