@@ -1,507 +1,507 @@
 {
   "Files": [
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TourNhanh.bundle.scp.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TourNhanh.bundle.scp.css",
       "PackagePath": "staticwebassets\\TourNhanh.bundle.scp.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\all.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\css\\all.css",
       "PackagePath": "staticwebassets\\css\\all.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\bootstrap-icons.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\css\\bootstrap-icons.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-icons.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\bootstrap.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\css2",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\css\\css2",
       "PackagePath": "staticwebassets\\css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\lightbox.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\css\\lightbox.min.css",
       "PackagePath": "staticwebassets\\css\\lightbox.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\owl.carousel.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\css\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\site.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\style.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\favicon.ico",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\about-2.png",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\about-2.png",
       "PackagePath": "staticwebassets\\img\\about-2.png"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\about-img.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\about-img.jpg",
       "PackagePath": "staticwebassets\\img\\about-img.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\blog-1.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\blog-1.jpg",
       "PackagePath": "staticwebassets\\img\\blog-1.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\blog-2.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\blog-2.jpg",
       "PackagePath": "staticwebassets\\img\\blog-2.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\blog-3.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\blog-3.jpg",
       "PackagePath": "staticwebassets\\img\\blog-3.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\breadcrum.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\breadcrum.jpg",
       "PackagePath": "staticwebassets\\img\\breadcrum.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\californication.avif",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\californication.avif",
       "PackagePath": "staticwebassets\\img\\californication.avif"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-1.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\carousel-1.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-1.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-11.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\carousel-11.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-11.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-2.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\carousel-2.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-2.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-22.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\carousel-22.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-22.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-3.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\carousel-3.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-3.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-33.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\carousel-33.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-33.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-1.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\destination-1.jpg",
       "PackagePath": "staticwebassets\\img\\destination-1.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-2.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\destination-2.jpg",
       "PackagePath": "staticwebassets\\img\\destination-2.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-4.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\destination-4.jpg",
       "PackagePath": "staticwebassets\\img\\destination-4.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-5.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\destination-5.jpg",
       "PackagePath": "staticwebassets\\img\\destination-5.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-6.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\destination-6.jpg",
       "PackagePath": "staticwebassets\\img\\destination-6.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-7.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\destination-7.jpg",
       "PackagePath": "staticwebassets\\img\\destination-7.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-8.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\destination-8.jpg",
       "PackagePath": "staticwebassets\\img\\destination-8.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-9.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\destination-9.jpg",
       "PackagePath": "staticwebassets\\img\\destination-9.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\explore-tour-1.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\explore-tour-1.jpg",
       "PackagePath": "staticwebassets\\img\\explore-tour-1.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\explore-tour-2.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\explore-tour-2.jpg",
       "PackagePath": "staticwebassets\\img\\explore-tour-2.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\explore-tour-3.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\explore-tour-3.jpg",
       "PackagePath": "staticwebassets\\img\\explore-tour-3.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\explore-tour-4.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\explore-tour-4.jpg",
       "PackagePath": "staticwebassets\\img\\explore-tour-4.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\explore-tour-5.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\explore-tour-5.jpg",
       "PackagePath": "staticwebassets\\img\\explore-tour-5.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\explore-tour-6.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\explore-tour-6.jpg",
       "PackagePath": "staticwebassets\\img\\explore-tour-6.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-1.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-1.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-1.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-10.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-10.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-10.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-2.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-2.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-2.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-3.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-3.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-3.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-4.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-4.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-4.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-5.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-5.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-5.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-6.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-6.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-6.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-7.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-7.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-7.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-8.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-8.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-8.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\gallery-9.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\gallery-9.jpg",
       "PackagePath": "staticwebassets\\img\\gallery-9.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\guide-1.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\guide-1.jpg",
       "PackagePath": "staticwebassets\\img\\guide-1.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\guide-2.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\guide-2.jpg",
       "PackagePath": "staticwebassets\\img\\guide-2.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\guide-3.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\guide-3.jpg",
       "PackagePath": "staticwebassets\\img\\guide-3.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\guide-4.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\guide-4.jpg",
       "PackagePath": "staticwebassets\\img\\guide-4.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-1.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\packages-1.jpg",
       "PackagePath": "staticwebassets\\img\\packages-1.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-2.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\packages-2.jpg",
       "PackagePath": "staticwebassets\\img\\packages-2.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-3.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\packages-3.jpg",
       "PackagePath": "staticwebassets\\img\\packages-3.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-4.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\packages-4.jpg",
       "PackagePath": "staticwebassets\\img\\packages-4.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\subscribe-img.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\subscribe-img.jpg",
       "PackagePath": "staticwebassets\\img\\subscribe-img.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\testimonial-1.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\testimonial-1.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-1.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\testimonial-2.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\testimonial-2.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-2.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\testimonial-3.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\testimonial-3.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-3.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\testimonial-4.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\testimonial-4.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-4.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\tour-booking-bg.jpg",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\tour-booking-bg.jpg",
       "PackagePath": "staticwebassets\\img\\tour-booking-bg.jpg"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\easing.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\js\\easing.min.js",
       "PackagePath": "staticwebassets\\js\\easing.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\jquery.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\js\\jquery.min.js",
       "PackagePath": "staticwebassets\\js\\jquery.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\lightbox.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\js\\lightbox.min.js",
       "PackagePath": "staticwebassets\\js\\lightbox.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\main.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\owl.carousel.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\js\\owl.carousel.js",
       "PackagePath": "staticwebassets\\js\\owl.carousel.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\site.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\waypoints.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\js\\waypoints.min.js",
       "PackagePath": "staticwebassets\\js\\waypoints.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
