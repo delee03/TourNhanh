@@ -15,10 +15,13 @@ namespace TourNhanh.Repositories.Implementations
 
         public async Task<IEnumerable<Tour>> GetAllAsync()
         {
-            return await _context.Tours.ToListAsync();
+            return await _context.Tours
+                .Include(tour=>tour.Transport)
+                .Include(tour=>tour.Category)
+                .ToListAsync();
         }
 
-        public async Task<Tour> GetByIdAsync(int id)
+        public async Task<Tour?> GetByIdAsync(int id)
         {
             return await _context.Tours.FindAsync(id);
         }
@@ -35,10 +38,14 @@ namespace TourNhanh.Repositories.Implementations
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Tour tour)
+        public async Task DeleteAsync(int id)
         {
-            _context.Tours.Remove(tour);
-            await _context.SaveChangesAsync();
+            var tour = await GetByIdAsync(id);
+            if (tour != null)
+            {
+                _context.Tours.Remove(tour);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

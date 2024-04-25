@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TourNhanh.Models;
 using Microsoft.AspNetCore.Identity;
+using TourNhanh.Repositories.Implementations;
+using TourNhanh.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,9 @@ builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireCo
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ITourRepository, TourRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ITransportRepository, TransportRepository>();
 
 var app = builder.Build();
 
