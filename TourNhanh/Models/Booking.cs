@@ -9,19 +9,34 @@ namespace TourNhanh.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        //Booking date
         [DataType(DataType.Date)]
         public DateTime BookingDate { get; set; }
 
-        public string CustomerId { get; set; }
-        public AppUser Customer { get; set; }
+        //Customer
+        [ForeignKey("Customer")]
+        public string? CustomerUserId { get; set; }
+        public virtual AppUser? Customer { get; set; }
 
+        //Tour
         public int TourId { get; set; }
-        public Tour Tour { get; set; }
+        public virtual Tour? Tour { get; set; }
 
-        public string ContactPersonId { get; set; }
-        [NotMapped]
-        public AppUser ContactPerson { get; set; }
+        //ContactPerson
+        [ForeignKey("ContactPerson")]
+        public string? ContactPersonUserId { get; set; }
+        public virtual AppUser? ContactPerson { get; set; }
+
+        //Note
+        public string? Note { get; set; }
+        //Payment
+        [DataType(DataType.Currency)]
+        public decimal Amount { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime PaymentDate { get; set; }
+
+        public string? PaymentMethod { get; set; }
     }
-
-
+    
 }

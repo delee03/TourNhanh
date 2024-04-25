@@ -11,8 +11,8 @@ namespace TourNhanh.Models
 
         [ForeignKey("Tour")]
         public int TourId { get;set; }
-        public string ImageUrl { get; set; }
-
         public virtual Tour? Tour { get; set; }
+
+        public string? ImageUrl { get; set; }
     }
 }

@@ -7,8 +7,8 @@ namespace TourNhanh.Models
     {
         [Required]
         [StringLength(100)]
-        public string FullName { get; set; }
+        public string? FullName { get; set; }
 
-        public List<Booking> Bookings { get; set; }
+        public List<Booking>? Bookings { get; set; }
     }
 }

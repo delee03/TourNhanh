@@ -1,38 +1,46 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
 
 namespace TourNhanh.Models
 {
     public class Tour
     {
+        //ID
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
         public int Id { get; set; }
 
+        //Category
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+        public virtual Category? Category { get; set; }
+
+        //Name
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
+        //Description
         [StringLength(500)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
+        //Price
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
-/*        [ForeignKey("Location")]
-        public int StartLocationId { get; set; }
-        public Location StartLocation { get; set; }
+        //Transport
+        [ForeignKey("Transport")]
+        public int TransportId { get; set; }
+        public virtual Transport? Transport { get; set; }
 
-        [ForeignKey("Location")]
-        public int EndLocationId { get; set; }
-        public Location EndLocation { get; set; }*/
+        //MainImage
+        public string? MainImageUrl { get; set; }
 
-        public int CategoryId { get; set; } // ID của danh mục
-        public Category Category { get; set; } // Danh mục của tour
+        //ListImage
+        public virtual ICollection<TourImage>? TourImages{get;set;}
 
-        public List<TourDetail> TourDetails { get; set; }
+        //Detail
+        public virtual ICollection<TourDetail>? TourDetails { get; set; }
     }
-
-
 }

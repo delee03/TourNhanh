@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TourNhanh.Models;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 

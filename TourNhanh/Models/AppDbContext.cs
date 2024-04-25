@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace TourNhanh.Models
@@ -14,8 +13,18 @@ namespace TourNhanh.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<TourDetail>()
-                .HasKey(tl => new { tl.TourId, tl.LocationId });
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Customer)
+                .WithMany(u => u.Bookings)
+                .HasForeignKey(b => b.CustomerUserId);
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.ContactPerson)
+                .WithMany() // không cần thuộc tính navigation property tương ứng trong AppUser
+                .HasForeignKey(b => b.ContactPersonUserId);
+
+            /*            modelBuilder.Entity<TourDetail>()
+                            .HasKey(tl => new { tl.TourId, tl.LocationId });*/
 
             /*          modelBuilder.Entity<IdentityUserLogin<string>>().HasNoKey();
                       modelBuilder.Entity<IdentityUserRole<string>>().HasNoKey();*/
@@ -24,12 +33,13 @@ namespace TourNhanh.Models
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Tour> Tours { get; set; }
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<Payment> Payments { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<TourDetail> TourDetails { get; set; }
-        public DbSet<AppUser> Users { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
 
         public DbSet<TourImage> TourImages { get; set; }
+
+        public DbSet<Transport> Transports { get; set; }
     }
 }

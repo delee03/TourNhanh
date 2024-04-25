@@ -58,7 +58,7 @@ namespace TourNhanh.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -88,13 +88,28 @@ namespace TourNhanh.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    Latitude = table.Column<double>(type: "float", nullable: false),
-                    Longitude = table.Column<double>(type: "float", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Latitude = table.Column<double>(type: "float", nullable: true),
+                    Longitude = table.Column<double>(type: "float", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Locations", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Transports",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Transports", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -209,10 +224,12 @@ namespace TourNhanh.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    TransportId = table.Column<int>(type: "int", nullable: false),
+                    MainImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -221,6 +238,12 @@ namespace TourNhanh.Migrations
                         name: "FK_Tours_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Tours_Transports_TransportId",
+                        column: x => x.TransportId,
+                        principalTable: "Transports",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -232,19 +255,27 @@ namespace TourNhanh.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BookingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CustomerId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CustomerUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     TourId = table.Column<int>(type: "int", nullable: false),
-                    ContactPersonId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ContactPersonUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Note = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PaymentMethod = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Bookings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Bookings_AspNetUsers_CustomerId",
-                        column: x => x.CustomerId,
+                        name: "FK_Bookings_AspNetUsers_ContactPersonUserId",
+                        column: x => x.ContactPersonUserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Bookings_AspNetUsers_CustomerUserId",
+                        column: x => x.CustomerUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Bookings_Tours_TourId",
                         column: x => x.TourId,
@@ -266,7 +297,7 @@ namespace TourNhanh.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TourDetails", x => new { x.TourId, x.LocationId });
+                    table.PrimaryKey("PK_TourDetails", x => x.TourId);
                     table.ForeignKey(
                         name: "FK_TourDetails_Hotels_HotelId",
                         column: x => x.HotelId,
@@ -294,7 +325,7 @@ namespace TourNhanh.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TourId = table.Column<int>(type: "int", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -303,27 +334,6 @@ namespace TourNhanh.Migrations
                         name: "FK_TourImages_Tours_TourId",
                         column: x => x.TourId,
                         principalTable: "Tours",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Payments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    BookingId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Payments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Payments_Bookings_BookingId",
-                        column: x => x.BookingId,
-                        principalTable: "Bookings",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -368,19 +378,19 @@ namespace TourNhanh.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bookings_CustomerId",
+                name: "IX_Bookings_ContactPersonUserId",
                 table: "Bookings",
-                column: "CustomerId");
+                column: "ContactPersonUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Bookings_CustomerUserId",
+                table: "Bookings",
+                column: "CustomerUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Bookings_TourId",
                 table: "Bookings",
                 column: "TourId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Payments_BookingId",
-                table: "Payments",
-                column: "BookingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TourDetails_HotelId",
@@ -401,6 +411,11 @@ namespace TourNhanh.Migrations
                 name: "IX_Tours_CategoryId",
                 table: "Tours",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tours_TransportId",
+                table: "Tours",
+                column: "TransportId");
         }
 
         /// <inheritdoc />
@@ -422,7 +437,7 @@ namespace TourNhanh.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Payments");
+                name: "Bookings");
 
             migrationBuilder.DropTable(
                 name: "TourDetails");
@@ -434,7 +449,7 @@ namespace TourNhanh.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Bookings");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Hotels");
@@ -443,13 +458,13 @@ namespace TourNhanh.Migrations
                 name: "Locations");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
                 name: "Tours");
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Transports");
         }
     }
 }
