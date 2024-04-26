@@ -4,25 +4,33 @@
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
 
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<!-- Customized Bootstrap Stylesheet -->
+<link type="text/css" href="~/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Template Stylesheet -->
+<link type="text/css" href="~/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            <a id="manage" class="me-3 text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><i class="fa-solid fa-heart"></i>Xin Chào @UserManager.GetUserName(User)!</a>
     </li>
     <li class="nav-item">
         <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
+                <button id="logout" type="submit" class="nav-link btn btn-link text-light border-0">Logout</button>
         </form>
     </li>
 }
 else
 {
     <li class="nav-item">
-        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="me-3 text-light"  id="register" asp-area="Identity" asp-page="/Account/Register"> <small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="me-3 text-light"  id="login" asp-area="Identity" asp-page="/Account/Login"> <small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Login</small></a>
     </li>
 }
 </ul>
