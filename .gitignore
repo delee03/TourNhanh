@@ -361,8 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-.vs/TourNhanh/DesignTimeBuild/.dtbcache.v2
-.vs/TourNhanh/v17/.suo
-TourNhanh/bin/Debug/net8.0/TourNhanh.dll
-/TourNhanh/bin/Debug
-/TourNhanh/obj/Debug
+.vs
