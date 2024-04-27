@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lL+9ok2uBXwDj31RCPvAl5rz0rUE4hBMszt5zxtR5Ss=",
+  "Hash": "9L8jeyiVgNE726P6E/vZ3B2eDsMHL94viM3Y9CsOCKU=",
   "Source": "TourNhanh",
   "BasePath": "_content/TourNhanh",
   "Mode": "Default",
@@ -3606,25 +3606,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\tuvzccs0.0h4.png",
-      "SourceId": "TourNhanh",
-      "SourceType": "Discovered",
-      "ContentRoot": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\",
-      "BasePath": "_content/TourNhanh",
-      "RelativePath": "tour/image/1/tuvzccs0.0h4.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\tour\\image\\1\\tuvzccs0.0h4.png"
     }
   ]
 }

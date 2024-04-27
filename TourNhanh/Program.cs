@@ -17,6 +17,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ITourRepository, TourRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ITransportRepository, TransportRepository>();
+builder.Services.AddScoped<IHotelRepository, HotelRepository>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<ITourImage, TourImageRepository>();
+
+
 
 var app = builder.Build();
 
