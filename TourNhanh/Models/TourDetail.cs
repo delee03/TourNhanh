@@ -12,10 +12,12 @@ namespace TourNhanh.Models
         public virtual Tour? Tour { get; set; }
 
         //Location
+        [ForeignKey("Location")]
         public int LocationId { get; set; }
         public virtual Location? Location { get; set; }
 
         // Thứ tự của địa điểm trong tour.
+        [Required]
         public int Order { get; set; }
 
         // Thời gian bắt đầu tại địa điểm.

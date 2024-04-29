@@ -505,6 +505,50 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\1ddnsui4.30v.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\1ddnsui4.30v.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\c5ouvoav.1zi.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\c5ouvoav.1zi.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\o111afcu.ype.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\o111afcu.ype.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\uppmoseh.ga3.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\uppmoseh.ga3.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\vxdh43zm.p2a.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\vxdh43zm.p2a.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\xfaxpv1f.fwk.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\xfaxpv1f.fwk.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\2\\5jzbiky5.3mk.png",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\5jzbiky5.3mk.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\2\\ybkk40my.qm5.png",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\ybkk40my.qm5.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\4\\4inlkhbr.qei.png",
+      "PackagePath": "staticwebassets\\tour\\image\\4\\4inlkhbr.qei.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\4\\jz1jo00v.skb.png",
+      "PackagePath": "staticwebassets\\tour\\image\\4\\jz1jo00v.skb.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\4\\otez4bn4.djs.png",
+      "PackagePath": "staticwebassets\\tour\\image\\4\\otez4bn4.djs.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TourNhanh.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

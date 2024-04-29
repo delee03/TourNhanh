@@ -14,13 +14,15 @@ namespace TourNhanh.Controllers
         private readonly ICategoryRepository _categoryRepository;
         private readonly ITransportRepository _transportRepository;
         private readonly ITourImage _tourImageRepository;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public TourController(ITourRepository tourRepository, ICategoryRepository categoryRepository, ITransportRepository transportRepository, ITourImage tourImageRepository)
+        public TourController(ITourRepository tourRepository, ICategoryRepository categoryRepository, ITransportRepository transportRepository, ITourImage tourImageRepository,IWebHostEnvironment hostingEnvironment)
         {
             _tourRepository = tourRepository;
             _categoryRepository = categoryRepository;
             _transportRepository = transportRepository;
             _tourImageRepository = tourImageRepository;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         // GET: Tour
@@ -57,7 +59,7 @@ namespace TourNhanh.Controllers
         // POST: Tour/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,Price,TransportId")] Tour tour, IFormFile imageFile, List<IFormFile> additionalImages)
+        public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
         {
             if (ModelState.IsValid)
             {
@@ -108,12 +110,25 @@ namespace TourNhanh.Controllers
         // POST: Tours/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Name,Description,Price,TransportId")] Tour tour, IFormFile imageFile)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Name,Description,Price,TransportId")] Tour tourFromForm, IFormFile? imageFile, List<IFormFile> additionalImages)
         {
-            if (id != tour.Id)
+            if (id != tourFromForm.Id)
             {
                 return NotFound();
             }
+
+            var tour = await _tourRepository.GetByIdAsync(tourFromForm.Id);
+            if (tour == null)
+            {
+                return NotFound();
+            }
+
+            // Update the tour fields based on the form data
+            tour.CategoryId = tourFromForm.CategoryId;
+            tour.Name = tourFromForm.Name;
+            tour.Description = tourFromForm.Description;
+            tour.Price = tourFromForm.Price;
+            tour.TransportId = tourFromForm.TransportId;
 
             if (ModelState.IsValid)
             {
@@ -123,13 +138,26 @@ namespace TourNhanh.Controllers
                     // Handle image saving and updating MainImageUrl
                     await HandleImageSaveAndUpdate(tour, imageFile);
                 }
-
+                // Handle additional images
+                if (additionalImages != null && additionalImages.Count > 0)
+                {
+                    // Delete old additional images
+                    await _tourImageRepository.DeleteByTourIdAsync(tour.Id);
+                    foreach (var additionalImage in additionalImages)
+                    {
+                        var tourImage = new TourImage
+                        {
+                            TourId = tour.Id,
+                            ImageUrl = await SaveImageAndGetUrl(tour.Id, additionalImage)
+                        };
+                        await _tourImageRepository.CreateAsync(tourImage);
+                    }
+                }
                 await _tourRepository.UpdateAsync(tour);
                 return RedirectToAction(nameof(Index));
             }
             return View(tour);
         }
-
 
         // GET: Tours/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -144,7 +172,6 @@ namespace TourNhanh.Controllers
             {
                 return NotFound();
             }
-
             return View(tour);
         }
 
@@ -163,6 +190,16 @@ namespace TourNhanh.Controllers
             var path = Path.Combine("wwwroot", $"tour/image/{tour.Id}");
             Directory.CreateDirectory(path);
 
+            // If a main image already exists, delete it
+            if (!string.IsNullOrEmpty(tour.MainImageUrl))
+            {
+                var oldImagePath = ConvertUrlToFilePath(tour.MainImageUrl);
+                if (System.IO.File.Exists(oldImagePath))
+                {
+                    System.IO.File.Delete(oldImagePath);
+                }
+            }
+
             // Generate a random file name
             var fileName = Path.GetRandomFileName() + Path.GetExtension(imageFile.FileName);
 
@@ -173,7 +210,7 @@ namespace TourNhanh.Controllers
             }
 
             // Update MainImageUrl
-            tour.MainImageUrl = $"~/tour/image/{tour.Id}/{fileName}";
+            tour.MainImageUrl = $"/tour/image/{tour.Id}/{fileName}";
             await _tourRepository.UpdateAsync(tour);
         }
 
@@ -193,7 +230,18 @@ namespace TourNhanh.Controllers
             }
 
             // Return the image URL
-            return $"~/tour/image/{tourId}/{fileName}";
+            return $"/tour/image/{tourId}/{fileName}";
         }
+        private string ConvertUrlToFilePath(string imageUrl)
+        {
+            // Remove the leading slash from the URL
+            var urlWithoutLeadingSlash = imageUrl.TrimStart('/');
+
+            // Combine the URL with the root path
+            var filePath = Path.Combine(_hostingEnvironment.WebRootPath, urlWithoutLeadingSlash);
+
+            return filePath;
+        }
+
     }
 }

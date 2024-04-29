@@ -40,8 +40,22 @@
                 <span asp-validation-for="TransportId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label for="imageFile" class="control-label">Image</label>
-                <input type="file" id="imageFile" name="imageFile" class="form-control" />
+                <label for="imageFile" class="control-label">Main Image</label>
+                <input type="file" id="imageFile" name="imageFile" class="form-control" onchange="previewImage(event, 'mainImagePreview')" />
+                <img id="mainImagePreview" src="@Model.MainImageUrl" alt="Main Image Preview" style="width: 100px; height: 100px;" />
+            </div>
+            <div class="form-group">
+                <label for="additionalImages" class="control-label">Additional Images</label>
+                <input type="file" id="additionalImages" name="additionalImages" multiple class="form-control" onchange="previewImages(event, 'additionalImagesPreview')" />
+                <div id="additionalImagesPreview">
+                    @if (ViewBag.TourImages != null)
+                    {
+                        foreach (var imageUrl in ViewBag.TourImages)
+                        {
+                            <img src="@imageUrl" alt="Additional Image Preview" style="width: 100px; height: 100px;" />
+                        }
+                    }
+                </div>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -53,6 +67,37 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script>
+    function previewImage(event, previewElementId) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById(previewElementId);
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function previewImages(event, previewElementId) {
+        var files = event.target.files;
+        var output = document.getElementById(previewElementId);
+        output.innerHTML = ''; // Clear the preview
+
+        for (var i = 0; i < files.length; i++) {
+            var reader = new FileReader();
+            reader.onload = (function (file) {
+                return function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.width = '100px';
+                    img.style.height = '100px';
+                    output.appendChild(img);
+                };
+            })(files[i]);
+            reader.readAsDataURL(files[i]);
+        }
+    }
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

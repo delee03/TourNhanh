@@ -10,5 +10,6 @@ namespace TourNhanh.Repositories.Interfaces
         Task CreateAsync(TourImage tourImage);
         Task UpdateAsync(TourImage tourImage);
         Task DeleteAsync(int id);
+        Task DeleteByTourIdAsync(int tourId);
     }
 }
