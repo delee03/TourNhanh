@@ -5,10 +5,14 @@ namespace TourNhanh.Models
 {
     public class TourDetail
     {
-        // Id
-        [Key, ForeignKey("Tour")]
-        public int TourId { get; set; }
+        //Id
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
+        // Tour
+        [ForeignKey("Tour")]
+        public int TourId { get; set; }
         public virtual Tour? Tour { get; set; }
 
         //Location

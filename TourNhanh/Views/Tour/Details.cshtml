@@ -50,6 +50,7 @@
     </dl>
 </div>
 <div>
+    <a asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id" class="btn btn-primary">Xem chi tiết tour</a>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

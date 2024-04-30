@@ -12,8 +12,8 @@ using TourNhanh.Models;
 namespace TourNhanh.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240427161121_Init")]
-    partial class Init
+    [Migration("20240430090506_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -393,8 +393,11 @@ namespace TourNhanh.Migrations
 
             modelBuilder.Entity("TourNhanh.Models.TourDetail", b =>
                 {
-                    b.Property<int>("TourId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
@@ -411,11 +414,16 @@ namespace TourNhanh.Migrations
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("TourId");
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("HotelId");
 
                     b.HasIndex("LocationId");
+
+                    b.HasIndex("TourId");
 
                     b.ToTable("TourDetails");
                 });

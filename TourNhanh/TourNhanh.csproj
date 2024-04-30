@@ -26,7 +26,6 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Migrations\" />
-    <Folder Include="wwwroot\tour\image\" />
   </ItemGroup>
 
 </Project>

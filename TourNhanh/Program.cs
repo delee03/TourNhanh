@@ -20,7 +20,7 @@ builder.Services.AddScoped<ITransportRepository, TransportRepository>();
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ITourImage, TourImageRepository>();
-
+builder.Services.AddScoped<ITourDetail, TourDetailRepository>();
 
 
 var app = builder.Build();

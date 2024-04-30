@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TourNhanh.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -288,6 +288,8 @@ namespace TourNhanh.Migrations
                 name: "TourDetails",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     TourId = table.Column<int>(type: "int", nullable: false),
                     LocationId = table.Column<int>(type: "int", nullable: false),
                     Order = table.Column<int>(type: "int", nullable: false),
@@ -297,7 +299,7 @@ namespace TourNhanh.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TourDetails", x => x.TourId);
+                    table.PrimaryKey("PK_TourDetails", x => x.Id);
                     table.ForeignKey(
                         name: "FK_TourDetails_Hotels_HotelId",
                         column: x => x.HotelId,
@@ -401,6 +403,11 @@ namespace TourNhanh.Migrations
                 name: "IX_TourDetails_LocationId",
                 table: "TourDetails",
                 column: "LocationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TourDetails_TourId",
+                table: "TourDetails",
+                column: "TourId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TourImages_TourId",

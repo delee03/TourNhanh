@@ -154,6 +154,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/WebProject/DACS/SourceCode/TourNhanh/Views/Tour/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

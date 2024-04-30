@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using TourNhanh.Models;
 using TourNhanh.Repositories.Interfaces;
 
@@ -7,15 +8,21 @@ namespace TourNhanh.Controllers
     public class TourDetailController:Controller
     {
         private readonly ITourDetail _tourDetailRepository;
+        private readonly ILocationRepository _locationRepository;
+        private readonly IHotelRepository _hotelRepository;
 
-        public TourDetailController(ITourDetail tourDetailRepository)
+
+        public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository)
         {
             _tourDetailRepository = tourDetailRepository;
+            _locationRepository = locationRepository;
+            _hotelRepository = hotelRepository;
         }
 
         // GET: TourDetails
         public async Task<IActionResult> Index(int tourId)
         {
+            ViewBag.TourId = tourId;
             return View(await _tourDetailRepository.GetByTourIdAsync(tourId));
         }
 
@@ -27,7 +34,7 @@ namespace TourNhanh.Controllers
                 return NotFound();
             }
 
-            var tourDetail = await _tourDetailRepository.Get(id.Value);
+            var tourDetail = await _tourDetailRepository.GetByIdAsync(id.Value);
             if (tourDetail == null)
             {
                 return NotFound();
@@ -37,9 +44,13 @@ namespace TourNhanh.Controllers
         }
 
         // GET: TourDetails/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int tourId)
         {
-            return View();
+            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(),"Id","Name");
+            ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name");
+            var tourDetail = new TourDetail { TourId = tourId };
+            ViewBag.TourId = tourId;
+            return View(tourDetail);
         }
 
         // POST: TourDetails/Create
@@ -49,8 +60,8 @@ namespace TourNhanh.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _tourDetailRepository.AddTourDetail(tourDetail);
-                return RedirectToAction(nameof(Index));
+                await _tourDetailRepository.CreateAsync(tourDetail);
+                return RedirectToAction(nameof(Index), new { tourId = tourDetail.TourId });
             }
             return View(tourDetail);
         }
@@ -63,7 +74,7 @@ namespace TourNhanh.Controllers
                 return NotFound();
             }
 
-            var tourDetail = await _tourDetailRepository.GetTourDetail(id.Value);
+            var tourDetail = await _tourDetailRepository.GetByIdAsync(id.Value);
             if (tourDetail == null)
             {
                 return NotFound();
@@ -83,7 +94,7 @@ namespace TourNhanh.Controllers
 
             if (ModelState.IsValid)
             {
-                await _tourDetailRepository.UpdateTourDetail(tourDetail);
+                await _tourDetailRepository.UpdateAsync(tourDetail);
                 return RedirectToAction(nameof(Index));
             }
             return View(tourDetail);
@@ -97,7 +108,7 @@ namespace TourNhanh.Controllers
                 return NotFound();
             }
 
-            var tourDetail = await _tourDetailRepository.GetTourDetail(id.Value);
+            var tourDetail = await _tourDetailRepository.GetByIdAsync(id.Value);
             if (tourDetail == null)
             {
                 return NotFound();
@@ -111,7 +122,7 @@ namespace TourNhanh.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            await _tourDetailRepository.DeleteTourDetail(id);
+            await _tourDetailRepository.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
     }
