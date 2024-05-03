@@ -285,3 +285,5 @@ D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\runtimes\win-arm\native\e_sqlite3
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

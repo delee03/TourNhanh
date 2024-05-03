@@ -205,6 +205,14 @@
       "PackagePath": "staticwebassets\\img\\guide-4.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\loading.gif",
+      "PackagePath": "staticwebassets\\img\\loading.gif"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\logo-1.png",
+      "PackagePath": "staticwebassets\\img\\logo-1.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-1.jpg",
       "PackagePath": "staticwebassets\\img\\packages-1.jpg"
     },
