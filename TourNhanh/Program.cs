@@ -4,6 +4,7 @@ using TourNhanh.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Configuration;
 using Microsoft.Extensions.Options;
+using TourNhanh.DataAcess;
 
 internal class Program
 {
@@ -14,7 +15,14 @@ internal class Program
       
         var configuration = builder.Configuration;
 
-       
+        builder.Services.AddDistributedMemoryCache();
+
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromSeconds(10);
+            options.Cookie.HttpOnly = true;
+            options.Cookie.IsEssential = true;
+        });
         builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -29,6 +37,8 @@ internal class Program
 
         builder.Services.AddControllersWithViews();
         builder.Services.AddRazorPages();
+
+        
         //login với FACEBOOk
         builder.Services.AddAuthentication().AddFacebook(facebookOptions =>
         {
@@ -65,17 +75,24 @@ internal class Program
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
-
+       
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
         app.UseRouting();
 
         app.UseAuthorization();
-        app.MapRazorPages();
+
+        app.UseSession();
+
+        app.MapControllerRoute(
+            name: "admin",
+            pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+        );
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
+        app.MapRazorPages();
 
         app.Run();
     }

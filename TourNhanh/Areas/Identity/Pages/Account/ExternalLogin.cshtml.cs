@@ -105,7 +105,6 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                 ErrorMessage = $"Error from external provider: {remoteError}";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
-
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
@@ -120,7 +119,6 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                 _logger.LogInformation("{Name} logged in with {LoginProvider} provider.", info.Principal.Identity.Name, info.LoginProvider);
                 return LocalRedirect(returnUrl);
             }
-
             if (result.IsLockedOut)
             {
                 return RedirectToPage("./Lockout");
@@ -129,9 +127,7 @@ namespace TourNhanh.Areas.Identity.Pages.Account
             {
                 // If the user does not have an account, then ask the user to create an account.
                 ReturnUrl = returnUrl;
-                // Set ProviderDisplayName to the user's full name
-                ProviderDisplayName = info.Principal.FindFirstValue("given_name") + " " + info.Principal.FindFirstValue("family_name");
-
+                ProviderDisplayName = info.ProviderDisplayName;
                 if (info.Principal.HasClaim(c => c.Type == ClaimTypes.Email))
                 {
                     Input = new InputModel
@@ -139,7 +135,6 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                         Email = info.Principal.FindFirstValue(ClaimTypes.Email)
                     };
                 }
-
                 return Page();
             }
         }
@@ -161,7 +156,7 @@ namespace TourNhanh.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-              
+
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
