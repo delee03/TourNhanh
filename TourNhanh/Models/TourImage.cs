@@ -8,11 +8,11 @@ namespace TourNhanh.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-      
-        public string ImageUrl { get; set; }
 
         [ForeignKey("Tour")]
-        public int TourId { get; set; }
+        public int TourId { get;set; }
         public virtual Tour? Tour { get; set; }
+
+        public string? ImageUrl { get; set; }
     }
 }

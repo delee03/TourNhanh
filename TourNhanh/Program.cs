@@ -6,7 +6,36 @@ using System.Configuration;
 using Microsoft.Extensions.Options;
 using TourNhanh.DataAcess;
 
+using TourNhanh.Repositories.Implementations;
+using TourNhanh.Repositories.Interfaces;
+
 internal class Program
+
+
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AppDbContext>();
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ITourRepository, TourRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ITransportRepository, TransportRepository>();
+builder.Services.AddScoped<IHotelRepository, HotelRepository>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<ITourImage, TourImageRepository>();
+builder.Services.AddScoped<ITourDetail, TourDetailRepository>();
+
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
 {
     
     private static void Main(string[] args)

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Web_VS\\TourNhanh\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\shared\\_layoutsign.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\shared\\_layoutsign.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -50,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 525,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,7 +82,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "_LayoutSign.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Shared\\_LayoutSign.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Views\\Shared\\_LayoutSign.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Shared\\_LayoutSign.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\Shared\\_LayoutSign.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-04T08:54:44.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -91,20 +108,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Identity\\Pages\\Account\\Login.cshtml*",
-              "RelativeToolTip": "TourNhanh\\Areas\\Identity\\Pages\\Account\\Login.cshtml*",
-              "ViewState": "AQIAAKMAAAAAAAAAAAAgwLkAAAB1AAAA",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "TourNhanh\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAMYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-04T08:07:14.409Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\NationalTour\\Index.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\NationalTour\\Index.cshtml",
@@ -117,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "QueryData.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\DataQuery\\QueryData.cs",
               "RelativeDocumentMoniker": "TourNhanh\\DataQuery\\QueryData.cs",
@@ -129,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_LayoutAdmin.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
@@ -142,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LoginController.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Areas\\Admin\\Controllers\\LoginController.cs",
@@ -155,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Areas\\Admin\\Views\\Login\\Index.cshtml",
@@ -167,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
@@ -179,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Areas\\Admin\\Controllers\\DashboardController.cs",
@@ -191,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Program.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Program.cs",
