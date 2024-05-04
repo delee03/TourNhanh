@@ -41,12 +41,8 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\hotel\\image\\1\\eaborkqn.yhb.png",
-      "PackagePath": "staticwebassets\\hotel\\image\\1\\eaborkqn.yhb.png"
-    },
-    {
-      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\hotel\\image\\2\\2bch1hei.pyk.png",
-      "PackagePath": "staticwebassets\\hotel\\image\\2\\2bch1hei.pyk.png"
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\hotel\\image\\3\\oal5en3m.asi.png",
+      "PackagePath": "staticwebassets\\hotel\\image\\3\\oal5en3m.asi.png"
     },
     {
       "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\img\\about-2.png",
@@ -515,6 +511,30 @@
     {
       "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\qjg3n1mn.dqb.png",
       "PackagePath": "staticwebassets\\tour\\image\\1\\qjg3n1mn.dqb.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\1\\zbyewtxl.aw3.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\zbyewtxl.aw3.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\2\\mlr22jbl.dxg.png",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\mlr22jbl.dxg.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\2\\pft0u3mw.4gn.png",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\pft0u3mw.4gn.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\2\\rmieepby.puw.png",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\rmieepby.puw.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\3\\5wyfnpqc.vqq.png",
+      "PackagePath": "staticwebassets\\tour\\image\\3\\5wyfnpqc.vqq.png"
+    },
+    {
+      "Id": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\wwwroot\\tour\\image\\3\\gakkfw0z.pnm.png",
+      "PackagePath": "staticwebassets\\tour\\image\\3\\gakkfw0z.pnm.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TourNhanh.Microsoft.AspNetCore.StaticWebAssets.props",

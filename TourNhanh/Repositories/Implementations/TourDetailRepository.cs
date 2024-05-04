@@ -15,17 +15,29 @@ namespace TourNhanh.Repositories.Implementations
 
         public async Task<IEnumerable<TourDetail>> GetAllAsync()
         {
-            return await _context.TourDetails.ToListAsync();
+            return await _context.TourDetails
+                .Include(tourDetail=>tourDetail.Tour)
+                .Include(tourDetail => tourDetail.Location)
+                .Include(tourDetail => tourDetail.Hotel)
+                .ToListAsync();
         }
 
         public async Task<TourDetail?> GetByIdAsync(int id)
         {
-            return await _context.TourDetails.FindAsync(id);
+            return await _context.TourDetails
+                .Include(tourDetail => tourDetail.Tour)
+                .Include(tourDetail => tourDetail.Location)
+                .Include(tourDetail => tourDetail.Hotel)
+                .FirstOrDefaultAsync(td=>td.Id==id);
         }
 
         public async Task<IEnumerable<TourDetail>> GetByTourIdAsync(int tourId)
         {
-            return await _context.TourDetails.Where(td => td.TourId == tourId).ToListAsync();
+            return await _context.TourDetails.Where(td => td.TourId == tourId)
+                .Include(tourDetail => tourDetail.Tour)
+                .Include(tourDetail => tourDetail.Location)
+                .Include(tourDetail => tourDetail.Hotel)
+                .ToListAsync();
         }
 
         public async Task CreateAsync(TourDetail tourDetail)

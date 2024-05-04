@@ -11,7 +11,6 @@ namespace TourNhanh.Controllers
         private readonly ILocationRepository _locationRepository;
         private readonly IHotelRepository _hotelRepository;
 
-
         public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository)
         {
             _tourDetailRepository = tourDetailRepository;
@@ -79,24 +78,27 @@ namespace TourNhanh.Controllers
             {
                 return NotFound();
             }
+            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(), "Id", "Name");
+            ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name");
             return View(tourDetail);
         }
 
         // POST: TourDetails/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TourId,LocationId,Order,StartTime,EndTime,HotelId")] TourDetail tourDetail)
+        public async Task<IActionResult> Edit(int id ,[Bind("Id,TourId,LocationId,Order,StartTime,EndTime,HotelId")] TourDetail tourDetail)
         {
-            if (id != tourDetail.TourId)
+            if (id != tourDetail.Id)
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 await _tourDetailRepository.UpdateAsync(tourDetail);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index),new {tourId=tourDetail.TourId });
             }
+            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(), "Id", "Name");
+            ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name");
             return View(tourDetail);
         }
 
@@ -122,8 +124,10 @@ namespace TourNhanh.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var tourDetail = await _tourDetailRepository.GetByIdAsync(id);
+            var tourId = tourDetail?.TourId;
             await _tourDetailRepository.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { tourId = tourId });
         }
     }
 }

@@ -20,10 +20,12 @@ namespace TourNhanh.Repositories.Implementations
                 .Include(tour=>tour.Category)
                 .ToListAsync();
         }
-
         public async Task<Tour?> GetByIdAsync(int id)
         {
-            return await _context.Tours.FindAsync(id);
+            return await _context.Tours
+                .Include(tour => tour.Transport)
+                .Include(tour => tour.Category)
+                .FirstOrDefaultAsync(tour => tour.Id == id);
         }
 
         public async Task CreateAsync(Tour tour)

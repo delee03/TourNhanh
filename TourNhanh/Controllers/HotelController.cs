@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using TourNhanh.Models;
 using TourNhanh.Repositories.Implementations;
 using TourNhanh.Repositories.Interfaces;
+
 
 namespace TourNhanh.Controllers
 {
@@ -85,12 +87,22 @@ namespace TourNhanh.Controllers
         // POST: Hotels/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Address,Rating")] Hotel hotel, IFormFile imageFile)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Address,Rating")] Hotel hotelFromForm, IFormFile imageFile)
         {
-            if (id != hotel.Id)
+            if (id != hotelFromForm.Id)
             {
                 return NotFound();
             }
+            var hotel = await _hotelRepository.GetByIdAsync(id);
+
+            if(hotel==null)
+            {
+                return NotFound();
+            }
+
+            hotel.Name = hotelFromForm.Name;
+            hotel.Address = hotelFromForm.Address;
+            hotel.Rating = hotelFromForm.Rating;
 
             if (ModelState.IsValid)
             {
@@ -99,10 +111,7 @@ namespace TourNhanh.Controllers
                     // Handle image saving and updating MainImageUrl
                     await HandleImageSaveAndUpdate(hotel, imageFile);
                 }
-                else
-                {
-                    await _hotelRepository.UpdateAsync(hotel);
-                }
+                await _hotelRepository.UpdateAsync(hotel);
                 return RedirectToAction(nameof(Index));
             }
             return View(hotel);

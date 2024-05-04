@@ -44,7 +44,8 @@ namespace TourNhanh.Controllers
             {
                 return NotFound();
             }
-
+            var tourImages = await _tourImageRepository.GetByTourIdAsync(tour.Id);
+            ViewBag.TourImages = tourImages.Select(ti => ti.ImageUrl).ToList();
             return View(tour);
         }
 
