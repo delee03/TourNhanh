@@ -22,6 +22,7 @@ namespace TourNhanh.Models
                 .HasOne(b => b.ContactPerson)
                 .WithMany() // không cần thuộc tính navigation property tương ứng trong AppUser
                 .HasForeignKey(b => b.ContactPersonUserId);
+            //comment
 
             /*            modelBuilder.Entity<TourDetail>()
                             .HasKey(tl => new { tl.TourId, tl.LocationId });*/
@@ -41,5 +42,7 @@ namespace TourNhanh.Models
         public DbSet<TourImage> TourImages { get; set; }
 
         public DbSet<Transport> Transports { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Comment> comments { get; set; }
     }
 }

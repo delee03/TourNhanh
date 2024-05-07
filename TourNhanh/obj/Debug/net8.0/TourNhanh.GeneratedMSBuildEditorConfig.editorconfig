@@ -80,6 +80,8 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Web_VS/TourNhanh/TourNhanh/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Web_VS/TourNhanh/TourNhanh/Views/Blog/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -94,6 +96,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Web_VS/TourNhanh/TourNhanh/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Blog/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Web_VS/TourNhanh/TourNhanh/Views/Category/Create.cshtml]
@@ -114,8 +120,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Web_VS/TourNhanh/TourNhanh/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
-[D:/Web_VS/TourNhanh/TourNhanh/Views/Blog/Update.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Web_VS/TourNhanh/TourNhanh/Views/Contact/Index.cshtml]
