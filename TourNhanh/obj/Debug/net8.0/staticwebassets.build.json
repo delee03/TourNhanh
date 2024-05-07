@@ -7503,6 +7503,25 @@
       "OriginalItemSpec": "wwwroot\\img\\destination-9.jpg"
     },
     {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\dong-cuu-ninh-thuan.png",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "img/dong-cuu-ninh-thuan.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\dong-cuu-ninh-thuan.png"
+    },
+    {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\explore-tour-1.jpg",
       "SourceId": "TourNhanh",
       "SourceType": "Discovered",
@@ -8016,6 +8035,25 @@
       "OriginalItemSpec": "wwwroot\\img\\subscribe-img.jpg"
     },
     {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\sun-world-ha-long-park.png",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "img/sun-world-ha-long-park.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\sun-world-ha-long-park.png"
+    },
+    {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\testimonial-1.jpg",
       "SourceId": "TourNhanh",
       "SourceType": "Discovered",
@@ -8111,6 +8149,25 @@
       "OriginalItemSpec": "wwwroot\\img\\tour-booking-bg.jpg"
     },
     {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\vuon-nho.png",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "img/vuon-nho.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\vuon-nho.png"
+    },
+    {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\bootstrap.bundle.min.js",
       "SourceId": "TourNhanh",
       "SourceType": "Discovered",
@@ -8128,6 +8185,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\comment.js",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "js/comment.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\comment.js"
     },
     {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\easing.min.js",

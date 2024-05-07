@@ -1333,6 +1333,10 @@
       "PackagePath": "staticwebassets\\img\\destination-9.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\dong-cuu-ninh-thuan.png",
+      "PackagePath": "staticwebassets\\img\\dong-cuu-ninh-thuan.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\explore-tour-1.jpg",
       "PackagePath": "staticwebassets\\img\\explore-tour-1.jpg"
     },
@@ -1441,6 +1445,10 @@
       "PackagePath": "staticwebassets\\img\\subscribe-img.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\sun-world-ha-long-park.png",
+      "PackagePath": "staticwebassets\\img\\sun-world-ha-long-park.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\testimonial-1.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-1.jpg"
     },
@@ -1461,8 +1469,16 @@
       "PackagePath": "staticwebassets\\img\\tour-booking-bg.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\vuon-nho.png",
+      "PackagePath": "staticwebassets\\img\\vuon-nho.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\comment.js",
+      "PackagePath": "staticwebassets\\js\\comment.js"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\easing.min.js",

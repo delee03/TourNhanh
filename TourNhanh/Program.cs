@@ -54,6 +54,9 @@ builder.Services.AddAuthentication().AddGoogle(ggOptions =>
     ggOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
 });
 
+builder.Services.AddScoped<IBlogRepository, EFBlogRepository>();
+builder.Services.AddScoped<ICommentRepository, EFCommentRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
