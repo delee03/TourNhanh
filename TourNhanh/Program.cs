@@ -1,7 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using TourNhanh.Models;
+using TourNhanh.Repositories;
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AppDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IBlogRepository, EFBlogRepository>();
+builder.Services.AddScoped<ICommentRepository, EFCommentRepository>();
 
 var app = builder.Build();
 

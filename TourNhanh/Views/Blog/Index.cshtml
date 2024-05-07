@@ -1,96 +1,156 @@
-﻿ <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Our Blog</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">Blog</li>
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
+﻿@model IEnumerable<TourNhanh.Models.Blog>
 
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Our Blog</h5>
-                    <h1 class="mb-4">Popular Travel Blogs</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti deserunt tenetur sapiente atque. Magni non explicabo beatae sit, vel reiciendis consectetur numquam id similique sunt error obcaecati ducimus officia maiores.
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-1.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-2.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-3.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<!--
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+@Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+@Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+@Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+@Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+@Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+@Html.DisplayNameFor(model => model.UpdatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+                <tr>
+                    <td>
+            @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+            @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+            @Html.DisplayFor(modelItem => item.ImageUrl)
+                    </td>
+                    <td>
+            @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </td>
+                    <td>
+            @Html.DisplayFor(modelItem => item.Author)
+                    </td>
+                    <td>
+            @Html.DisplayFor(modelItem => item.UpdatedAt)
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Display" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+}
+    </tbody>
+</table>-->
+
+
+            <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+    <h3 class="text-white display-3 mb-4">Our Blog</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+    <li class="breadcrumb-item active text-white">Blog</li>
+    </ol>    
+    </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Blog Start -->
+<div class="container-fluid blog py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Our Blog</h5>
+            <h1 class="mb-4">Popular Travel Blogs</h1>
+            <p class="mb-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti deserunt tenetur sapiente atque. Magni non explicabo beatae sit, vel reiciendis consectetur numquam id similique sunt error obcaecati ducimus officia maiores.
+            </p>
         </div>
-        <!-- Blog End -->
+        <a asp-action="Add" class="btn btn-primary rounded-pill py-2 px-4">Thêm bài viết</a>
+        <div class="row g-4 justify-content-center">
+            @foreach(var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <div class="blog-img-inner">
+                                <img class="img-fluid w-100 rounded-top" src="@item.ImageUrl" alt="Image">
+                                <div class="blog-icon">
+                                    <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                </div>
+                            </div>
+                            <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>@item.CreatedAt</small>
+                                <a class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i><span class="likeCount" data-like-count="@item.Id">@item.Likes</span></a>
+                                <a class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>
+                                   
+                                        @if (item.Comments != null)
+                                        {
+                                            <span>@item.Comments.Count()</span>
+                                        }
+                                        else
+                                        {
+                                            <span>0</span>
+                                        }
+                                    
+                               
+                                </a>
+                            </div>
+                        </div>
+                        <div class="blog-content border border-top-0 rounded-bottom p-4">
+                            <p class="mb-3">Posted By: @item.Author </p>
+                            <a href="#" class="h4">@item.Title</a>
+                            <a asp-action="Display" asp-route-id="@item.Id" class="btn btn-primary rounded-pill py-2 px-4">Xem chi tiết</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary rounded-pill py-2 px-4">Xoá</a>
+                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary rounded-pill py-2 px-4">Chỉnh sửa</a>
+                        </div>
+                        <div>
+                            <button onclick="likePost(@item.Id)" class="btn btn-primary rounded-pill py-2 px-4">Like</button>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function likePost(postId) {
+            var likeCountElement = document.querySelector(`[data-like-count="${postId}"]`);
+            var currentLikeCount = parseInt(likeCountElement.textContent);
+            
+            var newLikeCount = currentLikeCount + 1;
+            likeCountElement.textContent = newLikeCount;
+        }
+
+
+    </script>
+}
