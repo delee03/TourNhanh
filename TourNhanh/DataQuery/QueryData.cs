@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Net.Http;
-using TourNhanh.DataAcess;
+using TourNhanh;
+using TourNhanh.Models;
 
 namespace TourNhanh.DataQuery
 {

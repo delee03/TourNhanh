@@ -17,13 +17,13 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TourNhanh
 build_property.RootNamespace = TourNhanh
-build_property.ProjectDir = F:\WebProject\DACS\SourceCode\TourNhanh\
+build_property.ProjectDir = D:\Web_VS\TourNhanh\TourNhanh\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\WebProject\DACS\SourceCode\TourNhanh
+build_property.MSBuildProjectDirectory = D:\Web_VS\TourNhanh\TourNhanh
 build_property._RazorSourceGeneratorDebug = 
 
 [D:/Web_VS/TourNhanh/TourNhanh/Areas/Admin/Views/Dashboard/Index.cshtml]
@@ -86,91 +86,91 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Category/Create.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Category/Delete.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Category/Details.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Category/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Category/Edit.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Category/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Contact/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Home/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Home/Privacy.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Home/Test.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Home/Test.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Hotel/Create.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Hotel/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Hotel/Delete.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Hotel/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Hotel/Details.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Hotel/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Hotel/Edit.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Hotel/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Hotel/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Hotel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/InternationalTour/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/InternationalTour/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYXRpb25hbFRvdXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Location/Create.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Location/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Location/Delete.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Location/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Location/Details.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Location/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Location/Edit.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Location/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Location/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Location/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/NationalTour/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/NationalTour/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmF0aW9uYWxUb3VyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Shared/Error.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -186,74 +186,74 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Create.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/TourDetail/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Delete.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/TourDetail/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Details.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/TourDetail/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Edit.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/TourDetail/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/TourDetail/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/TourDetail/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91ckRldGFpbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Tour/Create.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Tour/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Tour/Delete.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Tour/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Tour/Details.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Tour/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Tour/Edit.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Tour/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Tour/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Tour/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Transport/Create.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Transport/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Transport/Delete.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Transport/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Transport/Details.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Transport/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Transport/Edit.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Transport/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Transport/Index.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Transport/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/_ViewImports.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/_ViewStart.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/WebProject/DACS/SourceCode/TourNhanh/Views/Shared/_Layout.cshtml]
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vdbjw7zbne

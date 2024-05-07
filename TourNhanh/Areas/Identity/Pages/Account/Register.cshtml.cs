@@ -2,16 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +13,6 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Extensions.Logging;
 using TourNhanh.Models;
 
 namespace TourNhanh.Areas.Identity.Pages.Account
@@ -129,7 +122,7 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                 _roleManager.CreateAsync(new IdentityRole(UserRole.Role_Guide)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(UserRole.Role_ContactPerson)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(UserRole.Role_Admin)).GetAwaiter().GetResult();
-                
+
 
             }
             Input = new()
@@ -161,7 +154,7 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-                   
+
                     //neu ko chon Role thì gán mặc định là Customer và ngược lại
                     if (!String.IsNullOrEmpty(Input.Role))
                     {
