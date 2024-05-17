@@ -587,7 +587,7 @@
 
 .packages .packages-item .packages-img .packages-price {
     position: absolute;
-    width: 100px; 
+    max-width: 120px; 
     top: 0; 
     left: 50%; 
     transform: translateX(-50%);

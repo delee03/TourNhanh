@@ -21,16 +21,21 @@ namespace TourNhanh.DataQuery
 
         public bool loginAdmin(string email, string password)
         {
-            if (email.Equals("admin@a.com") && password.Equals("tournhanh@123")) return true;
+            if (email.Equals("admin@a.com") && password.Equals("123")) return true;
             return false;
         }
 
         public bool loginAdmin(string password)
         {
-            if (password.Equals("tournhanh@123"))
-            { return true; }
+            if (password.Equals("123"))
+            { 
+                return true;
+            }
             else
+            {
                 return false;
+            }
+                
         }
         /*public static async Task<TokenGoogle> VerifyTokenGoogle(string token)
         {
