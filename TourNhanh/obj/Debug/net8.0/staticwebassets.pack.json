@@ -1277,6 +1277,10 @@
       "PackagePath": "staticwebassets\\img\\californication.avif"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\cap-treo-ba-den.png",
+      "PackagePath": "staticwebassets\\img\\cap-treo-ba-den.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-1.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-1.jpg"
     },
@@ -1299,6 +1303,10 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-33.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-33.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\chua-go-ken.png",
+      "PackagePath": "staticwebassets\\img\\chua-go-ken.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-1.jpg",
@@ -1425,12 +1433,24 @@
       "PackagePath": "staticwebassets\\img\\hon-ga-choi.png"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\hon-mong-tay-pq.jpg",
+      "PackagePath": "staticwebassets\\img\\hon-mong-tay-pq.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\lan-ngam-san-ho.jpg",
+      "PackagePath": "staticwebassets\\img\\lan-ngam-san-ho.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\logo CMYK-03.png",
       "PackagePath": "staticwebassets\\img\\logo CMYK-03.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\logo-1.png",
       "PackagePath": "staticwebassets\\img\\logo-1.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\nui-ba-den-220812.jpg",
+      "PackagePath": "staticwebassets\\img\\nui-ba-den-220812.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-1.jpg",
@@ -1447,6 +1467,10 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-4.jpg",
       "PackagePath": "staticwebassets\\img\\packages-4.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\sapa-moana.png",
+      "PackagePath": "staticwebassets\\img\\sapa-moana.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\subscribe-img.jpg",
@@ -1473,8 +1497,16 @@
       "PackagePath": "staticwebassets\\img\\testimonial-4.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\toa-thanh-cao-dai.png",
+      "PackagePath": "staticwebassets\\img\\toa-thanh-cao-dai.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\tour-booking-bg.jpg",
       "PackagePath": "staticwebassets\\img\\tour-booking-bg.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\tuong-phat-ba-den-1.png",
+      "PackagePath": "staticwebassets\\img\\tuong-phat-ba-den-1.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\vuon-nho.png",
@@ -3365,6 +3397,18 @@
       "PackagePath": "staticwebassets\\lib\\plugin\\ckeditor\\styles.js"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\bin\\Debug\\CKFinder.dll",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\bin\\Debug\\CKFinder.dll"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\bin\\Debug\\CKFinder.pdb",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\bin\\Debug\\CKFinder.pdb"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\bin\\Release\\CKFinder.dll",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\bin\\Release\\CKFinder.dll"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\changelog.txt",
       "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\changelog.txt"
     },
@@ -4833,6 +4877,22 @@
       "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\dummy\\plugin.js"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\bin\\Debug\\CKFinder_FileEditor.dll",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\bin\\Debug\\CKFinder_FileEditor.dll"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\bin\\Debug\\CKFinder_FileEditor.pdb",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\bin\\Debug\\CKFinder_FileEditor.pdb"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\bin\\Release\\CKFinder_FileEditor.dll",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\bin\\Release\\CKFinder_FileEditor.dll"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\bin\\Release\\CKFinder_FileEditor.pdb",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\bin\\Release\\CKFinder_FileEditor.pdb"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\codemirror\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\fileeditor\\codemirror"
     },
@@ -4945,12 +5005,44 @@
       "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\gallery\\colorbox\\license.txt"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\imageresize\\bin\\Debug\\CKFinder_ImageResize.dll",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\imageresize\\bin\\Debug\\CKFinder_ImageResize.dll"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\imageresize\\bin\\Debug\\CKFinder_ImageResize.pdb",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\imageresize\\bin\\Debug\\CKFinder_ImageResize.pdb"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\imageresize\\bin\\Release\\CKFinder_ImageResize.dll",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\imageresize\\bin\\Release\\CKFinder_ImageResize.dll"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\imageresize\\bin\\Release\\CKFinder_ImageResize.pdb",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\imageresize\\bin\\Release\\CKFinder_ImageResize.pdb"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\imageresize\\images\\mini.gif",
       "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\imageresize\\images\\mini.gif"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\imageresize\\plugin.js",
       "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\imageresize\\plugin.js"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\watermark\\bin\\Debug\\CKFinder_Watermark.dll",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\watermark\\bin\\Debug\\CKFinder_Watermark.dll"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\watermark\\bin\\Debug\\CKFinder_Watermark.pdb",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\watermark\\bin\\Debug\\CKFinder_Watermark.pdb"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\watermark\\bin\\Release\\CKFinder_Watermark.dll",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\watermark\\bin\\Release\\CKFinder_Watermark.dll"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\watermark\\bin\\Release\\CKFinder_Watermark.pdb",
+      "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\plugins\\watermark\\bin\\Release\\CKFinder_Watermark.pdb"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\lib\\plugin\\ckfinder\\plugins\\watermark\\logo.gif",
@@ -5621,8 +5713,24 @@
       "PackagePath": "staticwebassets\\lib\\plugin\\ckfinder\\userfiles\\.htaccess"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\0bgahvxc.f0a.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\0bgahvxc.f0a.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\3akbx010.lay.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\3akbx010.lay.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\3w5naiwj.xci.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\3w5naiwj.xci.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\cxh5ou42.1oo.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\1\\cxh5ou42.1oo.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\fqez1tgv.uqy.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\fqez1tgv.uqy.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\mx1hj2xz.fgs.jpg",
@@ -5643,6 +5751,14 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\zbyewtxl.aw3.png",
       "PackagePath": "staticwebassets\\tour\\image\\1\\zbyewtxl.aw3.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\0dbcbvfd.bbv.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\0dbcbvfd.bbv.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\ax2rxmhb.a5u.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\ax2rxmhb.a5u.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\hjo5mdju.qrt.jpg",
@@ -5669,12 +5785,36 @@
       "PackagePath": "staticwebassets\\tour\\image\\2\\whbz5cxk.x4n.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\yphs1lvs.npr.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\yphs1lvs.npr.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\yqce2ibl.31h.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\yqce2ibl.31h.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\3\\5wyfnpqc.vqq.png",
       "PackagePath": "staticwebassets\\tour\\image\\3\\5wyfnpqc.vqq.png"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\3\\cjplrbxe.rpp.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\3\\cjplrbxe.rpp.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\3\\diovddgw.i00.png",
+      "PackagePath": "staticwebassets\\tour\\image\\3\\diovddgw.i00.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\3\\fnheabxh.lep.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\3\\fnheabxh.lep.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\3\\gakkfw0z.pnm.png",
       "PackagePath": "staticwebassets\\tour\\image\\3\\gakkfw0z.pnm.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\3\\ssgkyzxd.h51.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\3\\ssgkyzxd.h51.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\3\\vsn3n1j5.5c2.jpg",

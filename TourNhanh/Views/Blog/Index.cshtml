@@ -1,10 +1,110 @@
-﻿@model IEnumerable<TourNhanh.Models.Blog>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> UserManager
 
-@{
-    ViewData["Title"] = "Index";
-}
+@model IEnumerable<TourNhanh.Models.Blog>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-YV55tjJ5zU2x1R25FVbFbjeBYp/+bhz9XrfqpZo5QhOYz+tnnASeJZ4MzPBpNL0u" crossorigin="anonymous">
+<style>
+    
 
-<h1>Index</h1>
+    .like-button {
+        display: flex;
+        align-items: center;
+    }
+
+        .like-button .btn {
+            margin-right: 10px; /* Khoảng cách giữa các phần tử */
+        }
+
+    .like-checkbox {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .heart-icon {
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+        .heart-icon.liked {
+            display: none;
+        }
+
+    .like-checkbox input:checked ~ .liked {
+        display: inline;
+    }
+
+    .like-checkbox input:checked ~ .far {
+        display: none;
+    }
+
+    .Btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 90px;
+        cursor: pointer;
+        position: fixed;
+        overflow: hidden;
+        transition-duration: .3s;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+        background-color: royalblue;
+        left: 30px;
+        bottom: 30px;
+    }
+
+    /* plus sign */
+    .sign {
+        width: 100%;
+        font-size: 2em;
+        color: white;
+        transition-duration: .3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* text */
+    .text {
+        position: absolute;
+        right: 5%;
+        width: 0%;
+        opacity: 0;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 500;
+        transition-duration: .3s;
+    }
+    /* hover effect on button width */
+    .Btn:hover {
+        width: 200px;
+        border-radius: 10rem;
+        transition-duration: .3s;
+    }
+
+        .Btn:hover .sign {
+            width: 30%;
+            transition-duration: .3s;
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+        /* hover effect button's text */
+        .Btn:hover .text {
+            opacity: 1;
+            width: 70%;
+            transition-duration: .3s;
+            padding-right: 20px;
+        }
+    /* button click effect*/
+    .Btn:active {
+        transform: translate(2px,2px);
+    }
+</style>
+
+
 <!--
 <p>
     <a asp-action="Add">Create New</a>
@@ -74,9 +174,24 @@
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
     <li class="breadcrumb-item"><a href="#">Pages</a></li>
     <li class="breadcrumb-item active text-white">Blog</li>
-    </ol>    
+    </ol>
     </div>
+    <form asp-action="Index" method="get" class="form-inline">
+        <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: rgb(62 119 238 / 80%);">
+            <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" name="title" type="text" placeholder="VD: Trải nghiệm...">
+            <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
+        </div>
+    </form>
     </div>
+
+<form asp-action="Add">
+    <button class="Btn">
+        <div class="sign">+</div>
+        <div class="text">Đăng bài viết</div>
+    </button>
+</form>
+    
+
     <!-- Header End -->
 
     <!-- Blog Start -->
@@ -88,8 +203,8 @@
             <p class="mb-0">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti deserunt tenetur sapiente atque. Magni non explicabo beatae sit, vel reiciendis consectetur numquam id similique sunt error obcaecati ducimus officia maiores.
             </p>
+            
         </div>
-        <a asp-action="Add" class="btn btn-primary rounded-pill py-2 px-4">Thêm bài viết</a>
         <div class="row g-4 justify-content-center">
             @foreach(var item in Model)
             {
@@ -104,7 +219,10 @@
                             </div>
                             <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
                                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>@item.CreatedAt</small>
-                                <a class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i><span class="likeCount" data-like-count="@item.Id">@item.Likes</span></a>
+                                <a class="btn-hover flex-fill text-center text-white border-end py-2">
+                                    <i class="fa-solid fa-heart text-primary me-2"></i>
+                                    <span class="likeCount" data-like-count="@item.Id">@item.Likes</span>
+                                </a>
                                 <a class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>
                                    
                                         @if (item.Comments != null)
@@ -120,37 +238,195 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="blog-content border border-top-0 rounded-bottom p-4">
+                        <div class="blog-content border border-top-0 rounded-bottom p-4 d-flex flex-column align-items-center justify-content-center">
                             <p class="mb-3">Posted By: @item.Author </p>
                             <a href="#" class="h4">@item.Title</a>
-                            <a asp-action="Display" asp-route-id="@item.Id" class="btn btn-primary rounded-pill py-2 px-4">Xem chi tiết</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary rounded-pill py-2 px-4">Xoá</a>
-                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary rounded-pill py-2 px-4">Chỉnh sửa</a>
-                        </div>
-                        <div>
-                            <button onclick="likePost(@item.Id)" class="btn btn-primary rounded-pill py-2 px-4">Like</button>
+                            <div class="like-button d-flex align-items-center mt-3">
+                                <a asp-action="Display" asp-route-id="@item.Id" class="btn btn-primary rounded-pill py-2 px-4 mr-3">Xem bài viết</a>
+                                <div class="like-checkbox">
+                                    <input type="checkbox" id="likeCheckbox-@item.Id" name="heartCheckbox" data-post-id="@item.Id" data-user-id="@UserManager.GetUserId(User)" style="display: none;">
+                                    <label for="likeCheckbox-@item.Id" class="d-flex align-items-center mb-0">
+                                        <i class="far fa-heart heart-icon" style="color: gray;"></i>
+                                        <i class="fas fa-heart heart-icon liked" style="color: red; display: none;"></i>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             }
         </div>
     </div>
 </div>
+@{
+    var userId = ViewBag.UserId;
+}
 <!-- Blog End -->
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    <script>
+    <!--<script>
         function likePost(postId) {
-            var likeCountElement = document.querySelector(`[data-like-count="${postId}"]`);
-            var currentLikeCount = parseInt(likeCountElement.textContent);
-            
-            var newLikeCount = currentLikeCount + 1;
-            likeCountElement.textContent = newLikeCount;
+            $.ajax({
+                url: '/Blog/Like/' + postId,
+                type: 'POST',
+                success: function (response) {
+                    // Cập nhật số lượng like trên giao diện người dùng
+                    var likeCountElement = document.querySelector(`[data-like-count="${postId}"]`);
+                    var currentLikeCount = parseInt(likeCountElement.textContent);
+                    var newLikeCount = currentLikeCount + 1;
+                    likeCountElement.textContent = newLikeCount;
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
         }
-
-
     </script>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var heartCheckboxes = document.querySelectorAll('input[name="heartCheckbox"]');
+                heartCheckboxes.forEach(function (checkbox) {
+                    var postId = checkbox.id.split('_')[1]; // Lấy postId từ id của checkbox
+
+                    var heartIcon = document.querySelector(`label[for="heartCheckbox_${postId}"] i`);
+
+                    checkbox.addEventListener('change', function () {
+                        if (this.checked) {
+                            heartIcon.style.color = 'red';
+                        } else {
+                            heartIcon.style.color = 'gray';
+                        }
+                    });
+                });
+            });
+        </script>
+        <script>
+            function likePost(postId) {
+                $.ajax({
+                    url: '/Blog/Like/' + postId,
+                    type: 'POST',
+                    success: function (response) {
+                        // Kiểm tra phản hồi từ server
+                        if (response === "Like thành công." || response === "Unlike thành công.") {
+                            // Tìm thẻ hiển thị số lượt like và cập nhật giá trị mới
+                            var likeCountElement = document.querySelector(`[data-like-count="${postId}"]`);
+                            if (likeCountElement) {
+                                var currentLikeCount = parseInt(likeCountElement.textContent);
+                                var newLikeCount = response === "Like thành công." ? currentLikeCount + 1 : currentLikeCount - 1;
+                                likeCountElement.textContent = newLikeCount;
+                            }
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+        </script>
+
+        <script>
+        async function likePost(postId) {
+            // Lấy trạng thái like hiện tại từ checkbox ẩn
+            var checkbox = document.getElementById("heartCheckbox_" + postId);
+            var isLiked = checkbox.checked;
+
+            // Gửi yêu cầu tới server để thực hiện like hoặc unlike
+            var response = await fetch('/Blog/Like/' + postId, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ postId: postId, isLiked: !isLiked }) // Gửi trạng thái like ngược lại
+            });
+
+            if (response.ok) {
+                // Nếu yêu cầu thành công, cập nhật trạng thái like và số lượng like trên giao diện
+                var heartIcon = document.querySelector("#heartCheckbox_" + postId).nextElementSibling.querySelector('.heart-icon');
+                if (isLiked) {
+                    // Người dùng đã unlike, nên chuyển màu trái tim sang màu xám
+                    heartIcon.style.color = 'gray';
+                } else {
+                    // Ngược lại, người dùng đã like, nên chuyển màu trái tim sang màu đỏ
+                    heartIcon.style.color = 'red';
+                }
+
+                // Cập nhật số lượng like
+                var likeCountElement = document.getElementById("likeCount_" + postId);
+                var likeCount = parseInt(likeCountElement.textContent);
+                if (isLiked) {
+                    likeCount--;
+                } else {
+                    likeCount++;
+                }
+                likeCountElement.textContent = likeCount;
+            } else {
+                console.error('Lỗi khi gửi yêu cầu like/unlike');
+            }
+        }
+    </script>
+    
+    
+
+    <script>
+        function likePost(blogId) {
+            var checkbox = document.getElementById("heartCheckbox_" + blogId);
+            var isChecked = checkbox.checked;
+
+            $.ajax({
+                type: "POST",
+                url: "/Blog/Like/" + blogId,
+                dataType: "json",
+                success: function (data) {
+                    if (data.liked) {
+                        // Nếu đã like, tick checkbox và thay đổi màu sắc của biểu tượng trái tim thành đỏ
+                        checkbox.checked = true;
+                        $(".heart-icon").css("color", "red");
+                    } else {
+                        // Nếu chưa like, bỏ tick checkbox và thay đổi màu sắc của biểu tượng trái tim thành màu gray
+                        checkbox.checked = false;
+                        $(".heart-icon").css("color", "gray");
+                    }
+                }
+            });
+        }
+    </script>
+
+    -->
+
+    <script>
+        $(document).ready(function () {
+            $('.like-checkbox label').click(function () {
+                var checkbox = $(this).prev('input[type="checkbox"]');
+                var checked = checkbox.prop('checked');
+                var blogId = checkbox.data('post-id');
+                var userId = checkbox.data('user-id'); // Lấy userId từ thuộc tính data của checkbox
+
+                $.ajax({
+                    url: '/Blog/LikePost',
+                    type: 'POST',
+                    data: { blogId: blogId, userId: userId },
+                    success: function (newLikeCount) {
+                        $('.likeCount[data-like-count="' + blogId + '"]').text(newLikeCount);
+
+                        if (checked) {
+                            checkbox.prop('checked', false);
+                            checkbox.next('label').find('.heart-icon').removeClass('fas').addClass('far').css('color', 'gray');
+                        } else {
+                            checkbox.prop('checked', true);
+                            checkbox.next('label').find('.heart-icon').removeClass('far').addClass('fas').css('color', 'red');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
 }
+
+<!--------------------------------------------->

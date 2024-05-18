@@ -41,6 +41,7 @@ builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ITourImage, TourImageRepository>();
 builder.Services.AddScoped<ITourDetail, TourDetailRepository>();
 
+
 //login với FACEBOOk
 builder.Services.AddAuthentication().AddFacebook(facebookOptions =>
 {
@@ -57,7 +58,7 @@ builder.Services.AddAuthentication().AddGoogle(ggOptions =>
 
 builder.Services.AddScoped<IBlogRepository, EFBlogRepository>();
 builder.Services.AddScoped<ICommentRepository, EFCommentRepository>();
-
+builder.Services.AddScoped<ILikeRepository, EFLikeRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
