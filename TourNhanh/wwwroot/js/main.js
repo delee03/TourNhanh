@@ -1,6 +1,25 @@
 (function ($) {
     "use strict";
 
+   /* $('.carousel-inner').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        smartSpeed: 1000,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    })*/
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -96,8 +115,8 @@
         margin: 25,
         nav : true,
         navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
+            '<i class="fa-solid fa-arrow-left"></i>',
+            '<i class="fa-solid fa-arrow-right"></i>'
         ],
         responsiveClass: true,
         responsive: {
