@@ -1,6 +1,6 @@
 ﻿using TourNhanh.Models;
 
-namespace TourNhanh.Repositories
+namespace TourNhanh.Repositories.Interfaces
 {
     public interface ICommentRepository
     {

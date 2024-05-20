@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TourNhanh.Models;
+using TourNhanh.Repositories.Interfaces;
 
-namespace TourNhanh.Repositories
+namespace TourNhanh.Repositories.Implementations
 {
-    public class EFBlogRepository: IBlogRepository
+    public class EFBlogRepository : IBlogRepository
     {
         private readonly AppDbContext _context;
         public EFBlogRepository(AppDbContext context)

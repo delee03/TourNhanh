@@ -6,7 +6,6 @@ using TourNhanh.Repositories.Implementations;
 using TourNhanh.Repositories.Interfaces;
 using System.Configuration;
 using Microsoft.Extensions.Options;
-using TourNhanh.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

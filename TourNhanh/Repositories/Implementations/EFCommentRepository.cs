@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TourNhanh.Models;
+using TourNhanh.Repositories.Interfaces;
 
-namespace TourNhanh.Repositories
+namespace TourNhanh.Repositories.Implementations
 {
     public class EFCommentRepository : ICommentRepository
     {

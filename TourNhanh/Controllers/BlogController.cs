@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 using TourNhanh.Models;
-using TourNhanh.Repositories;
+using TourNhanh.Repositories.Interfaces;
 
 namespace TourNhanh.Controllers
 {
