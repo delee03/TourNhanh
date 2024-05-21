@@ -1,9 +1,27 @@
-﻿@model IEnumerable<TourNhanh.Models.TourDetail>
+﻿
+@model IEnumerable<TourNhanh.Models.TourDetail>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">
+            Lịch trình tour
+        </h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item active text-white">Tour trong nước</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<section class="lichtrinh section">
+
+
 
 <h1>Index</h1>
 
@@ -64,3 +82,68 @@
 }
     </tbody>
 </table>
+
+<!-- if gom all in one show -->
+<div id="button-contact-vr" class="">
+    <div id="gom-all-in-one">
+        <!-- v3 -->
+        <!-- contact -->
+        <!-- end contact -->
+        <!-- viber -->
+        <!-- end viber -->
+        <!-- zalo -->
+        <div id="zalo-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a target="_blank" href="https://zalo.me/0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end zalo -->
+        <!-- Phone -->
+        <div id="phone-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a href="tel:0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
+                    </a>
+                </div>
+                <div class="phone-bar phone-bar-n">
+                    <a href="tel:0931034852">
+                        <span class="text-phone">093.1034.852(a Phát)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+       
+
+        <!-- end phone -->
+    </div><!-- end v3 class gom-all-in-one -->
+
+
+</div>
+<!-- Facebook Messenger -->
+<!-- color phone -->
+<style>
+    .phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
+        background-color: #dd3333;
+    }
+
+    #phone-vr .phone-vr-circle-fill {
+        opacity: 0.7;
+        box-shadow: 0 0 0 0 #dd3333;
+    }
+
+        #button-contact-vr {
+            bottom: 50px !important;
+        }
+</style>
+<!-- color contact -->
+<!-- color all in one -->
+<!-- size scale -->
+<!-- location left right -->
+</section>

@@ -114,6 +114,19 @@
 			padding: 10px 28px;
 			color: black !important;
 		} */
+
+	.phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
+		background-color: #dd3333;
+	}
+
+	#phone-vr .phone-vr-circle-fill {
+		opacity: 0.7;
+		box-shadow: 0 0 0 0 #dd3333;
+	}
+
+	#button-contact-vr {
+		bottom: 50px !important;
+	}
  </style>
 <!-- BREADCRUMB -->
 <!-- Header Start -->
@@ -206,7 +219,7 @@
 						<a class="review-link" href="#">10 Review(s) | Add your review</a>
 					</div>
 					<div>
-						<h3 class="product-price">@Html.DisplayFor(model => model.Price) <del class="product-old-price">$99999.00</del></h3>
+						<h3 class="product-price">@Html.DisplayFor(model => model.Price) VNĐ <del class="product-old-price">999999VNĐ</del></h3>
 						<span class="product-available">Còn chỗ</span>
 					</div>
 					<label>Phương tiện di chuyển: @Html.DisplayFor(model => model.Transport.Name) </label>
@@ -270,8 +283,11 @@
 
 					<ul class="product-links">
 						<li>Lịch trình:</li>
-						<li><a href="#"> @Html.DisplayFor(model => model.Category.Name)</a></li>
+						<li><a href="#"> @Html.DisplayFor(model => model.Category.Name)</a></li> | 
 						@* <li><a href="#">Accessories</a></li> *@
+						<li>Điểm khởi hành:</li>
+						<li><a href="#"> tại TPHCM</a></li>
+						
 					</ul>
 
 					<ul class="product-links">
@@ -328,13 +344,13 @@
 					</ul> *@
 					<ul class="nav nav-tabs" id="myTab" role="tablist">
 						<li class="nav-item" role="presentation">
-							<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" role="tab" aria-controls="home" aria-selected="true">Mô tả</button>
+							<button class="nav-link1 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" role="tab" aria-controls="home" aria-selected="true">Mô tả</button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">Chi tiết</button>
+							<button class="nav-link1" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">Chi tiết</button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Review (3)</button>
+							<button class="nav-link1" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Review (3)</button>
 						</li>
 					</ul>
 					<!-- /product tab nav -->
@@ -539,8 +555,54 @@
 			<!-- /product tab -->
 		</div>
 		<!-- /row -->
+		
 	</div>
 	<!-- /container -->
+	<!-- if gom all in one show -->
+	<div id="button-contact-vr" class="">
+		<div id="gom-all-in-one">
+			<!-- v3 -->
+			<!-- contact -->
+			<!-- end contact -->
+			<!-- viber -->
+			<!-- end viber -->
+			<!-- zalo -->
+			<div id="zalo-vr" class="button-contact">
+				<div class="phone-vr">
+					<div class="phone-vr-circle-fill"></div>
+					<div class="phone-vr-img-circle">
+						<a target="_blank" href="https://zalo.me/0931034852">
+							<img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- end zalo -->
+			<!-- Phone -->
+			<div id="phone-vr" class="button-contact">
+				<div class="phone-vr">
+					<div class="phone-vr-circle-fill"></div>
+					<div class="phone-vr-img-circle">
+						<a href="tel:0931034852">
+							<img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
+						</a>
+					</div>
+					<div class="phone-bar phone-bar-n">
+						<a href="tel:0931034852">
+							<span class="text-phone">093.1034.852(a Phát)</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- end phone -->
+		</div><!-- end v3 class gom-all-in-one -->
+
+
+	</div>
+	<!-- Facebook Messenger -->
+	<!-- color phone -->
 </div>
 <!-- /SECTION -->
 <!-- jQuery Plugins -->
