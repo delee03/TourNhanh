@@ -4735,12 +4735,15 @@ textarea.form-control-lg {
 
     .breadcrumb-item + .breadcrumb-item::before {
         float: left;
+        margin-top: 2px;
+        font-size: 14px;
         padding-right: .5rem;
         color: #fff;
-        content: var(--bs-breadcrumb-divider, "/") ;/* rtl: var(--bs-breadcrumb-divider,  "/") */
+        content: var(--bs-breadcrumb-divider, ">>"); /* rtl: var(--bs-breadcrumb-divider,  "/") */
     }
 
 .breadcrumb-item.active {
+    font-weight: 600;
     color: #6c757d;
 }
 

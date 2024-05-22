@@ -4,24 +4,82 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var view = ViewBag.Tour;
 }
+<!-- BREADCRUMB -->
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">
-            Lịch trình tour
+            Thông tin tour
         </h3>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Tour trong nước</li>
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>     
+            <li class="breadcrumb-item"><a href="~/Tour/Index/1">Tour trong nước</a></li>
+            <li class="breadcrumb-item"><a href="~/Tour/Details/@view.Id">@view.Name</a></li>
+            <li class="breadcrumb-item active text-white">Lịch trình</li>
         </ol>
     </div>
 </div>
 <!-- Header End -->
+<!-- /BREADCRUMB -->
 <section class="lichtrinh section">
+    <div class="container">
+               
+        <div class="title">
+            <h2>
+                Tour @view.Name
+            </h2>
+        </div>
+        <div class="content_lichtrinh">
+            <div class="row">
+                <div class="col-8 main-content">
+                    <div class="image_tour row">
+                        <div id="product-main-img">
 
-<h1>Index</h1>
+                            @if (ViewBag.TourImage != null)
+                            {
+                                <div class="product-preview">
+                                    <img src="@view.MainImageUrl" alt="anh tour">
+                                </div>
+                                foreach(var img in ViewBag.TourImage)
+                                {
+                                    <img class=" product-preview" src="@img" />
+                                }
+                            }
+                        </div>
+                        <div class="owl-carousel">
+                            @foreach(var image in ViewBag.TourImage)
+                            {
+                                <img class=" product-preview" src="@image" />
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 sub-content">
+
+                    <div class="tour_detail">
+                        <div class="tour-info">
+                            <p><i class="fas fa-check"></i> Bảo hiểm</p>
+                            <p><i class="fas fa-check"></i> Bữa sáng</p>
+                            <p><i class="fas fa-check"></i> Hướng dẫn viên</p>
+                            <p><i class="fas fa-check"></i> Khách sạn 3 sao</p>
+                            <p><i class="fas fa-check"></i> Vé tham quan</p>
+                            <p><i class="fas fa-check"></i> Vé máy bay</p>
+                            <p><i class="fas fa-check"></i> Xe đưa đón</p>
+                        </<div>                
+                    </div>
+                 </div>
+             </div> 
+        </div>
+
+        }
+    </div>
+</section>
+
+
+
+@* <h1>Index</h1>
 
 <p>
     <a asp-action="Create" asp-route-tourId="@ViewBag.TourId">Create New</a>
@@ -32,6 +90,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tour)
             </th>
+                <th>
+                   Hình ảnh tour
+                </th>
             <th>
                 @Html.DisplayNameFor(model => model.Location)
             </th>
@@ -57,6 +118,9 @@
                 @Html.DisplayFor(modelItem => item.Tour.Name)
             </td>
             <td>
+                 <img src=" @Html.DisplayFor(modelItem => item.Tour.MainImageUrl)" width="100px" height="80px" />            
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Location.Name)
             </td>
             <td>
@@ -79,7 +143,7 @@
         </tr>
 }
     </tbody>
-</table>
+</table> *@
 
 <!-- if gom all in one show -->
 <div id="button-contact-vr" class="">
