@@ -2,10 +2,12 @@
 
 @{
     ViewData["Title"] = "Details";
+	
     Layout = "~/Views/Shared/_Layout.cshtml";
 	int numOfQuanity = 1;
 }
 
+@* var view = ViewBag.ViewModel as TourNhanh.ViewModel.TourDetail_LichTrinh; *@
 @* <h1>Details</h1>
 
 <div>
@@ -290,6 +292,10 @@
 						
 					</ul>
 
+					@* <ul class="product-links"> 
+						<li>Điểm đến: @view.Location.Name </li>
+					</ul> *@
+
 					<ul class="product-links">
 						<li>Chia sẻ:</li>
 						<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
@@ -344,13 +350,13 @@
 					</ul> *@
 					<ul class="nav nav-tabs" id="myTab" role="tablist">
 						<li class="nav-item" role="presentation">
-							<button class="nav-link1 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" role="tab" aria-controls="home" aria-selected="true">Mô tả</button>
+							<button class="nav-link1 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" role="tab" aria-controls="home" aria-selected="true">Điểm nhấn hành trình</button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link1" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">Chi tiết</button>
+							<button class="nav-link1" id="profile-tab" data-bs-toggle="tab" type="button" role="tab" aria-controls="profile" aria-selected="false"><a class="fw-600" asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id">Lịch trình</a></button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link1" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Review (3)</button>
+							<button class="nav-link1" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Đánh giá (3)</button>
 						</li>
 					</ul>
 					<!-- /product tab nav -->
@@ -387,7 +393,7 @@
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
+												<i class="fa-solid fa-star-sharp-half"></i>
 											</div>
 										</div>
 										<ul class="rating">
@@ -589,7 +595,7 @@
 					</div>
 					<div class="phone-bar phone-bar-n">
 						<a href="tel:0931034852">
-							<span class="text-phone">093.1034.852(a Phát)</span>
+							<span class="text-phone">093.1034.852 (a Phát)</span>
 						</a>
 					</div>
 				</div>

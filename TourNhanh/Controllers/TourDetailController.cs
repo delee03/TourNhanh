@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TourNhanh.Models;
 using TourNhanh.Repositories.Interfaces;
+using TourNhanh.ViewModel;
 
 namespace TourNhanh.Controllers
 {
@@ -10,6 +11,7 @@ namespace TourNhanh.Controllers
         private readonly ITourDetail _tourDetailRepository;
         private readonly ILocationRepository _locationRepository;
         private readonly IHotelRepository _hotelRepository;
+        private readonly ITourRepository _tourRepository;
 
         public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository)
         {
