@@ -61,6 +61,25 @@
             margin-left: 0;
         }
 
+    .content_lichtrinh .product-main-img {
+        object-fit: cover;
+    }
+
+    #detail_main_img img {
+        height: 70vh;
+        width: 100%;
+        border-radius: 14px ;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+    #detail_img img {
+        height: 180px;
+        width: 100%;
+        border-radius: 10px; 
+        margin-right: 10px;
+        object-fit: cover;
+
+    }
 </style>
 
 
@@ -93,25 +112,32 @@
             <div class="row">
                 <div class="col-8 main-content">
                     <div class="image_tour row">
-                        <div id="product-main-img">
+                        <div id="detail_main_img" class="col-12">
 
                             @if (ViewBag.TourImage != null)
                             {
                                 <div class="product-preview">
-                                    <img src="@view.MainImageUrl" alt="anh tour">
+                                    <img src="@view.MainImageUrl" alt="anh tour"/>
                                 </div>
                                 foreach(var img in ViewBag.TourImage)
                                 {
-                                    <img class=" product-preview" src="@img" />
+                                    <img class=" product-preview" src="@img"  />
                                 }
                             }
                         </div>
-                        <div class="owl-carousel">
-                            @foreach(var image in ViewBag.TourImage)
+                        <div id="detail_img" class="col-12" >
+                            @if (ViewBag.TourImage != null)
                             {
-                                <img class=" product-preview" src="@image" />
+                                <div class="product-preview ">
+                                    <img src="@view.MainImageUrl" alt="">
+                                </div>
+                                foreach (var image in ViewBag.TourImage)
+                                {
+                                    <img class="product-preview" src="@image" />
+                                }
                             }
                         </div>
+                     
                     </div>
                 </div>
                 <div class="col-4 sub-content">
@@ -229,8 +255,6 @@
                  </div>
              </div> 
         </div>
-
-        }
     </div>
 </section>
 

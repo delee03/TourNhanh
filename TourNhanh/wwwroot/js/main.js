@@ -244,13 +244,51 @@
         },
         ]
     });
+    $('#detail_main_img').slick({
+        infinite: true,
+        speed: 300,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        fade: true,
+        dots: false,
+        arrows: false,
+        fade: true,
+        asNavFor: '#detail_img',
+    });
+
+    // Product imgs Slick
+    $('#detail_img').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true, 
+        autoplay: false,
+        autoplaySpeed: 3000,
+        focusOnSelect: true,
+        centerPadding: 0,
+        vertical: false,
+        asNavFor: '#detail_main_img',
+        responsive: [{
+            breakpoint: 991,
+            settings: {
+                vertical: false,
+                arrows: false,
+                dots: true,
+            }
+        },
+        ]
+    });
+
 
     // Product img zoom
     var zoomMainProduct = document.getElementById('product-main-img');
     if (zoomMainProduct) {
         $('#product-main-img .product-preview').zoom();
     }
-
+    var zoomMainProduct = document.getElementById('detail_main_img');
+    if (zoomMainProduct) {
+        $('#detail_main_img .product-preview').zoom();
+    }
 
 })(jQuery);
 

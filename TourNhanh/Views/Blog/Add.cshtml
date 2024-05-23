@@ -1,92 +1,73 @@
-﻿<!--
-
-<h1>Add</h1>
-
-<h4>Blog</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Add" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label">Image</label>
-                <input type="file" asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedAt" class="control-label"></label>
-                <input asp-for="UpdatedAt" class="form-control" />
-                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
--->
-
-<!------------------------------------------------------------------------------------------------->
-@model TourNhanh.Models.Blog
+﻿@model TourNhanh.Models.Blog
 @{
     ViewData["Title"] = "Add";
 }
+<style>
+    /* Custom styles for buttons */
+    .btn-custom {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+    }
 
-<h2>Add New Blog Post</h2>
+        .btn-custom svg {
+            margin-right: 5px;
+        }
 
-<form asp-action="Add" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label asp-for="Title" class="control-label"></label>
-        <input asp-for="Title" class="form-control" />
-        <span asp-validation-for="Title" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Content" class="control-label"></label>
-        <textarea asp-for="Content" class="form-control" id="editor"></textarea>
-        <span asp-validation-for="Content" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label for="ImageUrl">Image</label>
-        <input type="file" id="ImageUrl" name="ImageUrl" class="form-control-file">
-    </div>
-    <div class="form-group">
-        <label asp-for="Author" class="control-label"></label>
-        <input asp-for="Author" class="form-control" />
-        <span asp-validation-for="Author" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Add" class="btn btn-primary" />
-    </div>
-</form>
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
 
+</style>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <img class="img-fluid w-100" style="height: 70vh;" src="~/img/carousel-33.jpg" alt="Image">
 </div>
+
+<div class="container mt-5">
+    <form style="margin: 10px" class="border border-2 rounded p-4 text-center" asp-action="Add" method="post" enctype="multipart/form-data" novalidate>
+        <h2 class="text-center">Đăng bài viết mới</h2>
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label asp-for="Title" class="control-label">Tiêu đề bài viết</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label for="ImageUrl">Ảnh đại diện</label>
+            <input type="file" id="ImageUrl" name="ImageUrl" class="form-control-file">
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label asp-for="Content" class="control-label">Nội dung bài viết</label>
+            <textarea asp-for="Content" class="form-control" id="editor"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+
+        <div class="row mb-4 justify-content-center">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary btn-custom">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                    </svg>
+                    Đăng bài
+                </button>
+            </div>
+            <div class="col-auto">
+                <a href="@Url.Action("Index")" class="btn btn-secondary btn-custom">
+                    <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+                    Danh sách
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
 
 @section Scripts {
     <script>
