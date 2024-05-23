@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TourNhanh")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+642d02c46fdc833c6a2520c64751e62c21688c84")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a9e4f0969ca8422f32997d9b0df7746129cad29")]
 [assembly: System.Reflection.AssemblyProductAttribute("TourNhanh")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TourNhanh")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

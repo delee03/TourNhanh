@@ -1249,6 +1249,38 @@
       "PackagePath": "staticwebassets\\images\\loading.gif"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\2633e680-de10-11ea-9e67-407c2bf7f41a.jpg",
+      "PackagePath": "staticwebassets\\img\\2633e680-de10-11ea-9e67-407c2bf7f41a.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\300224214_486131746856508_1585899802288781450_n.jpg",
+      "PackagePath": "staticwebassets\\img\\300224214_486131746856508_1585899802288781450_n.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang22.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang22.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang222.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang222.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang2222.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang2222.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang22222.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang22222.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\HaLong11.jpg",
+      "PackagePath": "staticwebassets\\img\\HaLong11.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\HaLong1111.jpg",
+      "PackagePath": "staticwebassets\\img\\HaLong1111.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\about-2.png",
       "PackagePath": "staticwebassets\\img\\about-2.png"
     },
@@ -1509,8 +1541,16 @@
       "PackagePath": "staticwebassets\\img\\tuong-phat-ba-den-1.png"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\tải xuống.jpg",
+      "PackagePath": "staticwebassets\\img\\tải xuống.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\vuon-nho.png",
       "PackagePath": "staticwebassets\\img\\vuon-nho.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\word-image-68490-3.png",
+      "PackagePath": "staticwebassets\\img\\word-image-68490-3.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\bootstrap.bundle.min.js",

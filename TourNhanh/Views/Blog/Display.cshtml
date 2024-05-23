@@ -1,32 +1,175 @@
 ﻿@model TourNhanh.Models.Blog
 
 @{
-    ViewData["Title"] = "Display";
+	ViewData["Title"] = @Model.Title;
 }
 
+<style>
+	/* Custom styles for comment list */
+	#comment-list {
+		list-style-type: none; /* Bỏ ký hiệu gạch đầu dòng */
+		padding: 0;
+	}
 
+	.comment-item {
+		border-bottom: 1px solid #ddd; /* Đường viền dưới */
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+	}
+
+	.comment-content {
+		background-color: #f9f9f9; /* Màu nền nhạt */
+		border-radius: 5px; /* Bo góc */
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+	}
+
+		.comment-content p {
+			margin: 0; /* Bỏ khoảng cách mặc định */
+			font-size: 1rem; /* Cỡ chữ */
+			color: #333; /* Màu chữ */
+		}
+
+	.comment-author {
+		font-weight: bold; /* Chữ đậm */
+		color: #007bff; /* Màu xanh dương */
+	}
+
+	.comment-timestamp {
+		font-size: 0.875rem; /* Cỡ chữ nhỏ hơn */
+		color: #777; /* Màu xám */
+	}
+	
+	/* Custom styles for textarea */
+	#comment-content {
+		background-color: #e0f7fa; /* Màu xanh dương nhạt */
+		width: 100%; /* Chiều rộng bằng màn hình */
+		border: 1px solid #007bff; /* Viền màu xanh dương */
+		padding: 10px; /* Padding bên trong */
+		border-radius: 5px; /* Bo góc */
+		resize: none; /* Tắt khả năng thay đổi kích thước */
+	}
+
+	#comment-content:focus {
+		outline: none;
+		box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+		border-color: #007bff;
+	}
+
+	/* Custom styles for submit button */
+	#comment-form button[type="submit"] {
+		margin-top: 10px;
+		background-color: #007bff; /* Màu nền xanh dương */
+		border: none; /* Bỏ viền mặc định */
+		color: white; /* Màu chữ trắng */
+		padding: 10px 20px; /* Padding */
+		border-radius: 5px; /* Bo góc */
+		cursor: pointer; /* Con trỏ dạng tay */
+	}
+
+		#comment-form button[type="submit"]:hover {
+			background-color: #0056b3; /* Màu xanh dương đậm hơn khi hover */
+		}
+
+	/* Custom styles for the content container */
+	.content-container {
+		font-family: 'Arial, sans-serif';
+		line-height: 1.6;
+		color: #333;
+	}
+
+		/* Styling paragraphs */
+		.content-container p {
+			margin-bottom: 1em;
+			font-size: 1rem;
+		}
+
+		/* Styling headings */
+		.content-container h1,
+		.content-container h2,
+		.content-container h3,
+		.content-container h4,
+		.content-container h5,
+		.content-container h6 {
+			margin-top: 1.5em;
+			margin-bottom: 0.5em;
+			color: #2c3e50;
+		}
+
+		/* Styling images */
+		.content-container img {
+			max-width: 100%;
+			height: auto;
+			margin: 10px 0;
+			border-radius: 5px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Styling blockquotes */
+		.content-container blockquote {
+			margin: 1em 0;
+			padding: 0.5em 1em;
+			background-color: #f9f9f9;
+			border-left: 5px solid #ccc;
+			font-style: italic;
+			color: #555;
+		}
+
+		/* Styling lists */
+		.content-container ul,
+		.content-container ol {
+			padding-left: 2em;
+			margin-bottom: 1em;
+		}
+
+		/* Styling links */
+		.content-container a {
+			color: #3498db;
+			text-decoration: none;
+		}
+
+			.content-container a:hover {
+				text-decoration: underline;
+			}
+</style>
 <div>
     <img class="img-fluid w-100 rounded-top" src="@Model.ImageUrl" alt="Image">
 </div>
-<div>
-    <h2>Tác giả: @Model.Author  | @Model.CreatedAt  </h2>
+<div class="text-center">
+    <h4>Tác giả: @Model.Author  | @Model.CreatedAt  </h4>
+</div>
+<div class="text-center">
+	<h1>@Model.Title </h1>
 </div>
 
 <hr />
-<div class="row g-4 justify-content-center">
-    <div class="col-lg-8">
-        <!-- Độ rộng của phần nội dung -->
-        <div class="px-3 py-2">
-            <!-- Lề của phần nội dung -->
-            @Html.Raw(Model.Content)
-        </div>
-    </div>
+<div class="container ">
+	<div class="px-3 py-2 content-container">
+		<!-- Lề của phần nội dung -->
+		@Html.Raw(Model.Content)
+	</div>
 </div>
 <div id="comments">
+	<!-- Comment form -->
+	<div class="container mt-5">
+		<form id="comment-form" method="post">
+			<textarea id="comment-content" name="content" rows="5" placeholder="Thêm bình luận" required></textarea>
+			<button type="submit" class="btn btn-primary">Đăng</button>
+		</form>
+	</div>
 	@if (Model.Comments != null && Model.Comments.Any())
 	{
 		<hr />
-		<h3>Comments</h3>
+		<div class="container ">
+		<h3>
+			Bình luận(@if (Model.Comments != null)
+			{
+				<span>@Model.Comments.Count()</span>
+			}
+			else
+			{
+				<span>0</span>
+			})
+		</h3>
 
 		<!-- Add an ID to the comment list -->
 		<ul id="comment-list">
@@ -37,20 +180,18 @@
 					<!-- Div to hold comment content -->
 					<div class="comment-content px-3 py-2">
 						<!-- Comment content -->
-						<p>@comment.Author: @comment.Content | @comment.CreatedAt</p>
+						<p>
+							<span class="comment-author">@comment.Author</span>:
+							@comment.Content
+							<span class="comment-timestamp">| @comment.CreatedAt</span>
+						</p>
 					</div>
 				</li>
 			}
 		</ul>
+		</div>
 	}
-
-	<!-- Comment form -->
-	<form id="comment-form" method="post">
-		<textarea id="comment-content" name="content" placeholder="Add your comment" required></textarea>
-		<button type="submit">Submit</button>
-	</form>
 </div>
-
 
 @section Scripts {
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -83,265 +224,4 @@
 			});
 		});
 	</script>
-
-
-	<script>
-		// Toast function
-		function toast({
-			title = "",
-			message = "",
-			type = "info",
-			duration = 3000,
-		}) {
-			const main = document.getElementById("toast");
-			if (main) {
-				const toast = document.createElement("div");
-
-				// Auto remove toast
-				const autoRemoveId = setTimeout(function () {
-					main.removeChild(toast);
-				}, duration + 1000);
-
-				// Remove toast when click
-				toast.onclick = function (e) {
-					if (e.target.closest(".toast__close")) {
-						main.removeChild(toast);
-						clearTimeout(autoRemoveId);
-					}
-				};
-
-				const icons = {
-					success: "fa-solid fa-circle-check",
-					info: "fa-solid fa-circle-info",
-					warning: "fa-solid fa-circle-exclamation",
-					error: "fa-solid fa-circle-xmark",
-				};
-				const icon = icons[type];
-				const delay = (duration / 1000).toFixed(2);
-
-				toast.classList.add("toast", toast--${ type });
-				toast.style.animation = slideInLeft ease .3s, fadeOut linear 1s 3s forwards;
-
-				toast.innerHTML = `
-									<div class="toast__icon">
-										<i class="${icon}"></i>
-									</div>
-									<div class="toast__body">
-										<h3 class="toast__title">${title}</h3>
-										<p class="toast__msg">${message}</p>
-									</div>
-									<div class="toast__close">
-										<i class="fa-solid fa-xmark"></i>
-									</div>
-								`;
-				main.appendChild(toast);
-			}
-		}
-
-		// toast({
-		//   title: "Success",
-		//   message:
-		//     "Tham gia nhóm Học lập trình tại F8 trên Facebook để cùng nhau trao đổi trong quá trình học tập ❤️",
-		//   type: "success",
-		//   duration: 3000,
-		// });
-
-		function showSuccessToast() {
-			toast({
-				title: "Thành Công!",
-				message: "Thêm bình luận thành công",
-				type: "success",
-				duration: 3000,
-			});
-		}
-
-		function showErrorToast() {
-			toast({
-				title: "Thất Bại!",
-				message: "Thêm bình luận thất bại!",
-				type: "error",
-				duration: 5000,
-			});
-		}
-	</script>
 }
-
-
-<style>
-	* Modifier */
-	.btn--size-l {
-		padding: 16px 56px;
-	}
-
-	.btn--size-s {
-		padding: 8px 32px;
-	}
-
-	.btn:hover {
-		opacity: 0.8;
-	}
-
-	.btn + .btn {
-		margin-left: 16px;
-	}
-
-	.btn--success {
-		background-color: #71be34;
-	}
-
-	.btn--warn {
-		background-color: #ffb702;
-	}
-
-	.btn--danger {
-		background-color: #ff623d;
-	}
-
-	.btn--disabled {
-		opacity: 0.5 !important;
-		cursor: default;
-	}
-
-	/* ======= Toast message ======== */
-
-	#toast {
-		position: fixed;
-		top: 32px;
-		right: 32px;
-		z-index: 99999;
-	}
-
-	.toast {
-		display: flex;
-		align-items: center;
-		background-color: #fff;
-		border-left: 4px solid;
-		padding: 20px 0;
-		min-width: 400;
-		min-width: 450;
-		border-radius: 2px;
-		box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
-		/* animation: slideInLeft ease 0.3s, fadeOut linear 1s 3s forwards; */
-		transition: all linear 0.3s;
-	}
-
-	@@keyframes slideInLeft {
-		from {
-			opacity: 0;
-			transform: translateX(calc(100% + 32px));
-		}
-
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
-
-	@@keyframes fadeOut {
-		to {
-			opacity: 0;
-		}
-	}
-
-	.toast--success {
-		border-color: #47d864;
-	}
-
-		.toast--success .toast__icon {
-			color: #47d864;
-		}
-
-	.toast--info {
-		border-color: #2f86eb;
-	}
-
-		.toast--info .toast__icon {
-			color: #2f86eb;
-		}
-
-	.toast--warning {
-		border-color: #ffc021;
-	}
-
-		.toast--warning .toast__icon {
-			color: #ffc021;
-		}
-
-	.toast--error {
-		border-color: #ff623d;
-	}
-
-		.toast--error .toast__icon {
-			color: #ff623d;
-		}
-
-	.toast + .toast {
-		margin-top: 24px;
-	}
-
-	.toast__icon {
-		font-size: 24px;
-	}
-
-	.toast__icon,
-	.toast__close {
-		padding: 0 16px;
-	}
-
-	.toast__body {
-		flex-grow: 1;
-	}
-
-	.toast__title {
-		font-size: 16px;
-		font-weight: 600;
-		color: #333;
-	}
-
-	.toast__msg {
-		font-size: 14px;
-		color: #888;
-		margin-top: 6px;
-		line-height: 1.5;
-	}
-
-	.toast__close {
-		font-size: 20px;
-		color: rgba(0, 0, 0, 0.5);
-		cursor: pointer;
-	}
-
-		.toast__close:hover {
-			opacity: 0.6;
-		}
-
-	@@media only screen and (max-width: 480px) {
-		.heading-top {
-			width: 100%;
-			padding: 0 20px;
-		}
-
-		#top-header div {
-			width: 100%;
-			padding: 0 5px;
-			justify-content: center;
-			gap: 10px;
-		}
-
-		.header-links {
-			width: 220px;
-		}
-
-		.loginPartial {
-			display: flex;
-		}
-	}
-
-	.heading-top {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0 120px;
-		width: 100%;
-	}
-</style>

@@ -18,9 +18,9 @@ namespace TourNhanh.Models
 
         public string? ImageUrl { get; set; }
 
-        public DateTime CreatedAt { get; set; } 
-
+        public DateTime CreatedAt { get; set; }
         public string? Author { get; set; }
+   
         public DateTime UpdatedAt { get; set; }
 
         public List<Comment>? Comments { get; set; }

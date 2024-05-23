@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using System.Linq;
 using TourNhanh.Models;
-using TourNhanh.Repositories;
+using TourNhanh.Repositories.Interfaces;
 
 namespace TourNhanh.Controllers
 {
@@ -61,17 +61,15 @@ namespace TourNhanh.Controllers
             {
                 if (imageUrl != null)
                 {
-                    // Lưu hình ảnh đại diện tham khảo bài 02 hàm SaveImage
+
                     blog.ImageUrl = await SaveImage(imageUrl);
                 }
                 var currentUser = await _userManager.GetUserAsync(User);
-                // Thay thế Author bằng tên của người dùng hiện tại
-                blog.Author = currentUser.FullName; // Hoặc bạn có thể sử dụng currentUser.UserName hoặc bất kỳ thuộc tính nào khác của người dùng
-
+                blog.Author = currentUser.FullName;
                 blog.CreatedAt = DateTime.UtcNow;
                 blog.UpdatedAt = DateTime.UtcNow;
                 await _blogRepository.AddAsync(blog);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             return View(blog);
         }
@@ -124,7 +122,7 @@ namespace TourNhanh.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(int id, Blog blog, IFormFile imageUrl)
         {
-            ModelState.Remove("ImageUrl"); // Loại bỏ xác thực ModelState cho ImageUrl
+            ModelState.Remove("ImageUrl");
             if (id != blog.Id)
             {
                 return NotFound();
@@ -135,10 +133,10 @@ namespace TourNhanh.Controllers
             {
 
 
-                var existingBlog = await _blogRepository.GetByIdAsync(id); // Giả định có phương thức GetByIdAsync
+                var existingBlog = await _blogRepository.GetByIdAsync(id);
 
 
-                // Giữ nguyên thông tin hình ảnh nếu không có hình mới được tải lên
+
                 if (imageUrl == null)
                 {
                     blog.ImageUrl = existingBlog.ImageUrl;
@@ -149,7 +147,6 @@ namespace TourNhanh.Controllers
                     blog.ImageUrl = await SaveImage(imageUrl);
                 }
                 existingBlog.Title = blog.Title;
-                existingBlog.Author = blog.Author;
                 existingBlog.ImageUrl = blog.ImageUrl;
                 existingBlog.Content = blog.Content;
                 existingBlog.UpdatedAt = DateTime.UtcNow;
@@ -197,7 +194,7 @@ namespace TourNhanh.Controllers
                 Content = content,
                 BlogId = id,
                 Author = currentUser.FullName,
-                CreatedAt = DateTime.UtcNow // Assuming you have this property
+                CreatedAt = DateTime.UtcNow
             };
             await _commentRepository.AddAsync(comment);
 
@@ -418,27 +415,43 @@ namespace TourNhanh.Controllers
             return existingLike != null && existingLike.Liked; // Trả về true nếu đã like, ngược lại trả về false
         }
 
-        public async Task<bool> CheckWord(int id)
+        public async Task<IActionResult> Change(int id)
+        {
+            var blogs = await _blogRepository.GetByIdAsync(id);
+            if (blogs == null)
+            {
+                return NotFound();
+            }
+            return View(blogs);
+        }
+
+        public async Task<IActionResult> Accept(int id)
         {
             var blog = await _blogRepository.GetByIdAsync(id);
-            List<string> bannedWords = new List<string>
+            if (blog == null)
             {
-                    "đánh", "giết", "đâm", "cắt", "tấn công",
-                    "sex", "porn", "nude", "threesome", "kinky",
-                    "chó", "đen", "gái", "người nước ngoài",
-                    "child porn", "underage", "teen sex",
-                    "stalk", "harass", "bully",
-                    "drugs", "alcohol", "smoking",
-                     "fake account", "impersonation"
-            };
-            foreach(var word in bannedWords)
-            {
-                if (blog.Content.Contains(word))
-                {
-                    return true;
-                }
+                return NotFound();
             }
-            return false;
+
+            // Chỉ cần cập nhật trạng thái của blog thành 1 (hoặc giá trị tương ứng với trạng thái đã chấp nhận)
+            blog.State = 1; // Assuming 1 represents accepted state
+            await _blogRepository.UpdateAsync(blog);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Reject(int id)
+        {
+            var blog = await _blogRepository.GetByIdAsync(id);
+            if (blog == null)
+            {
+                return NotFound();
+            }
+
+            // Xóa blog khỏi cơ sở dữ liệu
+            await _blogRepository.DeleteAsync(id);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

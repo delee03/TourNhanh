@@ -3,36 +3,40 @@
   "WorkspaceRootPath": "D:\\Web_VS\\TourNhanh\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\change.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\change.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\display.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\display.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\display.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\display.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\blog\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\blog\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 525,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "BlogController.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\BlogController.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Controllers\\BlogController.cs",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\BlogController.cs",
               "RelativeToolTip": "TourNhanh\\Controllers\\BlogController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "ViewState": "AQIAAOIAAAAAAAAAAAAUwL8AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-16T08:58:51.786Z",
               "IsPinned": true,
@@ -60,75 +64,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Delete.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Delete.cshtml",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Delete.cshtml",
               "RelativeToolTip": "TourNhanh\\Views\\Blog\\Delete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAKAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T16:59:24.184Z"
+              "WhenOpened": "2024-05-23T04:51:45.113Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Update.cshtml",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Update.cshtml",
-              "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Update.cshtml",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Update.cshtml",
-              "RelativeToolTip": "TourNhanh\\Views\\Blog\\Update.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAA8AAABTAAAA",
+              "DocumentIndex": 1,
+              "Title": "Change.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Change.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Change.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Change.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\Blog\\Change.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAEEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T16:57:58.016Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Display.cshtml",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Display.cshtml",
-              "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Display.cshtml",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Display.cshtml",
-              "RelativeToolTip": "TourNhanh\\Views\\Blog\\Display.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T15:20:11.419Z"
+              "WhenOpened": "2024-05-22T04:07:09.747Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T02:25:17.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Add.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Add.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Add.cshtml*",
+              "RelativeToolTip": "TourNhanh\\Views\\Blog\\Add.cshtml*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T02:21:53.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Blog.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Blog.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Blog.cs",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Blog.cs",
               "RelativeToolTip": "TourNhanh\\Models\\Blog.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAmwBkAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T10:06:20.359Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "TourNhanh\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "TourNhanh\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAACSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T08:50:27.475Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Add.cshtml",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Add.cshtml",
-              "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Add.cshtml",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Add.cshtml",
-              "RelativeToolTip": "TourNhanh\\Views\\Blog\\Add.cshtml",
-              "ViewState": "AQIAAKcAAAAAAAAAAAAAALAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-15T02:54:31.779Z"
+              "WhenOpened": "2024-05-22T01:40:57.444Z"
             },
             {
               "$type": "Document",
@@ -138,9 +134,36 @@
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Index.cshtml",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Index.cshtml",
               "RelativeToolTip": "TourNhanh\\Views\\Blog\\Index.cshtml",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAAAL8AAAAHAAAA",
+              "ViewState": "AQIAAN4AAAAAAAAAAAAAAM0AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-14T08:01:22.518Z"
+              "WhenOpened": "2024-05-22T00:57:14.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Display.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Display.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Display.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Display.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\Blog\\Display.cshtml",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAAI4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T00:57:11.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Update.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Update.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Update.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\Blog\\Update.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T00:49:46.889Z",
+              "EditorCaption": ""
             }
           ]
         }
