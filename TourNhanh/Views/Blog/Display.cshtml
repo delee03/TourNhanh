@@ -156,41 +156,29 @@
 			<button type="submit" class="btn btn-primary">Đăng</button>
 		</form>
 	</div>
-	@if (Model.Comments != null && Model.Comments.Any())
-	{
-		<hr />
-		<div class="container ">
+	<div class="container">
 		<h3>
-			Bình luận(@if (Model.Comments != null)
-			{
-				<span>@Model.Comments.Count()</span>
-			}
-			else
-			{
-				<span>0</span>
-			})
+			Bình luận(@(Model.Comments != null ? Model.Comments.Count() : 0))
 		</h3>
 
-		<!-- Add an ID to the comment list -->
 		<ul id="comment-list">
-			@foreach (var comment in Model.Comments)
+			@if (Model.Comments != null && Model.Comments.Any())
 			{
-				<!-- Each comment item -->
-				<li class="comment-item">
-					<!-- Div to hold comment content -->
-					<div class="comment-content px-3 py-2">
-						<!-- Comment content -->
-						<p>
-							<span class="comment-author">@comment.Author</span>:
-							@comment.Content
-							<span class="comment-timestamp">| @comment.CreatedAt</span>
-						</p>
-					</div>
-				</li>
+				foreach (var comment in Model.Comments)
+				{
+					<li class="comment-item">
+						<div class="comment-content px-3 py-2">
+							<p>
+								<span class="comment-author">@comment.Author</span>:
+								@comment.Content
+								<span class="comment-timestamp">| @comment.CreatedAt</span>
+							</p>
+						</div>
+					</li>
+				}
 			}
 		</ul>
-		</div>
-	}
+	</div>
 </div>
 
 @section Scripts {
@@ -214,7 +202,14 @@
 								'<p>' + response.author + ': ' + content + ' | Just now</p>' +
 								'</div>' +
 								'</li>';
-							$('#comment-list').append(newComment);
+
+							// Check if the comment list is empty
+							if ($('#comment-list').children().length === 0) {
+								$('#comment-list').html(newComment); // Use html to replace the content if it was empty
+							} else {
+								$('#comment-list').append(newComment); // Append new comment if there are existing comments
+							}
+
 							$('#comment-content').val(''); // Clear the textarea
 						} else {
 							alert('Error adding comment');

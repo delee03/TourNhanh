@@ -223,11 +223,33 @@
 
     <script>
         $(document).ready(function () {
+            $('.like-checkbox input[type="checkbox"]').each(function () {
+                var checkbox = $(this);
+                var blogId = checkbox.data('post-id');
+                var userId = checkbox.data('user-id');
+
+                // Gửi yêu cầu AJAX để kiểm tra trạng thái ban đầu của like
+                $.ajax({
+                    url: '/Blog/CheckInitialLikeStatus', // Cập nhật URL của bạn
+                    type: 'GET',
+                    data: { blogId: blogId, userId: userId },
+                    success: function (isLiked) {
+                        if (isLiked) {
+                            checkbox.prop('checked', true);
+                            checkbox.next('label').find('.heart-icon').removeClass('far').addClass('fas').css('color', 'red');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+
             $('.like-checkbox label').click(function () {
                 var checkbox = $(this).prev('input[type="checkbox"]');
                 var checked = checkbox.prop('checked');
                 var blogId = checkbox.data('post-id');
-                var userId = checkbox.data('user-id'); // Lấy userId từ thuộc tính data của checkbox
+                var userId = checkbox.data('user-id');
 
                 $.ajax({
                     url: '/Blog/LikePost',
