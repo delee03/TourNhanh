@@ -1,0 +1,232 @@
+﻿#button-contact-vr {
+    position: fixed;
+    bottom: 0;
+    z-index: 99999;
+}
+    /*phone*/
+    #button-contact-vr .button-contact {
+        position: relative;
+    }
+
+        #button-contact-vr .button-contact .phone-vr {
+            position: relative;
+            visibility: visible;
+            background-color: transparent;
+            width: 90px;
+            height: 90px;
+            cursor: pointer;
+            z-index: 11;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transition: visibility .5s;
+            left: 0;
+            bottom: 0;
+            display: block;
+        }
+
+.phone-vr-circle-fill {
+    width: 65px;
+    height: 65px;
+    top: 12px;
+    left: 12px;
+    position: absolute;
+    box-shadow: 0 0 0 0 #c31d1d;
+    background-color: rgba(230, 8, 8, 0.7);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    -webkit-animation: phone-vr-circle-fill 2.3s infinite ease-in-out;
+    animation: phone-vr-circle-fill 2.3s infinite ease-in-out;
+    transition: all .5s;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animuiion: zoom 1.3s infinite;
+    animation: zoom 1.3s infinite;
+}
+
+.phone-vr-img-circle {
+    background-color: #e60808;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    top: 25px;
+    left: 25px;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+    animation: phone-vr-circle-fill 1s infinite ease-in-out;
+}
+
+    .phone-vr-img-circle a {
+        display: block;
+        line-height: 37px;
+    }
+
+    .phone-vr-img-circle img {
+        max-height: 25px;
+        max-width: 27px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+    }
+
+@-webkit-keyframes phone-vr-circle-fill {
+    0% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+
+    10% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+
+    20% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+
+    30% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+
+    40% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+}
+
+@-webkit-keyframes zoom {
+    0% {
+        transform: scale(.9)
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px transparent
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 transparent
+    }
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(.9)
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px transparent
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 transparent
+    }
+}
+
+.phone-bar a {
+    position: fixed;
+    bottom: 25px;
+    left: 30px;
+    z-index: -1;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 15px 7px 50px;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+    .phone-bar a:hover {
+        opacity: 0.8;
+        color: #fff;
+    }
+
+@media(max-width: 736px) {
+    .phone-bar {
+        display: none;
+    }
+}
+
+#zalo-vr .phone-vr-circle-fill {
+    box-shadow: 0 0 0 0 #2196F3;
+    background-color: rgba(33, 150, 243, 0.7);
+}
+
+#zalo-vr .phone-vr-img-circle {
+    background-color: #2196F3;
+}
+
+#viber-vr .phone-vr-circle-fill {
+    box-shadow: 0 0 0 0 #714497;
+    background-color: rgba(113, 68, 151, 0.8);
+}
+
+#viber-vr .phone-vr-img-circle {
+    background-color: #714497;
+}
+
+#contact-vr .phone-vr-circle-fill {
+    box-shadow: 0 0 0 0 #2196F3;
+    background-color: rgba(33, 150, 243, 0.7);
+}
+
+#contact-vr .phone-vr-img-circle {
+    background-color: #2196F3;
+}
+
+
+/*css all in one*/
+#gom-all-in-one #phone-vr {
+    transition: 0.7s all;
+    -moz-transition: 0.7s all;
+    -webkit-transition: 0.7s all;
+}
+
+#gom-all-in-one #zalo-vr {
+    transition: 1s all;
+    -moz-transition: 1s all;
+    -webkit-transition: 1s all;
+}
+
+#gom-all-in-one #viber-vr {
+    transition: 1.3s all;
+    -moz-transition: 1.3s all;
+    -webkit-transition: 1.3s all;
+}
+
+#gom-all-in-one #contact-vr {
+    transition: 1.6s all;
+    -moz-transition: 1.6s all;
+    -webkit-transition: 1.6s all;
+}
+
+#button-contact-vr.active #gom-all-in-one .button-contact {
+    margin-left: -100%;
+}
+
+#all-in-one-vr .phone-bar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    color: #fff;
+    padding: 5px 15px 5px 48px;
+    border-radius: 50px;
+    margin-left: -64px;
+    width: max-content;
+    cursor: pointer;
+}

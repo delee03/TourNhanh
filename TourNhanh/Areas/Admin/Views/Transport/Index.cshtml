@@ -1,0 +1,67 @@
+﻿ @model IEnumerable<TourNhanh.Models.Transport>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+
+    // Func f = new Func();
+    var listTransport = ViewBag.transports;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>Loại tour</th>
+                                    <th>Thông tin</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in listTransport)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Name</a>
+                                        </td>
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Description</a>
+                                        </td>
+
+
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a href="~/Admin/Transport/Details/@item.Id" title="Chi tiết">
+                                                        <span class="lnr lnr-eye"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Transport/Update/@item.Id" title="Chỉnh sửa">
+                                                        <span class="lnr lnr-pencil"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Transport/Delete/@item.Id" title="Xóa">
+                                                        <span class="lnr lnr-trash"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

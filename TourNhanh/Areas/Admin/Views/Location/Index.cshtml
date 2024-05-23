@@ -1,0 +1,77 @@
+﻿ @model IEnumerable<TourNhanh.Models.Location>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+
+    // Func f = new Func();
+    var listLocation = ViewBag.Locations;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>Tên địa điểm</th>
+                                    <th>Mô tả</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Kinh độ</th>
+                                    <th>Vĩ độ</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in listLocation)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Name</a>
+                                        </td>
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Description</a>
+                                        </td>
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Address</a>
+                                        </td>
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Longitude</a>
+                                        </td>
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Latitude</a>
+                                        </td>                                                
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a href="~/Admin/Location/Details/@item.Id" title="Chi tiết">
+                                                        <span class="lnr lnr-eye"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Location/Update/@item.Id" title="Chỉnh sửa">
+                                                        <span class="lnr lnr-pencil"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Location/Delete/@item.Id" title="Xóa">
+                                                        <span class="lnr lnr-trash"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
