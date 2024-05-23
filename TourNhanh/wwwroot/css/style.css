@@ -1746,10 +1746,18 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     }
 
 .product-details .product-available {
-    font-size: 15px;
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: 700;
     margin-left: 30px;
+    background-color: #4158D0;
+    background-image: linear-gradient(90deg, #4158D0 0%, #C850C0 46%, #ff0c0c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.product-details .product-available i{
+    font-size: 22px;
+    font-weight: 900;
     background-color: #4158D0;
     background-image: linear-gradient(90deg, #4158D0 0%, #C850C0 46%, #ff0c0c 100%);
     -webkit-background-clip: text;
@@ -1783,7 +1791,7 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
         margin-right: 10px;
         border: 2px solid transparent;
         height: 40px;
-        padding: 0 30px;
+        padding: 0 28px;
         background-color: var(--bs-linear-color);
         background-image: var(--bs-linear-img);
         color: #FFF;
@@ -1797,7 +1805,7 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
             position: relative;
             border: 2px solid transparent;
             height: 40px;
-            padding: 8px 30px;
+            padding: 8px 20px;
             background-color: var(--bs-linear-color);
             background-image: var(--bs-linear-img);
           
@@ -1810,11 +1818,11 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
         }
             .product-details .add-to-cart .add-to-cart-btn.new > i {
                 position: absolute;
-                left: 10%;
+                left: 5%;
                 top: 0;
-                width: 40px;
-                height: 36px;
-                line-height: 34px;
+                width: 30px;
+                height: 34px;
+                line-height: 32px;
                 background-color: var(--bs-linear-color);
                 background-image: var(--bs-linear-img);
                 -webkit-background-clip: text;
@@ -1829,16 +1837,16 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 border-color: var(--bs-linear-color);
-                padding: 8px 30px 8px 50px;
+                padding: 8px 20px 8px 32px;
             }
 
         .product-details .add-to-cart .add-to-cart-btn > i {
             position: absolute;
             left: 0;
             top: 0;
-            width: 40px;
-            height: 40px;
-            line-height: 38px;
+            width: 32px;
+            height: 32px;
+            line-height: 36px;
             background-color: var(--bs-linear-color);
             background-image: var(--bs-linear-img);
             -webkit-background-clip: text;
@@ -1854,7 +1862,7 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             border-color: var(--bs-linear-color);
-            padding: 0px 30px 0px 50px;
+            padding: 0px 25px 0px 35px;
         }
 
 .product-details .add-to-cart .add-to-cart-btn:hover > i {
