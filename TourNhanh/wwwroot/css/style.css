@@ -1670,6 +1670,9 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     #product-imgs .product-preview.slick-current {
         border-color: var(--bs-linear-color);
     }
+    #detail_img .product-preview.slick-current {
+        border-color: var(--bs-linear-color);
+    }
 
 #product-imgs .slick-prev {
     top: -20px;

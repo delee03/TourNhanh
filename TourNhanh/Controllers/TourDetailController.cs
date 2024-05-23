@@ -27,9 +27,15 @@ namespace TourNhanh.Controllers
         public async Task<IActionResult> Index(int tourId)
         {
             ViewBag.TourId = tourId;
+            List<string> imageURL = new List<string>();
             var tour = await _tourRepository.GetByIdAsync(tourId);
             var tourimage = await _tourImageRepository.GetByTourIdAsync(tourId);
-            ViewBag.TourImage = tourimage;
+            foreach(var img in tourimage)
+            {
+                imageURL.Add(img.ImageUrl);
+            }
+            ViewBag.TourImage = imageURL;
+
             ViewBag.Tour = tour;
             return View(await _tourDetailRepository.GetByTourIdAsync(tourId));
         }
