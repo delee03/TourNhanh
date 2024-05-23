@@ -296,6 +296,9 @@ namespace TourNhanh.Migrations
                     b.Property<string>("PaymentMethod")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
                     b.Property<int>("TourId")
                         .HasColumnType("int");
 

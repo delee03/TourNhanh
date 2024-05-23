@@ -17,6 +17,8 @@ namespace TourNhanh.Models
         [ForeignKey("Customer")]
         public string? CustomerUserId { get; set; }
         public virtual AppUser? Customer { get; set; }
+        //Quantity
+        public int? Quantity { get; set; }
 
         //Tour
         public int TourId { get; set; }

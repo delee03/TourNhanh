@@ -18,13 +18,14 @@ namespace TourNhanh.Controllers
         private readonly ITourImage _tourImageRepository;
         private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public TourController(ITourRepository tourRepository, ICategoryRepository categoryRepository, ITransportRepository transportRepository, ITourImage tourImageRepository,IWebHostEnvironment hostingEnvironment)
+        public TourController(ITourRepository tourRepository, ICategoryRepository categoryRepository, ITransportRepository transportRepository, ITourImage tourImageRepository,IWebHostEnvironment hostingEnvironment, ITourDetail tourDetail)
         {
             _tourRepository = tourRepository;
             _categoryRepository = categoryRepository;
             _transportRepository = transportRepository;
             _tourImageRepository = tourImageRepository;
             _hostingEnvironment = hostingEnvironment;
+            _tourDetailRepository = tourDetail;
         }
 
         // GET: Tour

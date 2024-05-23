@@ -39,6 +39,7 @@ builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ITourImage, TourImageRepository>();
 builder.Services.AddScoped<ITourDetail, TourDetailRepository>();
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
 //login với FACEBOOk
 builder.Services.AddAuthentication().AddFacebook(facebookOptions =>
@@ -50,9 +51,10 @@ builder.Services.AddAuthentication().AddFacebook(facebookOptions =>
 //login với Google
 builder.Services.AddAuthentication().AddGoogle(ggOptions =>
 {
-    ggOptions.ClientId = configuration["Authentication:Google:ClientId"];
-    ggOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+    ggOptions.ClientId = configuration["Authentication:Google:ClientId"] ?? throw new InvalidOperationException("Google ClientId is not configured.");
+    ggOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"] ?? throw new InvalidOperationException("Google ClientSecret is not configured.");
 });
+
 
 builder.Services.AddScoped<IBlogRepository, EFBlogRepository>();
 builder.Services.AddScoped<ICommentRepository, EFCommentRepository>();
