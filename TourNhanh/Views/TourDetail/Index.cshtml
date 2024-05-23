@@ -10,7 +10,7 @@
 <style>
 
     .section {
-        padding: 80px 0;
+        padding: 50px 0 80px;
     }
     .tour-info i, .product-details i {
 		color: #8dc63f;
@@ -80,6 +80,15 @@
         object-fit: cover;
 
     }
+    .title-gradient {
+        margin-bottom: 30px; 
+        background-color: var(--bs-linear-color);
+        background-image: var(--bs-linear-img);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600 ;
+        text-align: center;
+    }
 </style>
 
 
@@ -88,7 +97,7 @@
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">
-            Thông tin tour
+            Vi vu cùng Tour Nhanh
         </h3>
         <ol class="breadcrumb justify-content-center mb-0">
             <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>     
@@ -104,13 +113,14 @@
     <div class="container">
                
         <div class="title">
-            <h2>
-                Tour @view.Name
+            <h2 class="title-gradient">
+                Lịch trình tour @view.Name
             </h2>
         </div>
         <div class="content_lichtrinh">
             <div class="row">
-                <div class="col-8 main-content">
+                <div class="col-8 ">
+                    @*   Hinfh anh tour *@
                     <div class="image_tour row">
                         <div id="detail_main_img" class="col-12">
 
@@ -139,6 +149,28 @@
                         </div>
                      
                     </div>
+                  @*   Hinfh anh tour *@
+                  <!--Lich trinh Tour-->
+                    <div class="main-content">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Điểm nhấn hành trình</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Lịch trình</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Lịch khởi hành</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Mô tả</a>
+                            </li>
+                        </ul>
+
+                   </div>
+
+
+                   <!--Lich trinh Tour-->
                 </div>
                 <div class="col-4 sub-content">
 
