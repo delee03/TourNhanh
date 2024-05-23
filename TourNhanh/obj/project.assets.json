@@ -8632,19 +8632,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ACER\\.nuget\\packages\\": {}
+    "C:\\Users\\lamso\\.nuget\\packages\\": {},
+    "F:\\MicrosoftVStudio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Web_VS\\TourNhanh\\TourNhanh\\TourNhanh.csproj",
+      "projectUniqueName": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\TourNhanh.csproj",
       "projectName": "TourNhanh",
-      "projectPath": "D:\\Web_VS\\TourNhanh\\TourNhanh\\TourNhanh.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Web_VS\\TourNhanh\\TourNhanh\\obj\\",
+      "projectPath": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\TourNhanh.csproj",
+      "packagesPath": "C:\\Users\\lamso\\.nuget\\packages\\",
+      "outputPath": "F:\\WebProject\\DACS\\SourceCode\\TourNhanh\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "F:\\MicrosoftVStudio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lamso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8652,6 +8657,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8664,11 +8670,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8739,7 +8740,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
