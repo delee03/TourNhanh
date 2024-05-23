@@ -38,5 +38,5 @@ namespace TourNhanh.Models
 
         public string? PaymentMethod { get; set; }
     }
-    
+
 }

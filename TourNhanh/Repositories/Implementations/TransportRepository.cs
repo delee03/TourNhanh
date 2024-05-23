@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TourNhanh.Models;
+using TourNhanh;
+
 using TourNhanh.Repositories.Interfaces;
 
 namespace TourNhanh.Repositories.Implementations

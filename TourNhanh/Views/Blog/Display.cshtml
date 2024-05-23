@@ -1,0 +1,102 @@
+﻿@model TourNhanh.Models.Blog
+
+@{
+    ViewData["Title"] = "Display";
+}
+
+
+<div>
+    <img class="img-fluid w-100 rounded-top" src="@Model.ImageUrl" alt="Image">
+</div>
+<div>
+    <h2>Tác giả: @Model.Author  | @Model.CreatedAt  </h2>
+</div>
+
+<hr />
+<div class="row g-4 justify-content-center">
+    <div class="col-lg-8">
+        <!-- Độ rộng của phần nội dung -->
+        <div class="px-3 py-2">
+            <!-- Lề của phần nội dung -->
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+</div>
+@if (Model.Comments != null && Model.Comments.Any())
+{
+    <hr />
+    <h3>Comments</h3>
+
+    <ul id="comment-list">
+        <!-- Thêm ID cho danh sách comment -->
+        @foreach (var comment in Model.Comments)
+        {
+            <!-- Mỗi mục comment sẽ có một thẻ <li> -->
+            <li class="comment-item">
+                <!-- Thẻ div để chứa nội dung comment -->
+                <div class="comment-content">
+                    <!-- Nội dung comment -->
+                    <p>@comment.Content | @comment.CreatedAt</p>
+                </div>
+            </li>
+        }
+    </ul>
+}
+
+<!-- Form để thêm bình luận
+    <form asp-controller="Blog" asp-action="AddComment" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="commentContent">Add a comment:</label>
+        <textarea class="form-control" id="commentContent" name="content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> 
+-->
+
+
+
+<form class="comment-form">
+    <!-- Input ẩn để chứa ID của blog -->
+    <input type="hidden" name="id" value="@Model.Id"> <!-- Thay đổi giá trị value thành ID thích hợp -->
+    <!-- Textarea để người dùng nhập nội dung comment -->
+    <div class="form-group">
+        <label for="commentContent">Thêm bình luận: </label>
+        <textarea name="content" class="form-control" placeholder="Enter your comment here" required></textarea>
+
+    </div>
+    <!-- Nút để gửi comment -->
+    <button type="submit">Submit</button>
+</form>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('.comment-form').submit(function (event) {
+                event.preventDefault(); // Ngăn chặn gửi form mặc định
+
+                var form = $(this);
+                var formData = form.serialize();
+
+                $.ajax({
+                    url: '@Url.Action("AddComment", "Blog")',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        if (response.success) {
+                            // Thêm mới comment vào danh sách hiện có
+                            var commentContent = response.comment.content;
+                            var commentList = $('#comment-list'); // Chọn danh sách comment bằng ID
+
+                            commentList.append('<li>' + commentContent + '</li>');
+
+                            // Cập nhật số lượng comment nếu cần thiết
+                        } else {
+                            alert('Failed to add comment');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -3,9 +3,10 @@
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+	int numOfQuanity = 1;
 }
 
-<h1>Details</h1>
+@* <h1>Details</h1>
 
 <div>
     <h4>Tour</h4>
@@ -62,7 +63,492 @@
     </dl>
 </div>
 <div>
-    <a asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id" class="btn btn-primary">Xem chi tiết tour</a>
+    <a asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id" class="btn btn-primary">Xem Lịch Trình Tour</a>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+ *@
+
+               
+ <style>
+	.tour-info i {
+		color: #8dc63f;
+	}
+
+	.tour-info {
+		display: grid;
+		margin-top: 20px;
+		color: #000;
+		padding: 15px 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 32px rgba(0,0,0,.12) !important;
+		grid-template-columns: repeat(2, 1fr);
+		font-size: 15px;
+	}
+
+
+	/* .tour-info li {
+		border-bottom: 1px dashed #e1e1e1;
+		padding: 5px 0 5px 5px;
+		margin: 0 !important;
+		text-align: left;
+		list-style-type: none;
+		font-size: 13px;
+	}
+	.tour-info {
+		border-radius: 10px;
+		box-shadow: 0 0 32px rgba(0,0,0,.12) !important;
+		transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+		padding: 15px;
+		border-radius: 5px;
+		background-color: white;
+		margin-top: 15px;
+	}
+
+		.tour-info td {
+			border-bottom: none;
+		}
+
+		.tour-info tr, .tour-info td {
+			font-size: 16px;
+			padding: 10px 28px;
+			color: black !important;
+		} */
+ </style>
+<!-- BREADCRUMB -->
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+	<div class="container text-center py-5" style="max-width: 900px;">
+		<h3 class="text-white display-3 mb-4">
+			Thông tin tour
+		</h3>
+		<ol class="breadcrumb justify-content-center mb-0">
+			<li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+			<li class="breadcrumb-item"><a href="#">Pages</a></li>
+			<li class="breadcrumb-item"><a href="~/Tour/Index/@Model.Id">Tour trong nước</a></li>
+			<li class="breadcrumb-item active text-white">Chi tiết tour</li>
+		</ol>
+	</div>
+</div>
+<!-- Header End -->
+<!-- /BREADCRUMB -->
+
+<!-- SECTION -->
+<div style="padding: 100px 0 100px">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+			<!-- Product thumb imgs -->
+			<div class="col-md-2  col-md-pull-5">
+				<div id="product-imgs">
+					@if (ViewBag.TourImages != null)
+					{
+						<div class="product-preview">
+							<img src="@Model.MainImageUrl" alt="">
+						</div>
+						foreach (var image in ViewBag.TourImages)
+						{
+							<img class="product-preview" src="@image" />
+						}
+					}
+				</div>
+			</div>
+			<!-- /Product thumb imgs -->
+			<!-- Product main img -->
+			<div class="col-md-6 col-md-push-3">
+				<div id="product-main-img">
+
+
+					@if (ViewBag.TourImages != null)
+					{
+						<div class="product-preview">
+							<img src="@Html.DisplayFor(model => model.MainImageUrl)" alt="">
+						</div>
+						foreach (var image in ViewBag.TourImages)
+						{
+							<img class=" product-preview" src="@image" />
+						}
+					}
+					@* 	<div class="product-preview">
+					<img src="~/img/iPadAir.png" alt="">
+					</div>
+
+					<div class="product-preview">
+					<img src="~/img/iphone15_2.png" alt="">
+					</div>
+
+					<div class="product-preview">
+					<img src="~/img/iphone11.png" alt="">
+					</div> *@
+
+					@* <div class="product-preview">
+					<img src="~/img/product08.png" alt="">
+					</div> *@
+				</div>
+			</div>
+			<!-- /Product main img -->
+			
+		
+		
+			<!-- Product details -->
+			<div class="col-md-4">
+				<div class="product-details">
+					<h2 class="product-name">@Html.DisplayFor(model => model.Name)</h2>
+					<div>
+						<div class="product-rating">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa-regular fa-star text-primary"></i>
+						</div>
+						<a class="review-link" href="#">10 Review(s) | Add your review</a>
+					</div>
+					<div>
+						<h3 class="product-price">@Html.DisplayFor(model => model.Price) <del class="product-old-price">$99999.00</del></h3>
+						<span class="product-available">Còn chỗ</span>
+					</div>
+					<label>Phương tiện di chuyển: @Html.DisplayFor(model => model.Transport.Name) </label>
+					
+					<div class="product-options d-flex justify-content-flex-start align-items-center">
+						<label>
+							người lớn: 
+							<select class="input-select">							
+								<option value="0">2 </option>
+								<option value="1">3 </option>
+								<option value="2">4 </option>
+								<option value="3">5 </option>
+								<option value="4">6 </option>
+							</select>
+							
+						</label>
+						
+						<label>
+							Trẻ em: 
+							<select class="input-select">
+								<option value="0">0 </option>
+								<option value="1">1 </option>
+								<option value="2">2 </option>
+								<option value="3">3 </option>							
+							</select>
+							
+						</label>
+						
+					</div>
+
+					<div class="add-to-cart">
+						@* <div class="qty-label" >
+							Qty
+							<div class="input-number">								
+								<input type="number" value="1">
+								<span class="qty-up">+</span>
+								<span class="qty-down">-</span>
+							</div>
+						</div> *@
+						@* <button class="add-to-cart-btn"><a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-productId="@Model.Id>" asp-route-quantity="@numOfQuanity"><i class="fa fa-shopping-cart"></i> add to cart</a></button> *@
+						<div class="add-to-cart">
+							@* <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-productId="@Model.Id" asp-route-quantity="@numOfQuanity">
+								<button class="add-to-cart-btn">
+									<i class="fa fa-shopping-cart"></i> add to cart
+								</button>
+							</a> *@
+							<button onclick="showSuccessToast();" class="add-to-cart-btn addToCartBtn btn--success" data-productId="@Model.Id"><i class="fa fa-shopping-cart"></i> đặt tour</button>
+							@* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
+							 <a class="add-to-cart-btn new" asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id"><i class="fa fa-eye"></i>Xem lịch trình</a>
+							 <br />
+							@* <a asp-action="Index" class="btn-action"><i class="fa-solid fa-arrow-left"></i>Trở về</a> *@
+						</div>
+						
+						
+					</div>
+
+					<ul class="product-btns">
+						<li><a href="#"><i class="fa-regular fa-heart"></i> add to wishlist</a></li>
+						<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+					</ul>
+
+					<ul class="product-links">
+						<li>Lịch trình:</li>
+						<li><a href="#"> @Html.DisplayFor(model => model.Category.Name)</a></li>
+						@* <li><a href="#">Accessories</a></li> *@
+					</ul>
+
+					<ul class="product-links">
+						<li>Chia sẻ:</li>
+						<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+					</ul>
+
+					<div class="tour_detail">
+						<div class="tour-info">
+							<p><i class="fas fa-check"></i> Bảo hiểm</p>
+							<p><i class="fas fa-check"></i> Bữa sáng</p>
+							<p><i class="fas fa-check"></i> Hướng dẫn viên</p>
+							<p><i class="fas fa-check"></i> Khách sạn 3 sao</p>
+							<p><i class="fas fa-check"></i> Vé tham quan</p>
+							<p><i class="fas fa-check"></i> Vé máy bay</p>
+							<p><i class="fas fa-check"></i> Xe đưa đón</p>
+
+							@* <table>
+								<tbody>
+									<tr>
+										<td><i class="fas fa-check"></i> Bảo hiểm</td>
+										<td><i class="fas fa-check"></i> Bữa sáng</td>
+									</tr>
+									<tr>
+										<td><i class="fas fa-check"></i> Hướng dẫn viên</td>
+										<td><i class="fas fa-check"></i> Khách sạn 3<i class="fa-regular fa-star text-primary"></i> +</td>
+									</tr>
+									<tr>
+										<td><i class="fas fa-check"></i> Vé máy bay</td>
+										<td><i class="fas fa-check"></i> Vé tham quan</td>
+									</tr>
+									<tr>
+										<td><i class="fas fa-check"></i> Xe đưa đón</td>
+									</tr>
+								</tbody>
+							</table> *@
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- /Product details -->
+			<!-- Product tab -->
+			<div class="col-md-12">
+				<div id="product-tab">
+					<!-- product tab nav -->
+					@* <ul class="tab-nav">
+						<li class="active"><a data-toggle="tab" role="tab" href="#tab1">Description</a></li>
+						<li><a data-toggle="tab" role="tab" href="#tab2">Details</a></li>
+						<li><a data-toggle="tab" role="tab" href="#tab3">Reviews (3)</a></li>
+					</ul> *@
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" role="tab" aria-controls="home" aria-selected="true">Mô tả</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">Chi tiết</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Review (3)</button>
+						</li>
+					</ul>
+					<!-- /product tab nav -->
+					<!-- product tab content -->
+					<div class="tab-content" id="nav-tabContent">
+						<!-- tab1  -->
+						<div id="tab1" class="tab-pane fade show active">
+							<div class="row">
+								<div class="col-md-12">
+									<p>@Model.Description.</p>
+								</div>
+							</div>
+						</div>
+						<!-- /tab1  -->
+						<!-- tab2  -->
+						<div id="tab2" class="tab-pane fade in">
+							<div class="row">
+								<div class="col-md-12">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								</div>
+							</div>
+						</div>
+						<!-- /tab2  -->
+						<!-- tab3  -->
+						<div id="tab3" class="tab-pane fade in">
+							<div class="row">
+								<!-- Rating -->
+								<div class="col-md-3">
+									<div id="rating">
+										<div class="rating-avg">
+											<span>4.5</span>
+											<div class="rating-stars">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star-o"></i>
+											</div>
+										</div>
+										<ul class="rating">
+											<li>
+												<div class="rating-stars">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="rating-progress">
+													<div style="width: 80%;"></div>
+												</div>
+												<span class="sum">3</span>
+											</li>
+											<li>
+												<div class="rating-stars">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star-o"></i>
+												</div>
+												<div class="rating-progress">
+													<div style="width: 60%;"></div>
+												</div>
+												<span class="sum">2</span>
+											</li>
+											<li>
+												<div class="rating-stars">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</div>
+												<div class="rating-progress">
+													<div></div>
+												</div>
+												<span class="sum">0</span>
+											</li>
+											<li>
+												<div class="rating-stars">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</div>
+												<div class="rating-progress">
+													<div></div>
+												</div>
+												<span class="sum">0</span>
+											</li>
+											<li>
+												<div class="rating-stars">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+													<i class="fa fa-star-o"></i>
+												</div>
+												<div class="rating-progress">
+													<div></div>
+												</div>
+												<span class="sum">0</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /Rating -->
+								<!-- Reviews -->
+								<div class="col-md-6">
+									<div id="reviews">
+										<ul class="reviews">
+											<li>
+												<div class="review-heading">
+													<h5 class="name">John</h5>
+													<p class="date">27 DEC 2018, 8:0 PM</p>
+													<div class="review-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star-o empty"></i>
+													</div>
+												</div>
+												<div class="review-body">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+												</div>
+											</li>
+											<li>
+												<div class="review-heading">
+													<h5 class="name">John</h5>
+													<p class="date">27 DEC 2018, 8:0 PM</p>
+													<div class="review-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star-o empty"></i>
+													</div>
+												</div>
+												<div class="review-body">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+												</div>
+											</li>
+											<li>
+												<div class="review-heading">
+													<h5 class="name">John</h5>
+													<p class="date">27 DEC 2018, 8:0 PM</p>
+													<div class="review-rating">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star-o empty"></i>
+													</div>
+												</div>
+												<div class="review-body">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+												</div>
+											</li>
+										</ul>
+										<ul class="reviews-pagination">
+											<li class="active">1</li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li><a href="#">4</a></li>
+											<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+										</ul>
+									</div>
+								</div>
+								<!-- /Reviews -->
+								<!-- Review Form -->
+								<div class="col-md-3">
+									<div id="review-form">
+										<form class="review-form">
+											<input class="input" type="text" placeholder="Your Name">
+											<input class="input" type="email" placeholder="Your Email">
+											<textarea class="input" placeholder="Your Review"></textarea>
+											<div class="input-rating">
+												<span>Your Rating: </span>
+												<div class="stars">
+													<input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
+													<input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
+													<input id="star3" name="rating" value="3" type="radio"><label for="star3"></label>
+													<input id="star2" name="rating" value="2" type="radio"><label for="star2"></label>
+													<input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
+												</div>
+											</div>
+											<button class="primary-btn">Submit</button>
+										</form>
+									</div>
+								</div>
+								<!-- /Review Form -->
+							</div>
+						</div>
+						<!-- /tab3  -->
+					</div>
+					<!-- /product tab content  -->
+				</div>
+			</div>
+			<!-- /product tab -->
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!-- /SECTION -->
+<!-- jQuery Plugins -->
+<script src="~/js/jquery.min.js"></script>
+
+<script src="~/js/slick.min.js"></script>
+<script src="~/js/nouislider.min.js"></script>
+<script src="~/js/jquery.zoom.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/main.js"></script>
+
