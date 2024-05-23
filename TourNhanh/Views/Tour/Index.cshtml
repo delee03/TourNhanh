@@ -16,7 +16,19 @@
         overflow: hidden;
         display: -webkit-box;
     }
-   
+    
+    .phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
+        background-color: #dd3333;
+    }
+
+    #phone-vr .phone-vr-circle-fill {
+        opacity: 0.7;
+        box-shadow: 0 0 0 0 #dd3333;
+    }
+
+    #button-contact-vr {
+        bottom: 50px !important;
+    }
 
 </style>
 
@@ -27,8 +39,7 @@
             Tour Nổi Bật
         </h3>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>         
             <li class="breadcrumb-item active text-white">Tour trong nước</li>
         </ol>
     </div>
@@ -73,6 +84,11 @@
                         <div class="row bg-primary rounded-bottom mx-0">
                             <div class="col-6 text-start px-0">
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                                @* <a class="btn-hover btn text-white py-2 px-4" href="~/Tour/LichTrinh.cshtml">Lịch trình</a> *@
+                            </div>
+                            <div class="col-6 text-start px-0">
+                                <a asp-action="LichTrinh" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xem lịch trình</a>
+                                @* <a class="btn-hover btn text-white py-2 px-4" href="~/Tour/LichTrinh.cshtml">Lịch trình</a> *@
                             </div>
                             <div class="col-6 text-center px-0">
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Sửa</a>
@@ -80,9 +96,9 @@
                             <div class="col-6 text-center px-0">
                                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xóa</a>
                             </div>
-                            <div class="col-6 text-end px-0">
+                          @*   <div class="col-6 text-end px-0">
                                 <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                            </div>
+                            </div> *@
                         </div>
                     </div>
                 </div>
@@ -835,3 +851,48 @@
     </tbody>
 </table>
  *@
+<!-- if gom all in one show -->
+<div id="button-contact-vr" class="">
+    <div id="gom-all-in-one">
+        <!-- v3 -->
+        <!-- contact -->
+        <!-- end contact -->
+        <!-- viber -->
+        <!-- end viber -->
+        <!-- zalo -->
+        <div id="zalo-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a target="_blank" href="https://zalo.me/0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end zalo -->
+        <!-- Phone -->
+        <div id="phone-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a href="tel:0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
+                    </a>
+                </div>
+                <div class="phone-bar phone-bar-n">
+                    <a href="tel:0931034852">
+                        <span class="text-phone">093.1034.852(a Phát)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end phone -->
+    </div><!-- end v3 class gom-all-in-one -->
+
+
+</div>
+<!-- Facebook Messenger -->
+<!-- color phone -->

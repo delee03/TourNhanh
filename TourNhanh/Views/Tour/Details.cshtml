@@ -2,10 +2,12 @@
 
 @{
     ViewData["Title"] = "Details";
+	
     Layout = "~/Views/Shared/_Layout.cshtml";
 	int numOfQuanity = 1;
 }
 
+@* var view = ViewBag.ViewModel as TourNhanh.ViewModel.TourDetail_LichTrinh; *@
 @* <h1>Details</h1>
 
 <div>
@@ -75,7 +77,10 @@
 		color: #8dc63f;
 	}
 
+
 	.tour-info {
+		margin-left: 10px;
+		width: 407px;
 		display: grid;
 		margin-top: 20px;
 		color: #000;
@@ -86,7 +91,30 @@
 		font-size: 15px;
 	}
 
+	.product-details {
+		margin-left: 10px;
+		padding: 15px 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 32px rgba(0,0,0,.12) !important;
+	}
 
+		.product-details .product-links li, .product-details .product-options label, product-details label {
+			font-weight: 600;
+		}
+
+		.product-details .product-options .input-select {
+			width: 150px;
+		}
+
+		.product-details .product-price {
+			margin-bottom: 0;
+		}
+
+		.product-details .product-available{
+			margin-left: 10px;
+		}
+
+	
 	/* .tour-info li {
 		border-bottom: 1px dashed #e1e1e1;
 		padding: 5px 0 5px 5px;
@@ -114,6 +142,19 @@
 			padding: 10px 28px;
 			color: black !important;
 		} */
+
+	.phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
+		background-color: #dd3333;
+	}
+
+	#phone-vr .phone-vr-circle-fill {
+		opacity: 0.7;
+		box-shadow: 0 0 0 0 #dd3333;
+	}
+
+	#button-contact-vr {
+		bottom: 50px !important;
+	}
  </style>
 <!-- BREADCRUMB -->
 <!-- Header Start -->
@@ -123,10 +164,9 @@
 			Thông tin tour
 		</h3>
 		<ol class="breadcrumb justify-content-center mb-0">
-			<li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
-			<li class="breadcrumb-item"><a href="#">Pages</a></li>
+			<li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>		
 			<li class="breadcrumb-item"><a href="~/Tour/Index/@Model.Id">Tour trong nước</a></li>
-			<li class="breadcrumb-item active text-white">Chi tiết tour</li>
+			<li class="breadcrumb-item active text-white">@Model.Name</li>
 		</ol>
 	</div>
 </div>
@@ -206,9 +246,10 @@
 						<a class="review-link" href="#">10 Review(s) | Add your review</a>
 					</div>
 					<div>
-						<h3 class="product-price">@Html.DisplayFor(model => model.Price) <del class="product-old-price">$99999.00</del></h3>
-						<span class="product-available">Còn chỗ</span>
+						<h3 class="product-price">@Html.DisplayFor(model => model.Price) VNĐ <del class="product-old-price">999999VNĐ</del></h3>
+						
 					</div>
+					<h3><span class="product-available"><i class="fa-solid fa-hand-point-right fa-beat"></i> Đặt tour ngay <i class="fa-solid fa-hand-point-left fa-beat"></i></span></h3>
 					<label>Phương tiện di chuyển: @Html.DisplayFor(model => model.Transport.Name) </label>
 					
 					<div class="product-options d-flex justify-content-flex-start align-items-center">
@@ -270,9 +311,16 @@
 
 					<ul class="product-links">
 						<li>Lịch trình:</li>
-						<li><a href="#"> @Html.DisplayFor(model => model.Category.Name)</a></li>
+						<li><a href="#"> @Html.DisplayFor(model => model.Category.Name)</a></li> | 
 						@* <li><a href="#">Accessories</a></li> *@
+						<li>Điểm khởi hành:</li>
+						<li><a href="#"> tại TPHCM</a></li>
+						
 					</ul>
+
+					@* <ul class="product-links"> 
+						<li>Điểm đến: @view.Location.Name </li>
+					</ul> *@
 
 					<ul class="product-links">
 						<li>Chia sẻ:</li>
@@ -281,39 +329,38 @@
 						<li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
 						<li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
 					</ul>
+			
+				</div>
+				<div class="tour_detail">
+					<div class="tour-info">
+						<p><i class="fas fa-check"></i> Bảo hiểm</p>
+						<p><i class="fas fa-check"></i> Bữa sáng</p>
+						<p><i class="fas fa-check"></i> Hướng dẫn viên</p>
+						<p><i class="fas fa-check"></i> Khách sạn 3 sao</p>
+						<p><i class="fas fa-check"></i> Vé tham quan</p>
+						<p><i class="fas fa-check"></i> Vé máy bay</p>
+						<p><i class="fas fa-check"></i> Xe đưa đón</p>
 
-					<div class="tour_detail">
-						<div class="tour-info">
-							<p><i class="fas fa-check"></i> Bảo hiểm</p>
-							<p><i class="fas fa-check"></i> Bữa sáng</p>
-							<p><i class="fas fa-check"></i> Hướng dẫn viên</p>
-							<p><i class="fas fa-check"></i> Khách sạn 3 sao</p>
-							<p><i class="fas fa-check"></i> Vé tham quan</p>
-							<p><i class="fas fa-check"></i> Vé máy bay</p>
-							<p><i class="fas fa-check"></i> Xe đưa đón</p>
-
-							@* <table>
-								<tbody>
-									<tr>
-										<td><i class="fas fa-check"></i> Bảo hiểm</td>
-										<td><i class="fas fa-check"></i> Bữa sáng</td>
-									</tr>
-									<tr>
-										<td><i class="fas fa-check"></i> Hướng dẫn viên</td>
-										<td><i class="fas fa-check"></i> Khách sạn 3<i class="fa-regular fa-star text-primary"></i> +</td>
-									</tr>
-									<tr>
-										<td><i class="fas fa-check"></i> Vé máy bay</td>
-										<td><i class="fas fa-check"></i> Vé tham quan</td>
-									</tr>
-									<tr>
-										<td><i class="fas fa-check"></i> Xe đưa đón</td>
-									</tr>
-								</tbody>
-							</table> *@
-						</div>
+						@* <table>
+						<tbody>
+						<tr>
+						<td><i class="fas fa-check"></i> Bảo hiểm</td>
+						<td><i class="fas fa-check"></i> Bữa sáng</td>
+						</tr>
+						<tr>
+						<td><i class="fas fa-check"></i> Hướng dẫn viên</td>
+						<td><i class="fas fa-check"></i> Khách sạn 3<i class="fa-regular fa-star text-primary"></i> +</td>
+						</tr>
+						<tr>
+						<td><i class="fas fa-check"></i> Vé máy bay</td>
+						<td><i class="fas fa-check"></i> Vé tham quan</td>
+						</tr>
+						<tr>
+						<td><i class="fas fa-check"></i> Xe đưa đón</td>
+						</tr>
+						</tbody>
+						</table> *@
 					</div>
-
 				</div>
 			</div>
 			<!-- /Product details -->
@@ -328,13 +375,13 @@
 					</ul> *@
 					<ul class="nav nav-tabs" id="myTab" role="tablist">
 						<li class="nav-item" role="presentation">
-							<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" role="tab" aria-controls="home" aria-selected="true">Mô tả</button>
+							<button class="nav-link1 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab1" role="tab" aria-controls="home" aria-selected="true">Điểm nhấn hành trình</button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">Chi tiết</button>
+							<button class="nav-link1" id="profile-tab" data-bs-toggle="tab" type="button" role="tab" aria-controls="profile" aria-selected="false"><a style="font-weight:700" asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id">Lịch trình</a></button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Review (3)</button>
+							<button class="nav-link1" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Đánh giá (3)</button>
 						</li>
 					</ul>
 					<!-- /product tab nav -->
@@ -371,7 +418,7 @@
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
+												<i class="fa-solid fa-star-sharp-half"></i>
 											</div>
 										</div>
 										<ul class="rating">
@@ -539,8 +586,54 @@
 			<!-- /product tab -->
 		</div>
 		<!-- /row -->
+		
 	</div>
 	<!-- /container -->
+	<!-- if gom all in one show -->
+	<div id="button-contact-vr" class="">
+		<div id="gom-all-in-one">
+			<!-- v3 -->
+			<!-- contact -->
+			<!-- end contact -->
+			<!-- viber -->
+			<!-- end viber -->
+			<!-- zalo -->
+			<div id="zalo-vr" class="button-contact">
+				<div class="phone-vr">
+					<div class="phone-vr-circle-fill"></div>
+					<div class="phone-vr-img-circle">
+						<a target="_blank" href="https://zalo.me/0931034852">
+							<img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- end zalo -->
+			<!-- Phone -->
+			<div id="phone-vr" class="button-contact">
+				<div class="phone-vr">
+					<div class="phone-vr-circle-fill"></div>
+					<div class="phone-vr-img-circle">
+						<a href="tel:0931034852">
+							<img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
+						</a>
+					</div>
+					<div class="phone-bar phone-bar-n">
+						<a href="tel:0931034852">
+							<span class="text-phone">093.1034.852 (a Phát)</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- end phone -->
+		</div><!-- end v3 class gom-all-in-one -->
+
+
+	</div>
+	<!-- Facebook Messenger -->
+	<!-- color phone -->
 </div>
 <!-- /SECTION -->
 <!-- jQuery Plugins -->

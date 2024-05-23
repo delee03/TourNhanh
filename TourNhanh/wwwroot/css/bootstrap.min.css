@@ -21,6 +21,8 @@
     --bs-gray-dark: #343a40;
     --bs-primary: #2567f1;
     --bs-secondary: #1f05e6;
+    --bs-linear-color: #0093E9;
+    --bs-linear-img: linear-gradient(110deg, #0093E9 0%, #80D0C7 100%);
     --bs-success: #198754;
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
@@ -2916,14 +2918,17 @@ textarea.form-control-lg {
 
 .btn-primary {
     color: #fff;
-    background-color: #2567f1;
-    border-color: #2567f1;
+    /* background-color: #2567f1;
+    border-color: #2567f1;*/
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
+    border-color: var(--bs-linear-img);
 }
 
     .btn-primary:hover {
-        color: #fff;
+        color: var(--bs-linear-color);
         background-color: #102d69;
-        border-color: #0f2a62;
+        border-color: var(--bs-linear-img);
     }
 
     .btn-check:focus + .btn-primary, .btn-primary:focus {
@@ -3134,6 +3139,21 @@ textarea.form-control-lg {
         color: #000;
         background-color: #f4f4f4;
         border-color: #f3f3f3;
+    }
+.btn-light1 {
+    color: #fff;
+    /* background-color: #2567f1;
+    border-color: #2567f1;*/
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
+    border-color: var(--bs-linear-img);
+}
+
+    .btn-light1:hover {
+        color: var(--bs-linear-color);
+        background-color: #102d69;
+        border-color: var(--bs-linear-img);
+        -webkit-text-fill-color: #fff;
     }
 
     .btn-check:focus + .btn-light, .btn-light:focus {
@@ -3933,6 +3953,19 @@ textarea.form-control-lg {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
+.nav-link1 {
+    font-weight: 600;
+    font-size: 18px;
+    border: none;
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    padding: .5rem 1rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
 @media(prefers-reduced-motion: reduce) {
     .nav-link {
         transition: none;
@@ -3971,12 +4004,16 @@ textarea.form-control-lg {
             background-color: rgba(0, 0, 0, 0);
             border-color: rgba(0, 0, 0, 0);
         }
+.nav-link1.active {
+    -webkit-text-fill-color: #757575;
+    background-color: #fff;
+}
 
-        .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-            color: #495057;
-            background-color: #fff;
-            border-color: #dee2e6 #dee2e6 #fff;
-        }
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        color: #495057;
+        background-color: #fff;
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
 
     .nav-tabs .dropdown-menu {
         margin-top: -1px;
@@ -4698,12 +4735,15 @@ textarea.form-control-lg {
 
     .breadcrumb-item + .breadcrumb-item::before {
         float: left;
+        margin-top: 2px;
+        font-size: 14px;
         padding-right: .5rem;
         color: #fff;
-        content: var(--bs-breadcrumb-divider, "/") ;/* rtl: var(--bs-breadcrumb-divider,  "/") */
+        content: var(--bs-breadcrumb-divider, ">>"); /* rtl: var(--bs-breadcrumb-divider,  "/") */
     }
 
 .breadcrumb-item.active {
+    font-weight: 600;
     color: #6c757d;
 }
 
@@ -6808,7 +6848,7 @@ textarea.form-control-lg {
 }
 
 .border-primary {
-    border-color: #2567f1 !important;
+    border-color: var(--bs-linear-color) !important;
 }
 
 .border-secondary {
@@ -7785,7 +7825,11 @@ textarea.form-control-lg {
 }
 
 .text-primary {
-    color: #2567f1 !important;
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   /* color: #2567f1 !important;*/
 }
 
 .text-secondary {
@@ -7841,7 +7885,13 @@ textarea.form-control-lg {
 }
 
 .bg-primary {
-    background-color: #2567f1 !important;
+    /*background-color: #2567f1 !important;*/
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
+}
+.bg-primary1 {
+    background-color: var(--bs-linear-color)
+    !important;
 }
 
 .bg-secondary {
