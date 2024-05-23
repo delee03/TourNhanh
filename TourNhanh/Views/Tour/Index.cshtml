@@ -10,17 +10,36 @@
         display: block;
     }
 
+    .packages-carousel .packages-content .description-tour {
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+    
+    .phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
+        background-color: #dd3333;
+    }
+
+    #phone-vr .phone-vr-circle-fill {
+        opacity: 0.7;
+        box-shadow: 0 0 0 0 #dd3333;
+    }
+
+    #button-contact-vr {
+        bottom: 50px !important;
+    }
+
 </style>
 
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">
-            Travel Packages
+            Tour Nổi Bật
         </h3>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>         
             <li class="breadcrumb-item active text-white">Tour trong nước</li>
         </ol>
     </div>
@@ -30,8 +49,8 @@
 <div class="container-fluid packages py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Packages</h5>
-            <h1 class="mb-0">Awesome Packages</h1>
+            <h5 class="section-title px-3">Cùng TOUR NHANH xê dịch nào</h5>
+            <h1 class="mb-0">Danh sách tour</h1>
             <h5 class="section-title px-3">
                 <a asp-action="Create">Thêm mới</a>
             </h5>
@@ -45,14 +64,14 @@
                         <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>@* 2 Person *@</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
                         </div>
                         <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
                     </div>
                     <div class="packages-content bg-light">
                         <div class="p-4 pb-0">
                             <h5 class="mb-0">@item.Name</h5>
-                            <small class="text-uppercase">Hotel Deals</small>
+                            <small class="text-uppercase">Hot Deals</small>
                             <div class="mb-3">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -60,18 +79,26 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                             </div>
-                            <p class="mb-4">@item.Description</p>
+                            <p class="mb-4 description-tour">@item.Description</p>
                         </div>
                         <div class="row bg-primary rounded-bottom mx-0">
                             <div class="col-6 text-start px-0">
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                                @* <a class="btn-hover btn text-white py-2 px-4" href="~/Tour/LichTrinh.cshtml">Lịch trình</a> *@
+                            </div>
+                            <div class="col-6 text-start px-0">
+                                <a asp-action="LichTrinh" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xem lịch trình</a>
+                                @* <a class="btn-hover btn text-white py-2 px-4" href="~/Tour/LichTrinh.cshtml">Lịch trình</a> *@
                             </div>
                             <div class="col-6 text-center px-0">
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Sửa</a>
                             </div>
-                            <div class="col-6 text-end px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                            <div class="col-6 text-center px-0">
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xóa</a>
                             </div>
+                          @*   <div class="col-6 text-end px-0">
+                                <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                            </div> *@
                         </div>
                     </div>
                 </div>
@@ -824,3 +851,48 @@
     </tbody>
 </table>
  *@
+<!-- if gom all in one show -->
+<div id="button-contact-vr" class="">
+    <div id="gom-all-in-one">
+        <!-- v3 -->
+        <!-- contact -->
+        <!-- end contact -->
+        <!-- viber -->
+        <!-- end viber -->
+        <!-- zalo -->
+        <div id="zalo-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a target="_blank" href="https://zalo.me/0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end zalo -->
+        <!-- Phone -->
+        <div id="phone-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a href="tel:0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
+                    </a>
+                </div>
+                <div class="phone-bar phone-bar-n">
+                    <a href="tel:0931034852">
+                        <span class="text-phone">093.1034.852(a Phát)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end phone -->
+    </div><!-- end v3 class gom-all-in-one -->
+
+
+</div>
+<!-- Facebook Messenger -->
+<!-- color phone -->

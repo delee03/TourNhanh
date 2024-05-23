@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Rendering;
-
+using TourNhanh.ViewModel;
 using Microsoft.Extensions.Hosting;
 using TourNhanh.Models;
 using TourNhanh.Repositories.Interfaces;
+
 
 namespace TourNhanh.Controllers
 {
@@ -12,6 +13,7 @@ namespace TourNhanh.Controllers
     {
         private readonly ITourRepository _tourRepository;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly ITourDetail _tourDetailRepository;
         private readonly ITransportRepository _transportRepository;
         private readonly ITourImage _tourImageRepository;
         private readonly IWebHostEnvironment _hostingEnvironment;
@@ -44,13 +46,42 @@ namespace TourNhanh.Controllers
             {
                 return NotFound();
             }
-            var tourImages = await _tourImageRepository.GetByTourIdAsync(tour.Id);
+			var tourImages = await _tourImageRepository.GetByTourIdAsync(tour.Id);
             ViewBag.TourImages = tourImages.Select(ti => ti.ImageUrl).ToList();
             return View(tour);
         }
 
-        // GET: Tour/Create
-        public async Task<IActionResult> Create()
+        //ViewDirectory 
+        public async Task<IActionResult> LichTrinh(int? id, int ?idDetail)
+        {
+			if (id == null && idDetail == null)
+			{
+				return NotFound();
+			}
+			var tour = await _tourRepository.GetByIdAsync(id.Value);
+            var tourDetail = await _tourDetailRepository.GetByIdAsync(idDetail.Value);
+			var viewmodel = new TourDetail_LichTrinh()
+            {
+                Id = tour.Id,
+                Name = tour.Name,
+                Description = tour.Description,
+                Category = tour.Category,
+                Transport = tour.Transport,
+                Price = tour.Price,
+                MainImageUrl = tour.MainImageUrl,
+                TourDetailId = tourDetail.TourId,
+                Order = tourDetail.Order,
+                Location = tourDetail.Location,
+                StartTime= tourDetail.StartTime,
+                EndTime= tourDetail.EndTime,
+                Hotel= tourDetail.Hotel,
+            };
+            ViewBag.ViewModel = viewmodel;
+            return View(viewmodel);
+        }
+
+            // GET: Tour/Create
+            public async Task<IActionResult> Create()
         {
             ViewBag.CategoryId = new SelectList(await _categoryRepository.GetAllAsync(), "Id", "Name");
             ViewBag.TransportId = new SelectList(await _transportRepository.GetAllAsync(), "Id", "Name");

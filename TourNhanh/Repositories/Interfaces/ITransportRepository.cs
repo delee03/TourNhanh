@@ -9,5 +9,6 @@ namespace TourNhanh.Repositories.Interfaces
         Task CreateAsync(Transport transport);
         Task UpdateAsync(Transport transport);
         Task DeleteAsync(int id);
+     //   Task CreateAsync(Areas.Admin.Controllers.Transport transport);
     }
 }

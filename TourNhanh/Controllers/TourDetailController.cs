@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TourNhanh.Models;
 using TourNhanh.Repositories.Interfaces;
+using TourNhanh.ViewModel;
 
 namespace TourNhanh.Controllers
 {
@@ -10,18 +11,32 @@ namespace TourNhanh.Controllers
         private readonly ITourDetail _tourDetailRepository;
         private readonly ILocationRepository _locationRepository;
         private readonly IHotelRepository _hotelRepository;
+        private readonly ITourRepository _tourRepository;
+        private readonly ITourImage _tourImageRepository;
 
-        public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository)
+        public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository, ITourRepository tourRepository, ITourImage tourImageRepository)
         {
             _tourDetailRepository = tourDetailRepository;
             _locationRepository = locationRepository;
             _hotelRepository = hotelRepository;
+            _tourRepository = tourRepository;
+            _tourImageRepository = tourImageRepository;
         }
 
         // GET: TourDetails
         public async Task<IActionResult> Index(int tourId)
         {
             ViewBag.TourId = tourId;
+            List<string> imageURL = new List<string>();
+            var tour = await _tourRepository.GetByIdAsync(tourId);
+            var tourimage = await _tourImageRepository.GetByTourIdAsync(tourId);
+            foreach(var img in tourimage)
+            {
+                imageURL.Add(img.ImageUrl);
+            }
+            ViewBag.TourImage = imageURL;
+
+            ViewBag.Tour = tour;
             return View(await _tourDetailRepository.GetByTourIdAsync(tourId));
         }
 
@@ -45,8 +60,8 @@ namespace TourNhanh.Controllers
         // GET: TourDetails/Create
         public async Task<IActionResult> Create(int tourId)
         {
-            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(),"Id","Name");
-            ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name");
+            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(),"Id","Name", "Address");
+            ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name", "Address");
             var tourDetail = new TourDetail { TourId = tourId };
             ViewBag.TourId = tourId;
             return View(tourDetail);
