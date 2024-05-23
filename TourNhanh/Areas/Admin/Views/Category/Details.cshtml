@@ -1,0 +1,33 @@
+﻿@model TourNhanh.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Xem thông tin</h1>
+
+<div>
+    <h4>Loại tour</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="btn btn-primary">  <a class="text-white" href="~/Admin/Category/Update/@Model.Id">Chỉnh sửa</a> </div>
+   |
+    <div class="btn btn-outline-primary me-3"><a class="text-dark" href="~/Admin/Category/Index/@Model.Id">Trở về</a></div>
+
+</div>

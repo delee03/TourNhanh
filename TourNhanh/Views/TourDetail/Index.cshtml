@@ -1,0 +1,392 @@
+﻿
+@model IEnumerable<TourNhanh.Models.TourDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var view = ViewBag.Tour;
+}
+
+<style>
+
+    .section {
+        padding: 80px 0;
+    }
+    .tour-info i, .product-details i {
+		color: #8dc63f;
+	}
+
+   /*  .product-details .product-rating > i.fa-star, .product-details .product-price 
+    {
+        -webkit-text-fill-color: #8dc63f;
+        color: #8dc63f;
+    } */
+
+   /*  .tour-details .tour-info {
+        width: 437px;
+    }
+ */
+	.tour-info {
+		display: grid;
+        width:437px;
+		margin-top: 20px;
+		color: #000;
+        padding: 15px 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 32px rgba(0,0,0,.12) !important;
+		grid-template-columns: repeat(2, 1fr);
+		font-size: 15px;
+	}
+
+    .product-details {
+        margin-left: 10px;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 32px rgba(0,0,0,.12) !important;
+    }
+
+    .product-details .product-links li, .product-details .product-options label , .product-details label{        
+         font-weight: 600;
+    }
+
+        .product-details .product-options .input-select {         
+            width: 150px;
+        }
+
+        .product-details .product-price {
+            margin-bottom: 0;
+        }
+
+        .product-details .product-available {
+            margin-left: 0;
+        }
+
+    .content_lichtrinh .product-main-img {
+        object-fit: cover;
+    }
+
+    #detail_main_img img {
+        height: 70vh;
+        width: 100%;
+        border-radius: 14px ;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+    #detail_img img {
+        height: 180px;
+        width: 100%;
+        border-radius: 10px; 
+        margin-right: 10px;
+        object-fit: cover;
+
+    }
+</style>
+
+
+<!-- BREADCRUMB -->
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">
+            Thông tin tour
+        </h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>     
+            <li class="breadcrumb-item"><a href="~/Tour/Index/1">Tour trong nước</a></li>
+            <li class="breadcrumb-item"><a href="~/Tour/Details/@view.Id">@view.Name</a></li>
+            <li class="breadcrumb-item active text-white">Lịch trình</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<!-- /BREADCRUMB -->
+<section class="lichtrinh section">
+    <div class="container">
+               
+        <div class="title">
+            <h2>
+                Tour @view.Name
+            </h2>
+        </div>
+        <div class="content_lichtrinh">
+            <div class="row">
+                <div class="col-8 main-content">
+                    <div class="image_tour row">
+                        <div id="detail_main_img" class="col-12">
+
+                            @if (ViewBag.TourImage != null)
+                            {
+                                <div class="product-preview">
+                                    <img src="@view.MainImageUrl" alt="anh tour"/>
+                                </div>
+                                foreach(var img in ViewBag.TourImage)
+                                {
+                                    <img class=" product-preview" src="@img"  />
+                                }
+                            }
+                        </div>
+                        <div id="detail_img" class="col-12" >
+                            @if (ViewBag.TourImage != null)
+                            {
+                                <div class="product-preview ">
+                                    <img src="@view.MainImageUrl" alt="">
+                                </div>
+                                foreach (var image in ViewBag.TourImage)
+                                {
+                                    <img class="product-preview" src="@image" />
+                                }
+                            }
+                        </div>
+                     
+                    </div>
+                </div>
+                <div class="col-4 sub-content">
+
+                    <div class="row">
+                        <div class="product-details col-12">
+                            <h3>Khởi hành và giá cả</h3>
+                           
+                  
+                            <div>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa-regular fa-star text-primary"></i>
+                                </div>
+                                <a class="review-link" href="#">10 Review(s) | Add your review</a>
+                            </div>
+                            <div>
+                                <h3 class="product-price">@view.Price VNĐ <del class="product-old-price">999999VNĐ</del></h3>
+                                
+                            </div>
+                            <h3><span class="product-available"><i class="fa-solid fa-hand-point-right fa-beat"></i>"Thích vi vu thì nhích thôi" <i class="fa-solid fa-hand-point-left fa-beat"></i></span></h3>
+                            <label>Phương tiện di chuyển: @view.Transport.Name </label>
+                            <div class="product-options d-flex justify-content-flex-start align-items-center">
+                                <label>
+                                    Chọn ngày khởi hành:
+                                    <select class="input-select">
+                                        <option value="0">16/6 </option>
+                                        <option value="1">18/6 </option>
+                                        <option value="2">23/6 </option>
+                                        <option value="3">25/6 </option>
+                                        <option value="4">27/6 </option>
+                                    </select>
+
+                                </label>
+
+                                <label>
+                                    Thú cưng:
+                                    <select class="input-select">
+                                        <option value="0">Có </option>
+                                        <option value="1">Không </option>
+
+                                    </select>
+
+                                </label>
+
+                            </div>
+                          
+
+                            <div class="add-to-cart">
+                                @* <div class="qty-label" >
+                                Qty
+                                <div class="input-number">
+                                <input type="number" value="1">
+                                <span class="qty-up">+</span>
+                                <span class="qty-down">-</span>
+                                </div>
+                                </div> *@
+                                @* <button class="add-to-cart-btn"><a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-productId="@Model.Id>" asp-route-quantity="@numOfQuanity"><i class="fa fa-shopping-cart"></i> add to cart</a></button> *@
+                                <div class="add-to-cart">
+                                    @* <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-productId="@Model.Id" asp-route-quantity="@numOfQuanity">
+                                    <button class="add-to-cart-btn">
+                                    <i class="fa fa-shopping-cart"></i> add to cart
+                                    </button>
+                                    </a> *@
+                                    <button onclick="showSuccessToast();" class="add-to-cart-btn addToCartBtn btn--success" data-productId="@view.Id"><i class="fa fa-shopping-cart"></i> đặt tour</button>
+                                    @* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
+                                    <a class="add-to-cart-btn new" asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@view.Id"><i class="fa fa-eye"></i>Xem lịch trình</a>
+                                    <br />
+                                    @* <a asp-action="Index" class="btn-action"><i class="fa-solid fa-arrow-left"></i>Trở về</a> *@
+                                </div>
+
+
+                            </div>
+
+                            <ul class="product-btns">
+                                <li><a href="#"><i class="fa-regular fa-heart"></i> add to wishlist</a></li>
+                                <li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+                            </ul>
+
+                            <ul class="product-links">
+                                <li>Lịch trình:</li>
+                                <li><a href="#">@view.Category.Name</a></li> |
+                                @* <li><a href="#">Accessories</a></li> *@
+                                <li>Điểm khởi hành:</li>
+                                <li><a href="#"> tại TPHCM</a></li>
+
+                            </ul>
+
+                            @* <ul class="product-links">
+                            <li>Điểm đến: @view.Location.Name </li>
+                            </ul> *@
+
+                            <ul class="product-links">
+                                <li>Chia sẻ:</li>
+                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                            </ul>                         
+                       </div>
+                        <div class="tour_detail col-12 ">
+                            <div class="tour-info">
+                                <p><i class="fas fa-check"></i> Bảo hiểm</p>
+                                <p><i class="fas fa-check"></i> Bữa sáng</p>
+                                <p><i class="fas fa-check"></i> Hướng dẫn viên</p>
+                                <p><i class="fas fa-check"></i> Khách sạn 3 sao</p>
+                                <p><i class="fas fa-check"></i> Vé tham quan</p>
+                                <p><i class="fas fa-check"></i> Vé máy bay</p>
+                                <p><i class="fas fa-check"></i> Xe đưa đón</p>
+                            </div>
+                       </div>
+                 </div>
+             </div> 
+        </div>
+    </div>
+</section>
+
+
+
+@* <h1>Index</h1>
+
+<p>
+    <a asp-action="Create" asp-route-tourId="@ViewBag.TourId">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tour)
+            </th>
+                <th>
+                   Hình ảnh tour
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tour.Name)
+            </td>
+            <td>
+                 <img src=" @Html.DisplayFor(modelItem => item.Tour.MainImageUrl)" width="100px" height="80px" />            
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotel.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+
+<!-- if gom all in one show -->
+<div id="button-contact-vr" class="">
+    <div id="gom-all-in-one">
+        <!-- v3 -->
+        <!-- contact -->
+        <!-- end contact -->
+        <!-- viber -->
+        <!-- end viber -->
+        <!-- zalo -->
+        <div id="zalo-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a target="_blank" href="https://zalo.me/0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end zalo -->
+        <!-- Phone -->
+        <div id="phone-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a href="tel:0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
+                    </a>
+                </div>
+                <div class="phone-bar phone-bar-n">
+                    <a href="tel:0931034852">
+                        <span class="text-phone">093.1034.852(a Phát)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+       
+
+        <!-- end phone -->
+    </div><!-- end v3 class gom-all-in-one -->
+
+
+</div>
+<!-- Facebook Messenger -->
+<!-- color phone -->
+<style>
+    .phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
+        background-color: #dd3333;
+    }
+
+    #phone-vr .phone-vr-circle-fill {
+        opacity: 0.7;
+        box-shadow: 0 0 0 0 #dd3333;
+    }
+
+        #button-contact-vr {
+            bottom: 50px !important;
+        }
+</style>
+<!-- color contact -->
+<!-- color all in one -->
+<!-- size scale -->
+<!-- location left right -->
+</section>

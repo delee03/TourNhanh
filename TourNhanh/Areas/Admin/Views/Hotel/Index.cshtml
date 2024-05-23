@@ -1,0 +1,74 @@
+﻿ @model IEnumerable<TourNhanh.Models.Hotel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+
+    // Func f = new Func();
+    var listHotel = ViewBag.Hotels;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>Tên khách sạn</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Đánh giá</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in listHotel)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Name</a>
+                                        </td>
+                               
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Address</a>
+                                        </td>
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Rating <i class="text-warning mt-1" data-feather="star"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.ImageUrl</a>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a href="~/Admin/Hotel/Details/@item.Id" title="Chi tiết">
+                                                        <span class="lnr lnr-eye"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Hotel/Update/@item.Id" title="Chỉnh sửa">
+                                                        <span class="lnr lnr-pencil"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Hotel/Delete/@item.Id" title="Xóa">
+                                                        <span class="lnr lnr-trash"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
