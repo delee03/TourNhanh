@@ -92,8 +92,9 @@ namespace TourNhanh.Controllers
         // POST: Tour/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
+        public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,maxParticipants,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
         {
+            tour.RemainingSlots = tour.maxParticipants;
             if (ModelState.IsValid)
             {
                 await _tourRepository.CreateAsync(tour);
@@ -143,8 +144,9 @@ namespace TourNhanh.Controllers
         // POST: Tours/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Name,Description,Price,TransportId")] Tour tourFromForm, IFormFile? imageFile, List<IFormFile> additionalImages)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Name,Description,maxParticipants,Price,TransportId")] Tour tourFromForm, IFormFile? imageFile, List<IFormFile> additionalImages)
         {
+            tourFromForm.RemainingSlots = tourFromForm.maxParticipants;
             if (id != tourFromForm.Id)
             {
                 return NotFound();
@@ -162,7 +164,9 @@ namespace TourNhanh.Controllers
             tour.Description = tourFromForm.Description;
             tour.Price = tourFromForm.Price;
             tour.TransportId = tourFromForm.TransportId;
-
+            tour.RemainingSlots = tourFromForm.maxParticipants - (tour.maxParticipants- tour.RemainingSlots);
+            tour.maxParticipants = tourFromForm.maxParticipants;
+            
             if (ModelState.IsValid)
             {
                 // Check if an image file is provided

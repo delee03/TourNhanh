@@ -36,9 +36,11 @@ namespace TourNhanh.Models
         public decimal Amount { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime PaymentDate { get; set; }
+        public DateTime? PaymentDate { get; set; }
 
         public string? PaymentMethod { get; set; }
+
+        public bool? isPaymentCompleted { get; set; }
     }
 
 }

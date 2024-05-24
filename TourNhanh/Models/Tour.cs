@@ -25,6 +25,13 @@ namespace TourNhanh.Models
         [StringLength(500)]
         public string? Description { get; set; }
 
+        //Max Participants;
+        [Required]
+        public int? maxParticipants { get; set; }
+        //RemainingSlots
+        [Required]
+        public int? RemainingSlots { get; set; }
+
         //Price
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
@@ -36,7 +43,7 @@ namespace TourNhanh.Models
 
         //MainImage
         public string? MainImageUrl { get; set; }
-
+        
         //ListImage
         public virtual ICollection<TourImage>? TourImages{get;set;}
 

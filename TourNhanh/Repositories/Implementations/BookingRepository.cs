@@ -20,8 +20,11 @@ namespace TourNhanh.Repositories.Implementations
 
         public async Task<Booking?> GetByIdAsync(int id)
         {
-            return await _context.Bookings.FindAsync(id);
+            return await _context.Bookings
+                .Include(booking => booking.Tour)
+                .FirstOrDefaultAsync(b => b.Id == id);
         }
+
 
         public async Task CreateAsync(Booking booking)
         {
