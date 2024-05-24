@@ -26,5 +26,13 @@ namespace TourNhanh.Models
         public double? Longitude { get; set; }
 
         public string? Address { get; set; }
+
+        // Hàm để cắt chuỗi Address
+        public List<string> SplitAddress ()
+        {
+            return Address.Split('-').ToList();
+        
+        }
+      
     }
 }

@@ -5,6 +5,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var view = ViewBag.Tour;
+
 }
 
 <style>
@@ -104,7 +105,17 @@
         top: -100px;
     }
 
-   
+    .main-content .nav-tabs {
+        margin-bottom: 20px;
+    }   
+    .title-price-list {
+        border-left: 3px solid #f79321;
+        padding-left: 20px;
+        font-weight:600;
+        color: #215390;
+        font-size: 20px;
+    }
+
 </style>
 
 
@@ -168,22 +179,28 @@
                     <div class="main-content">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#diemnhanhanhtrinh">Điểm nhấn hành trình</a>
+                                <a class="nav-link1 active" aria-current="page" href="#diemnhanhanhtrinh">Điểm nhấn hành trình</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#lichtrinh">Lịch trình</a>
+                                <a class="nav-link1" href="#lichtrinh">Lịch trình</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#lichkhoihanh">Lịch khởi hành</a>
+                                <a class="nav-link1" href="#lichkhoihanh">Lịch khởi hành</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#mota">Mô tả</a>
+                                <a class="nav-link1" href="#mota">Mô tả</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link1" href="#map">Bản đồ</a>
                             </li>
                         </ul>
 
                         <div class="diemnhan_tour">
                             <div>
-                                <h3 id="diemnhanhanhtrinh" class="tab-title"><span>Điểm nhấn hành trình: <span></h3><p>Tour miền Bắc Hà Nội  – Hạ Long – Tràng An – Ninh Bình – Tam Chúc – Mai Châu &#8211; Mộc Châu &#8211; Sơn La sẽ đưa du khách khám phá những địa điểm du lịch nổi tiếng chắc chắn sẽ là một trải nghiệm hấp dẫn vô cùng thú vị.</p>
+                                <h3 id="diemnhanhanhtrinh" class="tab_title">
+                                    <span>Điểm nhấn hành trình: <span>
+                                </h3>
+                                <p>Tour miền Bắc Hà Nội  – Hạ Long – Tràng An – Ninh Bình – Tam Chúc – Mai Châu &#8211; Mộc Châu &#8211; Sơn La sẽ đưa du khách khám phá những địa điểm du lịch nổi tiếng chắc chắn sẽ là một trải nghiệm hấp dẫn vô cùng thú vị.</p>
                                 <p>Trong cuộc hành trình này khách hàng sẽ được khám phá những ngôi chùa nổi tiếng như chùa Trấn Quốc – Ngôi chùa Trấn Bắc cổ kính nhất Việt Nam, chùa Một Cột, Bảo tàng Hồ Chí Minh, Quảng trường Ba Đình…Khám phát nét thơ mộng, cổ xưa của Hà Nội, xen lẫn hiện đại, tất cả tạo nên nét đặc trưng không nơi nào có được</p>
                                 <p>Khám phá Quần thể Danh thắng Tràng An – Di sản được UNESCO công nhận là di sản văn hóa và thiên nhiên Thế Giới với dòng Sào khê uốn lượn giữa cánh đồng lúa, nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí</p>
                                 <p>Tham quan Vịnh Hạ Long<strong>,</strong> chiêm ngưỡng vẻ đẹp huyền bí của hàng ngàn đảo đá và các hang động kì thú: Động Thiên Cung, hang Đầu Gỗ…ngắm cảnh Làng Chài, hòn Ấm, hòn Rùa, hòn Đỉnh Hương, hòn Chó Đá, hòn Gà Chọi…</p>
@@ -196,33 +213,47 @@
                             <div id="lichtrinh" class="tab_title">
                                 <span>Lịch trình</span>
                             </div>
-                            <div class="list_order">
+                            <div class="list_order">                            
+                                @foreach(var item in Model)
+                                {
+                                    <div>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </div>
+                                    <div class="list_lichtrinh_box">
+                                        <div class="list_lichtrinh_title">
+                                            @* <span class="feature">Ngày <br>2</span> *@
+                                            <span>Ngày @item.Order: @item.Location.Address</span>
+                                        </div>
+                                        <div class="list_lichtrinh_content tinymce">
+                                            <p>Đi đến @ViewBag.Location1 bla bla sau đó cùng ngày đi đến @ViewBag.Location2  cuối ngày tại TP đó đi đến @ViewBag.Location3   ngày hôm sau</p>
+                                            @foreach (var part in item.Location.SplitAddress())
+                                            {
+                                               <p> Đi đến @part trưa đén nghỉ ngơi tại @item.Hotel.Name tại @item.Hotel.Address </p>
+                                            }
+                                           
+                                            <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng địa điểm @item.Location.SplitAddress().First(). Tự do khá phá Thành phố biển&nbsp;<strong>@ViewBag.Location1</strong>&nbsp;hoặc tắm&nbsp;<strong>@ViewBag.SecondLocal</strong>.</p>
+                                            <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về @item.Location.Name theo Quốc Lộ 10. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng Bắc Bộ với cảnh làng quê thanh bình qua các tỉnh Hải Phòng, Thái Bình, Nam Định.</p>
+                                            <p><strong>Trưa:&nbsp;</strong>&nbsp;Khách sạn &nbsp;<strong>@item.Hotel.Name</strong>, Quý khách tới nhà hàng dùng cơm trưa. Về khách sạn làm thụ tục nhận phòng và nghỉ ngơi.</p>
+                                            <p><strong>Chiều:</strong>&nbsp;Xe và Hướng dẫn viên đưa đi tham quan:</p>
+                                            <ul>
+                                                <li><strong>Quần thể danh@*  thắng @(ViewBag?.ThirdLocal ?? "Không có danh mục") *@</strong>&nbsp;– Di sản được UNESCO công nhận là di sản văn hóa và thiên nhiên Thế giới, giúp cho Việt Nam lần dầu lọt vào danh sách 30 di sản hỗn hợp Thế Giới. Lên thuyền xuôi dòng Sào khê uốn lượn giữa cánh đồng lúa , nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí , quý khách đi đò tham Hang sáng , Hang tối , Hang nấu rượu…</li>
+                                            </ul>
+                                            <figure id="attachment_3931" aria-describedby="caption-attachment-3931" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-3931" src="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-3931" class="wp-caption-text">Quần thể danh thắng Tràng An</figcaption></figure>
+                                            <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá:</p>
+                                            <ul>
+                                                <li><strong>Hang Múa&nbsp;(Option – Tự túc vé tham quan)</strong>, Quý khách bách bộ qua những lối đi vòng vèo được bao phủ bởi cây xanh và các kiến trúc non bộ đẹp mắt và sau đó là hành trình chinh phục đỉnh núi Hang Múa với 500 bậc đá. Tới đỉnh núi Múa, thu vào trong tầm mắt của Quý khách là tất cả đất trời của mảnh đất Hoa Lư rộng lớn với vẻ yên bình nhưng lộng lẫy như một bức tranh thủy mặc khiến không ít người chẳng thể kìm lòng mà vỡ òa cảm xúc. Trên hành trình trở lại, Quý khách sẽ ngang qua khu vực Đầm sen nằm giữa những rặng núi đá vôi tạo nên một khung cảnh cực kỳ thơ mộng và cổ trang. Quý khách có thể thuê những bộ đồ cổ trang để chụp hình tại đây.</li>
+                                            </ul>
+                                            <figure id="attachment_6536" aria-describedby="caption-attachment-6536" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-6536" src="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-6536" class="wp-caption-text">Hang Múa Ninh Bình</figcaption></figure>
+                                            <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng với&nbsp;<strong>đặc sản dê núi Ninh Bình</strong>, sau đó là chương trình tự do của quý khách với phố đêm Ninh bình.</p>
+                                        </div>
+                                    </div>
+                                }
+                                @* 
                                 <div class="list_lichtrinh_box">
                                     <div class="list_lichtrinh_title">
-                                      @*   <span class="feature">Ngày <br>1</span> *@
-                                        <span>Ngày 1: HCM - HÀ NỘI - HẠ LONG - KHÁM PHÁ VỊNH</span>
-                                    </div>
-                                    <div class="list_lichtrinh_content tinymce">
-                                        <p><strong>05h00: </strong>Đại diện của công ty đón Quý khách tại điểm hẹn &#8211;<strong> ga đi trong nước sân bay Quốc tế Tân Sơn Nhất</strong>, hỗ trợ Quý khách làm thủ tục đáp <strong>chuyến bay đi Hà Nội</strong> theo giờ đã chọn. Dự kiến khởi hành lúc <strong>07h00</strong>.</p>
-                                        <p><strong>09h10:</strong> Xe và HDV địa phương đón đoàn, sắp xếp hành lý. Khởi hành đi <strong>Hạ Long</strong>, trên đường đi HDV sẽ giới thiệu về cuộc sống, phong tục tập quán các địa phương đoàn đi qua.</p>
-                                        <p><strong>12h30: </strong>Đoàn ăn trưa tại nhà hàng.</p>
-                                        <p><strong>Chiều:</strong> Sau đó, xe đưa quý khách ra bến tàu du lịch, lên các động theo lộ trình tham quan:</p>
-                                        <img loading="lazy" decoding="async" class="aligncenter wp-image-6538 size-full" src="https://tourngay.vn/wp-content/uploads/2024/02/anh-40.jpg" alt="" width="700" height="280" srcset="https://tourngay.vn/wp-content/uploads/2024/02/anh-40.jpg 700w, https://tourngay.vn/wp-content/uploads/2024/02/anh-40-300x120.jpg 300w, https://tourngay.vn/wp-content/uploads/2024/02/anh-40-150x60.jpg 150w" sizes="(max-width: 700px) 100vw, 700px" />
-                                        <ul>
-                                            <li><strong>Động Thiên Cung</strong>: tức là “Cung điện của trời”, một trong những hang động đẹp nhất ở Hạ Long. Hang rộng, có nhiều cấp nhiều ngăn với vô vàn nhũ đá, măng đá mang những hình thù kỳ lạ.</li>
-                                            <li><strong>Hang Đầu Gỗ</strong>: là nơi gắn liền với câu chuyện lịch sử chống quân Nguyên Mông năm 1228 của Trần Hưng Đạo, hải trình du thuyền đi giữa Hạ Long với hàng ngàn đảo đá sừng sững, du khách sẽ có dịp chiêm ngưỡng bức tranh thiên tạo khổng lồ như Hòn Đỉnh Hương, Hòn Gà Chọi, Hòn Chó Đá, …</li>
-                                        </ul>
-                                        <p><strong>17h30: </strong>Tàu đưa Quý khách về lại đất liền. Đoàn về khách sạn nhận phòng nghỉ ngơi.</p>
-                                        <p><strong>Tối: </strong>Đến nhà hàng dùng bữa tối.</p>
-                                        <ul>
-                                            <li>Quý khách tự do dạo chơi <strong>Công viên Hoàng Gia dọc biển Bãi Cháy</strong>, đi mua sắm hàng hóa tại khu <strong>Chợ Đêm Hạ Long sầm uất </strong>với các sản phẩm đặc trưng Hạ Long, lên <strong>cầu Bãi Cháy</strong> – cây cầu dây văng dài nhất Việt Nam ngắm Hạ Long về đêm.</li>
-                                        </ul>
-                                        <p>Nghỉ đêm tại <strong>Hạ Long</strong>.</p>
-                                    </div>
-                                </div>
-                                <div class="list_lichtrinh_box">
-                                    <div class="list_lichtrinh_title">
-                                        @* <span class="feature">Ngày <br>2</span> *@
+                                     
                                         <span>Ngày 2: HẠ LONG - NINH BÌNH - TRÀNG AN - HANG MÚA</span>
                                     </div>
                                     <div class="list_lichtrinh_content tinymce">
@@ -244,7 +275,7 @@
                                 </div>
                                 <div class="list_lichtrinh_box">
                                     <div class="list_lichtrinh_title">
-                                      @*   <span class="feature">Ngày <br>2</span> *@
+                                       
                                         <span>Ngày 2: HẠ LONG - NINH BÌNH - TRÀNG AN - HANG MÚA</span>
                                     </div>
                                     <div class="list_lichtrinh_content tinymce">
@@ -264,29 +295,7 @@
                                         <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng với&nbsp;<strong>đặc sản dê núi Ninh Bình</strong>, sau đó là chương trình tự do của quý khách với phố đêm Ninh bình.</p>
                                     </div>
                                 </div>
-                                <div class="list_lichtrinh_box">
-                                    <div class="list_lichtrinh_title">
-                                       @*  <span class="feature">Ngày <br>2</span> *@
-                                        <span>Ngày 2: HẠ LONG - NINH BÌNH - TRÀNG AN - HANG MÚA</span>
-                                    </div>
-                                    <div class="list_lichtrinh_content tinymce">
-                                        <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng. Tự do khá phá Thành phố biển&nbsp;<strong>Hạ Long</strong>&nbsp;hoặc tắm&nbsp;<strong>biển Bãi Cháy</strong>.</p>
-                                        <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về Ninh Bình theo Quốc Lộ 10. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng Bắc Bộ với cảnh làng quê thanh bình qua các tỉnh Hải Phòng, Thái Bình, Nam Định.</p>
-                                        <p><strong>Trưa:&nbsp;</strong>&nbsp;Đến&nbsp;<strong>Ninh Bình</strong>, Quý khách tới nhà hàng dùng cơm trưa. Về khách sạn làm thụ tục nhận phòng và nghỉ ngơi.</p>
-                                        <p><strong>Chiều:</strong>&nbsp;Xe và Hướng dẫn viên đưa đi tham quan:</p>
-                                        <ul>
-                                            <li><strong>Quần thể danh thắng Tràng An</strong>&nbsp;– Di sản được UNESCO công nhận là di sản văn hóa và thiên nhiên Thế giới, giúp cho Việt Nam lần dầu lọt vào danh sách 30 di sản hỗn hợp Thế Giới. Lên thuyền xuôi dòng Sào khê uốn lượn giữa cánh đồng lúa , nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí , quý khách đi đò tham Hang sáng , Hang tối , Hang nấu rượu…</li>
-                                        </ul>
-                                        <figure id="attachment_3931" aria-describedby="caption-attachment-3931" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-3931" src="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-3931" class="wp-caption-text">Quần thể danh thắng Tràng An</figcaption></figure>
-                                        <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá:</p>
-                                        <ul>
-                                            <li><strong>Hang Múa&nbsp;(Option – Tự túc vé tham quan)</strong>, Quý khách bách bộ qua những lối đi vòng vèo được bao phủ bởi cây xanh và các kiến trúc non bộ đẹp mắt và sau đó là hành trình chinh phục đỉnh núi Hang Múa với 500 bậc đá. Tới đỉnh núi Múa, thu vào trong tầm mắt của Quý khách là tất cả đất trời của mảnh đất Hoa Lư rộng lớn với vẻ yên bình nhưng lộng lẫy như một bức tranh thủy mặc khiến không ít người chẳng thể kìm lòng mà vỡ òa cảm xúc. Trên hành trình trở lại, Quý khách sẽ ngang qua khu vực Đầm sen nằm giữa những rặng núi đá vôi tạo nên một khung cảnh cực kỳ thơ mộng và cổ trang. Quý khách có thể thuê những bộ đồ cổ trang để chụp hình tại đây.</li>
-                                        </ul>
-                                        <figure id="attachment_6536" aria-describedby="caption-attachment-6536" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-6536" src="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-6536" class="wp-caption-text">Hang Múa Ninh Bình</figcaption></figure>
-                                        <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng với&nbsp;<strong>đặc sản dê núi Ninh Bình</strong>, sau đó là chương trình tự do của quý khách với phố đêm Ninh bình.</p>
-                                    </div>
-                                </div>
-                               
+                                *@
                                 <!--LICH khoi hanh-->
                                 <div class="row" id="row-1517252312">
                                     <div id="col-1469351164" class="col small-12 large-12">
@@ -1058,8 +1067,14 @@
                                     </div>
                                 </div>
 
-                                <div id="map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3918.420763561081!2d106.7803462!3d10.8555672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2zSFVURUNIIC0gxJDhuqFpIGjhu41jIEPDtG5nIG5naOG7hyBUUC5IQ00gKFRodSBEdWMgQ2FtcHVzKQ!5e0!3m2!1svi!2s!4v1716467335167!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div id="map" style=" margin-top: 30px; padding: 30px 0">
+                                    <div class="list_lichtrinh_title">
+                                        <span>Vị trí công ty Tour Nhanh: Khu CNC, Thủ Đức Campus</span>
+                                    </div>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3918.420763561081!2d106.7803462!3d10.8555672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2zSFVURUNIIC0gxJDhuqFpIGjhu41jIEPDtG5nIG5naOG7hyBUUC5IQ00gKFRodSBEdWMgQ2FtcHVzKQ!5e0!3m2!1svi!2s!4v1716467335167!5m2!1svi!2s" width="800" height="500" style="margin-top: 20px;
+                                        outline: 10px solid var(--bs-linear-color);
+                                        /* width: 180%; */
+                                        border-radius: 25px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                                 <!--mota end-->
                             </div>
@@ -1141,7 +1156,7 @@
                                         @* <a asp-action="Index" class="btn-action"><i class="fa-solid fa-arrow-left"></i>Trở về</a> *@
                                     </div>
 
-
+                                  
                                 </div>
 
                                 <ul class="product-btns">

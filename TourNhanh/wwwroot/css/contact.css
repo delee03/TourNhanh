@@ -25,10 +25,10 @@
             display: block;
         }
         .phone-bar.phone-bar-n, .zalo-bar.zalo-bar-n{
-            opacity: 0;
+            visibility: hidden;
         }
 #button-contact-vr .button-contact:hover .phone-bar.phone-bar-n, #button-contact-vr .button-contact:hover .zalo-bar.zalo-bar-n {
-    opacity: 1;
+    visibility: visible;
 }
 
         .phone-vr-circle-fill {
