@@ -40,5 +40,7 @@ namespace TourNhanh.Models
 
         //Detail
         public virtual ICollection<TourDetail>? TourDetails { get; set; }
+        //Review
+        public List<Review>? Reviews { get; set; }
     }
 }

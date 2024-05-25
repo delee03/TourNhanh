@@ -108,8 +108,7 @@
               "RelativeToolTip": "TourNhanh\\Models\\Hotel.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T06:55:42.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T06:55:42.382Z"
             },
             {
               "$type": "Document",
@@ -118,8 +117,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Tours.sql",
               "ToolTip": "dbo.Tours [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-25T06:55:05.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T06:55:05.541Z"
             },
             {
               "$type": "Document",
@@ -131,8 +129,7 @@
               "RelativeToolTip": "TourNhanh\\Models\\Transport.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAA6wAoAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T06:50:51.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T06:50:51.605Z"
             },
             {
               "$type": "Document",
@@ -141,8 +138,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Transports.sql",
               "ToolTip": "dbo.Transports [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-25T06:42:42.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T06:42:42.194Z"
             },
             {
               "$type": "Document",
@@ -151,8 +147,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Hotels.sql",
               "ToolTip": "dbo.Hotels [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-25T06:40:15.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T06:40:15.462Z"
             },
             {
               "$type": "Document",
@@ -160,9 +155,9 @@
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\TourDetail\\Index.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\TourDetail\\Index.cshtml",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\TourDetail\\Index.cshtml*",
-              "RelativeToolTip": "TourNhanh\\Views\\TourDetail\\Index.cshtml*",
-              "ViewState": "AQIAABgBAAAAAAAAAAAkwCwBAABPAAAA",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\TourDetail\\Index.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\TourDetail\\Index.cshtml",
+              "ViewState": "AQIAABgBAAAAAAAAAAAkwCwBAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-23T11:16:34.109Z",
               "EditorCaption": ""
@@ -177,8 +172,7 @@
               "RelativeToolTip": "TourNhanh\\Models\\Blog.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAzwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T06:55:48.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T06:55:48.42Z"
             },
             {
               "$type": "Document",
@@ -187,8 +181,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Categories.sql",
               "ToolTip": "dbo.Categories [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-25T06:34:57.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T06:34:57.395Z"
             },
             {
               "$type": "Document",
@@ -197,8 +190,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Locations.sql",
               "ToolTip": "dbo.Locations [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-25T05:11:29.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T05:11:29.593Z"
             },
             {
               "$type": "Document",
@@ -219,8 +211,7 @@
               "RelativeToolTip": "TourNhanh\\Models\\Location.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAiwA0AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T16:45:39.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T16:45:39.725Z"
             },
             {
               "$type": "Document",
@@ -232,8 +223,7 @@
               "RelativeToolTip": "TourNhanh\\Controllers\\TourDetailController.cs",
               "ViewState": "AQIAAIwAAAAAAAAAAAAvwE8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T13:00:08.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T13:00:08.757Z"
             },
             {
               "$type": "Document",
@@ -245,8 +235,7 @@
               "RelativeToolTip": "TourNhanh\\Models\\TourDetail.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAwwBgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T12:56:40.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T12:56:40.106Z"
             },
             {
               "$type": "Document",
@@ -258,8 +247,7 @@
               "RelativeToolTip": "TourNhanh\\Views\\Tour\\Details.cshtml",
               "ViewState": "AQIAAFMCAAAAAAAAAAArwGICAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-23T16:27:19.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-23T16:27:19.428Z"
             },
             {
               "$type": "Document",
@@ -271,8 +259,7 @@
               "RelativeToolTip": "TourNhanh\\wwwroot\\js\\main.js",
               "ViewState": "AQIAAPoAAAAAAAAAAAAhwAkBAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-22T17:34:01.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-22T17:34:01.861Z"
             },
             {
               "$type": "Document",

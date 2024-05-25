@@ -18,12 +18,13 @@ namespace TourNhanh.Models
 
         public string? ImageUrl { get; set; }
 
-        public DateTime CreatedAt { get; set; } 
-
-        public string Author { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public string? Author { get; set; }
+   
         public DateTime UpdatedAt { get; set; }
 
         public List<Comment>? Comments { get; set; }
         public int Likes { get; set; } = 0;
+        public int State { get; set; } = 0;
     }
 }

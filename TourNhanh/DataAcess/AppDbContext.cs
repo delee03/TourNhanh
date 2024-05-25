@@ -44,5 +44,7 @@ namespace TourNhanh.Models
         public DbSet<Transport> Transports { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Comment> comments { get; set; }
+        public DbSet<Like> Likes { get; set; }
+        public DbSet<Review> Reviews { get; set; }
     }
 }

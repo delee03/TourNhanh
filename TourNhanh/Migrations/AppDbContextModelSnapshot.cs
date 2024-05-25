@@ -239,7 +239,6 @@ namespace TourNhanh.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Author")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
@@ -253,6 +252,9 @@ namespace TourNhanh.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Likes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("State")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -295,6 +297,9 @@ namespace TourNhanh.Migrations
 
                     b.Property<string>("PaymentMethod")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<int>("TourId")
                         .HasColumnType("int");
@@ -383,6 +388,31 @@ namespace TourNhanh.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Hotels");
+                });
+
+            modelBuilder.Entity("TourNhanh.Models.Like", b =>
+                {
+                    b.Property<int>("LikeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LikeId"));
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Liked")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LikeId");
+
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("Likes");
                 });
 
             modelBuilder.Entity("TourNhanh.Models.Location", b =>
@@ -615,6 +645,17 @@ namespace TourNhanh.Migrations
                 {
                     b.HasOne("TourNhanh.Models.Blog", "Blog")
                         .WithMany("Comments")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+                });
+
+            modelBuilder.Entity("TourNhanh.Models.Like", b =>
+                {
+                    b.HasOne("TourNhanh.Models.Blog", "Blog")
+                        .WithMany()
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
