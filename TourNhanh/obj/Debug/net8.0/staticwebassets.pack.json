@@ -1613,6 +1613,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\hotel\\image\\1\\sgc4g1hp.st4.png",
+      "PackagePath": "staticwebassets\\hotel\\image\\1\\sgc4g1hp.st4.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\hotel\\image\\1\\yiv2kguv.occ.jpg",
       "PackagePath": "staticwebassets\\hotel\\image\\1\\yiv2kguv.occ.jpg"
     },
@@ -1621,8 +1625,48 @@
       "PackagePath": "staticwebassets\\hotel\\image\\3\\oal5en3m.asi.png"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\2633e680-de10-11ea-9e67-407c2bf7f41a.jpg",
+      "PackagePath": "staticwebassets\\img\\2633e680-de10-11ea-9e67-407c2bf7f41a.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\300224214_486131746856508_1585899802288781450_n.jpg",
+      "PackagePath": "staticwebassets\\img\\300224214_486131746856508_1585899802288781450_n.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang22.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang22.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang222.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang222.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang2222.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang2222.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang22222.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang22222.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\HaLong11.jpg",
+      "PackagePath": "staticwebassets\\img\\HaLong11.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\HaLong1111.jpg",
+      "PackagePath": "staticwebassets\\img\\HaLong1111.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\HaLong11111.jpg",
+      "PackagePath": "staticwebassets\\img\\HaLong11111.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\about-2.png",
       "PackagePath": "staticwebassets\\img\\about-2.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\acer.png",
+      "PackagePath": "staticwebassets\\img\\acer.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\blog-1.jpg",
@@ -1643,6 +1687,10 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\californication.avif",
       "PackagePath": "staticwebassets\\img\\californication.avif"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\cap-treo-ba-den.png",
+      "PackagePath": "staticwebassets\\img\\cap-treo-ba-den.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-1.jpg",
@@ -1667,6 +1715,10 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\carousel-33.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-33.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\chua-go-ken.png",
+      "PackagePath": "staticwebassets\\img\\chua-go-ken.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\destination-1.jpg",
@@ -1793,6 +1845,14 @@
       "PackagePath": "staticwebassets\\img\\hon-ga-choi.png"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\hon-mong-tay-pq.jpg",
+      "PackagePath": "staticwebassets\\img\\hon-mong-tay-pq.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\lan-ngam-san-ho.jpg",
+      "PackagePath": "staticwebassets\\img\\lan-ngam-san-ho.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\logo CMYK-03.png",
       "PackagePath": "staticwebassets\\img\\logo CMYK-03.png"
     },
@@ -1803,6 +1863,10 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\logo-admin.png",
       "PackagePath": "staticwebassets\\img\\logo-admin.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\nui-ba-den-220812.jpg",
+      "PackagePath": "staticwebassets\\img\\nui-ba-den-220812.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-1.jpg",
@@ -1819,6 +1883,10 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\packages-4.jpg",
       "PackagePath": "staticwebassets\\img\\packages-4.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\sapa-moana.png",
+      "PackagePath": "staticwebassets\\img\\sapa-moana.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\subscribe-img.jpg",
@@ -1845,12 +1913,28 @@
       "PackagePath": "staticwebassets\\img\\testimonial-4.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\toa-thanh-cao-dai.png",
+      "PackagePath": "staticwebassets\\img\\toa-thanh-cao-dai.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\tour-booking-bg.jpg",
       "PackagePath": "staticwebassets\\img\\tour-booking-bg.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\tuong-phat-ba-den-1.png",
+      "PackagePath": "staticwebassets\\img\\tuong-phat-ba-den-1.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\tải xuống.jpg",
+      "PackagePath": "staticwebassets\\img\\tải xuống.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\vuon-nho.png",
       "PackagePath": "staticwebassets\\img\\vuon-nho.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\word-image-68490-3.png",
+      "PackagePath": "staticwebassets\\img\\word-image-68490-3.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\bootstrap.bundle.min.js",
@@ -6101,6 +6185,10 @@
       "PackagePath": "staticwebassets\\tour\\image\\1\\1mkpzcz2.hio.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\2h25nqvm.utn.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\2h25nqvm.utn.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\3akbx010.lay.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\1\\3akbx010.lay.jpg"
     },
@@ -6109,20 +6197,52 @@
       "PackagePath": "staticwebassets\\tour\\image\\1\\3w5naiwj.xci.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\c5peob1q.ljf.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\c5peob1q.ljf.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\cffxzlfj.4yg.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\1\\cffxzlfj.4yg.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\cpowrywq.mk0.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\cpowrywq.mk0.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\cxh5ou42.1oo.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\1\\cxh5ou42.1oo.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\eohealek.55a.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\eohealek.55a.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\fb4gcauq.5tt.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\1\\fb4gcauq.5tt.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\fj3fmap3.rzh.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\fj3fmap3.rzh.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\fqez1tgv.uqy.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\1\\fqez1tgv.uqy.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\g50sqjby.zx4.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\g50sqjby.zx4.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\hhkgkxdj.jjl.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\hhkgkxdj.jjl.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\hj2mgs3q.nda.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\hj2mgs3q.nda.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\jssfyis0.c4a.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\jssfyis0.c4a.png"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\ldjphoxg.rly.jpg",
@@ -6141,12 +6261,24 @@
       "PackagePath": "staticwebassets\\tour\\image\\1\\r5s2cnlz.nu2.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\seotxytd.z5r.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\seotxytd.z5r.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\u02nkxvo.ona.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\1\\u02nkxvo.ona.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\u5bl24r4.fw5.png",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\u5bl24r4.fw5.png"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\unwu3g4b.cle.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\1\\unwu3g4b.cle.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\wua4lcza.5z3.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\1\\wua4lcza.5z3.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\1\\zbyewtxl.aw3.png",
@@ -6161,6 +6293,10 @@
       "PackagePath": "staticwebassets\\tour\\image\\2\\0h2mjwxr.1q2.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\4lsjyrjt.dlr.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\4lsjyrjt.dlr.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\4rxxcigx.x3n.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\2\\4rxxcigx.x3n.jpg"
     },
@@ -6173,12 +6309,24 @@
       "PackagePath": "staticwebassets\\tour\\image\\2\\dhk2e4m4.qqh.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\fyhg2ugk.c1b.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\fyhg2ugk.c1b.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\hjo5mdju.qrt.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\2\\hjo5mdju.qrt.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\lva4bmi3.qby.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\lva4bmi3.qby.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\mlr22jbl.dxg.png",
       "PackagePath": "staticwebassets\\tour\\image\\2\\mlr22jbl.dxg.png"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\mxbjdnyj.mqw.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\mxbjdnyj.mqw.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\pft0u3mw.4gn.png",
@@ -6195,6 +6343,10 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\w2mnjksk.vqg.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\2\\w2mnjksk.vqg.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\w52z4z3s.xau.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\w52z4z3s.xau.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\whbz5cxk.x4n.jpg",
