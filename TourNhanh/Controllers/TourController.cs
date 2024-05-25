@@ -92,7 +92,7 @@ namespace TourNhanh.Controllers
         // POST: Tour/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,maxParticipants,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
+        public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,maxParticipants,RemainingSlots,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
         {
             tour.RemainingSlots = tour.maxParticipants;
             if (ModelState.IsValid)

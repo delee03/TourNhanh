@@ -74,11 +74,7 @@
     </dl>
 </div>
 <div>
+    <a asp-controller="Booking" asp-action="ProcessPayment" asp-route-bookingId="@Model.Id">Thanh toán ngay</a> |
 
-    @* @{
-        if(Model.PaymentMethod == "chuyển khoản")
-                <a asp-controller="Booking" asp-action="ProcessPayment" asp-route-bookingId="@Model.Id">Thanh toán ngay</a> |
-
-    } *@
     <a asp-controller="Tour" asp-action="Index">Trở về danh sách tour</a>
 </div>

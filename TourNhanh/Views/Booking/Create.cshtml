@@ -20,7 +20,10 @@
             </div>
             <div class="form-group">
                 <label for="paymentMethod">Payment Method</label>
-                <input type="text" name="paymentMethod" id="paymentMethod" class="form-control" required />
+                <select name="paymentMethod" id="paymentMethod" class="form-control" required>
+                    <option value="online">Thanh toán trực tuyến</option>
+                    <option value="offline">Thanh toán trực tiếp</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="Amount" class="control-label">Amount</label>
