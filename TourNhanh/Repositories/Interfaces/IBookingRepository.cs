@@ -9,5 +9,7 @@ namespace TourNhanh.Repositories.Interfaces
         Task CreateAsync(Booking booking);
         Task UpdateAsync(Booking booking);
         Task DeleteAsync(int id);
+
+        Task<IEnumerable<Booking>> GetUserTour(string userId);
     }
 }

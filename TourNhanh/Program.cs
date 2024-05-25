@@ -6,6 +6,7 @@ using TourNhanh.Repositories.Implementations;
 using TourNhanh.Repositories.Interfaces;
 using System.Configuration;
 using Microsoft.Extensions.Options;
+using TourNhanh.Services.VnPay;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +42,11 @@ builder.Services.AddScoped<ITourImage, TourImageRepository>();
 builder.Services.AddScoped<ITourDetail, TourDetailRepository>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IReviewRepository, EFReviewRepository>();
+builder.Services.AddScoped<IBlogRepository, EFBlogRepository>();
+builder.Services.AddScoped<ICommentRepository, EFCommentRepository>();
+builder.Services.AddScoped<ILikeRepository, EFLikeRepository>();
+
+builder.Services.AddSingleton<IVnPayService, VnPayService>();
 
 
 //login với FACEBOOk
@@ -58,9 +64,7 @@ builder.Services.AddAuthentication().AddGoogle(ggOptions =>
 });
 
 
-builder.Services.AddScoped<IBlogRepository, EFBlogRepository>();
-builder.Services.AddScoped<ICommentRepository, EFCommentRepository>();
-builder.Services.AddScoped<ILikeRepository, EFLikeRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

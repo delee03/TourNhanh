@@ -347,13 +347,21 @@
 									<i class="fa fa-shopping-cart"></i> add to cart
 								</button>
 							</a> *@
-							
 
+							@{
+								if(Model.RemainingSlots == 0)
+								{
+									<a class="add-to-cart-btn new"><i class="fa fa-eye"></i>Hết chỗ</a>
+								}
+								else
+								{
+									<a class="add-to-cart-btn new" asp-controller="Booking" asp-action="Create" asp-route-tourId="@Model.Id">
+										<i class="fa fa-shopping-cart"></i>
+										đặt tour
+									</a>
+								}
+							}
 							
-							<a class="add-to-cart-btn new" asp-controller="Booking" asp-action="Create" asp-route-tourId="@Model.Id">
-								<i class="fa fa-shopping-cart"></i>
-								đặt tour
-							</a>
 							@* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
 							 <a class="add-to-cart-btn new" asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id"><i class="fa fa-eye"></i>Xem lịch trình</a>
 							 <br />

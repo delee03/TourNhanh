@@ -1,0 +1,123 @@
+﻿@model TourNhanh.Models.Booking
+
+@{
+    decimal Total = 0;
+    var userInfo = ViewBag.Info;
+}
+<style>
+    .title-gradient-h {
+        font-size: 26px;
+        text-transform: uppercase;
+        background-color: #de0004;
+        background-image: linear-gradient(90deg, #f00 0%, #122125 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        .title-gradient
+    }
+
+    .title-gradient {
+        font-size: 26px;
+        background-color: #00DBDE;
+        background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .btn-action-checkout {
+        min-width: 90px;
+        text-align: center;
+        display: inline-block;
+        background: #fff;
+        text-transform: uppercase;
+        color: #ff0000;
+        border: 3px solid red;
+        padding: 8px 30px;
+        /*  margin: 5px 0; */
+        border-radius: 30px;
+        transition: background 0.5s;
+        font-weight: 700;
+    }
+
+        .btn-action-checkout:hover {
+            color: white;
+            border: 3px solid #e90000;
+            background-image: linear-gradient(160deg, #e90000 0%, #d08080 100%);
+            transition: ease 0.7s;
+        }
+
+    .form-group {
+        margin-top: 35px
+    }
+
+        .form-group:first-child {
+            margin-top: 0px;
+        }
+
+    .col-md-7 {
+        margin-top: -7px;
+    }
+</style>
+<!-- BREADCRUMB -->
+<div id="breadcrumb" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb-tree">
+                    <li><a href=" /home">Home</a></li>
+                    <li><a asp-action="Index" asp-controller="Tour">Khám phá tour</a></li>
+                    <li><a asp-action="YourTour" asp-controller="Booking">Your Tour</a></li>
+                    <li><a class="active" asp-action="YourTour" asp-controller="Booking">YourTour</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /BREADCRUMB -->
+<form asp-controller="Booking" asp-action="ProcessPaymentConfirmed" asp-route-bookingId="@Model.Id" method="post">
+    <div class="section">
+        <div class="container" style="display: flex; justify-content: space-between; gap:40px;">
+            <div class="row" style="width:70%;">
+                <div class="col-md-7" style="width:100%;">
+                    <div class="billing-details">
+                        <div class="section-title text-center">
+                            <h2 class="title-gradient-h">Thanh toán  @ViewBag.BookingId</h2>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="input"
+                               type="text"
+                               value="@ViewBag.FullName"
+                               placeholder="Họ và tên"
+                               asp-action="" />
+                    </div>
+
+                    <div class="form-group">
+                        <input class="input"
+                               type="email"
+                               value="@ViewBag.Email"
+                               placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <input class="input"
+                               type="tel"
+                               value="@ViewBag.Phone"
+                               placeholder="Số điện thoại" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 order-details" style="margin-top: 86px;">
+                <div style="display: flex; align-items: flex-end; justify-content: space-around">
+                    <button type="submit" name="payment" class="primary-btn order-submit" value="online">
+                        Thanh toán online
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
