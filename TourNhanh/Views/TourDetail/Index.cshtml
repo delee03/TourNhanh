@@ -5,6 +5,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var view = ViewBag.Tour;
+    
 
 }
 
@@ -100,10 +101,42 @@
     .slick-dots {
         bottom: 133px;
     }
+
+    .list_lichtrinh_box .slick-prev, .list_lichtrinh_box .slick-next {
+        top: 50%;
+    }
     .main-content {
         position: relative;
         top: -100px;
+        max-height: 100vh; 
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 0 10px;
     }
+
+        .main-content::-webkit-scrollbar{
+            width: 10px;
+            height: 100px;
+            
+        }
+ 
+        .main-content::-webkit-scrollbar-track {
+            background-color: #bbb;  
+            border-radius: 8px;
+        }
+
+        .main-content::-webkit-scrollbar-thumb {
+            background-color: var(--bs-linear-color);
+            background-image: var(--bs-linear-img);
+            border-radius: 8px;
+           
+        }
+/* 
+        .main-content::-webkit-scrollbar-thumb:hover, .main-content::-webkit-scrollbar-thumb:focus {
+                background-color: #2db0ca;
+                background-image: linear-gradient(180deg, #2db0ca 0%, #6284FF 50%, #FF0000 100%);
+                box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        } */
 
     .main-content .nav-tabs {
         margin-bottom: 20px;
@@ -114,6 +147,13 @@
         font-weight:600;
         color: #215390;
         font-size: 20px;
+    }
+
+    .tour-preview {
+        text-align: center;
+        width: 100%;
+        height: 400px;
+        object-fit:cover;
     }
 
 </style>
@@ -188,34 +228,42 @@
                                 <a class="nav-link1" href="#lichkhoihanh">Lịch khởi hành</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link1" href="#mota">Mô tả</a>
+                                <a class="nav-link1" href="#quydinh">Quy định</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link1" href="#map">Bản đồ</a>
                             </li>
                         </ul>
+                        <p>
+                            <a asp-action="Create" asp-route-tourId="@ViewBag.TourId">Create New</a>
+                        </p>
 
                         <div class="diemnhan_tour">
-                            <div>
-                                <h3 id="diemnhanhanhtrinh" class="tab_title">
-                                    <span>Điểm nhấn hành trình: <span>
-                                </h3>
-                                <p>Tour miền Bắc Hà Nội  – Hạ Long – Tràng An – Ninh Bình – Tam Chúc – Mai Châu &#8211; Mộc Châu &#8211; Sơn La sẽ đưa du khách khám phá những địa điểm du lịch nổi tiếng chắc chắn sẽ là một trải nghiệm hấp dẫn vô cùng thú vị.</p>
-                                <p>Trong cuộc hành trình này khách hàng sẽ được khám phá những ngôi chùa nổi tiếng như chùa Trấn Quốc – Ngôi chùa Trấn Bắc cổ kính nhất Việt Nam, chùa Một Cột, Bảo tàng Hồ Chí Minh, Quảng trường Ba Đình…Khám phát nét thơ mộng, cổ xưa của Hà Nội, xen lẫn hiện đại, tất cả tạo nên nét đặc trưng không nơi nào có được</p>
-                                <p>Khám phá Quần thể Danh thắng Tràng An – Di sản được UNESCO công nhận là di sản văn hóa và thiên nhiên Thế Giới với dòng Sào khê uốn lượn giữa cánh đồng lúa, nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí</p>
-                                <p>Tham quan Vịnh Hạ Long<strong>,</strong> chiêm ngưỡng vẻ đẹp huyền bí của hàng ngàn đảo đá và các hang động kì thú: Động Thiên Cung, hang Đầu Gỗ…ngắm cảnh Làng Chài, hòn Ấm, hòn Rùa, hòn Đỉnh Hương, hòn Chó Đá, hòn Gà Chọi…</p>
-                                <p>Ngắm nhìn vẻ đẹp mộc mạc, đơn sơ nhưng không kém phần thơ mộng cùng với nét văn hóa độc đáo tại Mai Châu, Mộc Châu</p>
-                                <p>Khách sạn 3 sao với tiêu chuẩn 2/3 khách/ phòng chắc chắn sẽ giúp bạn có những phút giây thư giãn tuyệt vời nhất.</p>
-                            </div>                                           
+                            <h3 id="diemnhanhanhtrinh" class="tab_title">
+                                <span>Điểm nhấn hành trình: <span>
+                            </h3>
+                            @foreach(var item in Model)
+                            {
+                                <div>                               
+                                    @foreach(var desc in item.Location.SplitDescription()){
+                                        <p>@desc </p>
+                                    }
+                                </div>
+                            }                                  
                         </div>
                         <!-- Lich trinh-->
                         <div class="chitiet_lichtrinh">                     
                             <div id="lichtrinh" class="tab_title">
                                 <span>Lịch trình</span>
                             </div>
+                         
                             <div class="list_order">                            
                                 @foreach(var item in Model)
                                 {
+                                    var text = "";
+                                    @if (item.Order == 3) { text = "cuối cùng"; }
+                                    else if (item.Order == 2) { text = "kế tiếp"; }
+                                    else text = "đầu tiên";
                                     <div>
                                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
@@ -223,79 +271,69 @@
                                     </div>
                                     <div class="list_lichtrinh_box">
                                         <div class="list_lichtrinh_title">
-                                            @* <span class="feature">Ngày <br>2</span> *@
-                                            <span>Ngày @item.Order: @item.Location.Address</span>
+                                     
+                                            <span>Ngày @item.Order:Điểm đến @item.Location.Address</span>
                                         </div>
                                         <div class="list_lichtrinh_content tinymce">
-                                            <p>Đi đến @ViewBag.Location1 bla bla sau đó cùng ngày đi đến @ViewBag.Location2  cuối ngày tại TP đó đi đến @ViewBag.Location3   ngày hôm sau</p>
-                                            @foreach (var part in item.Location.SplitAddress())
+                                            <!--Chi tiết tại từng local trong địa điểm mô tả-->
+                                        @*     @foreach (var part in item.Location.SplitAddress())
                                             {
                                                <p> Đi đến @part trưa đén nghỉ ngơi tại @item.Hotel.Name tại @item.Hotel.Address </p>
-                                            }
-                                           
-                                            <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng địa điểm @item.Location.SplitAddress().First(). Tự do khá phá Thành phố biển&nbsp;<strong>@ViewBag.Location1</strong>&nbsp;hoặc tắm&nbsp;<strong>@ViewBag.SecondLocal</strong>.</p>
-                                            <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về @item.Location.Name theo Quốc Lộ 10. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng Bắc Bộ với cảnh làng quê thanh bình qua các tỉnh Hải Phòng, Thái Bình, Nam Định.</p>
-                                            <p><strong>Trưa:&nbsp;</strong>&nbsp;Khách sạn &nbsp;<strong>@item.Hotel.Name</strong>, Quý khách tới nhà hàng dùng cơm trưa. Về khách sạn làm thụ tục nhận phòng và nghỉ ngơi.</p>
-                                            <p><strong>Chiều:</strong>&nbsp;Xe và Hướng dẫn viên đưa đi tham quan:</p>
+                                            } *@
+                                            <p>Điểm đến <span>@text</span> trong hành trình của chúng ta là: &nbsp;<strong>@item.Location.Name</strong></p>
+                                            <img style="width:100%; height: 240px; object-fit: cover;" src="@item.Tour.MainImageUrl" />
+                                            <figure class="py-3 text-center"> Hình ảnh về địa danh @item.Location.Name</figure>
+                                            <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng địa phương @item.Location.SplitAddress().First(). Tự do khám phá Thành phố&nbsp;<strong> @item.Location.SplitAddress().First()</strong>
+
+
+                                            <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về &nbsp; @if (@item.Location.SplitAddress().Count >= 2)
+                                                        {
+                                                    <strong>
+                                                            @item.Location.SplitAddress()[1]
+                                                    </strong>
+                                                        }  
+                                                 </p>
+                                            theo Quốc Lộ 10.Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng Bắc Bộ với cảnh làng quê thanh bình qua các tỉnh<strong> @item.Tour.Name</strong>.</p>
+                                            <p><strong>Trưa:&nbsp;</strong>&nbsp;Quý khách sẽ nghỉ ngơi tại khách sạn &nbsp;<strong>@item.Hotel.Name</strong>, Quý khách tới nhà hàng dùng cơm trưa. Về khách sạn làm thụ tục nhận phòng và nghỉ ngơi.</p>
+                                            <p><strong>Chiều:</strong>&nbsp;Xe và Hướng dẫn viên đưa đi tham quan:<strong> @item.Location.SplitAddress().Last()</strong></p>
                                             <ul>
-                                                <li><strong>Quần thể danh@*  thắng @(ViewBag?.ThirdLocal ?? "Không có danh mục") *@</strong>&nbsp;– Di sản được UNESCO công nhận là di sản văn hóa và thiên nhiên Thế giới, giúp cho Việt Nam lần dầu lọt vào danh sách 30 di sản hỗn hợp Thế Giới. Lên thuyền xuôi dòng Sào khê uốn lượn giữa cánh đồng lúa , nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí , quý khách đi đò tham Hang sáng , Hang tối , Hang nấu rượu…</li>
+                                                <li><strong>Quần thể danh thắng &nbsp; @item.Location.Address</strong>&nbsp; với phong cảnh hữu tình nên thơ, giúp cho Việt Nam lần dầu lọt vào danh sách 30 thắng cảnh hỗn hợp đẹp nhất Thế Giới. Lên thuyền xuôi dòng Sào khê uốn lượn giữa cánh đồng lúa , nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí , quý khách đi đò tham Hang sáng , Hang tối , Hang nấu rượu…</li>
                                             </ul>
-                                            <figure id="attachment_3931" aria-describedby="caption-attachment-3931" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-3931" src="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-3931" class="wp-caption-text">Quần thể danh thắng Tràng An</figcaption></figure>
-                                            <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá:</p>
+
+                                            <div id="tour-img" style="margin: 30px 0;">
+                                                
+                                                @if (ViewBag.TourImage != null)
+                                                {                                                       
+                                                  foreach (var image in ViewBag.TourImage)
+                                                    {
+                                                        <img class="tour-preview mb-4" src="@image" />
+                                                    }
+                                                }
+                                           </div>
+                                         
+                                            <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá thêm về văn hóa đời sống con người tại @item.Location.Name kết thúc hành trình trong ngày vào lúc @item.EndTime</p>
                                             <ul>
-                                                <li><strong>Hang Múa&nbsp;(Option – Tự túc vé tham quan)</strong>, Quý khách bách bộ qua những lối đi vòng vèo được bao phủ bởi cây xanh và các kiến trúc non bộ đẹp mắt và sau đó là hành trình chinh phục đỉnh núi Hang Múa với 500 bậc đá. Tới đỉnh núi Múa, thu vào trong tầm mắt của Quý khách là tất cả đất trời của mảnh đất Hoa Lư rộng lớn với vẻ yên bình nhưng lộng lẫy như một bức tranh thủy mặc khiến không ít người chẳng thể kìm lòng mà vỡ òa cảm xúc. Trên hành trình trở lại, Quý khách sẽ ngang qua khu vực Đầm sen nằm giữa những rặng núi đá vôi tạo nên một khung cảnh cực kỳ thơ mộng và cổ trang. Quý khách có thể thuê những bộ đồ cổ trang để chụp hình tại đây.</li>
+                                                <li><strong>Bảo tàng &nbsp;(Option – Tự túc vé tham quan)</strong>, Quý khách bách bộ qua những lối đi vòng vèo được bao phủ bởi cây xanh và các kiến trúc non bộ đẹp mắt và sau đó là hành trình chinh phục đỉnh núi Hang Múa với 500 bậc đá. Tới đỉnh núi Múa, thu vào trong tầm mắt của Quý khách là tất cả đất trời của mảnh đất @item.Location.SplitAddress().Last()  rộng lớn với vẻ yên bình nhưng lộng lẫy như một bức tranh thủy mặc khiến không ít người chẳng thể kìm lòng mà vỡ òa cảm xúc. Trên hành trình trở lại, Quý khách sẽ ngang qua khu vực Đầm sen nằm giữa những rặng núi đá vôi tạo nên một khung cảnh cực kỳ thơ mộng và cổ trang. Quý khách có thể thuê những bộ đồ cổ trang để chụp hình tại đây.</li>
                                             </ul>
-                                            <figure id="attachment_6536" aria-describedby="caption-attachment-6536" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-6536" src="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-6536" class="wp-caption-text">Hang Múa Ninh Bình</figcaption></figure>
-                                            <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng với&nbsp;<strong>đặc sản dê núi Ninh Bình</strong>, sau đó là chương trình tự do của quý khách với phố đêm Ninh bình.</p>
-                                        </div>
+                                            <div>
+                                                @foreach(var img in ViewBag.TourImage)
+                                                {
+                                                    <img class="py-5 text-center" src="@img" />
+                                                        continue;
+
+                                                }
+                                                <figure class="text-center py-3"> Vài nét về địa danh @item.Location.Name</figure>
+                                            </div>
+                                            <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng khách sạn @item.Hotel.Name &nbsp;<strong>đặc sản vùng đất @if (@item.Location.SplitAddress().Count >= 2) @item.Location.SplitAddress()[1]</strong>
+                                             , sau đó là chương trình tự do của quý khách với phố đêm của thành phố  &nbsp; @item.Location.Name.</p>
+                                            <p><strong>@item.StartTime:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển đến địa điểm tiếp theo lịch trình. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng, Trung du, Miền núi với cảnh làng quê thanh bình qua các tỉnh, thành phố, @item.Tour.Name</p>
+                                         </div>
                                     </div>
                                 }
-                                @* 
-                                <div class="list_lichtrinh_box">
-                                    <div class="list_lichtrinh_title">
-                                     
-                                        <span>Ngày 2: HẠ LONG - NINH BÌNH - TRÀNG AN - HANG MÚA</span>
-                                    </div>
-                                    <div class="list_lichtrinh_content tinymce">
-                                        <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng. Tự do khá phá Thành phố biển&nbsp;<strong>Hạ Long</strong>&nbsp;hoặc tắm&nbsp;<strong>biển Bãi Cháy</strong>.</p>
-                                        <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về Ninh Bình theo Quốc Lộ 10. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng Bắc Bộ với cảnh làng quê thanh bình qua các tỉnh Hải Phòng, Thái Bình, Nam Định.</p>
-                                        <p><strong>Trưa:&nbsp;</strong>&nbsp;Đến&nbsp;<strong>Ninh Bình</strong>, Quý khách tới nhà hàng dùng cơm trưa. Về khách sạn làm thụ tục nhận phòng và nghỉ ngơi.</p>
-                                        <p><strong>Chiều:</strong>&nbsp;Xe và Hướng dẫn viên đưa đi tham quan:</p>
-                                        <ul>
-                                            <li><strong>Quần thể danh thắng Tràng An</strong>&nbsp;– Di sản được UNESCO công nhận là di sản văn hóa và thiên nhiên Thế giới, giúp cho Việt Nam lần dầu lọt vào danh sách 30 di sản hỗn hợp Thế Giới. Lên thuyền xuôi dòng Sào khê uốn lượn giữa cánh đồng lúa , nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí , quý khách đi đò tham Hang sáng , Hang tối , Hang nấu rượu…</li>
-                                        </ul>
-                                        <figure id="attachment_3931" aria-describedby="caption-attachment-3931" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-3931" src="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-3931" class="wp-caption-text">Quần thể danh thắng Tràng An</figcaption></figure>
-                                        <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá:</p>
-                                        <ul>
-                                            <li><strong>Hang Múa&nbsp;(Option – Tự túc vé tham quan)</strong>, Quý khách bách bộ qua những lối đi vòng vèo được bao phủ bởi cây xanh và các kiến trúc non bộ đẹp mắt và sau đó là hành trình chinh phục đỉnh núi Hang Múa với 500 bậc đá. Tới đỉnh núi Múa, thu vào trong tầm mắt của Quý khách là tất cả đất trời của mảnh đất Hoa Lư rộng lớn với vẻ yên bình nhưng lộng lẫy như một bức tranh thủy mặc khiến không ít người chẳng thể kìm lòng mà vỡ òa cảm xúc. Trên hành trình trở lại, Quý khách sẽ ngang qua khu vực Đầm sen nằm giữa những rặng núi đá vôi tạo nên một khung cảnh cực kỳ thơ mộng và cổ trang. Quý khách có thể thuê những bộ đồ cổ trang để chụp hình tại đây.</li>
-                                        </ul>
-                                        <figure id="attachment_6536" aria-describedby="caption-attachment-6536" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-6536" src="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-6536" class="wp-caption-text">Hang Múa Ninh Bình</figcaption></figure>
-                                        <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng với&nbsp;<strong>đặc sản dê núi Ninh Bình</strong>, sau đó là chương trình tự do của quý khách với phố đêm Ninh bình.</p>
-                                    </div>
+                                <div>
+                                    <p>Mọi thông tin chi tiết xin quý khách vui lòngđọc thêm trong <strong>QUY ĐỊNH </strong>của chúng tôi bên dưới hoặc gọi cho nhân viên của chúng tôi bằng<strong> ZALO</strong> hoặc <strong>HOTLINE</strong></p>
                                 </div>
-                                <div class="list_lichtrinh_box">
-                                    <div class="list_lichtrinh_title">
-                                       
-                                        <span>Ngày 2: HẠ LONG - NINH BÌNH - TRÀNG AN - HANG MÚA</span>
-                                    </div>
-                                    <div class="list_lichtrinh_content tinymce">
-                                        <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng. Tự do khá phá Thành phố biển&nbsp;<strong>Hạ Long</strong>&nbsp;hoặc tắm&nbsp;<strong>biển Bãi Cháy</strong>.</p>
-                                        <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về Ninh Bình theo Quốc Lộ 10. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng Bắc Bộ với cảnh làng quê thanh bình qua các tỉnh Hải Phòng, Thái Bình, Nam Định.</p>
-                                        <p><strong>Trưa:&nbsp;</strong>&nbsp;Đến&nbsp;<strong>Ninh Bình</strong>, Quý khách tới nhà hàng dùng cơm trưa. Về khách sạn làm thụ tục nhận phòng và nghỉ ngơi.</p>
-                                        <p><strong>Chiều:</strong>&nbsp;Xe và Hướng dẫn viên đưa đi tham quan:</p>
-                                        <ul>
-                                            <li><strong>Quần thể danh thắng Tràng An</strong>&nbsp;– Di sản được UNESCO công nhận là di sản văn hóa và thiên nhiên Thế giới, giúp cho Việt Nam lần dầu lọt vào danh sách 30 di sản hỗn hợp Thế Giới. Lên thuyền xuôi dòng Sào khê uốn lượn giữa cánh đồng lúa , nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí , quý khách đi đò tham Hang sáng , Hang tối , Hang nấu rượu…</li>
-                                        </ul>
-                                        <figure id="attachment_3931" aria-describedby="caption-attachment-3931" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-3931" src="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2023/11/Quan-the-danh-thang-Trang-An-1.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-3931" class="wp-caption-text">Quần thể danh thắng Tràng An</figcaption></figure>
-                                        <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá:</p>
-                                        <ul>
-                                            <li><strong>Hang Múa&nbsp;(Option – Tự túc vé tham quan)</strong>, Quý khách bách bộ qua những lối đi vòng vèo được bao phủ bởi cây xanh và các kiến trúc non bộ đẹp mắt và sau đó là hành trình chinh phục đỉnh núi Hang Múa với 500 bậc đá. Tới đỉnh núi Múa, thu vào trong tầm mắt của Quý khách là tất cả đất trời của mảnh đất Hoa Lư rộng lớn với vẻ yên bình nhưng lộng lẫy như một bức tranh thủy mặc khiến không ít người chẳng thể kìm lòng mà vỡ òa cảm xúc. Trên hành trình trở lại, Quý khách sẽ ngang qua khu vực Đầm sen nằm giữa những rặng núi đá vôi tạo nên một khung cảnh cực kỳ thơ mộng và cổ trang. Quý khách có thể thuê những bộ đồ cổ trang để chụp hình tại đây.</li>
-                                        </ul>
-                                        <figure id="attachment_6536" aria-describedby="caption-attachment-6536" style="width: 600px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="wp-image-6536" src="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg" alt="" width="600" height="360" srcset="https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-300x180.jpg 300w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-150x90.jpg 150w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-768x461.jpg 768w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-800x480.jpg 800w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh-700x420.jpg 700w, https://tourngay.vn/wp-content/uploads/2024/02/Hang-Mua-Ninh-Binh.jpg 1000w" sizes="(max-width: 600px) 100vw, 600px"><figcaption id="caption-attachment-6536" class="wp-caption-text">Hang Múa Ninh Bình</figcaption></figure>
-                                        <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng với&nbsp;<strong>đặc sản dê núi Ninh Bình</strong>, sau đó là chương trình tự do của quý khách với phố đêm Ninh bình.</p>
-                                    </div>
-                                </div>
-                                *@
+                          
                                 <!--LICH khoi hanh-->
                                 <div class="row" id="row-1517252312">
                                     <div id="col-1469351164" class="col small-12 large-12">
@@ -310,9 +348,8 @@
 
                                             <a id="lichkhoihanh" href="#lichkhoihanh"></a>
                                             <div class="price-list">
-                                                <h3 class="title-price-list">
-                                                    Lịch khởi hành
-                                                    <div class="khoi-hanh-bang-gia">(Từ: Hồ Chí Minh)</div>
+                                                <h3  class="tab_title">
+                                                    <span>Lịch khởi hành: từ TPHCM <span>
                                                 </h3>
                                                 <div class="tab-container">
                                                     <div class="content-tab-title">
@@ -868,22 +905,12 @@
                                 <div class="row section-content" id="row-877408533">
                                     <div id="col-650395934" class="col col-mota small-12 large-12">
                                         <div class="col-inner">
-                                            <a id="mota" href="#mota"></a>
+                                            <a id="quydinh" href="#mota"></a>
 
-                                            <div class="woocommerce-tabs wc-tabs-wrapper container tabbed-content">
-                                                <ul class="tabs wc-tabs product-tabs small-nav-collapse nav nav-uppercase nav-line nav-left"
-                                                    role="tablist">
-                                                    <li class="description_tab active"
-                                                        id="tab-title-description"
-                                                        role="presentation">
-                                                        <a href="#tab-description"
-                                                           role="tab"
-                                                           aria-selected="true"
-                                                           aria-controls="tab-description">
-                                                            Mô tả
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                            <div class="woocommerce-tabs wc-tabs-wrapper container tabbed-content">                                            
+                                                    <div class="list_lichtrinh_title">
+                                                        <span>Quy định của chúng tôi</span>
+                                                    </div>                                           
                                                 <div class="tab-panels">
                                                     <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content active"
                                                          id="tab-description"
@@ -1071,7 +1098,7 @@
                                     <div class="list_lichtrinh_title">
                                         <span>Vị trí công ty Tour Nhanh: Khu CNC, Thủ Đức Campus</span>
                                     </div>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3918.420763561081!2d106.7803462!3d10.8555672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2zSFVURUNIIC0gxJDhuqFpIGjhu41jIEPDtG5nIG5naOG7hyBUUC5IQ00gKFRodSBEdWMgQ2FtcHVzKQ!5e0!3m2!1svi!2s!4v1716467335167!5m2!1svi!2s" width="800" height="500" style="margin-top: 20px;
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3918.420763561081!2d106.7803462!3d10.8555672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2zSFVURUNIIC0gxJDhuqFpIGjhu41jIEPDtG5nIG5naOG7hyBUUC5IQ00gKFRodSBEdWMgQ2FtcHVzKQ!5e0!3m2!1svi!2s!4v1716467335167!5m2!1svi!2s" width="700" height="500" style="margin-top: 20px;
                                         outline: 10px solid var(--bs-linear-color);
                                         /* width: 180%; */
                                         border-radius: 25px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -1170,7 +1197,8 @@
                                     @* <li><a href="#">Accessories</a></li> *@
                                     <li>Điểm khởi hành:</li>
                                     <li><a href="#"> tại TPHCM</a></li>
-
+                                    <li>Điểm đến:</li>
+                                    <li><a href="#">@view.Name</a></li>
                                 </ul>
 
                                 @* <ul class="product-links">
@@ -1290,6 +1318,11 @@
                 <div class="phone-vr-img-circle">
                     <a target="_blank" href="https://zalo.me/0931034852">
                         <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+                    </a>                
+                </div>
+                <div class="zalo-bar zalo-bar-n">
+                    <a href="https://zalo.me/0931034852">
+                        <span class="text-phone">Gửi yêu cầu tư vấn ngay</span>
                     </a>
                 </div>
             </div>

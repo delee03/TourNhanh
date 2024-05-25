@@ -30,61 +30,61 @@ namespace TourNhanh.Controllers
         {
             var details = await _tourDetailRepository.GetByTourIdAsync(tourId);
 
-          
-            List<string> locationDetails = new List<string>();
 
-            foreach (var list in details)
-            {
-                if (list.Location != null && list.Location.Address != null)
-                {
-                    locationDetails.AddRange(list.Location.Address.Split('-'));
-                }
-            }             
-            //mỗi tour quy định có tối đa là 3 địa điểm tối thiểu là 1 địa điểm, môi địa điểm có 3 điểm tham quan nữa 
-            if (locationDetails.Count > 9)
-            {
-                locationDetails.RemoveAt(locationDetails.Count - 1);            
-            }
+            /*  List<string> locationDetails = new List<string>();
 
-            switch (locationDetails.Count)
-            {
-                case 9:
-                    ViewBag.Location1 = locationDetails[0];
-                    goto case 8;
-                case 8:
-                    ViewBag.Location2 = locationDetails[1];
-                    goto case 7;
-                case 7:
-                    ViewBag.Location3 = locationDetails[2];
-                    goto case 6;
-                case 6: 
-                    ViewBag.Location4 = locationDetails[3];
-                    goto case 5;
-                case 5:
-                    ViewBag.Location5 = locationDetails[4];
-                    goto case 4;
-                case 4:
-                     ViewBag.Location6 = locationDetails[5];
-                     goto case 3;            
-                case 3:             
-                    ViewBag.Location7= locationDetails[6];
-                    goto case 2;
-                case 2:         
-                    ViewBag.Location8 = locationDetails[7];
-                    goto case 1;
-                case 1:            
-                    ViewBag.Location9 = locationDetails[8];
-                    break;
-            }
-            //Lấy ra Address của Location => cắt từng phần tử theo chuỗi sau dấu phẩy
+              foreach (var list in details)
+              {
+                  if (list.Location != null && list.Location.Address != null)
+                  {
+                      locationDetails.AddRange(list.Location.Address.Split('-'));
+                  }
+              }             
+              //mỗi tour quy định có tối đa là 3 địa điểm tối thiểu là 1 địa điểm, môi địa điểm có 3 điểm tham quan nữa 
+              if (locationDetails.Count > 9)
+              {
+                  locationDetails.RemoveAt(locationDetails.Count - 1);            
+              }
 
+              switch (locationDetails.Count)
+              {
+                  case 9:
+                      ViewBag.Location1 = locationDetails[0];
+                      goto case 8;
+                  case 8:
+                      ViewBag.Location2 = locationDetails[1];
+                      goto case 7;
+                  case 7:
+                      ViewBag.Location3 = locationDetails[2];
+                      goto case 6;
+                  case 6: 
+                      ViewBag.Location4 = locationDetails[3];
+                      goto case 5;
+                  case 5:
+                      ViewBag.Location5 = locationDetails[4];
+                      goto case 4;
+                  case 4:
+                       ViewBag.Location6 = locationDetails[5];
+                       goto case 3;            
+                  case 3:             
+                      ViewBag.Location7= locationDetails[6];
+                      goto case 2;
+                  case 2:         
+                      ViewBag.Location8 = locationDetails[7];
+                      goto case 1;
+                  case 1:            
+                      ViewBag.Location9 = locationDetails[8];
+                      break;
+              }
+              //Lấy ra Address của Location => cắt từng phần tử theo chuỗi sau dấu phẩy
+
+            */
             ViewBag.TourId = tourId;
-            List<string> imageURL = new List<string>();
-           
+            List<string> imageURL = new List<string>();       
             var tourimage = await _tourImageRepository.GetByTourIdAsync(tourId);
             foreach(var img in tourimage)
             {
-                imageURL.Add(img.ImageUrl);
+               imageURL.Add(img.ImageUrl);         
             }
             ViewBag.TourImage = imageURL;
             //Lấy ra list các ảnh
