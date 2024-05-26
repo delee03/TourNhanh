@@ -1,0 +1,73 @@
+﻿@model TourNhanh.Models.Tour
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Xem thông tin</h1>
+
+<div>
+    <h4>Tour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên tour
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            Loại tour
+        </dt>
+        <dd>
+            @{
+                var categoryName = Model.Category != null ? Model.Category.Name : null;
+            }
+            @Html.DisplayFor(model => categoryName)
+        </dd>
+        <dt>
+            Mô tả
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            Số lượng tối đa
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.maxParticipants)
+        </dd>
+        <dt>
+            Số lượng còn lại
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RemainingSlots)
+        </dd>
+        <dt>
+            Giá
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            Phương tiện
+        </dt>
+        <dd>
+            @{
+                var transportName = Model.Transport != null ? Model.Transport.Name : null;
+            }
+            @Html.DisplayFor(model => transportName)
+        </dd>
+        <dt>
+            Hình ảnh chính
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MainImageUrl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Chỉnh sửa</a> |
+    <a asp-action="Index">Trở về</a>
+</div>

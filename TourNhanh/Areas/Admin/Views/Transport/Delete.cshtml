@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-    var transport = ViewBag.transport;
 }
 
 <div class="row">
@@ -15,24 +14,25 @@
                             <h5>Xóa thông tin phương tiện</h5>
                         </div>
 
-                        <form asp-action="Delete" class="theme-form theme-form-2 mega-form" method="post" action="" enctype="multipart/form-data">
+                        <form asp-action="Delete" asp-controller="Transport" class="theme-form theme-form-2 mega-form" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="mb-4 row align-items-center">
                                     <label class="form-label-title col-sm-2 mb-0">Tên phương tiện </label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="text" value="@transport.Name" name="Name" disabled />
+                                        @Html.DisplayFor(model => model.Name)
                                     </div>
                                 </div>
                                 <div class="mb-4 row align-items-center">
                                     <label class="form-label-title col-sm-2 mb-0">Thông tin</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="text" value="@transport.Description" name="Description" disabled />
+                                        @Html.DisplayFor(model => model.Description)
                                     </div>
                                 </div>
 
                                 <div class="card-footer text-end border-0 pt-0">
-                                    <input class="form-control" type="number" value="" name="" hidden />
+                                    <input type="hidden" asp-for="Id" />
                                     <button class="btn btn-primary me-3" type="submit">Xóa phương tiện</button>
+                                    <a class="btn btn-outline-primary" asp-area="Admin" asp-controller="Transport" asp-action="Index">Hủy bỏ</a>
                                 </div>
                             </div>
                         </form>

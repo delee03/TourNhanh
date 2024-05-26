@@ -24,15 +24,15 @@
                             </thead>
 
                             <tbody>
-                                @foreach (var item in listCategory)
+                                @foreach (var item in Model)
                                 {
                                     <tr>
 
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Name</a>
+                                            <a>@item.Name</a>
                                         </td>
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Description</a>
+                                            <a>@item.Description</a>
                                         </td>
 
 
@@ -44,7 +44,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="~/Admin/Category/Update/@item.Id" title="Chỉnh sửa">
+                                                    <a href="~/Admin/Category/Edit/@item.Id" title="Chỉnh sửa">
                                                         <span class="lnr lnr-pencil"></span>
                                                     </a>
                                                 </li>

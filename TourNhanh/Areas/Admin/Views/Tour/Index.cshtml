@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TourNhanh.Models.Location>
+﻿@model IEnumerable<TourNhanh.Models.Tour>
 
 @{
     ViewBag.Title = "Index";
@@ -14,11 +14,14 @@
                         <table class="table table-1d all-package">
                             <thead>
                                 <tr>
-                                    <th>Tên địa điểm</th>
+                                    <th>Tên tour</th>
+                                    <th>Loại tour</th>
                                     <th>Mô tả</th>
-                                    <th>Địa chỉ</th>
-                                    <th>Kinh độ</th>
-                                    <th>Vĩ độ</th>
+                                    <th>Số lượng người tối đa</th>
+                                    <th>Chỗ còn lại</th>
+                                    <th>Giá</th>
+                                    <th>Phương tiện</th>
+                                    <th>Hình ảnh chính</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
@@ -27,35 +30,40 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
+                                        <td>@item.Name</td>
                                         <td>
-                                            <a>@item.Name</a>
+                                            @{
+                                                var categoryName = item.Category != null ? item.Category.Name : null;
+                                            }
+                                            @categoryName
+                                        </td>
+                                        <td>@item.Description</td>
+                                        <td>@item.maxParticipants</td>
+                                        <td>@item.RemainingSlots</td>
+                                        <td>@item.Price</td>
+                                        <td>
+                                            @{
+                                                var transportName = item.Transport != null ? item.Transport.Name : null;
+                                            }
+                                            @transportName
                                         </td>
                                         <td>
-                                            <a>@item.Description</a>
-                                        </td>
-                                        <td>
-                                            <a>@item.Address</a>
-                                        </td>
-                                        <td>
-                                            <a>@item.Longitude</a>
-                                        </td>
-                                        <td>
-                                            <a>@item.Latitude</a>
+                                            <img src="@item.MainImageUrl" alt="Main Image" style="width: 100px; height: 100px;" />
                                         </td>
                                         <td>
                                             <ul>
                                                 <li>
-                                                    <a href="~/Admin/Location/Details/@item.Id" title="Chi tiết">
+                                                    <a href="~/Admin/Tour/Details/@item.Id" title="Chi tiết">
                                                         <span class="lnr lnr-eye"></span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="~/Admin/Location/Edit/@item.Id" title="Chỉnh sửa">
+                                                    <a href="~/Admin/Tour/Edit/@item.Id" title="Chỉnh sửa">
                                                         <span class="lnr lnr-pencil"></span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="~/Admin/Location/Delete/@item.Id" title="Xóa">
+                                                    <a href="~/Admin/Tour/Delete/@item.Id" title="Xóa">
                                                         <span class="lnr lnr-trash"></span>
                                                     </a>
                                                 </li>

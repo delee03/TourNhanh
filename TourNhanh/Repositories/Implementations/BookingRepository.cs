@@ -15,7 +15,9 @@ namespace TourNhanh.Repositories.Implementations
 
         public async Task<IEnumerable<Booking>> GetAllAsync()
         {
-            return await _context.Bookings.ToListAsync();
+            return await _context.Bookings
+                .Include(booking => booking.Tour)
+                .ToListAsync();
         }
 
         public async Task<Booking?> GetByIdAsync(int id)

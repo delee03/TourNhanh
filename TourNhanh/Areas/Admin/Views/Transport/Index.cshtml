@@ -1,10 +1,8 @@
-﻿ @model IEnumerable<TourNhanh.Models.Transport>
+﻿@model IEnumerable<TourNhanh.Models.Transport>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-
-    // Func f = new Func();
     var listTransport = ViewBag.transports;
 }
 
@@ -17,22 +15,22 @@
                         <table class="table table-1d all-package">
                             <thead>
                                 <tr>
-                                    <th>Loại tour</th>
+                                    <th>Tên phương tiện</th>
                                     <th>Thông tin</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach (var item in listTransport)
+                                @foreach (var item in Model)
                                 {
                                     <tr>
 
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Name</a>
+                                            <a>@item.Name</a>
                                         </td>
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Description</a>
+                                            <a>@item.Description</a>
                                         </td>
 
 
@@ -44,7 +42,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="~/Admin/Transport/Update/@item.Id" title="Chỉnh sửa">
+                                                    <a href="~/Admin/Transport/Edit/@item.Id" title="Chỉnh sửa">
                                                         <span class="lnr lnr-pencil"></span>
                                                     </a>
                                                 </li>
