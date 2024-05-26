@@ -879,6 +879,7 @@ textarea.input {
         top: 0;
         left: 50%;
         transform: translateX(-50%);
+        text-align: center;
         display: inline-block;
         background-color: var(--bs-linear-color);
         background-image: var(--bs-linear-img);
@@ -1753,8 +1754,8 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     text-transform: uppercase;
     font-weight: 700;
     margin-left: 30px;
-    background-color: #4158D0;
-    background-image: linear-gradient(90deg, #4158D0 0%, #C850C0 46%, #ff0c0c 100%);
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -2242,3 +2243,63 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     position: static;
     margin: 15px 0px;
 }
+
+
+/* Custom PHAN LICH TRINH TOUR */
+.lichtrinh .chitiet_lichtrinh ul {
+    list-style: disc;
+    padding-left: 15px;
+}
+
+.lichtrinh .chitiet_lichtrinh .list_lichtrinh_title {
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    position: relative; /*de tao the beffore and after*/
+    margin-bottom: 20px;
+    font-weight: 700;
+    min-height: 35px;
+    margin-top: 10px;
+}
+
+.list_lichtrinh_title::before {
+    content: "";
+    position: absolute;
+    border-radius: 100%;
+    border: 1px solid var(--bs-linear-color);
+    top: 11px !important;
+    left: -32px !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.list_lichtrinh_title::after {
+    content: "";
+    position: absolute;
+    border-radius: 100%;
+    background: var(--bs-linear-color);
+    top: 14px !important;
+    left: -28px !important;
+    width: 12px !important;
+    height: 12px !important;
+  
+}
+
+.list_lichtrinh_box {
+    padding: 0px 20px;
+    border-left: dotted 3px #215390;
+}
+
+.tab_title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #617263;
+    border-left: 4px solid var(--bs-linear-color);
+}
+.tab_title span {
+    padding: 0px 0px 5px 25px;
+    color: #215390;
+}
+/* Custom PHAN LICH TRINH TOUR */

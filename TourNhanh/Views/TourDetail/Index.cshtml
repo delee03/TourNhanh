@@ -5,12 +5,14 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var view = ViewBag.Tour;
+    
+
 }
 
 <style>
 
     .section {
-        padding: 80px 0;
+        padding: 50px 0 80px;
     }
     .tour-info i, .product-details i {
 		color: #8dc63f;
@@ -28,8 +30,9 @@
  */
 	.tour-info {
 		display: grid;
-        width:437px;
+        width:410px;
 		margin-top: 20px;
+        margin-left: 10px;
 		color: #000;
         padding: 15px 20px;
 		border-radius: 10px;
@@ -80,6 +83,79 @@
         object-fit: cover;
 
     }
+    .title-gradient {
+        margin-bottom: 30px; 
+        background-color: var(--bs-linear-color);
+        background-image: var(--bs-linear-img);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600 ;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .slick-prev, .slick-next {
+        top: 25%;
+    }
+
+    .slick-dots {
+        bottom: 133px;
+    }
+
+    .list_lichtrinh_box .slick-prev, .list_lichtrinh_box .slick-next {
+        top: 50%;
+    }
+    .main-content {
+        position: relative;
+        top: -100px;
+        max-height: 100vh; 
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 0 10px;
+    }
+
+        .main-content::-webkit-scrollbar{
+            width: 10px;
+            height: 100px;
+            
+        }
+ 
+        .main-content::-webkit-scrollbar-track {
+            background-color: #bbb;  
+            border-radius: 8px;
+        }
+
+        .main-content::-webkit-scrollbar-thumb {
+            background-color: var(--bs-linear-color);
+            background-image: var(--bs-linear-img);
+            border-radius: 8px;
+           
+        }
+/* 
+        .main-content::-webkit-scrollbar-thumb:hover, .main-content::-webkit-scrollbar-thumb:focus {
+                background-color: #2db0ca;
+                background-image: linear-gradient(180deg, #2db0ca 0%, #6284FF 50%, #FF0000 100%);
+                box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        } */
+
+    .main-content .nav-tabs {
+        margin-bottom: 20px;
+    }   
+    .title-price-list {
+        border-left: 3px solid #f79321;
+        padding-left: 20px;
+        font-weight:600;
+        color: #215390;
+        font-size: 20px;
+    }
+
+    .tour-preview {
+        text-align: center;
+        width: 100%;
+        height: 400px;
+        object-fit:cover;
+    }
+
 </style>
 
 
@@ -88,7 +164,7 @@
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">
-            Thông tin tour
+            Vi vu cùng Tour Nhanh
         </h3>
         <ol class="breadcrumb justify-content-center mb-0">
             <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>     
@@ -101,16 +177,15 @@
 <!-- Header End -->
 <!-- /BREADCRUMB -->
 <section class="lichtrinh section">
-    <div class="container">
-               
-        <div class="title">
-            <h2>
-                Tour @view.Name
-            </h2>
-        </div>
-        <div class="content_lichtrinh">
+    <div class="container">                 
+        <h2 class="title-gradient">
+            Lịch trình tour @view.Name
+        </h2>
+
+         <div class="content_lichtrinh">  
             <div class="row">
-                <div class="col-8 main-content">
+                <div class="col-8 content-left">
+                    @*   Hinfh anh tour *@
                     <div class="image_tour row">
                         <div id="detail_main_img" class="col-12">
 
@@ -139,123 +214,1025 @@
                         </div>
                      
                     </div>
-                </div>
-                <div class="col-4 sub-content">
+                     @*   Hinfh anh tour *@
+                    <!--    main content    -->
+                    <div class="main-content">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link1 active" aria-current="page" href="#diemnhanhanhtrinh">Điểm nhấn hành trình</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link1" href="#lichtrinh">Lịch trình</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link1" href="#lichkhoihanh">Lịch khởi hành</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link1" href="#quydinh">Quy định</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link1" href="#map">Bản đồ</a>
+                            </li>
+                        </ul>
+                        <p>
+                            <a asp-action="Create" asp-route-tourId="@ViewBag.TourId">Create New</a>
+                        </p>
 
-                    <div class="row">
-                        <div class="product-details col-12">
-                            <h3>Khởi hành và giá cả</h3>
-                           
-                  
-                            <div>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa-regular fa-star text-primary"></i>
+                        <div class="diemnhan_tour">
+                            <h3 id="diemnhanhanhtrinh" class="tab_title">
+                                <span>Điểm nhấn hành trình: <span>
+                            </h3>
+                            @foreach(var item in Model)
+                            {
+                                <div>                               
+                                    @foreach(var desc in item.Location.SplitDescription()){
+                                        <p>@desc </p>
+                                    }
                                 </div>
-                                <a class="review-link" href="#">10 Review(s) | Add your review</a>
+                            }                                  
+                        </div>
+                        <!-- Lich trinh-->
+                        <div class="chitiet_lichtrinh">                     
+                            <div id="lichtrinh" class="tab_title">
+                                <span>Lịch trình</span>
                             </div>
-                            <div>
-                                <h3 class="product-price">@view.Price VNĐ <del class="product-old-price">999999VNĐ</del></h3>
+                         
+                            <div class="list_order">                            
+                                @foreach(var item in Model)
+                                {
+                                    var text = "";
+                                    @if (item.Order == 3) { text = "cuối cùng"; }
+                                    else if (item.Order == 2) { text = "kế tiếp"; }
+                                    else text = "đầu tiên";
+                                    <div>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </div>
+                                    <div class="list_lichtrinh_box">
+                                        <div class="list_lichtrinh_title">
+                                     
+                                            <span>Ngày @item.Order:Điểm đến @item.Location.Address</span>
+                                        </div>
+                                        <div class="list_lichtrinh_content tinymce">
+                                            <!--Chi tiết tại từng local trong địa điểm mô tả-->
+                                        @*     @foreach (var part in item.Location.SplitAddress())
+                                            {
+                                               <p> Đi đến @part trưa đén nghỉ ngơi tại @item.Hotel.Name tại @item.Hotel.Address </p>
+                                            } *@
+                                            <p>Điểm đến <span>@text</span> trong hành trình của chúng ta là: &nbsp;<strong>@item.Location.Name</strong></p>
+                                            <img style="width:100%; height: 240px; object-fit: cover;" src="@item.Tour.MainImageUrl" />
+                                            <figure class="py-3 text-center"> Hình ảnh về địa danh @item.Location.Name</figure>
+                                            <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng địa phương @item.Location.SplitAddress().First(). Tự do khám phá Thành phố&nbsp;<strong> @item.Location.SplitAddress().First()</strong>
+
+
+                                            <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về &nbsp; @if (@item.Location.SplitAddress().Count >= 2)
+                                                        {
+                                                    <strong>
+                                                            @item.Location.SplitAddress()[1]
+                                                    </strong>
+                                                        }  
+                                                 </p>
+                                            theo Quốc Lộ 10.Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng Bắc Bộ với cảnh làng quê thanh bình qua các tỉnh<strong> @item.Tour.Name</strong>.</p>
+                                            <p><strong>Trưa:&nbsp;</strong>&nbsp;Quý khách sẽ nghỉ ngơi tại khách sạn &nbsp;<strong>@item.Hotel.Name</strong>, Quý khách tới nhà hàng dùng cơm trưa. Về khách sạn làm thụ tục nhận phòng và nghỉ ngơi.</p>
+                                            <p><strong>Chiều:</strong>&nbsp;Xe và Hướng dẫn viên đưa đi tham quan:<strong> @item.Location.SplitAddress().Last()</strong></p>
+                                            <ul>
+                                                <li><strong>Quần thể danh thắng &nbsp; @item.Location.Address</strong>&nbsp; với phong cảnh hữu tình nên thơ, giúp cho Việt Nam lần dầu lọt vào danh sách 30 thắng cảnh hỗn hợp đẹp nhất Thế Giới. Lên thuyền xuôi dòng Sào khê uốn lượn giữa cánh đồng lúa , nơi những dải đá vôi, thung lũng và những sông ngòi đan xen tạo nên một không gian huyền ảo, kỳ bí , quý khách đi đò tham Hang sáng , Hang tối , Hang nấu rượu…</li>
+                                            </ul>
+
+                                            <div id="tour-img" style="margin: 30px 0;">
+                                                
+                                                @if (ViewBag.TourImage != null)
+                                                {                                                       
+                                                  foreach (var image in ViewBag.TourImage)
+                                                    {
+                                                        <img class="tour-preview mb-4" src="@image" />
+                                                    }
+                                                }
+                                           </div>
+                                         
+                                            <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá thêm về văn hóa đời sống con người tại @item.Location.Name kết thúc hành trình trong ngày vào lúc @item.EndTime</p>
+                                            <ul>
+                                                <li><strong>Bảo tàng &nbsp;(Option – Tự túc vé tham quan)</strong>, Quý khách bách bộ qua những lối đi vòng vèo được bao phủ bởi cây xanh và các kiến trúc non bộ đẹp mắt và sau đó là hành trình chinh phục đỉnh núi Hang Múa với 500 bậc đá. Tới đỉnh núi Múa, thu vào trong tầm mắt của Quý khách là tất cả đất trời của mảnh đất @item.Location.SplitAddress().Last()  rộng lớn với vẻ yên bình nhưng lộng lẫy như một bức tranh thủy mặc khiến không ít người chẳng thể kìm lòng mà vỡ òa cảm xúc. Trên hành trình trở lại, Quý khách sẽ ngang qua khu vực Đầm sen nằm giữa những rặng núi đá vôi tạo nên một khung cảnh cực kỳ thơ mộng và cổ trang. Quý khách có thể thuê những bộ đồ cổ trang để chụp hình tại đây.</li>
+                                            </ul>
+                                            <div>
+                                                @foreach(var img in ViewBag.TourImage)
+                                                {
+                                                    <img class="py-5 text-center" src="@img" />
+                                                        continue;
+
+                                                }
+                                                <figure class="text-center py-3"> Vài nét về địa danh @item.Location.Name</figure>
+                                            </div>
+                                            <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng khách sạn @item.Hotel.Name &nbsp;<strong>đặc sản vùng đất @if (@item.Location.SplitAddress().Count >= 2) @item.Location.SplitAddress()[1]</strong>
+                                             , sau đó là chương trình tự do của quý khách với phố đêm của thành phố  &nbsp; @item.Location.Name.</p>
+                                            <p><strong>@item.StartTime:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển đến địa điểm tiếp theo lịch trình. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng, Trung du, Miền núi với cảnh làng quê thanh bình qua các tỉnh, thành phố, @item.Tour.Name</p>
+                                         </div>
+                                    </div>
+                                }
+                                <div>
+                                    <p>Mọi thông tin chi tiết xin quý khách vui lòngđọc thêm trong <strong>QUY ĐỊNH </strong>của chúng tôi bên dưới hoặc gọi cho nhân viên của chúng tôi bằng<strong> ZALO</strong> hoặc <strong>HOTLINE</strong></p>
+                                </div>
+                          
+                                <!--LICH khoi hanh-->
+                                <div class="row" id="row-1517252312">
+                                    <div id="col-1469351164" class="col small-12 large-12">
+                                        <div class="col-inner">
+                                            <span class="scroll-to"
+                                                  data-label="Scroll to: #banggia"
+                                                  data-bullet="false"
+                                                  data-link="#banggia"
+                                                  data-title="Change this">
+                                                <a name="banggia"></a>
+                                            </span>
+
+                                            <a id="lichkhoihanh" href="#lichkhoihanh"></a>
+                                            <div class="price-list">
+                                                <h3  class="tab_title">
+                                                    <span>Lịch khởi hành: từ TPHCM <span>
+                                                </h3>
+                                                <div class="tab-container">
+                                                    <div class="content-tab-title">
+                                                        <ul>
+                                                            <li class="tablink active" data-tab="all">
+                                                                Tất cả
+                                                            </li>
+                                                            <li class="tablink" data-tab="month-06 ">
+                                                                Tháng 06
+                                                            </li>
+                                                            <li class="tablink" data-tab="month-07 ">
+                                                                Tháng 07
+                                                            </li>
+                                                            <li class="tablink" data-tab="month-08 ">
+                                                                Tháng 08
+                                                            </li>
+                                                            <li class="tablink" data-tab="month-09 ">
+                                                                Tháng 09
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="content-tab-content">
+                                                        <div id="all" class="tabcontent" style="display: block">
+                                                            <table class="table-all">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Ngày khởi hành</th>
+                                                                        <th scope="col">Giá tour</th>
+                                                                        <th scope="col">Chức năng</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>05-06-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-06-05"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>12-06-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-06-12"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>26-06-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.002
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-06-26"
+                                                                               data-price="9590002">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>03-07-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-07-03"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>17-07-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-07-17"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>31-07-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-07-31"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>07-08-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.001
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-08-07"
+                                                                               data-price="9590001">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>21-08-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-08-21"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>28-08-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-08-28"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>11-09-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                8.990.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-09-11"
+                                                                               data-price="8990000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>18-09-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                8.990.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-09-18"
+                                                                               data-price="8990000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>25-09-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                8.990.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-09-25"
+                                                                               data-price="8990000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div id="month-06" class="tabcontent">
+                                                            <table class="table-all">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Ngày khởi hành</th>
+                                                                        <th scope="col">Giá tour</th>
+                                                                        <th scope="col">Chức năng</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>05-06-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-06-05"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>12-06-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-06-12"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>26-06-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.002
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-06-26"
+                                                                               data-price="9590002">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div id="month-07" class="tabcontent">
+                                                            <table class="table-all">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Ngày khởi hành</th>
+                                                                        <th scope="col">Giá tour</th>
+                                                                        <th scope="col">Chức năng</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>03-07-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-07-03"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>17-07-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-07-17"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>31-07-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-07-31"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div id="month-08" class="tabcontent">
+                                                            <table class="table-all">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Ngày khởi hành</th>
+                                                                        <th scope="col">Giá tour</th>
+                                                                        <th scope="col">Chức năng</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>07-08-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.001
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-08-07"
+                                                                               data-price="9590001">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>21-08-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-08-21"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>28-08-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                9.590.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-08-28"
+                                                                               data-price="9590000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div id="month-09" class="tabcontent">
+                                                            <table class="table-all">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Ngày khởi hành</th>
+                                                                        <th scope="col">Giá tour</th>
+                                                                        <th scope="col">Chức năng</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>11-09-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                8.990.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-09-11"
+                                                                               data-price="8990000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>18-09-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                8.990.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-09-18"
+                                                                               data-price="8990000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>25-09-2024</td>
+                                                                        <td>
+                                                                            <p>
+                                                                                8.990.000
+                                                                                <span class="vnd-tb">VNĐ</span>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a target="_self"
+                                                                               class="button primary is-outline lowercase expand tourLienhe btnGiucho"
+                                                                               data-name="Tour Miền Bắc 5N4Đ: HÀ NỘI - HẠ LONG - TRÀNG AN - NINH BÌNH - TAM CHÚC - MAI CHÂU - MỘC CHÂU - SƠN LA"
+                                                                               data-tourID="6530"
+                                                                               data-date="2024-09-25"
+                                                                               data-price="8990000">
+                                                                                <span>Giữ chỗ</span>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--lich khoi hanh end-->
+                                <!--MOTA start-->
+                                <div class="row section-content" id="row-877408533">
+                                    <div id="col-650395934" class="col col-mota small-12 large-12">
+                                        <div class="col-inner">
+                                            <a id="quydinh" href="#mota"></a>
+
+                                            <div class="woocommerce-tabs wc-tabs-wrapper container tabbed-content">                                            
+                                                    <div class="list_lichtrinh_title">
+                                                        <span>Quy định của chúng tôi</span>
+                                                    </div>                                           
+                                                <div class="tab-panels">
+                                                    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content active"
+                                                         id="tab-description"
+                                                         role="tabpanel"
+                                                         aria-labelledby="tab-title-description">
+                                                        <p><strong>I. Giá tour Miền Bắc bao gồm</strong></p>
+                                                        <p>
+                                                            <strong>VẬN CHUYỂN: </strong>Xe du lịch 16 &#8211;
+                                                            45 chỗ (phù hợp số lượng) đời mới,máy lạnh, ghế bật.
+                                                        </p>
+                                                        <p>
+                                                            <strong>VÉ MÁY BAY</strong>: bay khứ hồi TP.HCM – Hà
+                                                            Nội – TP.HCM: Hãng Vietjet Air ( bao gồm 07kg xách
+                                                            tay + 20kg hành lý kí gửi).
+                                                        </p>
+                                                        <p>
+                                                            <strong>KHÁCH SẠN:</strong> Tiêu chuẩn 3 sao &#8211;
+                                                            2 khách/phòng, trường hợp lẻ ngủ 3
+                                                        </p>
+                                                        <p>
+                                                            <strong>Khách sạn tham khảo:</strong><br />
+                                                            + Hạ Long: Newday, Bảo Hân, Newyork…hoặc tương
+                                                            đương<br />
+                                                            + Ninh Bình: BVM, Golden Season, Rio… hoặc tương
+                                                            đương<br />
+                                                            + Hà Nội: De La Sein, Frist eden, Thăng Long
+                                                            Espana…hoặc tương đương<br />
+                                                            + Mộc Châu: Mạnh Tuân… hoặc tương đương
+                                                        </p>
+                                                        <p>
+                                                            <strong>ĂN UỐNG: </strong>ăn uống theo chương trình
+                                                        </p>
+                                                        <ul>
+                                                            <li>
+                                                                Ăn sáng: 04 bữa sáng tại khách sạn + 1 bữa ăn
+                                                                nhẹ tối ngày về
+                                                            </li>
+                                                            <li>
+                                                                Ăn trưa, chiều: 09 tại các nhà hàng địa phương,
+                                                                hợp vệ sinh đảm bảo an toàn thực phẩm.
+                                                            </li>
+                                                        </ul>
+                                                        <p><strong>HƯỚNG DẪN VIÊN:</strong></p>
+                                                        <ul>
+                                                            <li>
+                                                                Đoàn có HDV tiếng Việt thuyết minh và phục vụ
+                                                                tham quan suốt tuyến
+                                                            </li>
+                                                            <li>
+                                                                Đội ngũ Hướng dẫn viên trẻ, năng động, nhiệt
+                                                                tình.
+                                                            </li>
+                                                        </ul>
+                                                        <p>
+                                                            <strong>BẢO HIỂM:</strong> Bảo hiểm du lịch theo quy
+                                                            định trị giá 50.000.000vnđ/vụ.
+                                                        </p>
+                                                        <p>
+                                                            <strong>THAM QUAN</strong>: Bao gồm phí vào cổng một
+                                                            lượt tại các điểm tham quan nêu trên chương trình.
+                                                        </p>
+                                                        <p>
+                                                            <strong>QUÀ TẶNG: </strong>Nón du lịch, Khăn ướt +
+                                                            nước đóng chai.
+                                                        </p>
+                                                        <p><strong>II. Giá tour không bao gồm</strong></p>
+                                                        <p>Tiền TIP cho HDV + Tài xế địa phương , VAT</p>
+                                                        <p>
+                                                            Chi phí cá nhân ngoài chương trình: giặt ủi, điện
+                                                            thoại, minibar…
+                                                        </p>
+                                                        <p>
+                                                            Vé Cáp treo Fansipan: Theo giá công bố của Sunworld
+                                                        </p>
+                                                        <p>Vé Tàu hỏa Mường Hoa, vé tàu hỏa leo núi</p>
+                                                        <p><strong>III. Chính sách đặt tour</strong></p>
+                                                        <ul>
+                                                            <li>
+                                                                Lần 1: Quý khách vui lòng thanh toán 50% giá trị
+                                                                tour sau khi đăng ký giữ chỗ bằng hình thức
+                                                                chuyển khoản hoặc tiền mặt tại văn phòng công
+                                                                ty.
+                                                            </li>
+                                                            <li>
+                                                                Lần 2: Thanh toán hết phần còn lại trước ngày
+                                                                khởi hành 05 &#8211; 07 ngày.
+                                                            </li>
+                                                        </ul>
+                                                        <p>
+                                                            <strong>
+                                                                IV. Điều kiện hủy Tour (không tính thứ 7, chủ
+                                                                nhật và ngày lễ)
+                                                            </strong>
+                                                        </p>
+                                                        <p>
+                                                            Nếu hủy tour, Quý khách thanh toán các khoản lệ phí
+                                                            hủy tour sau :
+                                                        </p>
+                                                        <ul>
+                                                            <li>Hủy tour sau khi đăng kí: 30% giá tour.</li>
+                                                            <li value="5">
+                                                                Trước ngày đi 20 ngày: 50% giá tour.
+                                                            </li>
+                                                            <li value="5">
+                                                                Trước ngày đi 10-19 ngày: 75% giá tour.
+                                                            </li>
+                                                            <li value="5">
+                                                                Trước ngày đi 0-10 ngày : 100% giá tour.
+                                                            </li>
+                                                            <li value="5">
+                                                                Việc huỷ bỏ chuyến đi phải được thông báo trực
+                                                                tiếp với Công ty hoặc qua fax, email, tin nhắn
+                                                                và phải được Công ty xác nhận. Việc huỷ bỏ bằng
+                                                                điện thoại không được chấp nhận.
+                                                            </li>
+                                                            <li value="5">
+                                                                Do tính chất là đoàn ghép khách lẻ, công ty du
+                                                                lịch sẽ có trách nhiệm nhận khách đăng ký cho đủ
+                                                                đoàn (10 khách người lớn trở lên) thì đoàn sẽ
+                                                                khởi hành đúng lịch trình. Nếu số lượng đoàn
+                                                                dưới 10 khách, công ty có trách nhiệm thông báo
+                                                                cho khách trước khi khởi hành 3 ngày và sẽ thỏa
+                                                                thuận lại ngày khởi hành mới hoặc hoàn trả toàn
+                                                                bộ số tiền đã đặt cọc tour.
+                                                            </li>
+                                                            <li value="5">
+                                                                Trong những trường hợp bất khả kháng như: khủng
+                                                                bố, bạo động, thiên tai, lũ lụt, dịch bệnh… Tuỳ
+                                                                theo tình hình thực tế và sự thuận tiện, an toàn
+                                                                của khách hàng, công ty Du Lịch sẽ chủ động
+                                                                thông báo cho khách hàng sự thay đổi như sau:
+                                                                huỷ hoặc thay thế bằng một chương trình mới với
+                                                                chi phí tương đương chương trình tham quan trước
+                                                                đó. Trong trường hợp chương trình mới có phát
+                                                                sinh thì Khách hàng sẽ thanh toán khoản phát
+                                                                sinh này. Tuy nhiên, mỗi bên có trách nhiệm cố
+                                                                gắng tối đa, giúp đỡ bên bị thiệt hại nhằm giảm
+                                                                thiểu các tổn thất gây ra vì lý do bất khả
+                                                                kháng.…
+                                                            </li>
+                                                            <li value="5">
+                                                                Đối với sự thay đổi lịch trình, giờ bay do lỗi
+                                                                của hãng hàng không, tàu hoả, tàu thuỷ, công ty
+                                                                sẽ không chịu trách nhiệm bất kỳ phát sinh nào
+                                                                do lỗi trên như: phát sinh bữa ăn, nhà hàng,
+                                                                khách sạn, phương tiện di chuyển, hướng dẫn
+                                                                viên, …
+                                                            </li>
+                                                        </ul>
+                                                        <h3>
+                                                            <strong>
+                                                                QUÝ KHÁCH VUI LÒNG CHUẨN BỊ GIẤY TỜ TÙY THÂN ĐỂ
+                                                                ĐI MÁY BAY:
+                                                            </strong>
+                                                        </h3>
+                                                        <ul>
+                                                            <li>
+                                                                Người từ 14 tuổi trở lên phải có: Chứng minh
+                                                                nhân dân gốc hoặc hộ chiếu gốc hoăc bằng lái xe
+                                                                gốc, còn mới, còn hạn sử dụng.
+                                                            </li>
+                                                            <li>
+                                                                Trẻ em dưới 14 tuổi phải có: giấy khai sinh bản
+                                                                gốc hoặc hộ chiếu gốc.
+                                                            </li>
+                                                            <li>
+                                                                Những giấy tờ cá nhân của khách hàng (CMND hoặc
+                                                                Passport) thuộc về trách nhiệm của khách hàng.
+                                                                Mọi vấn đề như hình ảnh, thông tin giấy tờ trong
+                                                                bản gốc bị mờ, không rõ ràng; Passport, CMND hết
+                                                                hạn,… không đúng quy định của pháp luật Việt
+                                                                Nam, công ty du lịch sẽ không chịu trách nhiệm
+                                                                và sẽ không hoàn trả bất cứ chi phí phát sinh
+                                                                nào.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="map" style=" margin-top: 30px; padding: 30px 0">
+                                    <div class="list_lichtrinh_title">
+                                        <span>Vị trí công ty Tour Nhanh: Khu CNC, Thủ Đức Campus</span>
+                                    </div>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3918.420763561081!2d106.7803462!3d10.8555672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2zSFVURUNIIC0gxJDhuqFpIGjhu41jIEPDtG5nIG5naOG7hyBUUC5IQ00gKFRodSBEdWMgQ2FtcHVzKQ!5e0!3m2!1svi!2s!4v1716467335167!5m2!1svi!2s" width="700" height="500" style="margin-top: 20px;
+                                        outline: 10px solid var(--bs-linear-color);
+                                        /* width: 180%; */
+                                        border-radius: 25px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <!--mota end-->
+                            </div>
+                            <!-- List ORDER thu tu tour-->
+                        </div>
+                        <!-- Lich trinh-->
+                    </div>
+                   <!-- main-content -->
+                </div>
+                <!--Content_left-->
+                <!--Content right-->
+                <div class="col-4 right-content">
+                   
+                        <div class="product-details">
+                                <h3>Khởi hành và giá cả</h3>
+                                            
+                                <div>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa-regular fa-star text-primary"></i>
+                                    </div>
+                                    <a class="review-link" href="#">10 Review(s) | Add your review</a>
+                                </div>
+                                <div>
+                                    <h3 class="product-price">@view.Price VNĐ <del class="product-old-price">999999VNĐ</del></h3>
                                 
-                            </div>
-                            <h3><span class="product-available"><i class="fa-solid fa-hand-point-right fa-beat"></i>"Thích vi vu thì nhích thôi" <i class="fa-solid fa-hand-point-left fa-beat"></i></span></h3>
-                            <label>Phương tiện di chuyển: @view.Transport.Name </label>
-                            <div class="product-options d-flex justify-content-flex-start align-items-center">
-                                <label>
-                                    Chọn ngày khởi hành:
-                                    <select class="input-select">
-                                        <option value="0">16/6 </option>
-                                        <option value="1">18/6 </option>
-                                        <option value="2">23/6 </option>
-                                        <option value="3">25/6 </option>
-                                        <option value="4">27/6 </option>
-                                    </select>
+                                </div>
+                                <h3><span class="product-available"><i class="fa-solid fa-hand-point-right fa-beat"></i>"Thích vi vu thì nhích thôi" <i class="fa-solid fa-hand-point-left fa-beat"></i></span></h3>
+                                <label>Phương tiện di chuyển: @view.Transport.Name </label>
+                                <div class="product-options d-flex justify-content-flex-start align-items-center">
+                                    <label>
+                                        Chọn ngày khởi hành:
+                                        <select class="input-select">
+                                            <option value="0">16/6 </option>
+                                            <option value="1">18/6 </option>
+                                            <option value="2">23/6 </option>
+                                            <option value="3">25/6 </option>
+                                            <option value="4">27/6 </option>
+                                        </select>
 
-                                </label>
+                                    </label>
 
-                                <label>
-                                    Thú cưng:
-                                    <select class="input-select">
-                                        <option value="0">Có </option>
-                                        <option value="1">Không </option>
+                                    <label>
+                                        Thú cưng:
+                                        <select class="input-select">
+                                            <option value="0">Có </option>
+                                            <option value="1">Không </option>
 
-                                    </select>
+                                        </select>
 
-                                </label>
+                                    </label>
 
-                            </div>
+                                </div>
                           
 
-                            <div class="add-to-cart">
-                                @* <div class="qty-label" >
-                                Qty
-                                <div class="input-number">
-                                <input type="number" value="1">
-                                <span class="qty-up">+</span>
-                                <span class="qty-down">-</span>
-                                </div>
-                                </div> *@
-                                @* <button class="add-to-cart-btn"><a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-productId="@Model.Id>" asp-route-quantity="@numOfQuanity"><i class="fa fa-shopping-cart"></i> add to cart</a></button> *@
                                 <div class="add-to-cart">
-                                    @* <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-productId="@Model.Id" asp-route-quantity="@numOfQuanity">
-                                    <button class="add-to-cart-btn">
-                                    <i class="fa fa-shopping-cart"></i> add to cart
-                                    </button>
-                                    </a> *@
-                                    <button onclick="showSuccessToast();" class="add-to-cart-btn addToCartBtn btn--success" data-productId="@view.Id"><i class="fa fa-shopping-cart"></i> đặt tour</button>
-                                    @* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
-                                    <a class="add-to-cart-btn new" asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@view.Id"><i class="fa fa-eye"></i>Xem lịch trình</a>
-                                    <br />
-                                    @* <a asp-action="Index" class="btn-action"><i class="fa-solid fa-arrow-left"></i>Trở về</a> *@
+                                    @* <div class="qty-label" >
+                                    Qty
+                                    <div class="input-number">
+                                    <input type="number" value="1">
+                                    <span class="qty-up">+</span>
+                                    <span class="qty-down">-</span>
+                                    </div>
+                                    </div> *@
+                                    @* <button class="add-to-cart-btn"><a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-productId="@Model.Id>" asp-route-quantity="@numOfQuanity"><i class="fa fa-shopping-cart"></i> add to cart</a></button> *@
+                                    <div class="add-to-cart">
+                                        @* <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-productId="@Model.Id" asp-route-quantity="@numOfQuanity">
+                                        <button class="add-to-cart-btn">
+                                        <i class="fa fa-shopping-cart"></i> add to cart
+                                        </button>
+                                        </a> *@
+                                        <button onclick="showSuccessToast();" class="add-to-cart-btn addToCartBtn btn--success" data-productId="@view.Id"><i class="fa fa-shopping-cart"></i> đặt tour</button>
+                                        @* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
+                                        <a class="add-to-cart-btn new" href="https://zalo.me/0931034852"><i class="fa fa-eye"></i>Yêu cầu tư vấn</a>
+                                        <br />
+                                        @* <a asp-action="Index" class="btn-action"><i class="fa-solid fa-arrow-left"></i>Trở về</a> *@
+                                    </div>
+
+                                  
                                 </div>
 
+                                <ul class="product-btns">
+                                    <li><a href="#"><i class="fa-regular fa-heart"></i> add to wishlist</a></li>
+                                    <li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+                                </ul>
 
+                                <ul class="product-links">
+                                    <li>Lịch trình:</li>
+                                    <li><a href="#">@view.Category.Name</a></li> |
+                                    @* <li><a href="#">Accessories</a></li> *@
+                                    <li>Điểm khởi hành:</li>
+                                    <li><a href="#"> tại TPHCM</a></li>
+                                    <li>Điểm đến:</li>
+                                    <li><a href="#">@view.Name</a></li>
+                                </ul>
+
+                                @* <ul class="product-links">
+                                <li>Điểm đến: @view.Location.Name </li>
+                                </ul> *@
+
+                                <ul class="product-links">
+                                    <li>Chia sẻ:</li>
+                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                                </ul>                         
                             </div>
-
-                            <ul class="product-btns">
-                                <li><a href="#"><i class="fa-regular fa-heart"></i> add to wishlist</a></li>
-                                <li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
-                            </ul>
-
-                            <ul class="product-links">
-                                <li>Lịch trình:</li>
-                                <li><a href="#">@view.Category.Name</a></li> |
-                                @* <li><a href="#">Accessories</a></li> *@
-                                <li>Điểm khởi hành:</li>
-                                <li><a href="#"> tại TPHCM</a></li>
-
-                            </ul>
-
-                            @* <ul class="product-links">
-                            <li>Điểm đến: @view.Location.Name </li>
-                            </ul> *@
-
-                            <ul class="product-links">
-                                <li>Chia sẻ:</li>
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
-                            </ul>                         
-                       </div>
-                        <div class="tour_detail col-12 ">
-                            <div class="tour-info">
-                                <p><i class="fas fa-check"></i> Bảo hiểm</p>
-                                <p><i class="fas fa-check"></i> Bữa sáng</p>
-                                <p><i class="fas fa-check"></i> Hướng dẫn viên</p>
-                                <p><i class="fas fa-check"></i> Khách sạn 3 sao</p>
-                                <p><i class="fas fa-check"></i> Vé tham quan</p>
-                                <p><i class="fas fa-check"></i> Vé máy bay</p>
-                                <p><i class="fas fa-check"></i> Xe đưa đón</p>
-                            </div>
-                       </div>
-                 </div>
-             </div> 
+                            <div class="tour_detail col-12 ">
+                                <div class="tour-info">
+                                    <p><i class="fas fa-check"></i> Bảo hiểm</p>
+                                    <p><i class="fas fa-check"></i> Bữa sáng</p>
+                                    <p><i class="fas fa-check"></i> Hướng dẫn viên</p>
+                                    <p><i class="fas fa-check"></i> Khách sạn 3 sao</p>
+                                    <p><i class="fas fa-check"></i> Vé tham quan</p>
+                                    <p><i class="fas fa-check"></i> Vé máy bay</p>
+                                    <p><i class="fas fa-check"></i> Xe đưa đón</p>
+                                </div>
+                             </div>
+                        </div>                  
+                    </div>
+                    <!--Content right-->
+               </div>
+               <!-- row -->
         </div>
+        <!--content-->
     </div>
+    <!--Contaiiner-->
 </section>
 
 
@@ -341,6 +1318,11 @@
                 <div class="phone-vr-img-circle">
                     <a target="_blank" href="https://zalo.me/0931034852">
                         <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+                    </a>                
+                </div>
+                <div class="zalo-bar zalo-bar-n">
+                    <a href="https://zalo.me/0931034852">
+                        <span class="text-phone">Gửi yêu cầu tư vấn ngay</span>
                     </a>
                 </div>
             </div>

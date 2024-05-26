@@ -11,20 +11,32 @@ namespace TourNhanh.Models
         public int Id { get; set; }
 
         // Tên của địa điểm, không được để trống và tối đa 100 ký tự.
-        [Required]
-        [StringLength(100)]
+        [Required]  
         public string? Name { get; set; }
 
         // Mô tả về địa điểm, tối đa 500 ký tự.
-        [StringLength(500)]
-        public string? Description { get; set; }
-
-        // Tọa độ vĩ độ của địa điểm.
-        public double? Latitude { get; set; }
-
-        // Tọa độ kinh độ của địa điểm.
-        public double? Longitude { get; set; }
-
+        public string?Description { get; set; }
+        public List<string> SplitDescription()
+        {
+            return Description.Split('-').ToList();
+        }    
+        public string? Desc1 { get; set; }
+       
+        public string? Desc2 { get; set; }
+       
+        public string? Desc3 { get; set; }
+        
+        public float? Latitude { get; set; }
+        public float? Longitude { get; set; }
+        //gồm 3 địa điểm tối đa cách nhau bởi dấu " - ";
         public string? Address { get; set; }
+
+        // Hàm để cắt chuỗi Address-
+        public List<string> SplitAddress ()
+        {
+            return Address.Split('-').ToList();
+        
+        }
+      
     }
 }
