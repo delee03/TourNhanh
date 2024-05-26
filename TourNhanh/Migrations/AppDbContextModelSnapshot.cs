@@ -292,7 +292,7 @@ namespace TourNhanh.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PaymentDate")
+                    b.Property<DateTime?>("PaymentDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("PaymentMethod")
@@ -303,6 +303,9 @@ namespace TourNhanh.Migrations
 
                     b.Property<int>("TourId")
                         .HasColumnType("int");
+
+                    b.Property<bool?>("isPaymentCompleted")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -472,7 +475,15 @@ namespace TourNhanh.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int?>("RemainingSlots")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<int>("TransportId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("maxParticipants")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
