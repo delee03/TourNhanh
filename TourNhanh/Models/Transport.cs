@@ -14,8 +14,7 @@ namespace TourNhanh.Models
         [Required]
         public string? Name { get;set ; }
 
-        //Description
-        [Required]
+        //Description     
         public string? Description { get; set; }
     }
 }

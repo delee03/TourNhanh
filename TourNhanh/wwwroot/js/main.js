@@ -74,7 +74,7 @@
 
     // packages carousel
     $(".packages-carousel").owlCarousel({
-        autoplay: true,
+        autoplay: false,
         smartSpeed: 1000,
         center: false,
         dots: false,
@@ -247,7 +247,7 @@
     $('#detail_main_img').slick({
         infinite: true,
         speed: 300,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         fade: true,
         dots: false,
@@ -256,13 +256,26 @@
         asNavFor: '#detail_img',
     });
 
+    $('#tour-img').slick({
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        fade: true,
+        dots: false,
+        arrows: true,
+       
+    });
+
     // Product imgs Slick
     $('#detail_img').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
         dots: true, 
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         focusOnSelect: true,
         centerPadding: 0,

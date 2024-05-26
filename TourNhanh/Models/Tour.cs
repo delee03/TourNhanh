@@ -17,12 +17,10 @@ namespace TourNhanh.Models
         public virtual Category? Category { get; set; }
 
         //Name
-        [Required]
-        [StringLength(100)]
+        [Required]   
         public string? Name { get; set; }
 
-        //Description
-        [StringLength(500)]
+        //Description   
         public string? Description { get; set; }
 
         //Price

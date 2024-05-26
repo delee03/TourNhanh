@@ -6,7 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TourNhanh.Migrations
 {
     /// <inheritdoc />
+<<<<<<<< HEAD:TourNhanh/Migrations/20240523103123_init.cs
     public partial class init : Migration
+========
+    public partial class initialDatabase : Migration
+>>>>>>>> origin/Phát:TourNhanh/Migrations/20240525065655_initial Database.cs
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -109,10 +113,13 @@ namespace TourNhanh.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    Latitude = table.Column<double>(type: "float", nullable: true),
-                    Longitude = table.Column<double>(type: "float", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Desc1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Desc2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Desc3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Latitude = table.Column<float>(type: "real", nullable: true),
+                    Longitude = table.Column<float>(type: "real", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -127,7 +134,7 @@ namespace TourNhanh.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -290,8 +297,8 @@ namespace TourNhanh.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TransportId = table.Column<int>(type: "int", nullable: false),
                     MainImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)

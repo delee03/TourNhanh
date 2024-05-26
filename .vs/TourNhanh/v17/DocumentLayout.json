@@ -43,12 +43,12 @@
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 525,
-          "SelectedChildIndex": 10,
+          "DockedHeight": 292,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",

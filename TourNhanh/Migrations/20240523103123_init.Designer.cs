@@ -12,8 +12,13 @@ using TourNhanh.Models;
 namespace TourNhanh.Migrations
 {
     [DbContext(typeof(AppDbContext))]
+<<<<<<<< HEAD:TourNhanh/Migrations/20240523103123_init.Designer.cs
     [Migration("20240523103123_init")]
     partial class init
+========
+    [Migration("20240525065655_initial Database")]
+    partial class initialDatabase
+>>>>>>>> origin/Phát:TourNhanh/Migrations/20240525065655_initial Database.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -429,20 +434,27 @@ namespace TourNhanh.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Desc1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Desc2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Desc3")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("Latitude")
-                        .HasColumnType("float");
+                    b.Property<float?>("Latitude")
+                        .HasColumnType("real");
 
-                    b.Property<double?>("Longitude")
-                        .HasColumnType("float");
+                    b.Property<float?>("Longitude")
+                        .HasColumnType("real");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -461,16 +473,14 @@ namespace TourNhanh.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MainImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -554,7 +564,6 @@ namespace TourNhanh.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
