@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X6DX/yX9hn1pP43QVvnXveG95+xanMYVQtC6ToxpAas=",
+  "Hash": "rggTUVDGXNfW/Y9D/TIn0RKBQYxo4GYbeU+aMTaFy+E=",
   "Source": "TourNhanh",
   "BasePath": "_content/TourNhanh",
   "Mode": "Default",
@@ -9249,6 +9249,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\chua-go-ken.png"
+    },
+    {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang11111.jpg",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "img/DaNang11111.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\DaNang11111.jpg"
     },
     {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang22.jpg",
@@ -31994,6 +32013,25 @@
       "OriginalItemSpec": "wwwroot\\tour\\image\\4\\4u3rq53x.xpc.jpg"
     },
     {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\aonieqp0.umx.jpg",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "tour/image/4/aonieqp0.umx.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\tour\\image\\4\\aonieqp0.umx.jpg"
+    },
+    {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\bi3taghv.k1a.jpg",
       "SourceId": "TourNhanh",
       "SourceType": "Discovered",
@@ -32049,6 +32087,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\tour\\image\\4\\exaefs1t.hgs.jpg"
+    },
+    {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\fjacc51x.mpc.jpg",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "tour/image/4/fjacc51x.mpc.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\tour\\image\\4\\fjacc51x.mpc.jpg"
     },
     {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\gyhprlnb.zcr.jpg",
@@ -32146,6 +32203,25 @@
       "OriginalItemSpec": "wwwroot\\tour\\image\\4\\ndwqvr51.m1d.jpg"
     },
     {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\r2qkxgz0.uve.jpg",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "tour/image/4/r2qkxgz0.uve.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\tour\\image\\4\\r2qkxgz0.uve.jpg"
+    },
+    {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\rquv3g2k.yfx.jpg",
       "SourceId": "TourNhanh",
       "SourceType": "Discovered",
@@ -32165,6 +32241,25 @@
       "OriginalItemSpec": "wwwroot\\tour\\image\\4\\rquv3g2k.yfx.jpg"
     },
     {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\tgjk0ka3.azs.jpg",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "tour/image/4/tgjk0ka3.azs.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\tour\\image\\4\\tgjk0ka3.azs.jpg"
+    },
+    {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\yvlrapj4.ing.jpg",
       "SourceId": "TourNhanh",
       "SourceType": "Discovered",
@@ -32182,6 +32277,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\tour\\image\\4\\yvlrapj4.ing.jpg"
+    },
+    {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\4\\zwu1sq1x.tl0.jpg",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "tour/image/4/zwu1sq1x.tl0.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\tour\\image\\4\\zwu1sq1x.tl0.jpg"
     },
     {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\5\\0rvgukhy.fdw.jpg",

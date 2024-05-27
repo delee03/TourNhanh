@@ -218,9 +218,9 @@
 	<!-- container -->
 	<div class="container">
 		<!-- row -->
-		<div class="row">
+		<div class="row ">
 			<!-- Product thumb imgs -->
-			<div class="col-md-2  col-md-pull-5">
+			<div class="col-md-2  col-md-pull-5 wow animate__animated animate__fadeInLeft" data-wow-duration="2s" data-wow-delay=".4s">
 				<div id="product-imgs">
 					@if (ViewBag.TourImages != null)
 					{
@@ -236,7 +236,7 @@
 			</div>
 			<!-- /Product thumb imgs -->
 			<!-- Product main img -->
-			<div class="col-md-6 col-md-push-3">
+			<div class="col-md-6 col-md-push-3 wow animate__animated animate__fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".6s">
 				<div id="product-main-img">
 
 
@@ -272,7 +272,7 @@
 		
 		
 			<!-- Product details -->
-			<div class="col-md-4">
+			<div class="col-md-4 wow animate__animated animate__fadeInTopLeft" data-wow-duration="2s" data-wow-delay=".4s">
 				<div class="product-details">
 					<h2 class="product-name">@Html.DisplayFor(model => model.Name)</h2>
 					<div>
@@ -299,7 +299,7 @@
 						<a class="review-link" href="#">@Model.Reviews.Count() lượt đánh giá</a>
 					</div>
 					<div>
-						<h3 class="product-price">@Html.DisplayFor(model => model.Price) VNĐ <del class="product-old-price">999999VNĐ</del></h3>
+						<h3 class="product-price animate__animated animate__flash animate__infinite">@Html.DisplayFor(model => model.Price) VNĐ <del class="product-old-price">999999VNĐ</del></h3>
 						
 					</div>
 					<h3><span class="product-available"><i class="fa-solid fa-hand-point-right fa-beat"></i> Đặt tour ngay <i class="fa-solid fa-hand-point-left fa-beat"></i></span></h3>
