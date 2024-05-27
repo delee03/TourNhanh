@@ -1,0 +1,84 @@
+﻿@model TourNhanh.Models.Booking
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Xem thông tin</h1>
+
+<div>
+    <h4>Thông tin Booking</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Ngày đặt
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookingDate)
+        </dd>
+        <dt class="col-sm-2">
+            Khách hàng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer)
+        </dd>
+        <dt class="col-sm-2">
+            Số người
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            Tour
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                var tourName = Model.Tour != null ? Model.Tour.Name : null;
+            }
+            @tourName
+        </dd>
+        @* <dt class="col-sm-2">
+            Người liên hệ
+        </dt>
+         <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactPerson.Name)
+        </dd> *@
+        <dt class="col-sm-2">
+            Ghi chú
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+        <dt class="col-sm-2">
+            Số tiền
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            Ngày thanh toán
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaymentDate)
+        </dd>
+        <dt class="col-sm-2">
+            Phương thức thanh toán
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PaymentMethod)
+        </dd>
+        <dt class="col-sm-2">
+            Hoàn thành thanh toán
+        </dt>
+        <dd class="col-sm-10">
+            @{
+                var isPaymentCompleted = Model.isPaymentCompleted == true ? "Yes":"No";
+            }
+            @isPaymentCompleted
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-primary text-dark" asp-controller="Booking" asp-action="Index" asp-area="Admin">Trở về</a>
+</div>

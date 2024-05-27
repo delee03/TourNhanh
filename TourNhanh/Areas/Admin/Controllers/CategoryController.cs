@@ -9,17 +9,19 @@ namespace TourNhanh.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private readonly ICategoryRepository _categoryRepository;
-    
+
         public CategoryController(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }
-        public async Task<ActionResult> Index()
+
+        //GET:Categories
+        public async Task<IActionResult> Index()
         {
-            var categories = await _categoryRepository.GetAllAsync();
-            ViewBag.categories = categories.ToList();
-            return View(categories);
+            return View(await _categoryRepository.GetAllAsync());
         }
+
+        // GET: Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,39 +37,45 @@ namespace TourNhanh.Areas.Admin.Controllers
             return View(category);
         }
 
-
-        public async Task<ActionResult> Create()
+        // GET: Categories/Create
+        public IActionResult Create()
         {
             return View();
         }
 
+        // POST: Categories/Create
         [HttpPost]
-     
-        public async Task<IActionResult> Create(Category category)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Name,Description")] Category category)
         {
             if (ModelState.IsValid)
             {
                 await _categoryRepository.CreateAsync(category);
                 return RedirectToAction(nameof(Index));
             }
-
             return View(category);
         }
 
-        public async Task<IActionResult> Update(int id)
+        // GET: Categories/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-            var category = await _categoryRepository.GetByIdAsync(id);
+            var category = await _categoryRepository.GetByIdAsync(id.Value);
             if (category == null)
             {
                 return NotFound();
             }
-            ViewBag.category = category;
             return View(category);
         }
 
+        // POST: Categories/Edit/5
         [HttpPost]
-        public async Task<IActionResult> Update(int id, Category category)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] Category category)
         {
             if (id != category.Id)
             {
@@ -76,36 +84,36 @@ namespace TourNhanh.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                var existingCategory = await _categoryRepository.GetByIdAsync(id);
-
-                existingCategory.Name = category.Name;  
-                existingCategory.Description = category.Description;
-
-                await _categoryRepository.UpdateAsync(existingCategory);
+                await _categoryRepository.UpdateAsync(category);
                 return RedirectToAction(nameof(Index));
             }
-
             return View(category);
         }
 
-        public async Task<IActionResult> Delete(int id)
+        // GET: Categories/Delete/5
+        public async Task<IActionResult> Delete(int? id)
         {
-            var category = await _categoryRepository.GetByIdAsync(id);
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var category = await _categoryRepository.GetByIdAsync(id.Value);
             if (category == null)
             {
                 return NotFound();
             }
-            ViewBag.category = category;
+
             return View(category);
         }
-        //Process the product deletion
+
+        // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             await _categoryRepository.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
-
-
     }
 }
