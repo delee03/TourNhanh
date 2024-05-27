@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Web_VS\\TourNhanh\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web_VS\\TourNhanh\\TourNhanh\\Migrations\\20240527043926_initial Database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TourNhanh\\Migrations\\20240527043926_initial Database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\areas\\admin\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\areas\\admin\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -132,22 +140,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 180,
-          "SelectedChildIndex": 7,
+          "DockedHeight": 347,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\appsettings.json",
-              "RelativeDocumentMoniker": "TourNhanh\\appsettings.json",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\appsettings.json",
-              "RelativeToolTip": "TourNhanh\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-27T04:35:45.935Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{2d7728c2-de0a-45b5-99aa-89b609dfde73}"
@@ -174,20 +169,71 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Controllers\\BlogController.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "TourNhanh\\Controllers\\BlogController.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAswAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T06:07:21.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Areas\\Admin\\Controllers\\BlogController.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "TourNhanh\\Areas\\Admin\\Controllers\\BlogController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T06:07:19.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "TourNhanh\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AQIAANQAAAAAAAAAAAAowO4AAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T06:04:29.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\appsettings.json",
+              "RelativeDocumentMoniker": "TourNhanh\\appsettings.json",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\appsettings.json",
+              "RelativeToolTip": "TourNhanh\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-27T04:35:45.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "TourController.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\TourController.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Controllers\\TourController.cs",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\TourController.cs",
               "RelativeToolTip": "TourNhanh\\Controllers\\TourController.cs",
-              "ViewState": "AQIAAB8BAAAAAAAAAAD4v6YAAAAIAAAA",
+              "ViewState": "AQIAABMBAAAAAAAAAAD4v6YAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T04:37:43.812Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Add.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Add.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Add.cshtml",
@@ -199,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Change.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Change.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Change.cshtml",
@@ -211,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Shared\\_Layout.cshtml",
@@ -223,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Display.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Display.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Display.cshtml",
@@ -235,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Blog\\Index.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Blog\\Index.cshtml",
@@ -247,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\TourDetail\\Index.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\TourDetail\\Index.cshtml",
@@ -259,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Tour\\Details.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Tour\\Details.cshtml",
@@ -267,12 +313,11 @@
               "RelativeToolTip": "TourNhanh\\Views\\Tour\\Details.cshtml",
               "ViewState": "AQIAAEABAAAAAAAAAAApwC0BAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-23T16:27:19.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-23T16:27:19.428Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Tour.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Tour.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Tour.cs",
@@ -284,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "dbo.Locations [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Locations.sql",
               "ToolTip": "dbo.Locations [Data]",
@@ -293,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "TourDetailController.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\TourDetailController.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Controllers\\TourDetailController.cs",
@@ -305,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Tour\\Index.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Tour\\Index.cshtml",
@@ -317,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Location.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Location.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Location.cs",
@@ -329,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Booking.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Booking.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Booking.cs",
@@ -341,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "TourDetailRepository.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Repositories\\Implementations\\TourDetailRepository.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Repositories\\Implementations\\TourDetailRepository.cs",
@@ -353,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "BookingController.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Controllers\\BookingController.cs",
@@ -365,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\ErrorViewModel.cs",
@@ -377,7 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Hotel.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Hotel.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Hotel.cs",
@@ -389,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "dbo.Tours [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Tours.sql",
               "ToolTip": "dbo.Tours [Data]",
@@ -398,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "Transport.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Transport.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Transport.cs",
@@ -410,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "dbo.Transports [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Transports.sql",
               "ToolTip": "dbo.Transports [Data]",
@@ -419,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "dbo.Hotels [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Hotels.sql",
               "ToolTip": "dbo.Hotels [Data]",
@@ -428,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Blog.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Blog.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Blog.cs",
@@ -440,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "dbo.Categories [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Categories.sql",
               "ToolTip": "dbo.Categories [Data]",
@@ -449,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Controllers\\HomeController.cs",
@@ -461,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "TourDetail.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\TourDetail.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\TourDetail.cs",
@@ -473,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Review.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Review.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Review.cs",
@@ -485,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "main.js",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\main.js",
               "RelativeDocumentMoniker": "TourNhanh\\wwwroot\\js\\main.js",
@@ -497,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "bootstrap.min.css",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\bootstrap.min.css",
               "RelativeDocumentMoniker": "TourNhanh\\wwwroot\\css\\bootstrap.min.css",
@@ -509,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "style.css",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "TourNhanh\\wwwroot\\css\\style.css",
@@ -522,22 +567,9 @@
           ]
         },
         {
-          "DockedHeight": 230,
-          "SelectedChildIndex": 0,
+          "DockedHeight": 63,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20240527043926_initial Database.cs",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Migrations\\20240527043926_initial Database.cs",
-              "RelativeDocumentMoniker": "TourNhanh\\Migrations\\20240527043926_initial Database.cs",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Migrations\\20240527043926_initial Database.cs",
-              "RelativeToolTip": "TourNhanh\\Migrations\\20240527043926_initial Database.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T04:39:26.288Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
