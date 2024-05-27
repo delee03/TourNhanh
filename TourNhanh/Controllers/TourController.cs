@@ -164,7 +164,7 @@ namespace TourNhanh.Controllers
             return View(viewmodel);
         }
 
-        /*// GET: Tour/Create
+        
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create()
         {
