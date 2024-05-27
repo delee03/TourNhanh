@@ -243,19 +243,18 @@
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
                                 @* <a class="btn-hover btn text-white py-2 px-4" href="~/Tour/LichTrinh.cshtml">Lịch trình</a> *@
                             </div>
-                            <div class="col-6 text-start px-0">
-                                <a asp-action="LichTrinh" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xem lịch trình</a>
-                                @* <a class="btn-hover btn text-white py-2 px-4" href="~/Tour/LichTrinh.cshtml">Lịch trình</a> *@
-                            </div>
-                            <div class="col-6 text-center px-0">
+                          @*   <div class="col-6 text-end px-0">
+                                <a  asp-controller="TourDetail"  asp-action="Index" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xem lịch trình</a>
+                            </div> *@
+                            <div class="col-5 text-start px-0">
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Sửa</a>
                             </div>
-                            <div class="col-6 text-center px-0">
+                            <div class="col-5 text-end px-0">
                                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xóa</a>
                             </div>
-                          @*   <div class="col-6 text-end px-0">
+                            <div class="col-6 text-end px-0">
                                 <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                            </div> *@
+                            </div>
                         </div>
                     </div>
                 </div>

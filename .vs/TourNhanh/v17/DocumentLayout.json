@@ -3,43 +3,71 @@
   "WorkspaceRootPath": "D:\\Web_VS\\TourNhanh\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\tourdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\tourdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\services\\vnpay\\vnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\services\\vnpay\\vnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\tour\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\tour\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\services\\vnpay\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\services\\vnpay\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Locations.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\controllers\\tourdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\controllers\\tourdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\repositories\\implementations\\tourdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\repositories\\implementations\\tourdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\tour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\tour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\tourdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\tourdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\wwwroot\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\wwwroot\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\tourdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\tourdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Locations.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\views\\tour\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\views\\tour\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\controllers\\tourdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\controllers\\tourdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Categories.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
@@ -51,38 +79,19 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Hotels.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\tourdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\tourdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Tours.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\models\\transport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\models\\transport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.TourDetails.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|d:\\web_vs\\tournhanh\\tournhanh\\wwwroot\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{7A4363D1-D356-41B5-8A1F-36DA9233D049}|TourNhanh\\TourNhanh.csproj|solutionrelative:tournhanh\\wwwroot\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -91,8 +100,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 92,
-          "SelectedChildIndex": 20,
+          "DockedHeight": 305,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -120,7 +129,127 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 2,
+              "Title": "dbo.Locations [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Locations.sql",
+              "ToolTip": "dbo.Locations [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-05-25T05:11:29.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Tour.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Tour.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Models\\Tour.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Tour.cs",
+              "RelativeToolTip": "TourNhanh\\Models\\Tour.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T14:19:32.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TourDetailController.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\TourDetailController.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Controllers\\TourDetailController.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\TourDetailController.cs",
+              "RelativeToolTip": "TourNhanh\\Controllers\\TourDetailController.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAYwFsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T14:14:00.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Tour\\Index.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Views\\Tour\\Index.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Tour\\Index.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\Tour\\Index.cshtml",
+              "ViewState": "AQIAAAkCAAAAAAAAAAApwPYAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-25T14:09:48.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Location.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Location.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Models\\Location.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Location.cs",
+              "RelativeToolTip": "TourNhanh\\Models\\Location.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAzwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T13:59:18.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Models\\Booking.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Booking.cs",
+              "RelativeToolTip": "TourNhanh\\Models\\Booking.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA3wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T13:45:54.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\TourDetail\\Index.cshtml",
+              "RelativeDocumentMoniker": "TourNhanh\\Views\\TourDetail\\Index.cshtml",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\TourDetail\\Index.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\TourDetail\\Index.cshtml",
+              "ViewState": "AQIAABcBAAAAAAAAAAApwKsAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T11:16:34.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TourDetailRepository.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Repositories\\Implementations\\TourDetailRepository.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Repositories\\Implementations\\TourDetailRepository.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Repositories\\Implementations\\TourDetailRepository.cs",
+              "RelativeToolTip": "TourNhanh\\Repositories\\Implementations\\TourDetailRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T18:11:15.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "TourNhanh\\Controllers\\BookingController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T13:45:15.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "TourNhanh\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T13:44:55.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "Hotel.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Hotel.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Hotel.cs",
@@ -132,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "dbo.Tours [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Tours.sql",
               "ToolTip": "dbo.Tours [Data]",
@@ -141,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Transport.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Transport.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Transport.cs",
@@ -153,7 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "dbo.Transports [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Transports.sql",
               "ToolTip": "dbo.Transports [Data]",
@@ -162,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "dbo.Hotels [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Hotels.sql",
               "ToolTip": "dbo.Hotels [Data]",
@@ -171,32 +300,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\TourDetail\\Index.cshtml",
-              "RelativeDocumentMoniker": "TourNhanh\\Views\\TourDetail\\Index.cshtml",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\TourDetail\\Index.cshtml",
-              "RelativeToolTip": "TourNhanh\\Views\\TourDetail\\Index.cshtml",
-              "ViewState": "AQIAABkBAAAAAAAAAAAowCwBAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-23T11:16:34.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "Blog.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Blog.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Blog.cs",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Blog.cs",
               "RelativeToolTip": "TourNhanh\\Models\\Blog.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAzwAAAAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T06:55:48.42Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "dbo.Categories [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Categories.sql",
               "ToolTip": "dbo.Categories [Data]",
@@ -205,61 +321,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "dbo.Locations [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.Locations.sql",
-              "ToolTip": "dbo.Locations [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-25T05:11:29.593Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "dbo.TourDetails [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/DELEE03_PHATPC/TourNhanh/True/SqlTable/dbo.TourDetails.sql",
-              "ToolTip": "dbo.TourDetails [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-05-25T05:11:19.73Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Location.cs",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Location.cs",
-              "RelativeDocumentMoniker": "TourNhanh\\Models\\Location.cs",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Location.cs",
-              "RelativeToolTip": "TourNhanh\\Models\\Location.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAiwA0AAAASAAAA",
+              "DocumentIndex": 13,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "TourNhanh\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "TourNhanh\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T16:45:39.725Z"
+              "WhenOpened": "2024-05-25T13:44:23.484Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TourDetailController.cs",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\TourDetailController.cs",
-              "RelativeDocumentMoniker": "TourNhanh\\Controllers\\TourDetailController.cs",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Controllers\\TourDetailController.cs",
-              "RelativeToolTip": "TourNhanh\\Controllers\\TourDetailController.cs",
-              "ViewState": "AQIAAIwAAAAAAAAAAAAvwE8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T13:00:08.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 6,
               "Title": "TourDetail.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\TourDetail.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\TourDetail.cs",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\TourDetail.cs",
               "RelativeToolTip": "TourNhanh\\Models\\TourDetail.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAwwBgAAAAqAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-24T12:56:40.106Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Tour\\Details.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Tour\\Details.cshtml",
@@ -271,20 +357,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "Review.cs",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Review.cs",
               "RelativeDocumentMoniker": "TourNhanh\\Models\\Review.cs",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Models\\Review.cs",
               "RelativeToolTip": "TourNhanh\\Models\\Review.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAcwAwAAAAiAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T11:09:38.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T11:09:38.598Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "main.js",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\js\\main.js",
               "RelativeDocumentMoniker": "TourNhanh\\wwwroot\\js\\main.js",
@@ -296,19 +381,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 12,
               "Title": "bootstrap.min.css",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\bootstrap.min.css",
               "RelativeDocumentMoniker": "TourNhanh\\wwwroot\\css\\bootstrap.min.css",
               "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\bootstrap.min.css",
               "RelativeToolTip": "TourNhanh\\wwwroot\\css\\bootstrap.min.css",
-              "ViewState": "AQIAAB0AAAAAAAAAAAArwDIAAAAVAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAArwDIAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-05-22T17:01:27.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "style.css",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "TourNhanh\\wwwroot\\css\\style.css",
@@ -321,65 +406,9 @@
           ]
         },
         {
-          "DockedHeight": 236,
-          "SelectedChildIndex": 3,
+          "DockedHeight": 105,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VnPayService.cs",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Services\\VnPay\\VnPayService.cs",
-              "RelativeDocumentMoniker": "TourNhanh\\Services\\VnPay\\VnPayService.cs",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Services\\VnPay\\VnPayService.cs",
-              "RelativeToolTip": "TourNhanh\\Services\\VnPay\\VnPayService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T11:11:34.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IVnPayService.cs",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Services\\VnPay\\IVnPayService.cs",
-              "RelativeDocumentMoniker": "TourNhanh\\Services\\VnPay\\IVnPayService.cs",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Services\\VnPay\\IVnPayService.cs",
-              "RelativeToolTip": "TourNhanh\\Services\\VnPay\\IVnPayService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T11:11:33.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Program.cs",
-              "RelativeDocumentMoniker": "TourNhanh\\Program.cs",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Program.cs",
-              "RelativeToolTip": "TourNhanh\\Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T11:11:17.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\appsettings.json",
-              "RelativeDocumentMoniker": "TourNhanh\\appsettings.json",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\appsettings.json",
-              "RelativeToolTip": "TourNhanh\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-25T11:10:57.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
