@@ -1119,14 +1119,32 @@
                                 <h3>Khởi hành và giá cả</h3>
                                             
                                 <div>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa-regular fa-star text-primary"></i>
+                            @{
+
+                                var average = ViewBag.AverageRating;
+                                var count = ViewBag.Count;
+                            }
+                                    <div class="rating-stars">
+                                        @for (var i = 0; i < 5; i++)
+                                        {
+                                            // Nếu i nhỏ hơn phần nguyên của số trung bình, hiển thị một sao đầy
+                                            if (i < Math.Floor(ViewBag.AverageRating))
+                                            {
+                                                <i class="fa fa-star" style="color: #007bff;"></i>
+                                            }
+                                            // Nếu i bằng phần nguyên của số trung bình và phần thập phân lớn hơn hoặc bằng 0.5, hiển thị một nửa sao
+                                            else if (i == Math.Floor(average) && average - Math.Floor(average) >= 0.5)
+                                                {
+                                                    <i class="fa fa-star-half half-star" style="color: #007bff;"></i>
+                                                }
+                                            // Nếu không, hiển thị một sao rỗng
+                                                else
+                                                {
+                                                <i class="fa fa-star-o empty"></i>
+                                                }   
+                                        }
                                     </div>
-                                    <a class="review-link" href="#">10 Review(s) | Add your review</a>
+                                     <a class="review-link" href="#">@count lượt đánh giá</a>
                                 </div>
                                 <div>
                                     <h3 class="product-price">@view.Price VNĐ <del class="product-old-price">999999VNĐ</del></h3>

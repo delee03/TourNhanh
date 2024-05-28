@@ -13,15 +13,17 @@ namespace TourNhanh.Controllers
         private readonly IHotelRepository _hotelRepository;
         private readonly ITourRepository _tourRepository;
         private readonly ITourImage _tourImageRepository;
+        private readonly IReviewRepository _reviewRepository;
 
-        public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository, ITourRepository tourRepository, ITourImage tourImageRepository)
+        public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository, ITourRepository tourRepository, ITourImage tourImageRepository, IReviewRepository reviewRepository)
         {
             _tourDetailRepository = tourDetailRepository;
             _locationRepository = locationRepository;
             _hotelRepository = hotelRepository;
             _tourRepository = tourRepository;
             _tourImageRepository = tourImageRepository;
-        }
+            _reviewRepository = reviewRepository;
+    }
 
 
 
@@ -87,6 +89,20 @@ namespace TourNhanh.Controllers
                imageURL.Add(img.ImageUrl);         
             }
             ViewBag.TourImage = imageURL;
+
+            //lấy trung bình đánh giá
+            var reviews = await _reviewRepository.GetReviewsByTourId(tourId);
+            
+            int countRating1 = reviews.Count(v => v.Rating == 1);
+            int countRating2 = reviews.Count(v => v.Rating == 2);
+            int countRating3 = reviews.Count(v => v.Rating == 3);
+            int countRating4 = reviews.Count(v => v.Rating == 4);
+            int countRating5 = reviews.Count(v => v.Rating == 5);
+            int totalCount = countRating1 + countRating2 + countRating3 + countRating4 + countRating5;
+            // Tính trung bình cộng
+            float average = (countRating1 * 1 + countRating2 * 2 + countRating3 * 3 + countRating4 * 4 + countRating5 * 5) / (float)totalCount;
+            ViewBag.AverageRating = average;
+            ViewBag.Count = reviews.Count();
             //Lấy ra list các ảnh
             var tour = await _tourRepository.GetByIdAsync(tourId);
             ViewBag.Tour = tour;

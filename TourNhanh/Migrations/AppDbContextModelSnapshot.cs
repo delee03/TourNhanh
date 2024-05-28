@@ -17,7 +17,7 @@ namespace TourNhanh.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -453,6 +453,40 @@ namespace TourNhanh.Migrations
                     b.ToTable("Locations");
                 });
 
+            modelBuilder.Entity("TourNhanh.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("TourNhanh.Models.Tour", b =>
                 {
                     b.Property<int>("Id")
@@ -663,6 +697,17 @@ namespace TourNhanh.Migrations
                     b.Navigation("Blog");
                 });
 
+            modelBuilder.Entity("TourNhanh.Models.Review", b =>
+                {
+                    b.HasOne("TourNhanh.Models.Tour", "Tour")
+                        .WithMany("Reviews")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tour");
+                });
+
             modelBuilder.Entity("TourNhanh.Models.Tour", b =>
                 {
                     b.HasOne("TourNhanh.Models.Category", "Category")
@@ -737,6 +782,8 @@ namespace TourNhanh.Migrations
 
             modelBuilder.Entity("TourNhanh.Models.Tour", b =>
                 {
+                    b.Navigation("Reviews");
+
                     b.Navigation("TourDetails");
 
                     b.Navigation("TourImages");
