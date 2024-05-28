@@ -49,10 +49,10 @@ namespace TourNhanh.Controllers
 
             var userId = _userManager.GetUserId(User);
             //Chạy thật xóa comment đoạn dưới
-            /*if (userId == null)
+            if (userId == null)
             {
                 return Unauthorized();
-            }*/
+            }
 
             var booking = new Booking
             {
@@ -60,8 +60,8 @@ namespace TourNhanh.Controllers
                 BookingDate = DateTime.Now,
                 Quantity = quantity,
                 Amount = quantity * tour.Price,
-                /*CustomerUserId = userId,*/
-                CustomerUserId = null,//Test, chạy thật thì lấy cái trên
+                CustomerUserId = userId,
+              /*  CustomerUserId = null,*///Test, chạy thật thì lấy cái trên
                 PaymentDate = null,
                 PaymentMethod = paymentMethod,
                 Note = note,
@@ -88,12 +88,12 @@ namespace TourNhanh.Controllers
                 return NotFound();
             }
 
-            var userId = _userManager.GetUserId(User);
+            //var userId = _userManager.GetUserId(User);
             var user = await _userManager.GetUserAsync(User);
 
-            ViewBag.UserName = /*user.FullName*/ "";
-            ViewBag.Email = /*user.Email*/ "";
-            ViewBag.Phone =/* user.PhoneNumber */"";
+            ViewBag.FullName = user.FullName;
+            ViewBag.Email = user.Email ;
+            ViewBag.Phone = user.PhoneNumber;
             ViewBag.BookingId = bookingId;
             return View(booking);
         }

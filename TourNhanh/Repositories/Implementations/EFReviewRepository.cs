@@ -18,7 +18,7 @@ namespace TourNhanh.Repositories.Implementations
 
 		public async Task<IEnumerable<Review>> GetAllAsync()
 		{
-			return await _context.Reviews.ToListAsync();
+			return await _context.Reviews.Reverse().ToListAsync();
 		}
 
 		public async Task<Review> GetByIdAsync(int id)

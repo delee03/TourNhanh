@@ -79,6 +79,11 @@ namespace TourNhanh.Controllers
               //Lấy ra Address của Location => cắt từng phần tử theo chuỗi sau dấu phẩy
 
             */
+            foreach(var item in details)
+            {
+                ViewBag.Slots = item.Tour.RemainingSlots;
+            }
+
             ViewBag.TourId = tourId;
             List<string> imageURL = new List<string>();       
             var tourimage = await _tourImageRepository.GetByTourIdAsync(tourId);
@@ -110,11 +115,11 @@ namespace TourNhanh.Controllers
 
             return View(tourDetail);
         }
-/*
+
         // GET: TourDetails/Create
         public async Task<IActionResult> Create(int tourId)
         {
-            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(),"Id","Name", "Address");
+            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(), "Id", "Name", "Address");
             ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name", "Address");
             var tourDetail = new TourDetail { TourId = tourId };
             ViewBag.TourId = tourId;
@@ -155,7 +160,7 @@ namespace TourNhanh.Controllers
         // POST: TourDetails/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id ,[Bind("Id,TourId,LocationId,Order,StartTime,EndTime,HotelId")] TourDetail tourDetail)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TourId,LocationId,Order,StartTime,EndTime,HotelId")] TourDetail tourDetail)
         {
             if (id != tourDetail.Id)
             {
@@ -164,7 +169,7 @@ namespace TourNhanh.Controllers
             if (ModelState.IsValid)
             {
                 await _tourDetailRepository.UpdateAsync(tourDetail);
-                return RedirectToAction(nameof(Index),new {tourId=tourDetail.TourId });
+                return RedirectToAction(nameof(Index), new { tourId = tourDetail.TourId });
             }
             ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(), "Id", "Name");
             ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name");
@@ -197,6 +202,6 @@ namespace TourNhanh.Controllers
             var tourId = tourDetail?.TourId;
             await _tourDetailRepository.DeleteAsync(id);
             return RedirectToAction(nameof(Index), new { tourId = tourId });
-        }*/
+        }
     }
 }

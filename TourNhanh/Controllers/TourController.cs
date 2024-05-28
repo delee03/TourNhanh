@@ -42,6 +42,7 @@ namespace TourNhanh.Controllers
 			var tours = await _tourRepository.GetAllAsync();
             var categories = await _categoryRepository.GetAllAsync();
             ViewBag.Categories = categories;
+            ViewBag.Tours = tours;
             if (!string.IsNullOrEmpty(name))
 			{
 				if (Priceto != null && Pricefrom != null)
@@ -136,7 +137,7 @@ namespace TourNhanh.Controllers
         }
 
         //ViewDirectory 
-        public async Task<IActionResult> LichTrinh(int? id, int? idDetail)
+      /*  public async Task<IActionResult> LichTrinh(int? id, int? idDetail)
         {
             if (id == null && idDetail == null)
             {
@@ -162,10 +163,10 @@ namespace TourNhanh.Controllers
             };
             ViewBag.ViewModel = viewmodel;
             return View(viewmodel);
-        }
+        }*/
 
         
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create()
         {
             ViewBag.CategoryId = new SelectList(await _categoryRepository.GetAllAsync(), "Id", "Name");
@@ -175,7 +176,7 @@ namespace TourNhanh.Controllers
 
         // POST: Tour/Create
         //Admin tạo tour
-        [Authorize(Roles = "Admin")]
+     //   [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,maxParticipants,RemainingSlots,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
@@ -209,7 +210,7 @@ namespace TourNhanh.Controllers
 
         // GET: Tour/Edit/5
         //Admin edit
-        [Authorize(Roles ="Admin")]
+       // [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -230,7 +231,7 @@ namespace TourNhanh.Controllers
         }
 
         // POST: Tours/Edit/5
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Name,Description,maxParticipants,Price,TransportId")] Tour tourFromForm, IFormFile? imageFile, List<IFormFile> additionalImages)

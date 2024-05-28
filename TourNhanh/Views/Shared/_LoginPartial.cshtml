@@ -16,7 +16,7 @@
 <ul class="navbar-nav" style="display:flex; flex-flow: row nowrap;">
     @if (SignInManager.IsSignedIn(User))
     {
-        <li class="nav-item">
+        <li class="nav-item pt-2">
             <a id="manage" class="me-3 text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><i class="fa-solid fa-heart"></i>Chào @UserManager.GetUserName(User)!</a>
         </li>
         <li class="nav-item">
