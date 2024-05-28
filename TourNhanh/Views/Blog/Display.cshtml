@@ -130,57 +130,94 @@
 			.content-container a:hover {
 				text-decoration: underline;
 			}
+
+	.blog_detail .title {
+		padding: 50px 0;
+	}
+
+	.blog_detail {
+		padding: 50px 0;
+	}
+
+	.title-gradient{
+		font-weight: 700;
+		background-color: var(--bs-linear-color);
+		background-image: var(--bs-linear-img);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 </style>
-<div>
-    <img class="img-fluid w-100 rounded-top" src="@Model.ImageUrl" alt="Image">
-</div>
-<div class="text-center">
-    <h4>Tác giả: @Model.Author  | @Model.CreatedAt  </h4>
-</div>
-<div class="text-center">
-	<h1>@Model.Title </h1>
-</div>
-
-<hr />
-<div class="container ">
-	<div class="px-3 py-2 content-container">
-		<!-- Lề của phần nội dung -->
-		@Html.Raw(Model.Content)
-	</div>
-</div>
-<div id="comments">
-	<!-- Comment form -->
-	<div class="container mt-5">
-		<form id="comment-form" method="post">
-			<textarea id="comment-content" name="content" rows="5" placeholder="Thêm bình luận" required></textarea>
-			<button type="submit" class="btn btn-primary">Đăng</button>
-		</form>
-	</div>
-	<div class="container">
-		<h3>
-			Bình luận
+<!-- BREADCRUMB -->
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+	<div class="container text-center py-5" style="max-width: 900px;">
+		<h3 class="text-white display-3 mb-4">
+			Bài viết hữu ích
 		</h3>
-
-		<ul id="comment-list">
-			@if (Model.Comments != null && Model.Comments.Any())
-			{
-				foreach (var comment in Model.Comments)
-				{
-					<li class="comment-item">
-						<div class="comment-content px-3 py-2">
-							<p>
-								<span class="comment-author">@comment.Author</span>:
-								@comment.Content
-								<span class="comment-timestamp">| @comment.CreatedAt</span>
-							</p>
-						</div>
-					</li>
-				}
-			}
-		</ul>
+		<ol class="breadcrumb justify-content-center mb-0">
+			<li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+			<li class="breadcrumb-item"><a href="~/Blog/Index/1">Bài viết</a></li>
+			<li class="breadcrumb-item active text-white"><a href="~/Blog/Details/@Model.Id">@Model.Title</a></li>
+		</ol>
 	</div>
 </div>
+<!-- Header End -->
+<!-- /BREADCRUMB -->
+<section class="section blog_detail">
+	<div class="title">
+		<div class="text-center">
+			<h4>Tác giả: @Model.Author  | @Model.CreatedAt  </h4>
+		</div>
+		<div class="text-center title-gradient">
+			<h1>@Model.Title </h1>
+		</div>
+	</div>
 
+	<div class="container">
+		<img class="img-fluid w-100 rounded-top" src="@Model.ImageUrl" alt="Image">
+	</div>
+
+
+	<hr />
+	<div class="container ">
+		<div class="px-3 py-2 content-container">
+			<!-- Lề của phần nội dung -->
+			@Html.Raw(Model.Content)
+		</div>
+	</div>
+	<div id="comments">
+		<!-- Comment form -->
+		<div class="container mt-5">
+			<form id="comment-form" method="post">
+				<textarea id="comment-content" name="content" rows="5" placeholder="Thêm bình luận" required></textarea>
+				<button type="submit" class="btn btn-primary">Đăng</button>
+			</form>
+		</div>
+		<div class="container">
+			<h3 class="my-5">
+				Bình luận
+			</h3>
+
+			<ul id="comment-list">
+				@if (Model.Comments != null && Model.Comments.Any())
+				{
+					foreach (var comment in Model.Comments)
+					{
+						<li class="comment-item">
+							<div class="comment-content px-3 py-2">
+								<p>
+									<span class="comment-author">@comment.Author</span>:
+									@comment.Content
+									<span class="comment-timestamp">| @comment.CreatedAt</span>
+								</p>
+							</div>
+						</li>
+					}
+				}
+			</ul>
+		</div>
+	</div>
+</section>
 @section Scripts {
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">

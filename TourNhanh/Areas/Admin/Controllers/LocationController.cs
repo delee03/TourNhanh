@@ -9,18 +9,56 @@ namespace TourNhanh.Areas.Admin.Controllers
     public class LocationController : Controller
     {
         private readonly ILocationRepository _locationRepository;
+
         public LocationController(ILocationRepository locationRepository)
         {
             _locationRepository = locationRepository;
         }
+
+        // GET: Locations
         public async Task<IActionResult> Index()
         {
-           var location = await _locationRepository.GetAllAsync();
-            ViewBag.Locations = location;
+            return View(await _locationRepository.GetAllAsync());
+        }
+
+        // GET: Locations/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var location = await _locationRepository.GetByIdAsync(id.Value);
+            if (location == null)
+            {
+                return NotFound();
+            }
+
             return View(location);
         }
 
-        public async Task<IActionResult> Details(int? id)
+        // GET: Locations/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Locations/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,Latitude,Longitude,Address")] Location location)
+        {
+            if (ModelState.IsValid)
+            {
+                await _locationRepository.CreateAsync(location);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(location);
+        }
+
+        // GET: Locations/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -35,35 +73,10 @@ namespace TourNhanh.Areas.Admin.Controllers
             return View(location);
         }
 
-        public async Task<ActionResult> Create()
-        {
-            return View();
-        }
+        // POST: Locations/Edit/5
         [HttpPost]
-        public async Task<IActionResult> Create(Location location)
-        {
-            if (ModelState.IsValid)
-            {
-                await _locationRepository.CreateAsync(location);
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View(location);
-        }
-        public async Task<IActionResult> Update(int id)
-        {
-
-            var location = await _locationRepository.GetByIdAsync(id);
-            if (location == null)
-            {
-                return NotFound();
-            }
-            ViewBag.location = location;
-            return View(location);
-        }
-
-        [HttpPost] 
-        public async Task<IActionResult> Update(int id, Location location)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Latitude,Longitude,Address")] Location location)
         {
             if (id != location.Id)
             {
@@ -72,36 +85,36 @@ namespace TourNhanh.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                var existingCategory = await _locationRepository.GetByIdAsync(id);
-                    existingCategory.Name = location.Name;
-                    existingCategory.Description = location.Description;
-                    existingCategory.Longitude = location.Longitude;
-                    existingCategory.Latitude = location.Latitude;
-                    existingCategory.Address = location.Address;
-                await _locationRepository.UpdateAsync(existingCategory);
+                await _locationRepository.UpdateAsync(location);
                 return RedirectToAction(nameof(Index));
             }
-
-                return View(location);
-            }
-
-            public async Task<IActionResult> Delete(int id)
-            {
-                var location = await _locationRepository.GetByIdAsync(id);
-                if (location == null)
-                {
-                return NotFound();
-            }
-            ViewBag.location = location;
             return View(location);
         }
-        //Process the product deletion
+
+        // GET: Locations/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var location = await _locationRepository.GetByIdAsync(id.Value);
+            if (location == null)
+            {
+                return NotFound();
+            }
+
+            return View(location);
+        }
+
+        // POST: Locations/Delete/5
         [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             await _locationRepository.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
-
     }
 }

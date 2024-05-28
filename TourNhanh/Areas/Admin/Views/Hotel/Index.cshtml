@@ -1,11 +1,8 @@
-﻿ @model IEnumerable<TourNhanh.Models.Hotel>
+﻿@model IEnumerable<TourNhanh.Models.Hotel>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-
-    // Func f = new Func();
-    var listHotel = ViewBag.Hotels;
 }
 
 <div class="row">
@@ -26,22 +23,21 @@
                             </thead>
 
                             <tbody>
-                                @foreach (var item in listHotel)
+                                @foreach (var item in Model)
                                 {
                                     <tr>
 
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Name</a>
-                                        </td>
-                               
-                                        <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Address</a>
+                                            <a>@item.Name</a>
                                         </td>
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Rating <i class="text-warning mt-1" data-feather="star"></i></a>
+                                            <a>@item.Address</a>
                                         </td>
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.ImageUrl</a>
+                                            <a>@item.Rating <i class="text-warning mt-1" data-feather="star"></i></a>
+                                        </td>
+                                        <td>
+                                            <img src="@item.ImageUrl" />
                                         </td>
                                         <td>
                                             <ul>
@@ -51,7 +47,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="~/Admin/Hotel/Update/@item.Id" title="Chỉnh sửa">
+                                                    <a href="~/Admin/Hotel/Edit/@item.Id" title="Chỉnh sửa">
                                                         <span class="lnr lnr-pencil"></span>
                                                     </a>
                                                 </li>

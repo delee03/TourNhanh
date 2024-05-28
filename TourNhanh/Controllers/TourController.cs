@@ -136,15 +136,15 @@ namespace TourNhanh.Controllers
         }
 
         //ViewDirectory 
-        public async Task<IActionResult> LichTrinh(int? id, int ?idDetail)
+        public async Task<IActionResult> LichTrinh(int? id, int? idDetail)
         {
-			if (id == null && idDetail == null)
-			{
-				return NotFound();
-			}
-			var tour = await _tourRepository.GetByIdAsync(id.Value);
+            if (id == null && idDetail == null)
+            {
+                return NotFound();
+            }
+            var tour = await _tourRepository.GetByIdAsync(id.Value);
             var tourDetail = await _tourDetailRepository.GetByIdAsync(idDetail.Value);
-			var viewmodel = new TourDetail_LichTrinh()
+            var viewmodel = new TourDetail_LichTrinh()
             {
                 Id = tour.Id,
                 Name = tour.Name,
@@ -156,16 +156,17 @@ namespace TourNhanh.Controllers
                 TourDetailId = tourDetail.TourId,
                 Order = tourDetail.Order,
                 Location = tourDetail.Location,
-                StartTime= tourDetail.StartTime,
-                EndTime= tourDetail.EndTime,
-                Hotel= tourDetail.Hotel,
+                StartTime = tourDetail.StartTime,
+                EndTime = tourDetail.EndTime,
+                Hotel = tourDetail.Hotel,
             };
             ViewBag.ViewModel = viewmodel;
             return View(viewmodel);
         }
 
-            // GET: Tour/Create
-            public async Task<IActionResult> Create()
+        
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Create()
         {
             ViewBag.CategoryId = new SelectList(await _categoryRepository.GetAllAsync(), "Id", "Name");
             ViewBag.TransportId = new SelectList(await _transportRepository.GetAllAsync(), "Id", "Name");
@@ -173,10 +174,13 @@ namespace TourNhanh.Controllers
         }
 
         // POST: Tour/Create
+        //Admin tạo tour
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
+        public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,maxParticipants,RemainingSlots,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
         {
+            tour.RemainingSlots = tour.maxParticipants;
             if (ModelState.IsValid)
             {
                 await _tourRepository.CreateAsync(tour);
@@ -201,9 +205,11 @@ namespace TourNhanh.Controllers
             return View(tour);
         }
 
-        
+
 
         // GET: Tour/Edit/5
+        //Admin edit
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -224,10 +230,12 @@ namespace TourNhanh.Controllers
         }
 
         // POST: Tours/Edit/5
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Name,Description,Price,TransportId")] Tour tourFromForm, IFormFile? imageFile, List<IFormFile> additionalImages)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Name,Description,maxParticipants,Price,TransportId")] Tour tourFromForm, IFormFile? imageFile, List<IFormFile> additionalImages)
         {
+            tourFromForm.RemainingSlots = tourFromForm.maxParticipants;
             if (id != tourFromForm.Id)
             {
                 return NotFound();
@@ -245,7 +253,9 @@ namespace TourNhanh.Controllers
             tour.Description = tourFromForm.Description;
             tour.Price = tourFromForm.Price;
             tour.TransportId = tourFromForm.TransportId;
-
+            tour.RemainingSlots = tourFromForm.maxParticipants - (tour.maxParticipants- tour.RemainingSlots);
+            tour.maxParticipants = tourFromForm.maxParticipants;
+            
             if (ModelState.IsValid)
             {
                 // Check if an image file is provided
@@ -276,6 +286,7 @@ namespace TourNhanh.Controllers
         }
 
         // GET: Tours/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -292,6 +303,7 @@ namespace TourNhanh.Controllers
         }
 
         // POST: Tours/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -1,11 +1,8 @@
-﻿ @model IEnumerable<TourNhanh.Models.Location>
+﻿@model IEnumerable<TourNhanh.Models.Location>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-
-    // Func f = new Func();
-    var listLocation = ViewBag.Locations;
 }
 
 <div class="row">
@@ -27,25 +24,24 @@
                             </thead>
 
                             <tbody>
-                                @foreach (var item in listLocation)
+                                @foreach (var item in Model)
                                 {
                                     <tr>
-
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Name</a>
+                                            <a>@item.Name</a>
                                         </td>
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Description</a>
+                                            <a>@item.Description</a>
                                         </td>
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Address</a>
+                                            <a>@item.Address</a>
                                         </td>
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Longitude</a>
+                                            <a>@item.Longitude</a>
                                         </td>
                                         <td>
-                                            <a href="~/Shop/Detail/@item.Id" target="_blank">@item.Latitude</a>
-                                        </td>                                                
+                                            <a>@item.Latitude</a>
+                                        </td>
                                         <td>
                                             <ul>
                                                 <li>
@@ -54,7 +50,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="~/Admin/Location/Update/@item.Id" title="Chỉnh sửa">
+                                                    <a href="~/Admin/Location/Edit/@item.Id" title="Chỉnh sửa">
                                                         <span class="lnr lnr-pencil"></span>
                                                     </a>
                                                 </li>

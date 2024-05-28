@@ -126,7 +126,7 @@ namespace TourNhanh.Controllers
 
             return View(tourDetail);
         }
-
+/*
         // GET: TourDetails/Create
         public async Task<IActionResult> Create(int tourId)
         {
@@ -213,6 +213,6 @@ namespace TourNhanh.Controllers
             var tourId = tourDetail?.TourId;
             await _tourDetailRepository.DeleteAsync(id);
             return RedirectToAction(nameof(Index), new { tourId = tourId });
-        }
+        }*/
     }
 }

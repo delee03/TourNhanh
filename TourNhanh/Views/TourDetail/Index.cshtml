@@ -186,7 +186,7 @@
             <div class="row">
                 <div class="col-8 content-left">
                     @*   Hinfh anh tour *@
-                    <div class="image_tour row">
+                    <div class="image_tour row wow animate__animated animate__fadeInTopLeft" data-wow-duration="2s" data-wow-delay=".4s">
                         <div id="detail_main_img" class="col-12">
 
                             @if (ViewBag.TourImage != null)
@@ -216,7 +216,7 @@
                     </div>
                      @*   Hinfh anh tour *@
                     <!--    main content    -->
-                    <div class="main-content">
+                    <div class="main-content wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link1 active" aria-current="page" href="#diemnhanhanhtrinh">Điểm nhấn hành trình</a>
@@ -1113,7 +1113,7 @@
                 </div>
                 <!--Content_left-->
                 <!--Content right-->
-                <div class="col-4 right-content">
+                <div class="col-4 right-content wow animate__animated animate__fadeInTopRight" data-wow-duration="2s" data-wow-delay=".4s">
                    
                         <div class="product-details">
                                 <h3>Khởi hành và giá cả</h3>
@@ -1147,10 +1147,12 @@
                                      <a class="review-link" href="#">@count lượt đánh giá</a>
                                 </div>
                                 <div>
-                                    <h3 class="product-price">@view.Price VNĐ <del class="product-old-price">999999VNĐ</del></h3>
+                                 <h3 class="product-price animate__animated animate__flash animate__infinite">@view.Price VNĐ <del class="product-old-price">999999VNĐ</del></h3>
                                 
-                                </div>
-                                <h3><span class="product-available"><i class="fa-solid fa-hand-point-right fa-beat"></i>"Thích vi vu thì nhích thôi" <i class="fa-solid fa-hand-point-left fa-beat"></i></span></h3>
+                                  </div>
+                                  <h3 >
+                                    <span class="product-available"><i class="fa-solid fa-hand-point-right"></i>"Thích vi vu thì nhích thôi" <i class="fa-solid fa-hand-point-left"></i></span>
+                                </h3>
                                 <label>Phương tiện di chuyển: @view.Transport.Name </label>
                                 <div class="product-options d-flex justify-content-flex-start align-items-center">
                                     <label>

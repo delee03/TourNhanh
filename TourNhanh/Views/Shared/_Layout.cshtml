@@ -38,6 +38,9 @@
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
      <!-- Template Stylesheet -->
+
+     <!--Animate Lib-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <!-- Customized Bootstrap Stylesheet -->
@@ -105,7 +108,7 @@
                     <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Trang chủ</a>
                     <a asp-controller="Tour" asp-action="Index" class="nav-item nav-link">Tour Trong Nước</a>
                     <a asp-controller="InternationalTour" asp-action="Index" class="nav-item nav-link">Tour Nước Ngoài</a>
-                    <div class="nav-item dropdown">
+                  @*   <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
                             <a href="#!destination.html" class="dropdown-item">Destination</a>
@@ -118,11 +121,11 @@
                             <a href="#" class="dropdown-item">Services</a>
                             <a href="#!404.html" class="dropdown-item">404 Page</a>
                         </div>
-                    </div>
-                    <a asp-controller="Blog" asp-action="Index" class="nav-item nav-link">Blog</a>                                    
+                    </div> *@
+                    <a asp-controller="Blog" asp-action="Index" class="nav-item nav-link">Bài viết</a>                                    
                     <a asp-controller="Contact" asp-action="Index" class="nav-item nav-link">Liên hệ</a>
                 </div>
-                <a href="#!" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                <a asp-controller="Booking" asp-action="YourTour" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Your Tour</a>
             </div>
         </nav>
     </div>
@@ -183,39 +186,39 @@
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
                         <h4 class="mb-4 text-white">Get In Touch</h4>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                        <a href="https://themewagon.github.io/travela/" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                        <a href="#"><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
+                        <a href="#"><i class="fas fa-envelope me-2"></i> info@example.com</a>
+                        <a href="#"><i class="fas fa-phone me-2"></i> +012 345 67890</a>
+                        <a href="#" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
                         <div class="d-flex align-items-center">
                             <i class="fas fa-share fa-2x text-white me-2"></i>
-                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://themewagon.github.io/travela/"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://themewagon.github.io/travela/"><i class="fab fa-twitter"></i></a>
-                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://themewagon.github.io/travela/"><i class="fab fa-instagram"></i></a>
-                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://themewagon.github.io/travela/"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn-square btn btn-primary rounded-circle mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
                         <h4 class="mb-4 text-white">Company</h4>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> About</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Careers</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Blog</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Press</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Magazine</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> About</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Careers</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Blog</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Press</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Magazine</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
                         <h4 class="mb-4 text-white">Support</h4>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Contact</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                        <a href="https://themewagon.github.io/travela/"><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
@@ -250,12 +253,12 @@
                         </div>
                         <h4 class="text-white mb-3">Payments</h4>
                         <div class="footer-bank-card">
-                            <a href="https://themewagon.github.io/travela/#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
-                            <a href="https://themewagon.github.io/travela/#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
-                            <a href="https://themewagon.github.io/travela/#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
-                            <a href="https://themewagon.github.io/travela/#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
-                            <a href="https://themewagon.github.io/travela/#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                            <a href="https://themewagon.github.io/travela/#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-amex fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-visa fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fas fa-credit-card fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-mastercard fa-2x"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-cc-discover fa-2x"></i></a>
                         </div>
                     </div>
                 </div>
@@ -268,13 +271,13 @@
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6 text-center text-md-end mb-md-0">
-                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="https://themewagon.github.io/travela/#">Your Site Name</a>, All right reserved.
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Your Site Name</a>, All right reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-start">
                     <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                     <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                     <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="text-white" href="https://htmlcodex.com/">HTML Codex</a> Distributed By <a href="#">Phạm Tiến Thuận Phát</a>
+                    Designed By <a class="text-white" href="https://htmlcodex.com/">HTML Codex</a> Distributed By <a style="color: #fff" href="#">Phạm Tiến Thuận Phát</a>
                 </div>
             </div>
         </div>
@@ -300,6 +303,11 @@
     <script src="~/js/lightbox.min.js"></script>
     <script src="~/lib/plugin/ckfinder/ckfinder.js"></script>
     <script src="~/lib/plugin/ckeditor/ckeditor.js"></script>
+    <!--Wow js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        new WOW().init();
+    </script>
     <!-- Template Javascript -->
     <script src="~/js/main.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
