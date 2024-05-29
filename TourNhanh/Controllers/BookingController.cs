@@ -75,7 +75,7 @@ namespace TourNhanh.Controllers
             await _tourRepository.UpdateAsync(tour);
 
             // Redirect to the payment processing page
-            return RedirectToAction("Details", new { bookingId = booking.Id });
+            return RedirectToAction("YourTour", new { bookingId = booking.Id });
         }
 
 
@@ -165,13 +165,15 @@ namespace TourNhanh.Controllers
         //[Authorize]
         public async Task<IActionResult> YourTour()
         {
-			var userId = _userManager.GetUserId(User);
+            var user = await _userManager.GetUserAsync(User);
+            // var userId = _userManager.GetUserId(User);         
             /*if(userId == null)
             {
                 return NotFound();
             }*/
-
-			var userBooking = await _bookingRepository.GetUserTour(userId);
+            //ViewBag.UserName = userName;
+            ViewBag.FullName = user.FullName;
+			var userBooking = await _bookingRepository.GetUserTour(user.Id);
             return View(userBooking);
         }
 

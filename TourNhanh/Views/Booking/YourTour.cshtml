@@ -5,11 +5,129 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>YourTour</h2>
+<style>
+    .section {
+        padding: 50px 0 100px;
+    }
+</style>
 
-@* <p>
+
+<!-- BREADCRUMB START-->
+
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">
+            Booking Tour
+        </h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="~/Booking/YourTour">Your Tour</a></li>
+            <li class="breadcrumb-item active text-white">Danh sách</li>
+        </ol>
+    </div>
+</div>
+
+<!-- /BREADCRUMB END -->
+
+<section class="section your-tour">
+    <div class="container-fluid">
+        <div class="heading py-5">
+            <h2 class="title-gradient text-center">Các tour đã đặt</h2>
+        </div>
+        <div class="content-your-tour" >
+             <table class="table table-tour">
+                <thead>
+                    <tr>
+                         <th>
+                                   Khách hàng
+                        </th>
+                         <th>
+                                  Tour
+                        </th>
+                   
+                        <th>
+                                   Số lượng
+                        </th>
+                 
+                          <th>
+                                   Ngày đặt
+                        </th>
+                        <th>
+                                   Ghi chú
+                        </th>
+                        <th>
+                                   Giá tiền
+                        </th>
+                        <th>
+                                    Ngày thanh toán
+                        </th>
+                        <th>
+                                   Phương thức
+                        </th>
+                        <th>
+                                   Đã thanh toán
+                        </th>
+                        <th> 
+                                 Hành động
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                            @foreach (var item in Model)
+                            {
+                        <tr>
+                            <td>
+                                @ViewBag.FullName
+                             </td>
+                             <td>
+                                @Html.DisplayFor(modelItem => item.Tour.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            </td>
+                            <td>
+                                 @Html.DisplayFor(modelItem => item.BookingDate)
+                            </td>
+                      
+                                         
+                            <td>
+                                        @Html.DisplayFor(modelItem => item.Note)
+                            </td>
+                            <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                            <td>
+                                        @Html.DisplayFor(modelItem => item.PaymentDate)
+                            </td>
+                            <td>
+                                        @Html.DisplayFor(modelItem => item.PaymentMethod)
+                            </td>
+                            <td>
+                                        @Html.DisplayFor(modelItem => item.isPaymentCompleted)
+                            </td>
+                            <td>
+             
+                               <a asp-action="Details" asp-route-bookingId="@item.Id">Details</a> |                
+                          </td>
+
+                        </tr>
+                            }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+@* <h2>YourTour</h2>
+
+ <p>
     <a asp-action="Create">Đặt ngay</a>
-</p> *@
+</p> 
 <table class="table">
     <thead>
         <tr>
@@ -80,11 +198,12 @@
                 @Html.DisplayFor(modelItem => item.isPaymentCompleted)
             </td>
             <td>
-@*                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
- *@                <a asp-action="Details" asp-route-bookingId="@item.Id">Details</a> |
-@*                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+               <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+               <a asp-action="Details" asp-route-bookingId="@item.Id">Details</a> |
+               <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> 
             </td>
         </tr>
 }
     </tbody>
 </table>
+ *@

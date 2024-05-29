@@ -334,20 +334,27 @@ textarea.input {
 }
 
 .btn.btn-primary:hover {
-    box-shadow: inset 300px 0 0 0 var(--bs-light) !important;
+    box-shadow: inset 655px 0 0 0 var(--bs-light) !important;
     color: var(--bs-linear-color) !important;
 }
 
 .btn.btn-light {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    -webkit-text-fill-color: var(--bs-linear-color);
+    background-color: #fff;
+    border-color: var(--bs-linear-color);
+   /* box-shadow: inset 655px 0 0 0 var(--bs-light) !important;*/
+    color: var(--bs-linear-color) !important;
+    transition: all .8s;
 }
 
-.btn.btn-light:hover {
-    -webkit-text-fill-color: #fff;
-    box-shadow: inset 300px 0 0 0 var(--bs-linear-color);
-    color: var(--bs-light) !important;
+
+    .btn.btn-light:hover {
+        background-color: var(--bs-linear-color);
+        background-image: var(--bs-linear-img);
+        box-shadow: inset 655px 0 0 0 var(--bs-linear-color) var(--bs-linear-img) !important;
+    }
     
-}
+
 
 .btn-hover {
     transition: 0.5s;
@@ -2346,3 +2353,45 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
 .processing-payment .tour-summery .tour-col input {
     margin: 15px 0;
 }
+/* KIEM TRA THONG TIN TOUR END
+*/
+/* YOUR TOUR START
+*/
+
+thead , tbody, tr, th, td {
+    vertical-align: middle; 
+}
+
+.your-tour .table-tour thead tr th {
+    font-size: 16px;
+    background-color: #262932;
+    color: #fff;
+    text-align: center;
+    min-width: 100%;
+}
+
+.your-tour .table th, .table td {
+    padding: .75rem;
+}
+
+.your-tour .table th {
+    font-weight: 600;
+}
+
+.your-tour .table tbody td {
+    text-align: center;
+}
+.your-tour .table td {
+    font-size: 16px;
+    color: #2b2b2b;
+}
+
+.your-tour .table {
+    border: 1px solid rgb(170 170 170 / 36%);
+}
+
+.content-your-tour {
+    letter-spacing: 1px;
+}
+    /* YOUR TOUR END
+*/

@@ -17,8 +17,6 @@ namespace TourNhanh.Models
 
         //Location
         [ForeignKey("Location")]
-
-
         public int LocationId { get; set; }
         public virtual Location? Location { get; set; }
 
