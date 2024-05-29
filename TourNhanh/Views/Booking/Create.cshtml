@@ -42,13 +42,19 @@
     <a asp-controller="Tour" asp-action="Details" asp-route-id="@ViewBag.TourId">Back to List</a>
 </div>
 
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 
 <script>
+
+
+   
     const price = @ViewBag.Price;
     const maxCap = @ViewBag.RemainingSlots;
+
+    console.log(price, maxCap)
 
     function validateQuantity() {
         const quantityInput = document.getElementById('quantity');
@@ -78,3 +84,73 @@
         validateQuantity();
     });
 </script>
+@* 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    let paymentMethodValue = 0;
+    document.getElementById('paymentMethod').addEventListener('change', function () {
+        paymentMethodValue = this.value;
+        console.log("paymentMethodValue", this.value)
+    })
+
+    let noteValue  = 0;
+
+    document.getElementById('note').addEventListener('change', function () {
+        noteValue = this.value;
+        console.log("noteValue", this.value)
+    })
+
+
+    let amount = 0;
+    document.getElementById('Amount').addEventListener('change', function () {
+        amount = this.value;
+        console.log( "amount" ,this.value)
+    })
+
+
+    let quantity = 0;
+    document.getElementById('quantity').addEventListener('change', function () {
+        quantity = this.value;
+        console.log("quantity", this.value)
+    })
+
+    let idTourValue = document.getElementById("tourID").value;
+    console.log("idTourValue", idTourValue)
+
+    
+
+
+
+    $(document).ready(function () {
+        $('#backToListBtn').on('click', function (e) {
+            e.preventDefault(); // Ngăn chặn hành động mặc định của nút
+
+            var tourId = idTourValue;
+            var quantity = $("#quantity").value;
+                var paymentMethod = paymentMethodValue  /*phupng thuc*/;
+            var note = noteValue /* Lấy giá trị note từ form hoặc biến phù hợp */;
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Create", "Tour")',
+                data: {
+                    tourId: tourId,
+                    quantity: quantity,
+                    paymentMethod: paymentMethod,
+                    note: note
+                },
+                success: function (response) {
+                   console.log("thanh cong")
+                    // Xử lý phản hồi từ server nếu cần thiết
+                },
+                error: function (xhr, status, error) {
+                    // Xử lý lỗi nếu có
+                    console.log("loi!!!!")
+
+                }
+            });
+        });
+    });
+</script>
+ *@

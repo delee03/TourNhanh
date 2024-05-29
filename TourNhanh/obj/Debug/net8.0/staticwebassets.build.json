@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ulaAJ9KQbNnKYlMrJjzqArScQUjUF5dR78aD4GKbPls=",
+  "Hash": "TD8Dvhb625/LROrf86cWYNGZ5lXn+EbXsXCpY1CdDqY=",
   "Source": "TourNhanh",
   "BasePath": "_content/TourNhanh",
   "Mode": "Default",
@@ -9268,6 +9268,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\chua-go-ken.png"
+    },
+    {
+      "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\ConDao11111.jpg",
+      "SourceId": "TourNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\",
+      "BasePath": "_content/TourNhanh",
+      "RelativePath": "img/ConDao11111.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ConDao11111.jpg"
     },
     {
       "Identity": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaLat1111.jpg",

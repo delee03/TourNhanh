@@ -2317,3 +2317,32 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     color: #215390;
 }
 /* Custom PHAN LICH TRINH TOUR */
+/* KIEM TRA THONG TIN TOUR START
+*/
+/*.processing-payment .tour-summery .tour-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}*/
+/*.processing-payment .tour-summery .tour-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}*/
+.processing-payment .tour-summery .tour-col .tour-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+    .processing-payment .tour-summery .tour-col .tour-content p{
+           font-size: 18px;
+    }
+    .processing-payment .tour-summery .tour-col {
+        padding: 5px 15px;
+    }
+.processing-payment .tour-summery .tour-col input {
+    margin: 15px 0;
+}

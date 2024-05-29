@@ -10,9 +10,9 @@
     }
 
     .product-details {
-        width: 100%;
-        margin-left: 10px;
-        padding: 15px 20px;
+        width: 85%;
+        margin-left: 40px;
+        padding: 15px 30px;
         border-radius: 10px;
         box-shadow: 0 0 32px rgba(0,0,0,.12) !important;
     }
@@ -40,7 +40,7 @@
         background-image: linear-gradient(90deg, #f00 0%, #122125 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        .title-gradient
+       
     }
 
    
@@ -106,7 +106,7 @@
 
 <!-- /BREADCRUMB END -->
 <!--Content Processing Payment-->
-<section class="section">
+<section class="section processing-payment">
     <div class="container">
          <form asp-controller="Booking" asp-action="ProcessPaymentConfirmed" asp-route-bookingId="@Model.Id" method="post">
             <div class="billing-details">
@@ -120,7 +120,7 @@
                                 <input type="text"
                                        class="form-control title"
                                        name=""
-                                       value="@Model.Id" @*  hoặc xài @ViewBag.BookingId *@
+                                       value="@Model.Id" 
                                        id=""
                                        aria-describedby="helpId"
                                        placeholder="" />
@@ -161,7 +161,7 @@
                                 <div>
                                   <button type="submit" name="payment" class="btn-action" value="online">
                                         <i class="fa-solid fa-money-check-dollar"></i>
-                                        Thanh toán với VNPay
+                                        Tiếp tục với VNPay
                                     </button>
                                 </div>
                             </div>
@@ -174,23 +174,46 @@
                 <div class="col-md-5 ">
                     <div class="product-details">
                         <div class="heading">
-                            <h3 class="title-gradient fs-2">Thông tin tour</h3>
+                            <h3 class="title-gradient-h fs-2 text-center mb-4">Thông tin tour</h3>
                         </div>
-                        <div class="order-summary">
-                        
-                            <div class="order-col">
-                                <div>Shiping</div>
-                                <div><strong>FREE</strong></div>
+                        <div class="tour-summery">
+                            <div class="tour-col">
+                                <div class="tour-content">
+                                    <h5>Tour:</h5>
+                                    <p>@Model.Tour.Name</p>
+                                </div>
                             </div>
-                            <div class="order-col">
-                                <div><strong>TOTAL</strong></div>
-                                <div><strong class="order-total">$@Total</strong></div>
+                            <div class="tour-col">
+                                <div class="tour-content">
+                                    <h5>Số lượng:</h5>
+                                    <p>@Model.Quantity</p>
+                                </div>
                             </div>
-                            <div class="order-col">
+                            <div class="tour-col">
+                                <div class="tour-content">
+                                    <h5>Ngày đặt:</h5>
+                                    <p>@Model.BookingDate</p>
+                                </div>
+                            </div>
+                            <div class="tour-col">
+                                <div class="tour-content">
+                                    <h5>Ghi chú:</h5>
+                                    <p>@Model.Note</p>
+                                </div>
+                            </div>
+
+                            <div class="tour-col">
+                                <div class="tour-content">
+                                    <h5>Tổng giá:</h5>
+                                    <p>@Model.Amount</p>
+                                </div>
+                            </div>
+                           
+                            <div class="tour-col">
                                 <div><strong>VOUCHER</strong></div>
-                                <input style="margin-left: 5px" type="text" class="form-control input" placeholder="Discount">
+                                <input style="margin-left: 5px" type="text" class="form-control input" placeholder="Voucher giảm giá">
                                 <div class="input-group-append">
-                                    <button type="reset" class="btn-action-checkout">Apply</button>
+                                    <button type="reset" class="btn-action-checkout">Áp dụng</button>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +254,7 @@
                             <input type="submit" name="payment" class="primary-btn order-submit" value="thanh toán vnpay" />
                          
                         </div> *@
-                        <div class="tour_detail">
+                        @* <div class="tour_detail">
                             <div class="tour-info">
                                 <p><i class="fas fa-check"></i> Bảo hiểm</p>
                                 <p><i class="fas fa-check"></i> Bữa sáng</p>
@@ -242,7 +265,7 @@
                                 <p><i class="fas fa-check"></i> Xe đưa đón</p>
 
                             </div>
-                        </div>
+                        </div> *@
                     </div>
                  </div>
                 <!-- /Order Details -->

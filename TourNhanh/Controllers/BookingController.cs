@@ -22,7 +22,7 @@ namespace TourNhanh.Controllers
             _bookingRepository = bookingRepository;
             _vnPayService = vnPayService;
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Create(int tourId)
         {
@@ -61,7 +61,7 @@ namespace TourNhanh.Controllers
                 Quantity = quantity,
                 Amount = quantity * tour.Price,
                 CustomerUserId = userId,
-              /*  CustomerUserId = null,*///Test, chạy thật thì lấy cái trên
+                /*  CustomerUserId = null,*///Test, chạy thật thì lấy cái trên
                 PaymentDate = null,
                 PaymentMethod = paymentMethod,
                 Note = note,
@@ -77,6 +77,7 @@ namespace TourNhanh.Controllers
             // Redirect to the payment processing page
             return RedirectToAction("Details", new { bookingId = booking.Id });
         }
+
 
         [HttpGet]
         public async Task<IActionResult> ProcessPayment(int bookingId)
@@ -129,10 +130,10 @@ namespace TourNhanh.Controllers
 
             var vnPayModel = new VnPaymentRequestModel
             {
-                Amount = /*booking.Amount*/ 10000,
+                Amount = (double)booking.Amount ,
                 CreatedDate = DateTime.Now,
-                Desc =/* $"{user.FullName} {user.PhoneNumber}"*/ "TEst",
-                FullName = /*user.FullName*/ "Test",
+                Desc = $"{user.FullName} {user.PhoneNumber}",
+                FullName = user.FullName ,
                 BookingId = bookingId,
                 PaymentBackReturnUrl = Url.Action("PaymentCallBack", "Booking", bookingId, Request.Scheme)  // URL callback
             };
