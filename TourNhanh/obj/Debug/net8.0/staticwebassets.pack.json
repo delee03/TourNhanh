@@ -1649,6 +1649,10 @@
       "PackagePath": "staticwebassets\\img\\DaNang11111.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang2.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang2.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang22.jpg",
       "PackagePath": "staticwebassets\\img\\DaNang22.jpg"
     },
@@ -1683,6 +1687,22 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\Hue1.jpg",
       "PackagePath": "staticwebassets\\img\\Hue1.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\Hue11.jpg",
+      "PackagePath": "staticwebassets\\img\\Hue11.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\Hue111.jpg",
+      "PackagePath": "staticwebassets\\img\\Hue111.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\Hue1111.jpg",
+      "PackagePath": "staticwebassets\\img\\Hue1111.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\Hue11111.jpg",
+      "PackagePath": "staticwebassets\\img\\Hue11111.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\NamDu1111.jpg",
@@ -6389,6 +6409,14 @@
       "PackagePath": "staticwebassets\\tour\\image\\2\\0h2mjwxr.1q2.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\0mrkkup1.s54.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\0mrkkup1.s54.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\2jushjf3.ysq.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\2jushjf3.ysq.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\310qvdws.2q3.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\2\\310qvdws.2q3.jpg"
     },
@@ -6451,6 +6479,14 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\hjo5mdju.qrt.jpg",
       "PackagePath": "staticwebassets\\tour\\image\\2\\hjo5mdju.qrt.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\icly1djk.i2l.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\icly1djk.i2l.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\iusz3eyc.j30.jpg",
+      "PackagePath": "staticwebassets\\tour\\image\\2\\iusz3eyc.j30.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\tour\\image\\2\\jcvn3o05.j1k.jpg",

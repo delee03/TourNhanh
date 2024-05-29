@@ -56,12 +56,10 @@ namespace TourNhanh.Controllers
         [Authorize]
         public async Task<IActionResult> Add(Blog blog, IFormFile imageUrl)
         {
-
             if (ModelState.IsValid)
             {
                 if (imageUrl != null)
                 {
-
                     blog.ImageUrl = await SaveImage(imageUrl);
                 }
                 var currentUser = await _userManager.GetUserAsync(User);
@@ -69,9 +67,9 @@ namespace TourNhanh.Controllers
                 blog.CreatedAt = DateTime.UtcNow;
                 blog.UpdatedAt = DateTime.UtcNow;
                 await _blogRepository.AddAsync(blog);
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
-            return View(blog);
+            return Json(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
         }
 
         private async Task<string> SaveImage(IFormFile image)
