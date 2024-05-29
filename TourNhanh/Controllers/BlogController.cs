@@ -41,7 +41,7 @@ namespace TourNhanh.Controllers
             }
             if (!string.IsNullOrEmpty(title))
             {
-                blogs = blogs.Where(x => x.Title.Contains(title));
+                blogs = blogs.Where(x => x.Title.IndexOf(title, StringComparison.OrdinalIgnoreCase) >= 0);
             }
             return View(blogs);
         }

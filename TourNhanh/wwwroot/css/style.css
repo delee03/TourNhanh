@@ -23,7 +23,7 @@ ul, ol {
     padding: 12px 30px;
     background-color: var(--bs-linear-color);
     background-image: var(--bs-linear-img);
-    border: none;
+    border: 1px solid transparent;
     border-radius: 40px;
     color: #FFF;
     text-transform: uppercase;
@@ -34,12 +34,14 @@ ul, ol {
 }
 
     .primary-btn:hover, .primary-btn:focus {
+        padding: 12px 50px;
         background-color: var(--bs-linear-color);
         background-image: var(--bs-linear-img);
         background-color: #fff;
         border: 1px solid var(--bs-linear-color);
        
     }
+
 
 .btn-action {
     position: relative;
@@ -1562,6 +1564,8 @@ a[b-vdbjw7zbne] {
 
 /*** copyright Start ***/
 .copyright {
+    position: absolute;
+    left: -6%;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: var(--bs-dark) !important;
 }
@@ -2243,7 +2247,17 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     position: static;
     margin: 15px 0px;
 }
-
+/*Custom phần title*/
+.title-gradient {
+    margin-bottom: 30px;
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    text-align: center;
+    font-size: 50px;
+}
 
 /* Custom PHAN LICH TRINH TOUR */
 .lichtrinh .chitiet_lichtrinh ul {

@@ -1,21 +1,23 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TourNhanh.Models;
+using TourNhanh.Repositories.Interfaces;
 
 namespace TourNhanh.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ITourRepository _repository;
+        public HomeController(ITourRepository tourRepository)
         {
-            _logger = logger;
+            _repository = tourRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var tour = await _repository.GetAllAsync();
+            return View(tour);
         }
         public IActionResult Test()
         {

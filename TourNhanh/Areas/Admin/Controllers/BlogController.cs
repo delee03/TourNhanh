@@ -6,6 +6,7 @@ using TourNhanh.Repositories.Interfaces;
 
 namespace TourNhanh.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class BlogController : Controller
     {
         private readonly IBlogRepository _blogRepository;

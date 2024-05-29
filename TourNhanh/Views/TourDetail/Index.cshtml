@@ -83,7 +83,7 @@
         object-fit: cover;
 
     }
-    .title-gradient {
+    /* .title-gradient {
         margin-bottom: 30px; 
         background-color: var(--bs-linear-color);
         background-image: var(--bs-linear-img);
@@ -92,7 +92,7 @@
         font-weight: 600 ;
         text-align: center;
         font-size: 50px;
-    }
+    } */
 
     .slick-prev, .slick-next {
         top: 25%;
@@ -1196,8 +1196,23 @@
                                         <i class="fa fa-shopping-cart"></i> add to cart
                                         </button>
                                         </a> *@
-                                        <button onclick="showSuccessToast();" class="add-to-cart-btn addToCartBtn btn--success" data-productId="@view.Id"><i class="fa fa-shopping-cart"></i> đặt tour</button>
-                                        @* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
+
+
+                                        @{
+                                            if (ViewBag.Slots == 0)
+                                            {
+                                                <a class="add-to-cart-btn new"><i class="fa fa-eye"></i>Hết chỗ</a>
+                                            }
+                                            else
+                                            {
+                                                <a class="add-to-cart-btn new" asp-controller="Booking" asp-action="Create" asp-route-tourId="@view.Id">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    đặt tour
+                                                </a>
+                                            }
+                                        }
+@*                                         <button onclick="showSuccessToast();" class="add-to-cart-btn addToCartBtn btn--success" data-productId="@view.Id"><i class="fa fa-shopping-cart"></i> đặt tour</button>
+ *@                                        @* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
                                         <a class="add-to-cart-btn new" href="https://zalo.me/0931034852"><i class="fa fa-eye"></i>Yêu cầu tư vấn</a>
                                         <br />
                                         @* <a asp-action="Index" class="btn-action"><i class="fa-solid fa-arrow-left"></i>Trở về</a> *@
