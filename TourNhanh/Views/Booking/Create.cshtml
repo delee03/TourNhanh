@@ -4,51 +4,168 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+     .section {
+        padding: 50px 0 100px;
+    }
+    .section a {
+        color: var(--bs-linear-color);
+        font-weight: 600;
+    }
+    .section .btn.btn-light:hover a {
+        color: #fff;
+    }
+</style>
 
-<h2>Create</h2>
 
-<h4>Booking</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" method="post">
-            <input type="hidden" name="tourId" value="@ViewBag.TourId" />
-            <div class="form-group">
-                <label for="quantity">Number of People</label>
-                <input type="number" name="quantity" id="quantity" class="form-control" required
-                       min="1" max="@ViewBag.MaxCap" oninput="validateQuantity()" />
-            </div>
-            <div class="form-group">
-                <label for="paymentMethod">Payment Method</label>
-                <select name="paymentMethod" id="paymentMethod" class="form-control" required>
-                    <option value="online">Thanh toán trực tuyến</option>
-                    <option value="offline">Thanh toán trực tiếp</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="Amount" class="control-label">Amount</label>
-                <span id="Amount" class="form-control"></span>
-            </div>
-            <div class="form-group">
-                <label for="note">Note</label>
-                <textarea name="note" id="note" class="form-control"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Book Now</button>
-        </form>
+<!-- BREADCRUMB START-->
+
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">
+            Booking Tour
+        </h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="~/Tour/Index">Danh sách tour</a></li>
+            <li class="breadcrumb-item active text-white">Trang đặt tour</li>
+        </ol>
     </div>
 </div>
 
-<div>
-    <a asp-controller="Tour" asp-action="Details" asp-route-id="@ViewBag.TourId">Back to List</a>
-</div>
+<!-- /BREADCRUMB END -->
 
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+             <div class="billing-details">
+                <h2 class="title-gradient text-center">Điền thông tin đặt tour</h2>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <form asp-action="Create" method="post" id="formBooking" >
+                    <div class="row g-3">
+                        <input type="hidden" name="tourId" value="@ViewBag.TourId" />
+                                   
+                        <div class="col-12">
+                             <div class="form-floating">
+                                
+                                <input type="number" name="quantity" id="quantity" class="form-control" required
+                                       min="1" max="@ViewBag.MaxCap" oninput="validateQuantity()" 
+                                       placeholder="Số người"/>
+                                 <label for="quantity">Số người</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                             <div class="form-floating">
+                               
+                                <select name="paymentMethod" id="paymentMethod" class="form-control" required>
+                                    <option value="online">Thanh toán online</option>
+                                    <option value="offline">Thanh toán trực tiếp</option>
+                                </select>
+                                 <label for="paymentMethod">Phương thức thanh toán</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                             <div class="form-floating">
+                               
+                                <span id="Amount" class="form-control"></span>
+                                 <label for="Amount" class="control-label">Giá </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                           <div class="form-floating">                              
+                               <textarea name="note" id="note" class="form-control" placeholder="Ghi chú" style="height: 80px"></textarea>
+                                 <label for="note">Ghi chú</label>
+                            </div>
+                        </div
+
+                       <div class="col-12">
+                            <button onclick="showSuccessToast();" id="bookNow"  data-tourId="@ViewBag.TourId" class="btn btn-primary btn--success w-100 py-3">Đặt ngay</button>
+                       </div>
+                        <div class="col-12">
+                           <button class="btn btn-light w-100 py-3 mt-4"><a asp-controller="Tour" class="f-w-600" asp-action="Details" asp-route-id="@ViewBag.TourId">Trở về</a></button>
+                       </div>
+                    </div>
+
+                </form>
+            </div>     
+         </div>
+    </div>
+ </section>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    let paymentMethodValue = "";
+    document.getElementById('paymentMethod').addEventListener("change", function(){
+        paymentMethodValue = this.value;
+        console.log("paymentMethodValue", paymentMethodValue);
+    });
+
+    let noteValue  = "";
+    document.getElementById('note').addEventListener("change", function(){
+        noteValue = this.value;
+        console.log("noteValue", noteValue);
+    });
+
+    let amountValue = 0;
+    document.getElementById('Amount').addEventListener("change", function(){
+        amountValue = this.value * 1;
+        console.log( "amount" ,amountValue);
+    });
+
+    let quantityValue = 0;
+    document.getElementById('quantity').addEventListener("change", function(){
+        quantityValue = this.value * 1;    
+        console.log("quantity",  quantityValue);
+    });
+
+    let idTourValue = document.getElementById("tourID").value;
+    console.log("idTourValue", idTourValue);
+    var tourId1 = idTourValue;
+   $(document).ready(function () {
+        $('#formBooking').submit(function (e) {
+            e.preventDefault(); // Ngăn chặn hành động mặc định của form
+
+            var tourId = tourId1;
+            var quantity = quantityValue;
+            var paymentMethod = paymentMethodValue;
+            var note = noteValue;
+            
+            $.ajax({
+                type: 'POST',
+                url: 'Booking/YourTour',
+                data: {
+                    tourId: tourId,
+                    quantity: quantity,
+                    paymentMethod: paymentMethod,
+                    note: note
+                },
+                async: false,
+                success: function (response) {
+                    console.log("thanh cong");
+                   showSuccessToast();
+                   // Hiển thị thông báo toast tại đây
+                },
+                error: function (xhr, status, error) {
+                    // Xử lý lỗi nếu có
+                    console.log("loi!!!!")
+                    showErrorToast();
+                }
+            });
+        })
+    });
+</script>
+<script>
+
+
+   
     const price = @ViewBag.Price;
     const maxCap = @ViewBag.RemainingSlots;
+
+    console.log(price, maxCap)
 
     function validateQuantity() {
         const quantityInput = document.getElementById('quantity');
@@ -77,4 +194,10 @@
     document.addEventListener('DOMContentLoaded', function () {
         validateQuantity();
     });
+
+    
 </script>
+
+
+
+

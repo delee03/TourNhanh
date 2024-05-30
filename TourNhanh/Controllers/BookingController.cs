@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TourNhanh.Models;
+using TourNhanh.Repositories.Implementations;
 using TourNhanh.Repositories.Interfaces;
 using TourNhanh.Services.VnPay;
 using TourNhanh.ViewModel;
@@ -22,7 +23,7 @@ namespace TourNhanh.Controllers
             _bookingRepository = bookingRepository;
             _vnPayService = vnPayService;
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Create(int tourId)
         {
@@ -38,6 +39,7 @@ namespace TourNhanh.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(int tourId, int quantity, string paymentMethod, string note)
         {
             var tour = await _tourRepository.GetByIdAsync(tourId);
@@ -61,7 +63,7 @@ namespace TourNhanh.Controllers
                 Quantity = quantity,
                 Amount = quantity * tour.Price,
                 CustomerUserId = userId,
-              /*  CustomerUserId = null,*///Test, chạy thật thì lấy cái trên
+                /*  CustomerUserId = null,*///Test, chạy thật thì lấy cái trên
                 PaymentDate = null,
                 PaymentMethod = paymentMethod,
                 Note = note,
@@ -73,10 +75,61 @@ namespace TourNhanh.Controllers
             await _bookingRepository.CreateAsync(booking);
             tour.RemainingSlots = tour.RemainingSlots - booking.Quantity;
             await _tourRepository.UpdateAsync(tour);
-
+          //  return Json(new {  bookingId = booking.Id });
             // Redirect to the payment processing page
             return RedirectToAction("Details", new { bookingId = booking.Id });
         }
+
+        public async Task<IActionResult> Delete(int bookingId)
+        {
+            if (bookingId == null)
+            {
+                return NotFound();
+            }
+
+            var booking = await _bookingRepository.GetByIdAsync(bookingId);
+            if (booking == null)
+            {
+                return NotFound();
+            }
+
+            return View(booking);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirm(int bookingId)
+        {
+            await _bookingRepository.DeleteAsync(bookingId);
+            return RedirectToAction(nameof(YourTour));
+        }
+
+
+        /*   [HttpPost, Authorize]
+           public async Task<IActionResult> Update(int bookingId)
+           {
+               var booking = await _bookingRepository.GetByIdAsync(bookingId);
+               if(booking == null)
+               {
+                   return NotFound();
+               }
+               return View(booking);
+           }
+
+           [HttpPost, Authorize]
+           public async Task<IActionResult> Update(int id , Booking booking)
+           {
+               if (id != booking.Id)
+               {
+                   return NotFound();
+               }
+               var existingBooking = await _bookingRepository.GetByIdAsync(id);
+               if (existingBooking == null)
+               {
+                   return NotFound();
+               }
+               existingBooking.Quantity = booking.Quantity;
+               existingBooking.
+           }*/
 
         [HttpGet]
         public async Task<IActionResult> ProcessPayment(int bookingId)
@@ -129,10 +182,10 @@ namespace TourNhanh.Controllers
 
             var vnPayModel = new VnPaymentRequestModel
             {
-                Amount = /*booking.Amount*/ 10000,
+                Amount = (double)booking.Amount ,
                 CreatedDate = DateTime.Now,
-                Desc =/* $"{user.FullName} {user.PhoneNumber}"*/ "TEst",
-                FullName = /*user.FullName*/ "Test",
+                Desc = $"{user.FullName} {user.PhoneNumber}",
+                FullName = user.FullName ,
                 BookingId = bookingId,
                 PaymentBackReturnUrl = Url.Action("PaymentCallBack", "Booking", bookingId, Request.Scheme)  // URL callback
             };
@@ -156,21 +209,22 @@ namespace TourNhanh.Controllers
             if (booking == null)
             {
                 return NotFound();
-            }
-
+            }         
             return View(booking);
         }
 
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> YourTour()
         {
-			var userId = _userManager.GetUserId(User);
+            var user = await _userManager.GetUserAsync(User);
+            // var userId = _userManager.GetUserId(User);         
             /*if(userId == null)
             {
                 return NotFound();
             }*/
-
-			var userBooking = await _bookingRepository.GetUserTour(userId);
+            //ViewBag.UserName = userName;
+            ViewBag.FullName = user.FullName;
+			var userBooking = await _bookingRepository.GetUserTour(user.Id);
             return View(userBooking);
         }
 

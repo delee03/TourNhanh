@@ -64,8 +64,8 @@ namespace TourNhanh.Controllers
                 }
                 var currentUser = await _userManager.GetUserAsync(User);
                 blog.Author = currentUser.FullName;
-                blog.CreatedAt = DateTime.UtcNow;
-                blog.UpdatedAt = DateTime.UtcNow;
+                blog.CreatedAt = DateTime.Now;
+                blog.UpdatedAt = DateTime.Now;
                 await _blogRepository.AddAsync(blog);
                 return Json(new { success = true });
             }

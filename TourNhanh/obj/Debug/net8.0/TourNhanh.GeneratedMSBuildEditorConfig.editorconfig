@@ -206,28 +206,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Web_VS/TourNhanh/TourNhanh/Areas/Identity/Pages/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Web_VS/TourNhanh/TourNhanh/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Web_VS/TourNhanh/TourNhanh/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Web_VS/TourNhanh/TourNhanh/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Web_VS/TourNhanh/TourNhanh/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Web_VS/TourNhanh/TourNhanh/Areas/Identity/Pages/Account/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Web_VS/TourNhanh/TourNhanh/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
@@ -268,6 +252,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Web_VS/TourNhanh/TourNhanh/Views/Booking/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web_VS/TourNhanh/TourNhanh/Views/Booking/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Web_VS/TourNhanh/TourNhanh/Views/Booking/Details.cshtml]
@@ -348,6 +336,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Web_VS/TourNhanh/TourNhanh/Views/InternationalTour/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYXRpb25hbFRvdXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web_VS/TourNhanh/TourNhanh/Views/International/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYXRpb25hbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Web_VS/TourNhanh/TourNhanh/Views/Location/Create.cshtml]
