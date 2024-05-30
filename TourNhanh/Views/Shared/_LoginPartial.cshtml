@@ -1,5 +1,6 @@
 ﻿﻿@using Microsoft.AspNetCore.Identity
 @using TourNhanh.Models
+@inject UserManager<AppUser> UserManager
 
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
@@ -16,8 +17,13 @@
 <ul class="navbar-nav" style="display:flex; flex-flow: row nowrap;">
     @if (SignInManager.IsSignedIn(User))
     {
+        var user = await UserManager.GetUserAsync(User);
+        var fullName = user?.FullName ?? "User"; // Default to "User" if FullName is null
+
         <li class="nav-item">
-            <a id="manage" class="me-3 text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><i class="fa-solid fa-heart"></i>Chào @UserManager.GetUserName(User)!</a>
+            <a id="manage" class="me-3 text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                <i class="fa-solid fa-heart"></i>Chào @fullName!
+            </a>
         </li>
         <li class="nav-item">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
