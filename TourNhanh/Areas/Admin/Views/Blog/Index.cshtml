@@ -1,0 +1,101 @@
+﻿@model IEnumerable<TourNhanh.Models.Blog>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>Tên blog</th>                                                                        
+                                    <th>Ngày tạo</th>                                 
+                                    <th>Hình ảnh chính</th>
+                                    <th>Trạng thái</th>
+                                    <th>Tác vụ</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    if(item.State == 0)
+                                    {
+                                        <tr>
+                                            <td>@item.Title</td>                                           
+                                            <td>@item.CreatedAt</td>
+                                            <td>
+                                                <img src="@item.ImageUrl" alt="Main Image" style="width: 100px; height: 100px;" />
+                                            </td>
+                                            <td>
+                                                @if (item.State == 0)
+                                                {
+                                                    <a href="~/Admin/Blog/Change/@item.Id" class="text-danger" title="Chưa duyệt" style="color: red !important;">Chưa duyệt</a>
+                                                }
+                                            </td>
+
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="~/Admin/Blog/Change/@item.Id" title="Duyệt bài">
+                                                            <span class="lnr lnr-pencil"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="~/Admin/Blog/Delete/@item.Id" title="Từ chối">
+                                                            <span class="lnr lnr-trash"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    if (item.State != 0)
+                                    {
+                                        <tr>
+                                            <td>@item.Title</td>                                          
+                                            <td>@item.CreatedAt</td>
+                                            <td>
+                                                <img src="@item.ImageUrl" alt="Main Image" style="width: 100px; height: 100px;" />
+                                            </td>
+                                            <td>
+                                                @if (item.State != 0)
+                                                {
+                                                    <a href="~/Admin/Blog/Change/@item.Id" title="Đã duyệt" style="color: green !important;">Đã duyệt</a>
+                                                }
+                                            </td>
+
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="~/Admin/Blog/Change/@item.Id" title="Duyệt bài">
+                                                            <span class="lnr lnr-pencil"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="~/Admin/Blog/Delete/@item.Id" title="Từ chối">
+                                                            <span class="lnr lnr-trash"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

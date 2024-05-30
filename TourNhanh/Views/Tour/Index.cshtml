@@ -82,8 +82,8 @@
     }
     .slider .progress{
       height: 100%;
-      left: 25%;
-      right: 25%;
+      left: 0%;
+      right: 0%;
       position: absolute;
       border-radius: 5px;
       background: #17A2B8;
@@ -171,51 +171,68 @@
                 <a asp-action="Create">Thêm mới</a>
             </h5>
         </div>
-        <form asp-action="Index" method="get" class="form-check-inline" style="margin-bottom: 50px">
-            <div class="aside">
-                <div class="form-group">
-                    <label for="CategoryId">Danh mục:</label>
-                    <select name="categoryId">
-                        <option value="0">-- Lịch trình --</option>
-                        @foreach (var category in ViewBag.Categories)
-                        {
-                            <option value="@category.Id">@category.Name</option>
-                        }
-                    </select>
-                </div>
-                <!-- aside title -->
-                <label class="aside-title">Tour</label>
-                <input type="text" class="input" name="name" value="" />
-                <div class="sld">
-                    <div class="price-input">
-                        <div class="field">
-                            <span>Min</span>
-                            <input type="number" class="input-min" name="Priceto" value="2500000">
-                        </div>
-                        <div class="separator">-</div>
-                        <div class="field">
-                            <span>Max</span>
-                            <input type="number" class="input-max" name="Pricefrom" value="7500000">
-                        </div>
+        <form asp-action="Index" method="get" class="form-inline" style="margin-bottom: 70px; border: 1px solid #dee2e6; padding: 15px; border-radius: 5px;">
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <label for="CategoryId" class="w-100">Danh mục:</label>
+                        <select name="categoryId" class="custom-select w-100 rounded-pill text-center" style="height: 35px" id="CategoryId">
+                            <option value="0">-- Lịch trình --</option>
+                            @foreach (var category in ViewBag.Categories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        </select>
                     </div>
-                    <div class="slider">
-                        <div class="progress"></div>
+                    <div class="col-lg-4 col-md-6">
+                        <label for="tourName" class="w-100">Tour</label>
+                        <input type="text" id="tourName" class="form-control w-100 rounded-pill" style="height: 35px" name="name" value="" />
                     </div>
-                    <div class="range-input">
-                        <input type="range" class="range-min" min="0" max="10000000" value="2500000" step="1">
-                        <input type="range" class="range-max" min="0" max="10000000" value="7500000" step="1">
+                    <div class="col-md-4 my-1 d-flex align-items-end">
+                        <button class="btn btn-primary w-100 rounded-pill" style="height: 35px">Tìm kiếm</button>
                     </div>
                 </div>
-                <!--btn action-->
-                <br />
-                <button class="primary-btn">Search</button>
-                <br />
+                <div class="form-row align-items-center mt-3">
+                    <div class="col sld">
+                        <div class="price-input">
+                            <div class="field">
+                                <span>Min</span>
+                                <input type="number" class="form-control input-min" name="Priceto" value="0">
+                            </div>
+                            <div class="separator">-</div>
+                            <div class="field">
+                                <span>Max</span>
+                                <input type="number" class="form-control input-max" name="Pricefrom" value="10000000">
+                            </div>
+                        </div>
+                        <div class="slider">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="range-input">
+                            <input type="range" class="form-control-range range-min" min="0" max="10000000" value="0" step="1000">
+                            <input type="range" class="form-control-range range-max" min="0" max="10000000" value="10000000" step="1000">
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
+
+
 
         <div  class="packages-carousel owl-carousel">
             @foreach (var item in Model)
             {
+                
+                    int countRating1 = item.Reviews.Count(v => v.Rating == 1);
+                    int countRating2 = item.Reviews.Count(v => v.Rating == 2);
+                    int countRating3 = item.Reviews.Count(v => v.Rating == 3);
+                    int countRating4 = item.Reviews.Count(v => v.Rating == 4);
+                    int countRating5 = item.Reviews.Count(v => v.Rating == 5);
+                    int totalCount = countRating1 + countRating2 + countRating3 + countRating4 + countRating5;
+                    // Tính trung bình cộng
+                    float average = (countRating1 * 1 + countRating2 * 2 + countRating3 * 3 + countRating4 * 4 + countRating5 * 5) / (float)totalCount;
+     
+                
                 <div class="packages-item">
                     <div class="packages-img">
                         <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover">
@@ -230,12 +247,27 @@
                         <div class="p-4 pb-0">
                             <h5 class="mb-0">@item.Name</h5>
                             <small class="text-uppercase">Hot Deals</small>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
+                            <div class="mb-3">                       
+                                <div class="rating-stars">
+                                    @for (var i = 0; i < 5; i++)
+                                    {
+                                        // Nếu i nhỏ hơn phần nguyên của số trung bình, hiển thị một sao đầy
+                                        if (i < Math.Floor(average))
+                                        {
+                                            <small class="fa fa-star text-primary"></small>
+                                        }
+                                        // Nếu i bằng phần nguyên của số trung bình và phần thập phân lớn hơn hoặc bằng 0.5, hiển thị một nửa sao
+                                        else if (i == Math.Floor(average) && average - Math.Floor(average) >= 0.5)
+                                        {
+                                            <small class="fa fa-star-half half-star text-primary"></small>
+                                        }
+                                        // Nếu không, hiển thị một sao rỗng
+                                        else
+                                        {
+                                            <i class="fa fa-star-o empty"></i>
+                                        }
+                                    }
+                                </div>
                             </div>
                             <p class="mb-4 description-tour">@item.Description</p>
                         </div>

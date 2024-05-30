@@ -42,7 +42,7 @@
 <!-- /BREADCRUMB -->
 
 <div class="container mt-5">
-    <form style="margin: 10px" class="border border-2 rounded p-4 text-center" asp-action="Add" method="post" enctype="multipart/form-data" novalidate>
+    <form id="blogForm" style="margin: 10px" class="border border-2 rounded p-4 text-center" asp-action="Add" method="post" enctype="multipart/form-data" novalidate>
         <h2 class="text-center">Đăng bài viết mới</h2>
         <div data-mdb-input-init class="form-outline mb-4">
             <label asp-for="Title" class="control-label">Tiêu đề bài viết</label>
@@ -81,7 +81,6 @@
     </form>
 </div>
 
-
 @section Scripts {
     <script>
         CKEDITOR.replace('editor');
@@ -89,4 +88,33 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#blogForm').on('submit', function (event) {
+                event.preventDefault();
+
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: '@Url.Action("Add", "Blog")',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Thêm thành công! Bài viết của bạn sẽ cần được phê duyệt');
+                            // Reset form or update the UI accordingly
+                        } else {
+                            alert('Đã xảy ra lỗi: ' + response.errors.join(', '));
+                        }
+                    },
+                    error: function () {
+                        alert('Đã xảy ra lỗi khi gửi yêu cầu.');
+                    }
+                });
+            });
+        });
+    </script>
 }

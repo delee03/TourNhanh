@@ -1,0 +1,32 @@
+﻿@model TourNhanh.Models.Blog
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <img class="img-fluid w-100" style="height: 70vh;" src="@Model.ImageUrl" alt="Product Image" />
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form asp-action="Delete" method="post" enctype="multipart/form-data">
+                <div class="form-group text-center">
+                    <label asp-for="Title" class="control-label">Tên bài viết</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <label asp-for="Author" class="control-label">Tác giả</label>
+                    <input asp-for="Author" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" value="Delete" class="btn btn-danger rounded-pill py-2 px-4" />
+                    <a asp-action="Index" class="btn btn-primary rounded-pill py-2 px-4">Quay lại</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
