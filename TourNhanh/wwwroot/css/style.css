@@ -1798,7 +1798,7 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     }
 
 .product-details .add-to-cart {
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
     .product-details .add-to-cart .add-to-cart-btn {
@@ -2363,7 +2363,7 @@ thead , tbody, tr, th, td {
 }
 
 .your-tour .table-tour thead tr th {
-    font-size: 16px;
+    font-size: 15px;
     background-color: #262932;
     color: #fff;
     text-align: center;
@@ -2382,7 +2382,7 @@ thead , tbody, tr, th, td {
     text-align: center;
 }
 .your-tour .table td {
-    font-size: 16px;
+    font-size: 14px;
     color: #2b2b2b;
 }
 

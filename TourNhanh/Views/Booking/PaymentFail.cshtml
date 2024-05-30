@@ -27,7 +27,7 @@
         background-image: linear-gradient(90deg, #f00 0%, #122125 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        .title-gradient
+      
     }
 
     .title-gradient {
@@ -39,33 +39,31 @@
     }
 </style>
 
-<!-- BREADCRUMB -->
-<div id="breadcrumb" class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="breadcrumb-tree">
-                    <li><a asp-action="Index" asp-controller="Tour">Trang chủ</a></li>
-                    <li><a asp-action="Index" asp-controller="Tour">Khám phá tour</a></li>
-                    <li><a asp-action="YourTour" asp-controller="Booking">Tour của bạn</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /BREADCRUMB -->
-@* body *@
-<section class="sucess-section section-b-space">
-    <div class="container">
-        <div class="row">
-            <div class="section-title text-center">
-                <h2 style="margin: 20px 0 30px" class="title-gradient-h">Payment Failure</h2>
 
-            </div>
+<!-- BREADCRUMB START-->
+
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">
+            Booking Tour
+        </h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="~/Tour/Index">Danh sách tour</a></li>
+            <li class="breadcrumb-item active text-white">Kết quả</li>
+        </ol>
+    </div>
+</div>
+
+<!-- /BREADCRUMB END -->
+
+<section>
+    <div class="container">
+        
+            
+             <h2 style="margin: 20px 0 30px" class="title-gradient-h text-center">Payment Failure</h2>
+
+         
 
 
             <div class="cart--container">
@@ -83,34 +81,7 @@
 
             </div>
 
-            @* <div class="col-md-5 order-details" style="margin-top: 86px;">
-            <div class="section-title text-center">
-            <h3 class="title-gradient">Your Order</h3>
-            </div>
-            <div class="order-summary">
-            <div class="order-col">
-            <div><strong>PRODUCT</strong></div>
-            <div><strong>SUB TOTAL</strong></div>
-            </div>
-            @foreach (var item in ViewBag.CartOrder)
-            {
-            decimal subtotal = (int)item.Quantity * item.Price;
-            Total += subtotal;
-            <div class="order-products">
-            <div class="order-col">
-            <div>x1 @item.Name</div>
-            <div>$@subtotal</div>
-            </div>
-            </div>
-            }
-            <div class="order-col">
-            <div>Shiping</div>
-            <div><strong>FREE</strong></div>
-            </div>
-            <div class="order-col">
-            <div><strong>TOTAL</strong></div>
-            <div><strong class="order-total">$@Total</strong></div>
-            </div>
-            </div>
-            </div> *@
+      </div>
+
+        
 </section>

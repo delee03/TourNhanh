@@ -3,12 +3,51 @@
 @{
     ViewData["Title"] = "YourTour";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
 <style>
     .section {
         padding: 50px 0 100px;
     }
+
+   
+    tbody tr .details a:hover {
+        color: #e22454;
+    }
+
+    tbody tr .details a{
+        position: relative;
+       
+
+    }
+
+        tbody tr .details a:visited {
+            color: #2b2b2b;
+        }
+
+    tbody tr .details a::before {
+        padding-top: 3px;
+        content: "Xem nhanh";
+        font-size: 12px;
+        position: absolute;
+        top: -24px;
+        left: -43px;
+        color: #e22454;
+        border-top: 2px solid red;       
+        background: #fff;
+        box-shadow: 0 0 32px rgba(0, 0, 0, .2);
+        width: 100px;
+        height: 25px;
+        visibility: hidden;
+        transition: all .4s;
+    }
+
+        tbody tr .details a:hover::before {
+            visibility: visible;
+        }
+    
+  
 </style>
 
 
@@ -31,13 +70,16 @@
 
 <section class="section your-tour">
     <div class="container-fluid">
-        <div class="heading py-5">
+        <div class="heading py-2">
             <h2 class="title-gradient text-center">Các tour đã đặt</h2>
         </div>
         <div class="content-your-tour" >
              <table class="table table-tour">
                 <thead>
                     <tr>
+                        <th>
+                            Id
+                        </th>
                          <th>
                                    Khách hàng
                         </th>
@@ -65,7 +107,7 @@
                                    Phương thức
                         </th>
                         <th>
-                                   Đã thanh toán
+                                  Trạng thái
                         </th>
                         <th> 
                                  Hành động
@@ -73,9 +115,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                            @foreach (var item in Model)
-                            {
+                    @foreach (var item in Model)
+                       
+                    {
+                        var trangthai = "Chưa thanh toán";
+                        if(item.isPaymentCompleted==true)
+                        { trangthai = "Đã thanh toán"; }
+                        var method = "Trực tiếp";
+                        if(item.PaymentMethod=="online"){ method = "VNPay"; }
                         <tr>
+                            <td>
+                                @item.Id
+                            </td>
                             <td>
                                 @ViewBag.FullName
                              </td>
@@ -100,15 +151,15 @@
                                         @Html.DisplayFor(modelItem => item.PaymentDate)
                             </td>
                             <td>
-                                        @Html.DisplayFor(modelItem => item.PaymentMethod)
+                                       @method
                             </td>
-                            <td>
-                                        @Html.DisplayFor(modelItem => item.isPaymentCompleted)
+                            <td style="color: #e22454;">
+                                      @trangthai
                             </td>
-                            <td>
-             
-                               <a asp-action="Details" asp-route-bookingId="@item.Id">Details</a> |                
-                          </td>
+                            <td class="details">
+                                <a asp-action="Details" asp-route-bookingId="@item.Id"><i class="fa-solid fa-eye"></i></a>
+@*                                 <a asp-action="Delete" asp-route-bookingId="@item.Id"><i class="fa-solid fa-trash-can"></i></a>
+ *@                            </td>
 
                         </tr>
                             }

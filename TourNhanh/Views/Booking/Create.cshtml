@@ -43,7 +43,7 @@
                 <h2 class="title-gradient text-center">Điền thông tin đặt tour</h2>
             </div>
             <div class="col-md-6 mx-auto">
-                <form asp-action="Create" method="post">
+                <form asp-action="Create" method="post" id="formBooking" >
                     <div class="row g-3">
                         <input type="hidden" name="tourId" value="@ViewBag.TourId" />
                                    
@@ -81,7 +81,7 @@
                         </div
 
                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary w-100 py-3">Đặt ngay</button>
+                            <button onclick="showSuccessToast();" id="bookNow"  data-tourId="@ViewBag.TourId" class="btn btn-primary btn--success w-100 py-3">Đặt ngay</button>
                        </div>
                         <div class="col-12">
                            <button class="btn btn-light w-100 py-3 mt-4"><a asp-controller="Tour" class="f-w-600" asp-action="Details" asp-route-id="@ViewBag.TourId">Trở về</a></button>
@@ -96,7 +96,68 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    let paymentMethodValue = "";
+    document.getElementById('paymentMethod').addEventListener("change", function(){
+        paymentMethodValue = this.value;
+        console.log("paymentMethodValue", paymentMethodValue);
+    });
 
+    let noteValue  = "";
+    document.getElementById('note').addEventListener("change", function(){
+        noteValue = this.value;
+        console.log("noteValue", noteValue);
+    });
+
+    let amountValue = 0;
+    document.getElementById('Amount').addEventListener("change", function(){
+        amountValue = this.value * 1;
+        console.log( "amount" ,amountValue);
+    });
+
+    let quantityValue = 0;
+    document.getElementById('quantity').addEventListener("change", function(){
+        quantityValue = this.value * 1;    
+        console.log("quantity",  quantityValue);
+    });
+
+    let idTourValue = document.getElementById("tourID").value;
+    console.log("idTourValue", idTourValue);
+    var tourId1 = idTourValue;
+   $(document).ready(function () {
+        $('#formBooking').submit(function (e) {
+            e.preventDefault(); // Ngăn chặn hành động mặc định của form
+
+            var tourId = tourId1;
+            var quantity = quantityValue;
+            var paymentMethod = paymentMethodValue;
+            var note = noteValue;
+            
+            $.ajax({
+                type: 'POST',
+                url: 'Booking/YourTour',
+                data: {
+                    tourId: tourId,
+                    quantity: quantity,
+                    paymentMethod: paymentMethod,
+                    note: note
+                },
+                async: false,
+                success: function (response) {
+                    console.log("thanh cong");
+                   showSuccessToast();
+                   // Hiển thị thông báo toast tại đây
+                },
+                error: function (xhr, status, error) {
+                    // Xử lý lỗi nếu có
+                    console.log("loi!!!!")
+                    showErrorToast();
+                }
+            });
+        })
+    });
+</script>
 <script>
 
 
@@ -133,74 +194,10 @@
     document.addEventListener('DOMContentLoaded', function () {
         validateQuantity();
     });
-</script>
-@* 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-
-    let paymentMethodValue = 0;
-    document.getElementById('paymentMethod').addEventListener('change', function () {
-        paymentMethodValue = this.value;
-        console.log("paymentMethodValue", this.value)
-    })
-
-    let noteValue  = 0;
-
-    document.getElementById('note').addEventListener('change', function () {
-        noteValue = this.value;
-        console.log("noteValue", this.value)
-    })
-
-
-    let amount = 0;
-    document.getElementById('Amount').addEventListener('change', function () {
-        amount = this.value;
-        console.log( "amount" ,this.value)
-    })
-
-
-    let quantity = 0;
-    document.getElementById('quantity').addEventListener('change', function () {
-        quantity = this.value;
-        console.log("quantity", this.value)
-    })
-
-    let idTourValue = document.getElementById("tourID").value;
-    console.log("idTourValue", idTourValue)
 
     
-
-
-
-    $(document).ready(function () {
-        $('#backToListBtn').on('click', function (e) {
-            e.preventDefault(); // Ngăn chặn hành động mặc định của nút
-
-            var tourId = idTourValue;
-            var quantity = $("#quantity").value;
-                var paymentMethod = paymentMethodValue  /*phupng thuc*/;
-            var note = noteValue /* Lấy giá trị note từ form hoặc biến phù hợp */;
-
-            $.ajax({
-                type: 'POST',
-                url: '@Url.Action("Create", "Tour")',
-                data: {
-                    tourId: tourId,
-                    quantity: quantity,
-                    paymentMethod: paymentMethod,
-                    note: note
-                },
-                success: function (response) {
-                   console.log("thanh cong")
-                    // Xử lý phản hồi từ server nếu cần thiết
-                },
-                error: function (xhr, status, error) {
-                    // Xử lý lỗi nếu có
-                    console.log("loi!!!!")
-
-                }
-            });
-        });
-    });
 </script>
- *@
+
+
+
+
