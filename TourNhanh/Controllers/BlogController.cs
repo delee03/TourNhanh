@@ -45,7 +45,7 @@ namespace TourNhanh.Controllers
             }
             return View(blogs);
         }
-
+        [Authorize]
         public async Task<IActionResult> Add()
         {
 

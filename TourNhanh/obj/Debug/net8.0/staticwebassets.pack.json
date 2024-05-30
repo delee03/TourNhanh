@@ -1645,6 +1645,10 @@
       "PackagePath": "staticwebassets\\img\\DaLat11111.jpg"
     },
     {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang1.jpg",
+      "PackagePath": "staticwebassets\\img\\DaNang1.jpg"
+    },
+    {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang11111.jpg",
       "PackagePath": "staticwebassets\\img\\DaNang11111.jpg"
     },
@@ -1667,6 +1671,14 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\DaNang22222.jpg",
       "PackagePath": "staticwebassets\\img\\DaNang22222.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\HaGiang1.jpg",
+      "PackagePath": "staticwebassets\\img\\HaGiang1.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\HaGiang1111.jpg",
+      "PackagePath": "staticwebassets\\img\\HaGiang1111.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\HaLong1.jpg",
@@ -1707,6 +1719,10 @@
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\NamDu1111.jpg",
       "PackagePath": "staticwebassets\\img\\NamDu1111.jpg"
+    },
+    {
+      "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\TayNinh1.jpg",
+      "PackagePath": "staticwebassets\\img\\TayNinh1.jpg"
     },
     {
       "Id": "D:\\Web_VS\\TourNhanh\\TourNhanh\\wwwroot\\img\\about-2.png",

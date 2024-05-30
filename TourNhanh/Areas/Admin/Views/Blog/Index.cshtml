@@ -13,8 +13,7 @@
                         <table class="table table-1d all-package">
                             <thead>
                                 <tr>
-                                    <th>Tên blog</th>                                    
-                                    <th>Nội dung</th>
+                                    <th>Tên blog</th>                                                                        
                                     <th>Ngày tạo</th>                                 
                                     <th>Hình ảnh chính</th>
                                     <th>Trạng thái</th>
@@ -28,8 +27,7 @@
                                     if(item.State == 0)
                                     {
                                         <tr>
-                                            <td>@item.Title</td>
-                                            <td>@Html.Raw(item.Content)</td>
+                                            <td>@item.Title</td>                                           
                                             <td>@item.CreatedAt</td>
                                             <td>
                                                 <img src="@item.ImageUrl" alt="Main Image" style="width: 100px; height: 100px;" />
@@ -37,7 +35,7 @@
                                             <td>
                                                 @if (item.State == 0)
                                                 {
-                                                    <a href="~/Admin/Blog/Change/@item.Id" class="text-danger" title="Chưa duyệt" style="color: red !;">Chưa duyệt</a>
+                                                    <a href="~/Admin/Blog/Change/@item.Id" class="text-danger" title="Chưa duyệt" style="color: red !important;">Chưa duyệt</a>
                                                 }
                                             </td>
 
@@ -63,8 +61,7 @@
                                     if (item.State != 0)
                                     {
                                         <tr>
-                                            <td>@item.Title</td>
-                                            <td>@Html.Raw(item.Content)</td>
+                                            <td>@item.Title</td>                                          
                                             <td>@item.CreatedAt</td>
                                             <td>
                                                 <img src="@item.ImageUrl" alt="Main Image" style="width: 100px; height: 100px;" />
