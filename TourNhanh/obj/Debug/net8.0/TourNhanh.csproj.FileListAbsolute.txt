@@ -99,7 +99,6 @@ D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Configu
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.DependencyInjection.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.Abstractions.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.dll
@@ -115,7 +114,6 @@ D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Hosting
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Http.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Localization.dll
-D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Configuration.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Console.dll
 D:\Web_VS\TourNhanh\TourNhanh\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Debug.dll
