@@ -128,9 +128,9 @@
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "TourNhanh\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Home\\Index.cshtml*",
-              "RelativeToolTip": "TourNhanh\\Views\\Home\\Index.cshtml*",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADkAAAAWAAAA",
+              "ToolTip": "D:\\Web_VS\\TourNhanh\\TourNhanh\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "TourNhanh\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAADkAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-30T18:58:58.044Z",
               "EditorCaption": ""
@@ -145,8 +145,7 @@
               "RelativeToolTip": "TourNhanh\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-30T18:50:26.108Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T18:50:26.108Z"
             },
             {
               "$type": "Document",
@@ -158,8 +157,7 @@
               "RelativeToolTip": "TourNhanh\\wwwroot\\css\\style.css",
               "ViewState": "AQIAAPcGAAAAAAAAAAAewAMHAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-30T18:16:52.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T18:16:52.759Z"
             },
             {
               "$type": "Document",
@@ -240,8 +238,7 @@
               "RelativeToolTip": "TourNhanh\\Controllers\\BlogController.cs",
               "ViewState": "AQIAAD0AAAAAAAAAAAAkwEwAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T18:52:35.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T18:52:35.949Z"
             },
             {
               "$type": "Document",
@@ -358,8 +355,7 @@
               "RelativeToolTip": "TourNhanh\\Views\\Booking\\SuccessfulOnlinePay.cshtml",
               "ViewState": "AQIAAGoAAAAAAAAAAAAawH8AAADxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-30T09:29:21.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T09:29:21.147Z"
             },
             {
               "$type": "Document",
