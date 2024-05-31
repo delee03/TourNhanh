@@ -234,9 +234,9 @@
                                 <a class="nav-link1" href="#map">Bản đồ</a>
                             </li>
                         </ul>
-                        <p>
+                      @*   <p>
                             <a asp-action="Create" asp-route-tourId="@ViewBag.TourId">Create New</a>
-                        </p>
+                        </p> *@
 
                         <div class="diemnhan_tour">
                             <h3 id="diemnhanhanhtrinh" class="tab_title">
@@ -264,11 +264,11 @@
                                     @if (item.Order == 3) { text = "cuối cùng"; }
                                     else if (item.Order == 2) { text = "kế tiếp"; }
                                     else text = "đầu tiên";
-                                    <div>
+                                  @*   <div>
                                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                                         <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                    </div>
+                                    </div> *@// thêm xóa sửa
                                     <div class="list_lichtrinh_box">
                                         <div class="list_lichtrinh_title">
                                      
@@ -285,7 +285,12 @@
                                             
                                             <figure class="py-3 text-center"> Hình ảnh về địa danh @item.Location.Name</figure>
                                             <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng địa phương @item.Location.SplitAddress().First(). Tự do khám phá Thành phố&nbsp;<strong> @item.Location.SplitAddress().First()</strong>
-
+                                            <p><strong>Sau đó:</strong> Quý khách về nghỉ ngơi tại khách sạn: @item.Hotel.Name</p>
+                                                <div>
+                                                    <img src="@item.Hotel.ImageUrl"/>
+                                                    <figure class="text-center py-3"> Hình ảnh khách sạn</figure>
+                                                </div>
+                                              
 
                                             <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về &nbsp; @if (@item.Location.SplitAddress().Count >= 2)
                                                         {

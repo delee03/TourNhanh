@@ -168,7 +168,8 @@
             <h5 class="section-title px-3">Cùng TOUR NHANH xê dịch nào</h5>
             <h1 class="mb-0">Danh sách tour</h1>
             <h5 class="section-title px-3">
-                <a asp-action="Create">Thêm mới</a>
+                Nổi bật
+              @*   <a asp-action="Create">Thêm mới</a> *@
             </h5>
         </div>
         <form asp-action="Index" method="get" class="form-inline" style="margin-bottom: 70px; border: 1px solid #dee2e6; padding: 15px; border-radius: 5px;">
@@ -279,14 +280,14 @@
                           @*   <div class="col-6 text-end px-0">
                                 <a  asp-controller="TourDetail"  asp-action="Index" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xem lịch trình</a>
                             </div> *@
-                            <div class="col-5 text-start px-0">
+                          @*   <div class="col-5 text-start px-0">
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Sửa</a>
                             </div>
                             <div class="col-5 text-end px-0">
                                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xóa</a>
-                            </div>
+                            </div> *@
                             <div class="col-6 text-end px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                <a asp-controller="Booking" asp-action="Create" class="btn-hover btn text-white py-2 px-4">Đặt ngay</a>
                             </div>
                         </div>
                     </div>

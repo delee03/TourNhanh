@@ -20,7 +20,7 @@
         var user = await UserManager.GetUserAsync(User);
         var fullName = user?.FullName ?? "User"; // Default to "User" if FullName is null
 
-        <li class="nav-item">
+        <li class="nav-item pt-2">
             <a id="manage" class="me-3 text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
                 <i class="fa-solid fa-heart"></i>Chào @fullName!
             </a>
