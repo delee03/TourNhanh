@@ -2,6 +2,7 @@
 using TourNhanh.Models;
 using TourNhanh.Repositories.Implementations;
 using TourNhanh.Repositories.Interfaces;
+using TourNhanh.ViewModel;
 
 namespace TourNhanh.Areas.Admin.Controllers
 {
@@ -38,7 +39,7 @@ namespace TourNhanh.Areas.Admin.Controllers
             return View(location);
         }
 
-        // GET: Locations/Create
+        /*// GET: Locations/Create
         public IActionResult Create()
         {
             return View();
@@ -55,9 +56,97 @@ namespace TourNhanh.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(location);
+        }*/
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View(new LocationViewModel());
         }
 
-        // GET: Locations/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(LocationViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var location = new Location
+                {
+                    Name = model.Name,
+                    Description = model.Description,
+                    Latitude = model.Latitude,
+                    Longitude = model.Longitude,
+                    Address = string.Join("-", model.Addresses.Where(a => !string.IsNullOrEmpty(a))),
+                    Desc1 = model.Descriptions.ElementAtOrDefault(0),
+                    Desc2 = model.Descriptions.ElementAtOrDefault(1),
+                    Desc3 = model.Descriptions.ElementAtOrDefault(2)
+                };
+
+                await _locationRepository.CreateAsync(location);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var location = await _locationRepository.GetByIdAsync(id.Value);
+            if (location == null)
+            {
+                return NotFound();
+            }
+
+            var model = new LocationViewModel
+            {
+                Id = location.Id,
+                Name = location.Name,
+                Description = location.Description,
+                Latitude = location.Latitude,
+                Longitude = location.Longitude,
+                Addresses = location.Address.Split('-').ToList(),
+                Descriptions = new List<string> { location.Desc1, location.Desc2, location.Desc3 }
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, LocationViewModel model)
+        {
+            if (id != model.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var location = new Location
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    Description = model.Description,
+                    Latitude = model.Latitude,
+                    Longitude = model.Longitude,
+                    Address = string.Join("-", model.Addresses.Where(a => !string.IsNullOrEmpty(a))),
+                    Desc1 = model.Descriptions.ElementAtOrDefault(0),
+                    Desc2 = model.Descriptions.ElementAtOrDefault(1),
+                    Desc3 = model.Descriptions.ElementAtOrDefault(2)
+                };
+
+                await _locationRepository.UpdateAsync(location);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
+        }
+        /*// GET: Locations/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,7 +178,7 @@ namespace TourNhanh.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(location);
-        }
+        }*/
 
         // GET: Locations/Delete/5
         public async Task<IActionResult> Delete(int? id)
