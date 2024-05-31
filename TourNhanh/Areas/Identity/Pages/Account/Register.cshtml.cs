@@ -2,9 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -13,6 +10,9 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Text.Encodings.Web;
 using TourNhanh.Models;
 
 namespace TourNhanh.Areas.Identity.Pages.Account
@@ -139,23 +139,33 @@ namespace TourNhanh.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            // Nếu returnUrl không được cung cấp, đặt nó thành URL mặc định
             returnUrl ??= Url.Content("~/");
+
+            // Lấy danh sách các phương thức xác thực bên ngoài
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+            // Kiểm tra xem dữ liệu đầu vào có hợp lệ không
             if (ModelState.IsValid)
             {
+                // Tạo một đối tượng người dùng mới
                 var user = CreateUser();
 
+                // Đặt tên đầy đủ và số điện thoại cho người dùng từ dữ liệu đầu vào
                 user.FullName = Input.FullName;
                 user.PhoneNumber = Input.PhoneNumber;
+
+                // Đặt tên người dùng và email cho người dùng
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+
+                // Tạo người dùng mới với mật khẩu được cung cấp
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
+                // Nếu việc tạo người dùng thành công, thực hiện các bước tiếp theo
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User created a new account with password.");
-
-                    //neu ko chon Role thì gán mặc định là Customer và ngược lại
+                    // Tự động cấp role Customer cho người dùng mới
                     if (!String.IsNullOrEmpty(Input.Role))
                     {
                         await _userManager.AddToRoleAsync(user, Input.Role);
@@ -165,18 +175,24 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                         await _userManager.AddToRoleAsync(user, UserRole.Role_Customer);
                     }
 
+                    // Lấy ID người dùng và tạo mã xác nhận email
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
+                    // Tạo URL xác nhận email
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
+                    // Gửi email xác nhận tới người dùng
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
+                    // Nếu yêu cầu xác nhận tài khoản, chuyển hướng người dùng tới trang xác nhận đăng ký
+                    // Ngược lại, đăng nhập người dùng và chuyển hướng họ tới returnUrl
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
                         return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
@@ -187,15 +203,18 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
+
+                // Nếu có lỗi khi tạo người dùng, thêm lỗi vào ModelState
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
 
-            // If we got this far, something failed, redisplay form
+            // Nếu chúng ta đến được đây, có gì đó đã thất bại, hiển thị lại form đăng ký
             return Page();
         }
+
 
         private AppUser CreateUser()
         {

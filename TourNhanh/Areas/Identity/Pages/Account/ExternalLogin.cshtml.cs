@@ -85,8 +85,17 @@ namespace TourNhanh.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+
+            [Required]
+            [Display(Name = "Tên")]
+            public string FullName { get; set; }
+
+            [Required]
+            [Phone]
+            [Display(Name = "Điện thoại")]
+            public string PhoneNumber { get; set; }
         }
-        
+
         public IActionResult OnGet() => RedirectToPage("./Login");
 
         public IActionResult OnPost(string provider, string returnUrl = null)
@@ -132,7 +141,9 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                 {
                     Input = new InputModel
                     {
-                        Email = info.Principal.FindFirstValue(ClaimTypes.Email)
+                        Email = info.Principal.FindFirstValue(ClaimTypes.Email),
+                        FullName = info.Principal.FindFirstValue(ClaimTypes.Name),
+                        PhoneNumber = null
                     };
                 }
                 return Page();
@@ -146,7 +157,7 @@ namespace TourNhanh.Areas.Identity.Pages.Account
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                ErrorMessage = "Error loading external login information during confirmation.";
+                ErrorMessage = "Lỗi khi tải thông tin đăng nhập bên ngoài trong quá trình xác thực.";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
 
@@ -156,6 +167,7 @@ namespace TourNhanh.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
 
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
@@ -163,10 +175,13 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                     result = await _userManager.AddLoginAsync(user, info);
                     if (result.Succeeded)
                     {
-                        _logger.LogInformation("User created an account using {Name} provider.", info.LoginProvider);
+                        await _userManager.AddToRoleAsync(user, UserRole.Role_Customer);
+
+                        _logger.LogInformation("Người dùng đã tạo tài khoản bằng nhà cung cấp {Name}.", info.LoginProvider);
 
                         var userId = await _userManager.GetUserIdAsync(user);
                         var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
                         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                         var callbackUrl = Url.Page(
                             "/Account/ConfirmEmail",
@@ -174,8 +189,8 @@ namespace TourNhanh.Areas.Identity.Pages.Account
                             values: new { area = "Identity", userId = userId, code = code },
                             protocol: Request.Scheme);
 
-                        await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                            $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                        await _emailSender.SendEmailAsync(Input.Email, "Xác nhận email của bạn",
+                            $"Vui lòng xác nhận tài khoản của bạn bằng cách <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>nhấp vào đây</a>.");
 
                         // If account confirmation is required, we need to show the link if we don't have a real email sender
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)

@@ -10,15 +10,15 @@ namespace TourNhanh.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        // Tên của địa điểm, không được để trống và tối đa 100 ký tự.
+        // Tên của địa điểm, không được để trống
         [Required]  
         public string? Name { get; set; }
 
-        // Mô tả về địa điểm, tối đa 500 ký tự.
+        // Mô tả về địa điểm
         public string?Description { get; set; }
         public List<string> SplitDescription()
         {
-            return Description.Split('-').ToList();
+            return Description?.Split('-').ToList() ?? new List<string>();
         }    
         public string? Desc1 { get; set; }
        
@@ -28,15 +28,13 @@ namespace TourNhanh.Models
         
         public float? Latitude { get; set; }
         public float? Longitude { get; set; }
-        //gồm 3 địa điểm tối đa cách nhau bởi dấu " - ";
+        // Địa chỉ gồm 3 địa điểm tối đa cách nhau bởi dấu "-"
         public string? Address { get; set; }
 
-        // Hàm để cắt chuỗi Address-
-        public List<string> SplitAddress ()
+        public List<string> SplitAddress()
         {
-            return Address.Split('-').ToList();
-        
+            return Address?.Split('-').ToList() ?? new List<string>();
         }
-      
+
     }
 }

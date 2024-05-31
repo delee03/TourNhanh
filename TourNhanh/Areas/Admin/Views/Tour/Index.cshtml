@@ -53,7 +53,7 @@
                                         <td>
                                             <ul>
                                                 <li>
-                                                    <a href="~/Admin/Tour/Details/@item.Id" title="Chi tiết">
+                                                    <a asp-controller="TourDetail" asp-area="Admin" asp-action="Index" asp-route-tourId="@item.Id" title="Chi tiết">
                                                         <span class="lnr lnr-eye"></span>
                                                     </a>
                                                 </li>
