@@ -83,7 +83,7 @@
         object-fit: cover;
 
     }
-    .title-gradient {
+    /* .title-gradient {
         margin-bottom: 30px; 
         background-color: var(--bs-linear-color);
         background-image: var(--bs-linear-img);
@@ -92,7 +92,7 @@
         font-weight: 600 ;
         text-align: center;
         font-size: 50px;
-    }
+    } */
 
     .slick-prev, .slick-next {
         top: 25%;
@@ -186,7 +186,7 @@
             <div class="row">
                 <div class="col-8 content-left">
                     @*   Hinfh anh tour *@
-                    <div class="image_tour row">
+                    <div class="image_tour row wow animate__animated animate__fadeInTopLeft" data-wow-duration="2s" data-wow-delay=".4s">
                         <div id="detail_main_img" class="col-12">
 
                             @if (ViewBag.TourImage != null)
@@ -216,7 +216,7 @@
                     </div>
                      @*   Hinfh anh tour *@
                     <!--    main content    -->
-                    <div class="main-content">
+                    <div class="main-content wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link1 active" aria-current="page" href="#diemnhanhanhtrinh">Điểm nhấn hành trình</a>
@@ -234,9 +234,9 @@
                                 <a class="nav-link1" href="#map">Bản đồ</a>
                             </li>
                         </ul>
-                        <p>
+                      @*   <p>
                             <a asp-action="Create" asp-route-tourId="@ViewBag.TourId">Create New</a>
-                        </p>
+                        </p> *@
 
                         <div class="diemnhan_tour">
                             <h3 id="diemnhanhanhtrinh" class="tab_title">
@@ -264,11 +264,11 @@
                                     @if (item.Order == 3) { text = "cuối cùng"; }
                                     else if (item.Order == 2) { text = "kế tiếp"; }
                                     else text = "đầu tiên";
-                                    <div>
+                                  @*   <div>
                                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                                         <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                    </div>
+                                    </div> *@// thêm xóa sửa
                                     <div class="list_lichtrinh_box">
                                         <div class="list_lichtrinh_title">
                                      
@@ -282,9 +282,15 @@
                                             } *@
                                             <p>Điểm đến <span>@text</span> trong hành trình của chúng ta là: &nbsp;<strong>@item.Location.Name</strong></p>
                                             <img style="width:100%; height: 240px; object-fit: cover;" src="@item.Tour.MainImageUrl" />
+                                            
                                             <figure class="py-3 text-center"> Hình ảnh về địa danh @item.Location.Name</figure>
                                             <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng địa phương @item.Location.SplitAddress().First(). Tự do khám phá Thành phố&nbsp;<strong> @item.Location.SplitAddress().First()</strong>
-
+                                            <p><strong>Sau đó:</strong> Quý khách về nghỉ ngơi tại khách sạn: @item.Hotel.Name</p>
+                                                <div>
+                                                    <img src="@item.Hotel.ImageUrl"/>
+                                                    <figure class="text-center py-3"> Hình ảnh khách sạn</figure>
+                                                </div>
+                                              
 
                                             <p><strong>09h00:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển về &nbsp; @if (@item.Location.SplitAddress().Count >= 2)
                                                         {
@@ -1113,26 +1119,46 @@
                 </div>
                 <!--Content_left-->
                 <!--Content right-->
-                <div class="col-4 right-content">
+                <div class="col-4 right-content wow animate__animated animate__fadeInTopRight" data-wow-duration="2s" data-wow-delay=".4s">
                    
                         <div class="product-details">
                                 <h3>Khởi hành và giá cả</h3>
                                             
                                 <div>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa-regular fa-star text-primary"></i>
+                            @{
+
+                                var average = ViewBag.AverageRating;
+                                var count = ViewBag.Count;
+                            }
+                                    <div class="rating-stars">
+                                        @for (var i = 0; i < 5; i++)
+                                        {
+                                            // Nếu i nhỏ hơn phần nguyên của số trung bình, hiển thị một sao đầy
+                                            if (i < Math.Floor(ViewBag.AverageRating))
+                                            {
+                                                <i class="fa fa-star" style="color: #007bff;"></i>
+                                            }
+                                            // Nếu i bằng phần nguyên của số trung bình và phần thập phân lớn hơn hoặc bằng 0.5, hiển thị một nửa sao
+                                            else if (i == Math.Floor(average) && average - Math.Floor(average) >= 0.5)
+                                                {
+                                                    <i class="fa fa-star-half half-star" style="color: #007bff;"></i>
+                                                }
+                                            // Nếu không, hiển thị một sao rỗng
+                                                else
+                                                {
+                                                <i class="fa fa-star-o empty"></i>
+                                                }   
+                                        }
                                     </div>
-                                    <a class="review-link" href="#">10 Review(s) | Add your review</a>
+                                     <a class="review-link" href="#">@count lượt đánh giá</a>
                                 </div>
                                 <div>
-                                    <h3 class="product-price">@view.Price VNĐ <del class="product-old-price">999999VNĐ</del></h3>
+                                 <h3 class="product-price animate__animated animate__flash animate__infinite">@view.Price VNĐ <del class="product-old-price">999999VNĐ</del></h3>
                                 
-                                </div>
-                                <h3><span class="product-available"><i class="fa-solid fa-hand-point-right fa-beat"></i>"Thích vi vu thì nhích thôi" <i class="fa-solid fa-hand-point-left fa-beat"></i></span></h3>
+                                  </div>
+                                  <h3 >
+                                    <span class="product-available"><i class="fa-solid fa-hand-point-right"></i>"Thích vi vu thì nhích thôi" <i class="fa-solid fa-hand-point-left"></i></span>
+                                </h3>
                                 <label>Phương tiện di chuyển: @view.Transport.Name </label>
                                 <div class="product-options d-flex justify-content-flex-start align-items-center">
                                     <label>
@@ -1176,8 +1202,23 @@
                                         <i class="fa fa-shopping-cart"></i> add to cart
                                         </button>
                                         </a> *@
-                                        <button onclick="showSuccessToast();" class="add-to-cart-btn addToCartBtn btn--success" data-productId="@view.Id"><i class="fa fa-shopping-cart"></i> đặt tour</button>
-                                        @* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
+
+
+                                        @{
+                                            if (ViewBag.Slots == 0)
+                                            {
+                                                <a class="add-to-cart-btn new"><i class="fa fa-eye"></i>Hết chỗ</a>
+                                            }
+                                            else
+                                            {
+                                                <a class="add-to-cart-btn new" asp-controller="Booking" asp-action="Create" asp-route-tourId="@view.Id">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    đặt tour
+                                                </a>
+                                            }
+                                        }
+@*                                         <button onclick="showSuccessToast();" class="add-to-cart-btn addToCartBtn btn--success" data-productId="@view.Id"><i class="fa fa-shopping-cart"></i> đặt tour</button>
+ *@                                        @* <a asp-action="Update" asp-route-id="@Model.Id" class="btn-action">Edit</a> | *@
                                         <a class="add-to-cart-btn new" href="https://zalo.me/0931034852"><i class="fa fa-eye"></i>Yêu cầu tư vấn</a>
                                         <br />
                                         @* <a asp-action="Index" class="btn-action"><i class="fa-solid fa-arrow-left"></i>Trở về</a> *@

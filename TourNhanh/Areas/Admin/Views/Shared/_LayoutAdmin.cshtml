@@ -243,6 +243,13 @@
                                 </li>
 
                                 <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav" href="~/Admin/Blog/Index">
+                                        <i data-feather="book"></i>
+                                        <span>Duyệt bài</span>
+                                    </a>
+                                </li>
+                              
+                                <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="~/Admin/Transport/Index">
                                         <i data-feather="box"></i>
                                         <span>Phương tiện</span>
@@ -257,7 +264,7 @@
                                 </li>
 
                                 <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="~/Admin/Customers">
+                                    <a class="sidebar-link sidebar-title link-nav" href="~/Admin/User">
                                         <i data-feather="users"></i>
                                         <span>Khách hàng</span>
                                     </a>
@@ -374,6 +381,7 @@
             window.history.replaceState(null, null, window.location.href);
         }
     </script>
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

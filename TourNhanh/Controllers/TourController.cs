@@ -6,6 +6,9 @@ using Microsoft.Extensions.Hosting;
 using TourNhanh.Models;
 using TourNhanh.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using TourNhanh.Repositories.Implementations;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace TourNhanh.Controllers
@@ -18,8 +21,10 @@ namespace TourNhanh.Controllers
         private readonly ITransportRepository _transportRepository;
         private readonly ITourImage _tourImageRepository;
         private readonly IWebHostEnvironment _hostingEnvironment;
+		private readonly UserManager<AppUser> _userManager;
+        private readonly IReviewRepository _reviewRepository;
 
-        public TourController(ITourRepository tourRepository, ICategoryRepository categoryRepository, ITransportRepository transportRepository, ITourImage tourImageRepository, IWebHostEnvironment hostingEnvironment, ITourDetail tourDetail)
+		public TourController(ITourRepository tourRepository, ICategoryRepository categoryRepository, ITransportRepository transportRepository, ITourImage tourImageRepository,IWebHostEnvironment hostingEnvironment, ITourDetail tourDetail, UserManager<AppUser> userManager, IReviewRepository reviewRepository)
         {
             _tourRepository = tourRepository;
             _categoryRepository = categoryRepository;
@@ -27,12 +32,77 @@ namespace TourNhanh.Controllers
             _tourImageRepository = tourImageRepository;
             _hostingEnvironment = hostingEnvironment;
             _tourDetailRepository = tourDetail;
-        }
+			_userManager = userManager;
+            _reviewRepository = reviewRepository;
+		}
 
         // GET: Tour
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string name, decimal? Priceto, decimal? Pricefrom, int? CategoryId)
         {
-            return View(await _tourRepository.GetAllAsync());
+			var tours = await _tourRepository.GetAllAsync();
+            var categories = await _categoryRepository.GetAllAsync();
+            ViewBag.Categories = categories;
+            ViewBag.Tours = tours;
+            if (!string.IsNullOrEmpty(name))
+			{
+				if (Priceto != null && Pricefrom != null)
+				{
+					if (CategoryId > 0)
+					{
+                        tours = tours.Where(x => x.CategoryId == CategoryId &&
+                          x.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0 &&
+                          x.Price >= Priceto &&
+                          x.Price <= Pricefrom);
+
+                    }
+                    else
+					{
+						tours = tours.Where(x => x.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0 && x.Price >= Priceto && x.Price <= Pricefrom);
+
+					}
+
+				}
+				else
+				{
+					if(CategoryId > 0)
+                    {
+                        tours = tours.Where(x => x.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0 && x.CategoryId == CategoryId);
+                    }
+                    else
+                    {
+                        tours = tours.Where(x => x.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0);
+                    }
+
+				}
+			}
+			else
+			{
+				if(CategoryId > 0)
+                {
+                    if(Priceto != null && Pricefrom != null)
+                    {
+                        tours = tours.Where(x => x.CategoryId == CategoryId && x.Price >= Priceto && x.Price <= Pricefrom);
+                    }
+                    else
+                    {
+                        tours = tours.Where(x => x.CategoryId == CategoryId);
+                    }
+                }
+                else
+                {
+                    if (Priceto != null && Pricefrom != null)
+                    {
+                        tours = tours.Where(x => x.Price >= Priceto && x.Price <= Pricefrom);
+                    }
+                }
+            }
+			foreach (var item in tours)
+			{
+				var t = await _tourRepository.GetByIdAsync(item.Id);
+				var review = await _reviewRepository.GetReviewsByTourId(t.Id);
+				t.Reviews = review;
+			}
+			return View(tours);
         }
 
         // GET: Tour/Details/5
@@ -48,13 +118,26 @@ namespace TourNhanh.Controllers
             {
                 return NotFound();
             }
-            var tourImages = await _tourImageRepository.GetByTourIdAsync(tour.Id);
+            var tours = await _tourRepository.GetAllAsync();
+            foreach(var item in tours)
+            {
+                var t = await _tourRepository.GetByIdAsync(item.Id);
+                var review = await _reviewRepository.GetReviewsByTourId(t.Id);
+                t.Reviews = review;
+            }
+			var currentUser = await _userManager.GetUserAsync(User);
+			if (currentUser != null)
+			{
+				ViewBag.CurrentUserFullName = currentUser.FullName;
+				ViewBag.CurrentUserEmail = currentUser.Email;
+			}
+			var tourImages = await _tourImageRepository.GetByTourIdAsync(tour.Id);
             ViewBag.TourImages = tourImages.Select(ti => ti.ImageUrl).ToList();
             return View(tour);
         }
 
         //ViewDirectory 
-        public async Task<IActionResult> LichTrinh(int? id, int? idDetail)
+      /*  public async Task<IActionResult> LichTrinh(int? id, int? idDetail)
         {
             if (id == null && idDetail == null)
             {
@@ -80,10 +163,10 @@ namespace TourNhanh.Controllers
             };
             ViewBag.ViewModel = viewmodel;
             return View(viewmodel);
-        }
+        }*/
 
-        /*// GET: Tour/Create
-        [Authorize(Roles = "Admin")]
+        
+       // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create()
         {
             ViewBag.CategoryId = new SelectList(await _categoryRepository.GetAllAsync(), "Id", "Name");
@@ -93,7 +176,7 @@ namespace TourNhanh.Controllers
 
         // POST: Tour/Create
         //Admin tạo tour
-        [Authorize(Roles = "Admin")]
+     //   [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CategoryId,Name,Description,maxParticipants,RemainingSlots,Price,TransportId")] Tour tour, IFormFile? imageFile, List<IFormFile> additionalImages)
@@ -127,7 +210,7 @@ namespace TourNhanh.Controllers
 
         // GET: Tour/Edit/5
         //Admin edit
-        [Authorize(Roles ="Admin")]
+       // [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -148,7 +231,7 @@ namespace TourNhanh.Controllers
         }
 
         // POST: Tours/Edit/5
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Name,Description,maxParticipants,Price,TransportId")] Tour tourFromForm, IFormFile? imageFile, List<IFormFile> additionalImages)
@@ -288,6 +371,80 @@ namespace TourNhanh.Controllers
 
             return filePath;
         }
-*/
-    }
+
+		[HttpPost]
+		[Authorize]
+		public async Task<IActionResult> AddReview(int id, string content, int rating)
+		{
+			var currentUser = await _userManager.GetUserAsync(User);
+			if (currentUser == null)
+			{
+				return Unauthorized();
+			}
+
+			var tour = await _tourRepository.GetByIdAsync(id);
+			if (tour == null)
+			{
+				return NotFound();
+			}
+
+			var review = new Review
+			{
+				TourId = tour.Id,
+				Author = currentUser.FullName,
+				Email = currentUser.Email,
+				Content = content,
+				Rating = rating,
+				CreatedAt = DateTime.UtcNow
+			};
+
+			await _reviewRepository.AddAsync(review);
+
+			return Json(new
+			{
+				success = true,
+				id = review.TourId,
+				author = currentUser.FullName,
+				content = review.Content,
+				createdAt = review.CreatedAt.ToString("dd/MM/yyyy HH:mm"),
+				rating = review.Rating
+			});
+		}
+		
+
+		[HttpPost]
+		public async Task<IActionResult> DeleteReview(int id)
+		{
+            var review = await _reviewRepository.GetByIdAsync(id);
+			if (review == null)
+			{
+				return NotFound();
+			}
+
+            await _reviewRepository.DeleteAsync(id);
+
+			// Chuyển hướng đến trang hiển thị bài viết sau khi xóa bình luận
+			return RedirectToAction("Display", "Tour", new { Id = review.TourId });
+		}
+
+
+
+		[HttpPost]
+		public async Task<IActionResult> EditReview(int id, string content)
+		{
+			var review = await _reviewRepository.GetByIdAsync(id);
+			if (review == null)
+			{
+				return NotFound();
+			}
+
+			// Cập nhật nội dung của bình luận
+			review.Content = content;
+            await _reviewRepository.UpdateAsync(review);
+
+			// Chuyển hướng đến trang hiển thị bài viết sau khi chỉnh sửa bình luận
+			return RedirectToAction("Display", "Review", new { Id = review.TourId });
+		}
+
+	}
 }

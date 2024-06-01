@@ -41,11 +41,11 @@ namespace TourNhanh.Controllers
             }
             if (!string.IsNullOrEmpty(title))
             {
-                blogs = blogs.Where(x => x.Title.Contains(title));
+                blogs = blogs.Where(x => x.Title.IndexOf(title, StringComparison.OrdinalIgnoreCase) >= 0);
             }
             return View(blogs);
         }
-
+        [Authorize]
         public async Task<IActionResult> Add()
         {
 
@@ -56,22 +56,20 @@ namespace TourNhanh.Controllers
         [Authorize]
         public async Task<IActionResult> Add(Blog blog, IFormFile imageUrl)
         {
-
             if (ModelState.IsValid)
             {
                 if (imageUrl != null)
                 {
-
                     blog.ImageUrl = await SaveImage(imageUrl);
                 }
                 var currentUser = await _userManager.GetUserAsync(User);
                 blog.Author = currentUser.FullName;
-                blog.CreatedAt = DateTime.UtcNow;
-                blog.UpdatedAt = DateTime.UtcNow;
+                blog.CreatedAt = DateTime.Now;
+                blog.UpdatedAt = DateTime.Now;
                 await _blogRepository.AddAsync(blog);
-                return RedirectToAction("Index");
+                return Json(new { success = true });
             }
-            return View(blog);
+            return Json(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
         }
 
         private async Task<string> SaveImage(IFormFile image)
@@ -194,7 +192,7 @@ namespace TourNhanh.Controllers
                 Content = content,
                 BlogId = id,
                 Author = currentUser.FullName,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow,
             };
             await _commentRepository.AddAsync(comment);
 
@@ -238,144 +236,7 @@ namespace TourNhanh.Controllers
             return RedirectToAction("Display", "Blog", new { Id = comment.BlogId });
         }
 
-        /*
-        [HttpPost]
-        public async Task<IActionResult> Like(int id)
-        {
-          
-            // Kiểm tra xem người dùng đã like bài viết này trước đó chưa
-            var hasLiked = HttpContext.Request.Cookies["LikedPost_" + id];
-            var blog = await _blogRepository.GetByIdAsync(id);
 
-            if (hasLiked != null)
-            {
-                // Người dùng đã like bài viết này trước đó, do đó ta sẽ giảm số lượng like và xóa cookie
-                if (blog != null && blog.Likes > 0)
-                {
-                    blog.Likes--;
-                    await _blogRepository.UpdateAsync(blog);
-                }
-
-                // Xóa cookie để đánh dấu rằng người dùng đã unlike bài viết này
-                HttpContext.Response.Cookies.Delete("LikedPost_" + id);
-
-                return Ok("Unlike thành công.");
-            }
-
-            // Ngược lại, người dùng chưa like bài viết này, do đó ta sẽ tăng số lượng like và lưu cookie
-            if (blog != null)
-            {
-                blog.Likes++;
-                await _blogRepository.UpdateAsync(blog);
-            }
-
-            // Lưu cookie để đánh dấu rằng người dùng đã like bài viết này
-            HttpContext.Response.Cookies.Append("LikedPost_" + id, "true", new CookieOptions
-            {
-                // Thiết lập thời gian sống của cookie tùy ý
-                // Ví dụ: TimeSpan.FromDays(30) sẽ làm cookie tồn tại trong 30 ngày
-                Expires = DateTimeOffset.Now.Add(TimeSpan.FromDays(30)),
-                HttpOnly = true
-            });
-
-            return Ok("Like thành công.");
-        }
-        
-            var userId = User.Identity.Name;
-            var hasLiked = await _likeRepository.HasLikedAsync(userId, id);
-            var blog = await _blogRepository.GetByIdAsync(id);
-
-            if (hasLiked)
-            {
-                if (blog != null && blog.Likes > 0)
-                {
-                    blog.Likes--;
-                    await _blogRepository.UpdateAsync(blog);
-                }
-
-                await _likeRepository.RemoveAsync(userId, id);
-
-                var likeCount = blog.Likes;
-                var isLiked = false;
-
-                return Json(new { likeCount, isLiked });
-            }
-
-            if (blog != null)
-            {
-                blog.Likes++;
-                await _blogRepository.UpdateAsync(blog);
-                await _likeRepository.AddAsync(new Like { UserId = userId, BlogId = id });
-
-                var likeCount = blog.Likes;
-                var isLiked = true;
-
-                return Json(new { likeCount, isLiked });
-            }
-
-            return Json(new { error = "Failed to like/unlike post." });
-         
-         
-        
-
-        [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> Like(int id)
-        {
-            var currentUser = await _userManager.GetUserAsync(User);
-            
-            bool alreadyLiked = await _likeRepository.HasLikedAsync(currentUser.Id, id);
-            if (!alreadyLiked)
-            {
-                var like = new Like
-                {
-                    UserId = currentUser.Id,
-                    BlogId = id,
-                    Liked = true
-                };
-
-                await _likeRepository.AddAsync(like);
-
-                // Tăng số lượng like của bài viết
-                var blog = await _blogRepository.GetByIdAsync(id);
-                if (blog != null)
-                {
-                    blog.Likes++;
-                    await _blogRepository.UpdateAsync(blog);
-                }
-            }
-            else
-            {
-                await _likeRepository.RemoveAsync(currentUser.Id, id);
-                var blog = await _blogRepository.GetByIdAsync(id);
-                if (blog != null)
-                {
-                    blog.Likes--;
-                    await _blogRepository.UpdateAsync(blog);
-                }
-            }
-            var response = new { Liked = !alreadyLiked };
-            return Json(response);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> CheckLikedStatus(int id)
-        {
-            // Lấy UserID của người dùng hiện tại
-            var currentUser = await _userManager.GetUserAsync(User);
-            if (currentUser == null)
-            {
-                // Trả về dữ liệu JSON với trạng thái liked là false nếu người dùng không được xác định
-                return Json(new { Liked = false });
-            }
-
-            // Kiểm tra xem người dùng đã like bài viết có ID là 'id' chưa
-            bool liked = await _likeRepository.HasLikedAsync(currentUser.Id, id);
-
-            // Trả về dữ liệu JSON với trạng thái liked
-            return Json(new { Liked = liked });
-        }
-        */
         [HttpPost]
         public async Task<IActionResult> LikePost(int blogId, string userId)
         {

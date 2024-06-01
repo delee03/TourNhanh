@@ -41,6 +41,7 @@ builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ITourImage, TourImageRepository>();
 builder.Services.AddScoped<ITourDetail, TourDetailRepository>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IReviewRepository, EFReviewRepository>();
 builder.Services.AddScoped<IBlogRepository, EFBlogRepository>();
 builder.Services.AddScoped<ICommentRepository, EFCommentRepository>();
 builder.Services.AddScoped<ILikeRepository, EFLikeRepository>();

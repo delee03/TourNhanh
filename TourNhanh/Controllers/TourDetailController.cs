@@ -13,15 +13,17 @@ namespace TourNhanh.Controllers
         private readonly IHotelRepository _hotelRepository;
         private readonly ITourRepository _tourRepository;
         private readonly ITourImage _tourImageRepository;
+        private readonly IReviewRepository _reviewRepository;
 
-        public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository, ITourRepository tourRepository, ITourImage tourImageRepository)
+        public TourDetailController(ITourDetail tourDetailRepository, ILocationRepository locationRepository, IHotelRepository hotelRepository, ITourRepository tourRepository, ITourImage tourImageRepository, IReviewRepository reviewRepository)
         {
             _tourDetailRepository = tourDetailRepository;
             _locationRepository = locationRepository;
             _hotelRepository = hotelRepository;
             _tourRepository = tourRepository;
             _tourImageRepository = tourImageRepository;
-        }
+            _reviewRepository = reviewRepository;
+    }
 
 
 
@@ -79,6 +81,11 @@ namespace TourNhanh.Controllers
               //Lấy ra Address của Location => cắt từng phần tử theo chuỗi sau dấu phẩy
 
             */
+            foreach(var item in details)
+            {
+                ViewBag.Slots = item.Tour.RemainingSlots;
+            }
+
             ViewBag.TourId = tourId;
             List<string> imageURL = new List<string>();       
             var tourimage = await _tourImageRepository.GetByTourIdAsync(tourId);
@@ -87,6 +94,20 @@ namespace TourNhanh.Controllers
                imageURL.Add(img.ImageUrl);         
             }
             ViewBag.TourImage = imageURL;
+
+            //lấy trung bình đánh giá
+            var reviews = await _reviewRepository.GetReviewsByTourId(tourId);
+            
+            int countRating1 = reviews.Count(v => v.Rating == 1);
+            int countRating2 = reviews.Count(v => v.Rating == 2);
+            int countRating3 = reviews.Count(v => v.Rating == 3);
+            int countRating4 = reviews.Count(v => v.Rating == 4);
+            int countRating5 = reviews.Count(v => v.Rating == 5);
+            int totalCount = countRating1 + countRating2 + countRating3 + countRating4 + countRating5;
+            // Tính trung bình cộng
+            float average = (countRating1 * 1 + countRating2 * 2 + countRating3 * 3 + countRating4 * 4 + countRating5 * 5) / (float)totalCount;
+            ViewBag.AverageRating = average;
+            ViewBag.Count = reviews.Count();
             //Lấy ra list các ảnh
             var tour = await _tourRepository.GetByIdAsync(tourId);
             ViewBag.Tour = tour;
@@ -110,11 +131,11 @@ namespace TourNhanh.Controllers
 
             return View(tourDetail);
         }
-/*
+
         // GET: TourDetails/Create
         public async Task<IActionResult> Create(int tourId)
         {
-            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(),"Id","Name", "Address");
+            ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(), "Id", "Name", "Address");
             ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name", "Address");
             var tourDetail = new TourDetail { TourId = tourId };
             ViewBag.TourId = tourId;
@@ -155,7 +176,7 @@ namespace TourNhanh.Controllers
         // POST: TourDetails/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id ,[Bind("Id,TourId,LocationId,Order,StartTime,EndTime,HotelId")] TourDetail tourDetail)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TourId,LocationId,Order,StartTime,EndTime,HotelId")] TourDetail tourDetail)
         {
             if (id != tourDetail.Id)
             {
@@ -164,7 +185,7 @@ namespace TourNhanh.Controllers
             if (ModelState.IsValid)
             {
                 await _tourDetailRepository.UpdateAsync(tourDetail);
-                return RedirectToAction(nameof(Index),new {tourId=tourDetail.TourId });
+                return RedirectToAction(nameof(Index), new { tourId = tourDetail.TourId });
             }
             ViewBag.LocationId = new SelectList(await _locationRepository.GetAllAsync(), "Id", "Name");
             ViewBag.HotelId = new SelectList(await _hotelRepository.GetAllAsync(), "Id", "Name");
@@ -197,6 +218,6 @@ namespace TourNhanh.Controllers
             var tourId = tourDetail?.TourId;
             await _tourDetailRepository.DeleteAsync(id);
             return RedirectToAction(nameof(Index), new { tourId = tourId });
-        }*/
+        }
     }
 }

@@ -1,6 +1,35 @@
 ﻿<!-- <body data-new-gr-c-s-check-loaded="14.1061.0" data-gr-ext-installed=""> -->
+@model IEnumerable<TourNhanh.Models.Tour>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+  /*   .phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
+        background-color: #dd3333;
+    }
 
+    #phone-vr .phone-vr-circle-fill {
+        opacity: 0.7;
+        box-shadow: 0 0 0 0 #dd3333;
+    }
 
+    #button-contact-vr {
+        bottom: 50px !important;
+    } */
+
+    .owl-carousel .owl-nav.disabled {
+        display: block;
+    }
+
+    .packages-carousel .packages-content .description-tour {
+        min-height: 71px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+</style>
 
 <div class="container-fluid position-relative p-0">
     <!-- Carousel Start -->
@@ -13,11 +42,11 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active carousel-item-start">
-                    <img src="~/img/carousel-2.jpg" class="img-fluid" alt="Image">
+                    <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Image">
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                            <h1 class="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>
+                            <h1 class="display-2 text-capitalize text-white mb-4">Hãy khám phá cả thế giới cùng tôi!</h1>
                             <p class="mb-5 fs-5">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
@@ -32,7 +61,7 @@
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                            <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Travel</h1>
+                            <h1 class="display-2 text-capitalize text-white mb-4">Tìm cho mình một tour du lịch chất lượng</h1>
                             <p class="mb-5 fs-5">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
@@ -43,11 +72,11 @@
                     </div>
                 </div>
                 <div class="carousel-item carousel-item-next">
-                    <img src="~/img/carousel-1.jpg" class="img-fluid" alt="Image">
+                    <img src="https://images.unsplash.com/photo-1576675466684-456bcdeccfbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Image">
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                            <h1 class="display-2 text-capitalize text-white mb-4">You Like To Go?</h1>
+                            <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Tôi luôn bên cạnh bạn</h4>
+                            <h1 class="display-2 text-capitalize text-white mb-4">Bạn muốn đi đâu?</h1>
                             <p class="mb-5 fs-5">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             </p>
@@ -623,142 +652,54 @@
 <div class="container-fluid packages py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Packages</h5>
-            <h1 class="mb-0">Awesome Packages</h1>
+            <h5 class="section-title px-3">DANH SÁCH TOUR</h5>
+            <h1 class="mb-0">Tour Nổi Bật</h1>
         </div>
         <div class="packages-carousel owl-carousel">
-            <div class="packages-item">
-                <div class="packages-img">
-                    <img src="~/img/packages-4.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                    </div>
-                    <div class="packages-price py-2 px-4">$349.00</div>
-                </div>
-                <div class="packages-content bg-light">
-                    <div class="p-4 pb-0">
-                        <h5 class="mb-0">Venice - Italy</h5>
-                        <small class="text-uppercase">Hotel Deals</small>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
+          
+           @foreach(var item in Model)
+            {
+                <div class="packages-item">
+                    <div class="packages-img">
+                        <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover">
+                        <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
                         </div>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
+                        <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
                     </div>
-                    <div class="row bg-primary rounded-bottom mx-0">
-                        <div class="col-6 text-start px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                    <div class="packages-content bg-light">
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-0">@item.Name</h5>
+                            <small class="text-uppercase">Hot Deals</small>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p class="mb-4 description-tour">@item.Description</p>
                         </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="packages-item">
-                <div class="packages-img">
-                    <img src="~/img/packages-2.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                    </div>
-                    <div class="packages-price py-2 px-4">$449.00</div>
-                </div>
-                <div class="packages-content bg-light">
-                    <div class="p-4 pb-0">
-                        <h5 class="mb-0">The New California</h5>
-                        <small class="text-uppercase">Hotel Deals</small>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                    </div>
-                    <div class="row bg-primary rounded-bottom mx-0">
-                        <div class="col-6 text-start px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                        </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                        <div class="row bg-primary rounded-bottom mx-0">
+                            <div class="col-6 text-start px-0">
+                                <a asp-controller="Tour"  asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                            </div>
+                         
+                          @*   <div class="col-5 text-start px-0">
+                                <a asp-controller="Tour" asp-action="Edit" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Sửa</a>
+                            </div>
+                            <div class="col-5 text-end px-0">
+                                <a asp-controller="Tour" asp-action="Delete" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xóa</a>
+                            </div> *@
+                            <div class="col-6 text-end px-0">
+                                <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" as class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="packages-item">
-                <div class="packages-img">
-                    <img src="~/img/packages-3.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                    </div>
-                    <div class="packages-price py-2 px-4">$549.00</div>
-                </div>
-                <div class="packages-content bg-light">
-                    <div class="p-4 pb-0">
-                        <h5 class="mb-0">Discover Japan</h5>
-                        <small class="text-uppercase">Hotel Deals</small>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                    </div>
-                    <div class="row bg-primary rounded-bottom mx-0">
-                        <div class="col-6 text-start px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                        </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="packages-item">
-                <div class="packages-img">
-                    <img src="~/img/packages-1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Thayland</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                    </div>
-                    <div class="packages-price py-2 px-4">$649.00</div>
-                </div>
-                <div class="packages-content bg-light">
-                    <div class="p-4 pb-0">
-                        <h5 class="mb-0">Thayland Trip</h5>
-                        <small class="text-uppercase">Hotel Deals</small>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                    </div>
-                    <div class="row bg-primary rounded-bottom mx-0">
-                        <div class="col-6 text-start px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                        </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
@@ -1565,6 +1506,54 @@
             </div>
         </div>
     </div>
+</div>
+<!-- if gom all in one show -->
+<div id="button-contact-vr" class="">
+    <div id="gom-all-in-one">
+        <!-- v3 -->
+        <!-- contact -->
+        <!-- end contact -->
+        <!-- viber -->
+        <!-- end viber -->
+        <!-- zalo -->
+        <div id="zalo-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a target="_blank" href="https://zalo.me/0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+                    </a>
+                </div>
+                <div class="zalo-bar zalo-bar-n">
+                    <a href="https://zalo.me/0931034852">
+                        <span class="text-phone">Gửi yêu cầu tư vấn ngay</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end zalo -->
+        <!-- Phone -->
+        <div id="phone-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a href="tel:0931034852">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
+                    </a>
+                </div>
+                <div class="phone-bar phone-bar-n">
+                    <a href="tel:0931034852">
+                        <span class="text-phone">093.1034.852(a Phát)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end phone -->
+    </div><!-- end v3 class gom-all-in-one -->
+
+
 </div>
 <!-- Services End -->
 <!-- <div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image" href="#!"></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image" href="#!"></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div><div id="volume-booster-visusalizer">

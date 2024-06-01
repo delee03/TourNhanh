@@ -23,7 +23,7 @@ ul, ol {
     padding: 12px 30px;
     background-color: var(--bs-linear-color);
     background-image: var(--bs-linear-img);
-    border: none;
+    border: 1px solid transparent;
     border-radius: 40px;
     color: #FFF;
     text-transform: uppercase;
@@ -34,12 +34,14 @@ ul, ol {
 }
 
     .primary-btn:hover, .primary-btn:focus {
+        padding: 12px 50px;
         background-color: var(--bs-linear-color);
         background-image: var(--bs-linear-img);
         background-color: #fff;
         border: 1px solid var(--bs-linear-color);
        
     }
+
 
 .btn-action {
     position: relative;
@@ -332,20 +334,27 @@ textarea.input {
 }
 
 .btn.btn-primary:hover {
-    box-shadow: inset 300px 0 0 0 var(--bs-light) !important;
+    box-shadow: inset 655px 0 0 0 var(--bs-light) !important;
     color: var(--bs-linear-color) !important;
 }
 
 .btn.btn-light {
-    box-shadow: inset 0 0 0 0 var(--bs-primary);
+    -webkit-text-fill-color: var(--bs-linear-color);
+    background-color: #fff;
+    border-color: var(--bs-linear-color);
+   /* box-shadow: inset 655px 0 0 0 var(--bs-light) !important;*/
+    color: var(--bs-linear-color) !important;
+    transition: all .8s;
 }
 
-.btn.btn-light:hover {
-    -webkit-text-fill-color: #fff;
-    box-shadow: inset 300px 0 0 0 var(--bs-linear-color);
-    color: var(--bs-light) !important;
+
+    .btn.btn-light:hover {
+        background-color: var(--bs-linear-color);
+        background-image: var(--bs-linear-img);
+        box-shadow: inset 655px 0 0 0 var(--bs-linear-color) var(--bs-linear-img) !important;
+    }
     
-}
+
 
 .btn-hover {
     transition: 0.5s;
@@ -1562,6 +1571,8 @@ a[b-vdbjw7zbne] {
 
 /*** copyright Start ***/
 .copyright {
+    position: absolute;
+    left: -6%;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: var(--bs-dark) !important;
 }
@@ -1787,7 +1798,7 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     }
 
 .product-details .add-to-cart {
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
     .product-details .add-to-cart .add-to-cart-btn {
@@ -2243,7 +2254,17 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     position: static;
     margin: 15px 0px;
 }
-
+/*Custom phần title*/
+.title-gradient {
+    margin-bottom: 30px;
+    background-color: var(--bs-linear-color);
+    background-image: var(--bs-linear-img);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    text-align: center;
+    font-size: 50px;
+}
 
 /* Custom PHAN LICH TRINH TOUR */
 .lichtrinh .chitiet_lichtrinh ul {
@@ -2303,3 +2324,74 @@ img.product-preview.slick-slide.slick-current.slick-active.slick-center {
     color: #215390;
 }
 /* Custom PHAN LICH TRINH TOUR */
+/* KIEM TRA THONG TIN TOUR START
+*/
+/*.processing-payment .tour-summery .tour-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}*/
+/*.processing-payment .tour-summery .tour-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}*/
+.processing-payment .tour-summery .tour-col .tour-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+    .processing-payment .tour-summery .tour-col .tour-content p{
+           font-size: 18px;
+    }
+    .processing-payment .tour-summery .tour-col {
+        padding: 5px 15px;
+    }
+.processing-payment .tour-summery .tour-col input {
+    margin: 15px 0;
+}
+/* KIEM TRA THONG TIN TOUR END
+*/
+/* YOUR TOUR START
+*/
+
+thead , tbody, tr, th, td {
+    vertical-align: middle; 
+}
+
+.your-tour .table-tour thead tr th {
+    font-size: 15px;
+    background-color: #262932;
+    color: #fff;
+    text-align: center;
+    min-width: 100%;
+}
+
+.your-tour .table th, .table td {
+    padding: .75rem;
+}
+
+.your-tour .table th {
+    font-weight: 600;
+}
+
+.your-tour .table tbody td {
+    text-align: center;
+}
+.your-tour .table td {
+    font-size: 14px;
+    color: #2b2b2b;
+}
+
+.your-tour .table {
+    border: 1px solid rgb(170 170 170 / 36%);
+}
+
+.content-your-tour {
+    letter-spacing: 1px;
+}
+    /* YOUR TOUR END
+*/

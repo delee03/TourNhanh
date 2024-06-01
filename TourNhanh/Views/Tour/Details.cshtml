@@ -1,78 +1,55 @@
 ﻿@model TourNhanh.Models.Tour
-
+@using Microsoft.AspNetCore.Identity;
+@using System.Linq;
+@inject UserManager<AppUser> UserManager
 @{
     ViewData["Title"] = "Details";
 	
     Layout = "~/Views/Shared/_Layout.cshtml";
 	int numOfQuanity = 1;
 }
+@{
+	var currentUserFullName = ViewBag.CurrentUserFullName;
+	var currentUserEmail = ViewBag.CurrentUserEmail;
+}
 
-@* var view = ViewBag.ViewModel as TourNhanh.ViewModel.TourDetail_LichTrinh; *@
-@* <h1>Details</h1>
 
-<div>
-    <h4>Tour</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Transport)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Transport.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MainImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            <img src="@Model.MainImageUrl" style="width: 100px; height: 100px;">
-        </dd>
-        <dt class="col-sm-2">
-            Các ảnh khác
-        </dt>
-        <dd class="col-sm-10">
-            @if (ViewBag.TourImages != null)
-            {
-                foreach (var imageUrl in ViewBag.TourImages)
-                {
-                    <img src="@imageUrl" alt="Additional Image Preview" style="width: 100px; height: 100px;" />
-                }
-            }
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id" class="btn btn-primary">Xem Lịch Trình Tour</a>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
- *@
+@{
+	int countRating1 = Model.Reviews.Count(v => v.Rating == 1);
+	int countRating2 = Model.Reviews.Count(v => v.Rating == 2);
+	int countRating3 = Model.Reviews.Count(v => v.Rating == 3);
+	int countRating4 = Model.Reviews.Count(v => v.Rating == 4);
+	int countRating5 = Model.Reviews.Count(v => v.Rating == 5);
+	int totalCount = countRating1 + countRating2 + countRating3 + countRating4 + countRating5;
+	// Tính trung bình cộng
+	float average = (countRating1 * 1 + countRating2 * 2 + countRating3 * 3 + countRating4 * 4 + countRating5 * 5) / (float)totalCount;
+	float percentageRating1 = (float)countRating1 / totalCount * 100;
+	float percentageRating2 = (float)countRating2 / totalCount * 100;
+	float percentageRating3 = (float)countRating3 / totalCount * 100;
+	float percentageRating4 = (float)countRating4 / totalCount * 100;
+	float percentageRating5 = (float)countRating5 / totalCount * 100;
+}
+<style>
+	.half-star {
+		color: #007bff; /* Màu xanh của bạn ở đây */
+	}
+	/* Định dạng ngôi sao */
+	.review-rating .fa-star {
+		color: #007bff; /* Màu xanh dương */
+	}
 
-               
- <style>
+	/* Định dạng khung cuộn */
+	#reviews-container {
+		max-height: 250px; /* Đặt chiều cao tối đa cho danh sách đánh giá */
+		overflow-y: auto; /* Thêm thanh cuộn khi danh sách dài hơn */
+	}
+
+	/* Định dạng danh sách đánh giá */
+	#reviews {
+		list-style-type: none; /* Loại bỏ dấu đầu dòng của danh sách */
+		padding: 0; /* Loại bỏ lề trong danh sách */
+		margin: 0; /* Loại bỏ khoảng trống xung quanh danh sách */
+	}
 	.tour-info i {
 		color: #8dc63f;
 	}
@@ -116,46 +93,10 @@
 		}
 
 	
-	/* .tour-info li {
-		border-bottom: 1px dashed #e1e1e1;
-		padding: 5px 0 5px 5px;
-		margin: 0 !important;
-		text-align: left;
-		list-style-type: none;
-		font-size: 13px;
+	
+	#reviews .date {
+		font-size: 14px;
 	}
-	.tour-info {
-		border-radius: 10px;
-		box-shadow: 0 0 32px rgba(0,0,0,.12) !important;
-		transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-		padding: 15px;
-		border-radius: 5px;
-		background-color: white;
-		margin-top: 15px;
-	}
-
-		.tour-info td {
-			border-bottom: none;
-		}
-
-		.tour-info tr, .tour-info td {
-			font-size: 16px;
-			padding: 10px 28px;
-			color: black !important;
-		} */
-
-	/* .phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
-		background-color: #dd3333;
-	}
-
-	#phone-vr .phone-vr-circle-fill {
-		opacity: 0.7;
-		box-shadow: 0 0 0 0 #dd3333;
-	}
-
-	#button-contact-vr {
-		bottom: 50px !important;
-	} */
  </style>
 <!-- BREADCRUMB -->
 <!-- Header Start -->
@@ -178,10 +119,13 @@
 <div style="padding: 100px 0 100px">
 	<!-- container -->
 	<div class="container">
+		<h2 class="title-gradient">
+			Tour @Model.Name
+		</h2>
 		<!-- row -->
-		<div class="row">
+		<div class="row ">
 			<!-- Product thumb imgs -->
-			<div class="col-md-2  col-md-pull-5">
+			<div class="col-md-2  col-md-pull-5 wow animate__animated animate__fadeInLeft" data-wow-duration="2s" data-wow-delay=".4s">
 				<div id="product-imgs">
 					@if (ViewBag.TourImages != null)
 					{
@@ -197,7 +141,7 @@
 			</div>
 			<!-- /Product thumb imgs -->
 			<!-- Product main img -->
-			<div class="col-md-6 col-md-push-3">
+			<div class="col-md-6 col-md-push-3 wow animate__animated animate__fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".6s">
 				<div id="product-main-img">
 
 
@@ -211,21 +155,7 @@
 							<img class=" product-preview" src="@image" />
 						}
 					}
-					@* 	<div class="product-preview">
-					<img src="~/img/iPadAir.png" alt="">
-					</div>
-
-					<div class="product-preview">
-					<img src="~/img/iphone15_2.png" alt="">
-					</div>
-
-					<div class="product-preview">
-					<img src="~/img/iphone11.png" alt="">
-					</div> *@
-
-					@* <div class="product-preview">
-					<img src="~/img/product08.png" alt="">
-					</div> *@
+				
 				</div>
 			</div>
 			<!-- /Product main img -->
@@ -233,27 +163,40 @@
 		
 		
 			<!-- Product details -->
-			<div class="col-md-4">
+			<div class="col-md-4 wow animate__animated animate__fadeInTopLeft" data-wow-duration="2s" data-wow-delay=".4s">
 				<div class="product-details">
 					<h2 class="product-name">@Html.DisplayFor(model => model.Name)</h2>
 					<div>
-						<div class="product-rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa-regular fa-star text-primary"></i>
+						<div class="rating-stars">
+							@for (var i = 0; i < 5; i++)
+							{
+								// Nếu i nhỏ hơn phần nguyên của số trung bình, hiển thị một sao đầy
+								if (i < Math.Floor(average))
+								{
+									<i class="fa fa-star" style="color: #007bff;"></i>
+								}
+								// Nếu i bằng phần nguyên của số trung bình và phần thập phân lớn hơn hoặc bằng 0.5, hiển thị một nửa sao
+								else if (i == Math.Floor(average) && average - Math.Floor(average) >= 0.5)
+								{
+									<i class="fa fa-star-half half-star" style="color: #007bff;"></i>
+								}
+								// Nếu không, hiển thị một sao rỗng
+								else
+								{
+									<i class="fa fa-star-o empty"></i>
+								}
+							}
 						</div>
-						<a class="review-link" href="#">10 Review(s) | Add your review</a>
+						<a class="review-link" href="#">@Model.Reviews.Count() lượt đánh giá</a>
 					</div>
 					<div>
-						<h3 class="product-price">@Html.DisplayFor(model => model.Price) VNĐ <del class="product-old-price">999999VNĐ</del></h3>
+						<h3 class="product-price animate__animated animate__flash animate__infinite">@Html.DisplayFor(model => model.Price) VNĐ <del class="product-old-price">999999VNĐ</del></h3>
 						
 					</div>
 					<h3><span class="product-available"><i class="fa-solid fa-hand-point-right fa-beat"></i> Đặt tour ngay <i class="fa-solid fa-hand-point-left fa-beat"></i></span></h3>
 					<label>Phương tiện di chuyển: @Html.DisplayFor(model => model.Transport.Name) </label>
 					
-					<div class="product-options d-flex justify-content-flex-start align-items-center">
+					@* <div class="product-options d-flex justify-content-flex-start align-items-center">
 						<label>
 							người lớn: 
 							<select class="input-select">							
@@ -277,7 +220,7 @@
 							
 						</label>
 						
-					</div>
+					</div> *@
 
 					<div class="add-to-cart">
 						@* <div class="qty-label" >
@@ -299,14 +242,14 @@
 							@{
 								if(Model.RemainingSlots == 0)
 								{
-									<a class="add-to-cart-btn new"><i class="fa fa-eye"></i>Hết chỗ</a>
+										<a class="add-to-cart-btn new"><i class="fa fa-eye"></i>Hết chỗ</a>
 								}
 								else
 								{
-									<a class="add-to-cart-btn new" asp-controller="Booking" asp-action="Create" asp-route-tourId="@Model.Id">
-										<i class="fa fa-shopping-cart"></i>
-										đặt tour
-									</a>
+										<a class="add-to-cart-btn new" asp-controller="Booking" asp-action="Create" asp-route-tourId="@Model.Id">
+											<i class="fa fa-shopping-cart"></i>
+											đặt tour
+										</a>
 								}
 							}
 							
@@ -355,26 +298,7 @@
 						<p><i class="fas fa-check"></i> Vé tham quan</p>
 						<p><i class="fas fa-check"></i> Vé máy bay</p>
 						<p><i class="fas fa-check"></i> Xe đưa đón</p>
-
-						@* <table>
-						<tbody>
-						<tr>
-						<td><i class="fas fa-check"></i> Bảo hiểm</td>
-						<td><i class="fas fa-check"></i> Bữa sáng</td>
-						</tr>
-						<tr>
-						<td><i class="fas fa-check"></i> Hướng dẫn viên</td>
-						<td><i class="fas fa-check"></i> Khách sạn 3<i class="fa-regular fa-star text-primary"></i> +</td>
-						</tr>
-						<tr>
-						<td><i class="fas fa-check"></i> Vé máy bay</td>
-						<td><i class="fas fa-check"></i> Vé tham quan</td>
-						</tr>
-						<tr>
-						<td><i class="fas fa-check"></i> Xe đưa đón</td>
-						</tr>
-						</tbody>
-						</table> *@
+				
 					</div>
 				</div>
 			</div>
@@ -396,7 +320,7 @@
 							<button class="nav-link1" id="profile-tab" data-bs-toggle="tab" type="button" role="tab" aria-controls="profile" aria-selected="false"><a style="font-weight:700" asp-controller="TourDetail" asp-action="Index" asp-route-tourId="@Model.Id">Lịch trình</a></button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link1" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Đánh giá (3)</button>
+							<button class="nav-link1" id="contact-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="contact" aria-selected="false">Đánh giá</button>
 						</li>
 					</ul>
 					<!-- /product tab nav -->
@@ -415,25 +339,39 @@
 						<div id="tab2" class="tab-pane fade in">
 							<div class="row">
 								<div class="col-md-12">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									<p> <h1>Chưa biết chổ nào</h1>  consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 								</div>
 							</div>
 						</div>
 						<!-- /tab2  -->
 						<!-- tab3  -->
+						
 						<div id="tab3" class="tab-pane fade in">
 							<div class="row">
 								<!-- Rating -->
 								<div class="col-md-3">
 									<div id="rating">
 										<div class="rating-avg">
-											<span>4.5</span>
+											<span>@average.ToString("0.0")</span>
 											<div class="rating-stars">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa-solid fa-star-sharp-half"></i>
+												@for (var i = 0; i < 5; i++)
+												{
+													// Nếu i nhỏ hơn phần nguyên của số trung bình, hiển thị một sao đầy
+													if (i < Math.Floor(average))
+													{
+														<i class="fa fa-star"></i>
+													}
+													// Nếu i bằng phần nguyên của số trung bình và phần thập phân lớn hơn hoặc bằng 0.5, hiển thị một nửa sao
+													else if (i == Math.Floor(average) && average - Math.Floor(average) >= 0.5)
+													{
+														<i class="fa fa-star-half half-star" style="color: #007bff;"></i>
+													}
+													// Nếu không, hiển thị một sao rỗng
+													else
+													{
+														<i class="fa fa-star-o empty"></i>
+													}
+												}
 											</div>
 										</div>
 										<ul class="rating">
@@ -446,9 +384,9 @@
 													<i class="fa fa-star"></i>
 												</div>
 												<div class="rating-progress">
-													<div style="width: 80%;"></div>
+													<div style="width: @percentageRating5.ToString("0")%;"></div>
 												</div>
-												<span class="sum">3</span>
+												<span class="sum">@countRating5</span>
 											</li>
 											<li>
 												<div class="rating-stars">
@@ -459,9 +397,9 @@
 													<i class="fa fa-star-o"></i>
 												</div>
 												<div class="rating-progress">
-													<div style="width: 60%;"></div>
+													<div style="width: @percentageRating4.ToString("0")%;"></div>
 												</div>
-												<span class="sum">2</span>
+												<span class="sum">@countRating4</span>
 											</li>
 											<li>
 												<div class="rating-stars">
@@ -472,9 +410,9 @@
 													<i class="fa fa-star-o"></i>
 												</div>
 												<div class="rating-progress">
-													<div></div>
+													<div style="width: @percentageRating3.ToString("0")%;"></div>
 												</div>
-												<span class="sum">0</span>
+												<span class="sum">@countRating3</span>
 											</li>
 											<li>
 												<div class="rating-stars">
@@ -485,9 +423,9 @@
 													<i class="fa fa-star-o"></i>
 												</div>
 												<div class="rating-progress">
-													<div></div>
+													<div style="width: @percentageRating2.ToString("0")%;"></div>
 												</div>
-												<span class="sum">0</span>
+												<span class="sum">@countRating2</span>
 											</li>
 											<li>
 												<div class="rating-stars">
@@ -498,9 +436,9 @@
 													<i class="fa fa-star-o"></i>
 												</div>
 												<div class="rating-progress">
-													<div></div>
+													<div style="width: @percentageRating1.ToString("0")%;"></div>
 												</div>
-												<span class="sum">0</span>
+												<span class="sum">@countRating1</span>
 											</li>
 										</ul>
 									</div>
@@ -509,56 +447,65 @@
 								<!-- Reviews -->
 								<div class="col-md-6">
 									<div id="reviews">
-										<ul class="reviews">
-											<li>
-												<div class="review-heading">
-													<h5 class="name">John</h5>
-													<p class="date">27 DEC 2018, 8:0 PM</p>
-													<div class="review-rating">
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star-o empty"></i>
-													</div>
-												</div>
-												<div class="review-body">
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-												</div>
-											</li>
-											<li>
-												<div class="review-heading">
-													<h5 class="name">John</h5>
-													<p class="date">27 DEC 2018, 8:0 PM</p>
-													<div class="review-rating">
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star-o empty"></i>
-													</div>
-												</div>
-												<div class="review-body">
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-												</div>
-											</li>
-											<li>
-												<div class="review-heading">
-													<h5 class="name">John</h5>
-													<p class="date">27 DEC 2018, 8:0 PM</p>
-													<div class="review-rating">
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star-o empty"></i>
-													</div>
-												</div>
-												<div class="review-body">
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-												</div>
-											</li>
-										</ul>
+										<div id="reviews-container">
+											<ul id="reviews">
+												@if (Model.Reviews != null && Model.Reviews.Any())
+												{
+													for(int i = Model.Reviews.Count-1; i >= 0; i--)
+													{
+														<li>
+															<div class="review-heading">
+																<h5 class="name fw-bolder">@Model.Reviews[i].Author</h5>
+
+																<div class="review-rating">
+																	@for (var j = 0; j < 5; j++)
+																	{
+																		if (j < @Model.Reviews[i].Rating)
+																		{
+																			<i class="fa fa-star"></i>
+																		}
+																		else
+																		{
+																			<i class="fa fa-star-o empty"></i>
+																		}
+																	}
+																</div>
+															</div>
+															<div class="review-body">
+																<p>@Model.Reviews[i].Content</p>
+															</div>
+															<p class="date">@Model.Reviews[i].CreatedAt</p>
+														</li>
+													}
+													@* @foreach (var item in Model.Reviews)
+													{
+														<li>
+															<div class="review-heading">
+																<h5 class="name fw-bolder">@item.Author</h5>
+																
+																<div class="review-rating">
+																	@for (var i = 0; i < 5; i++)
+																	{
+																		if (i < item.Rating)
+																		{
+																			<i class="fa fa-star"></i>
+																		}
+																		else
+																		{
+																			<i class="fa fa-star-o empty"></i>
+																		}
+																	}
+																</div>
+															</div>
+															<div class="review-body">
+																<p>@item.Content</p>
+															</div>
+															<p class="date">@item.CreatedAt</p>
+														</li>
+													} *@
+												}
+											</ul>
+										</div>
 										<ul class="reviews-pagination">
 											<li class="active">1</li>
 											<li><a href="#">2</a></li>
@@ -569,15 +516,14 @@
 									</div>
 								</div>
 								<!-- /Reviews -->
-								<!-- Review Form -->
-								<div class="col-md-3">
+								<!-- Review Form <div class="col-md-3">
 									<div id="review-form">
-										<form class="review-form">
+										<form class="review-form" id="reviewForm" method="post">
 											<input class="input" type="text" placeholder="Your Name">
 											<input class="input" type="email" placeholder="Your Email">
-											<textarea class="input" placeholder="Your Review"></textarea>
+											<textarea class="input" id="review-content" name="content" placeholder="Đánh giá của bạn"></textarea>
 											<div class="input-rating">
-												<span>Your Rating: </span>
+												<span>Mức độ: </span>
 												<div class="stars">
 													<input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
 													<input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
@@ -586,11 +532,32 @@
 													<input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
 												</div>
 											</div>
-											<button class="primary-btn">Submit</button>
+											<button class="primary-btn">Đăng</button>
+										</form>
+									</div>
+								</div>-->
+								
+								<!-- /Review Form -->
+								<div class="col-md-3">
+									<div id="review-form">
+										<form class="review-form" id="reviewForm" method="post">
+											<input class="input" type="text" id="name" placeholder=" @currentUserFullName" readonly>
+											<input class="input" type="email" id="email" placeholder="@currentUserEmail" readonly>
+											<textarea class="input" id="review-content" name="content" placeholder="Đánh giá của bạn"></textarea>
+											<div class="input-rating">
+												<span>Mức độ: </span>
+												<div class="stars">
+													<input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
+													<input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
+													<input id="star3" name="rating" value="3" type="radio"><label for="star3"></label>
+													<input id="star2" name="rating" value="2" type="radio"><label for="star2"></label>
+													<input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
+												</div>
+											</div>
+											<button type="button" class="primary-btn" id="submit-review">Đăng</button>
 										</form>
 									</div>
 								</div>
-								<!-- /Review Form -->
 							</div>
 						</div>
 						<!-- /tab3  -->
@@ -665,3 +632,70 @@
 <script src="~/js/bootstrap.min.js"></script>
 <script src="~/js/main.js"></script>
 
+<script>
+	$(document).ready(function () {
+		$('#submit-review').click(function () {
+			var content = $('#review-content').val().trim(); // Sử dụng trim() để loại bỏ khoảng trắng không mong muốn
+			var rating = $('input[name=rating]:checked').val();
+
+			$.ajax({
+				url: '/Tour/AddReview',
+				type: 'POST',
+				data: {
+					id: @Model.Id, // Thay YourTourId bằng ID của tour
+					content: content,
+					rating: rating
+				},
+				success: function (response) {
+					if (response.success) {
+						var reviewItem = '<li>' +
+							'<div class="review-heading">' +
+							'<h5 class="name fw-bolder">' + response.author + '</h5>' +
+						
+							'<div class="review-rating">';
+
+						for (var i = 0; i < 5; i++) {
+							if (i < response.rating) {
+								reviewItem += '<i class="fa fa-star"></i>';
+							} else {
+								reviewItem += '<i class="fa fa-star-o empty"></i>';
+							}
+						}
+
+						reviewItem += '</div></div>' +
+							'<div class="review-body">' +
+							'<p>' + response.content + '</p>' +
+							'</div></li>' +
+								'<p class="date">' + response.createdAt + '</p>';
+						$('#reviews').prepend(reviewItem);
+
+						// Xóa nội dung và chọn lại rating sau khi thêm review
+						$('#review-content').val('');
+						$('input[name=rating]').prop('checked', false);
+
+						// Kiểm tra và cập nhật thanh cuộn nếu cần thiết
+						updateScrollbar();
+					} else {
+						alert('Thêm review không thành công.');
+					}
+				},
+				error: function (xhr, status, error) {
+					console.error(xhr.responseText);
+					alert('Hãy đăng nhập dể tạo đánh giá ngay nhé !.');
+				}
+			});
+		});
+
+		// Hàm cập nhật thanh cuộn
+		function updateScrollbar() {
+			var containerHeight = $('#reviews-container').height();
+			var reviewsHeight = $('#reviews').height();
+
+			if (reviewsHeight > containerHeight) {
+				$('#reviews-container').css('overflow-y', 'auto');
+			} else {
+				$('#reviews-container').css('overflow-y', 'hidden');
+			}
+		}
+	});
+</script>
