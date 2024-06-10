@@ -1,5 +1,7 @@
 ﻿<!-- <body data-new-gr-c-s-check-loaded="14.1061.0" data-gr-ext-installed=""> -->
-@model IEnumerable<TourNhanh.Models.Tour>
+@* @model IEnumerable<TourNhanh.Models.Tour> *@
+@model TourNhanh.ViewModel.HomeViewModel
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -648,8 +650,157 @@
     </div>
 </div>
 <!-- Explore Tour End -->
+<!--Tour nổi bật-->
 <!-- Packages Start -->
 <div class="container-fluid packages py-5">
+    <div class="container py-5">
+
+        <!-- Section for Best Rated Tours -->
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">DANH SÁCH TOUR</h5>
+            <h1 class="mb-0">Đánh giá tốt nhất</h1>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="packages-carousel owl-carousel">
+                    @foreach (var item in Model.ToursByRating)
+                    {
+                        <div class="packages-item">
+                            <div class="packages-img">
+                                <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover" onerror="this.src='/images/default.jpg'; this.onerror=null;">
+                                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
+                                </div>
+                                <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
+                            </div>
+                            <div class="packages-content bg-light">
+                                <div class="p-4 pb-0">
+                                    <h5 class="mb-0">@item.Name</h5>
+                                    <small class="text-uppercase">Hot Deals</small>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p class="mb-4 description-tour">@item.Description</p>
+                                </div>
+                                <div class="row bg-primary rounded-bottom mx-0">
+                                    <div class="col-6 text-start px-0">
+                                        <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                                    </div>
+                                    <div class="col-6 text-end px-0">
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Section for Most Popular Tours -->
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h1 class="mb-0">Nhiều người đi nhất</h1>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="packages-carousel owl-carousel">
+                    @foreach (var item in Model.ToursByPopularity)
+                    {
+                        <div class="packages-item">
+                            <div class="packages-img">
+                                <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover" onerror="this.src='/images/default.jpg'; this.onerror=null;">
+                                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
+                                </div>
+                                <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
+                            </div>
+                            <div class="packages-content bg-light">
+                                <div class="p-4 pb-0">
+                                    <h5 class="mb-0">@item.Name</h5>
+                                    <small class="text-uppercase">Hot Deals</small>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p class="mb-4 description-tour">@item.Description</p>
+                                </div>
+                                <div class="row bg-primary rounded-bottom mx-0">
+                                    <div class="col-6 text-start px-0">
+                                        <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                                    </div>
+                                    <div class="col-6 text-end px-0">
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Section for Newest Tours -->
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h1 class="mb-0">Mới nhất</h1>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="packages-carousel owl-carousel">
+                    @foreach (var item in Model.ToursByNewest)
+                    {
+                        <div class="packages-item">
+                            <div class="packages-img">
+                                <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover" onerror="this.src='/images/default.jpg'; this.onerror=null;">
+                                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
+                                </div>
+                                <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
+                            </div>
+                            <div class="packages-content bg-light">
+                                <div class="p-4 pb-0">
+                                    <h5 class="mb-0">@item.Name</h5>
+                                    <small class="text-uppercase">Hot Deals</small>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p class="mb-4 description-tour">@item.Description</p>
+                                </div>
+                                <div class="row bg-primary rounded-bottom mx-0">
+                                    <div class="col-6 text-start px-0">
+                                        <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                                    </div>
+                                    <div class="col-6 text-end px-0">
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@* <div class="container-fluid packages py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">DANH SÁCH TOUR</h5>
@@ -686,13 +837,6 @@
                             <div class="col-6 text-start px-0">
                                 <a asp-controller="Tour"  asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
                             </div>
-                         
-                          @*   <div class="col-5 text-start px-0">
-                                <a asp-controller="Tour" asp-action="Edit" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Sửa</a>
-                            </div>
-                            <div class="col-5 text-end px-0">
-                                <a asp-controller="Tour" asp-action="Delete" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Xóa</a>
-                            </div> *@
                             <div class="col-6 text-end px-0">
                                 <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" as class="btn-hover btn text-white py-2 px-4">Book Now</a>
                             </div>
@@ -702,7 +846,7 @@
             }
         </div>
     </div>
-</div>
+</div> *@
 <!-- Packages End -->
 <!-- Gallery Start -->
 <div class="container-fluid gallery py-5 my-5">

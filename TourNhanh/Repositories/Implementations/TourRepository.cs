@@ -50,5 +50,34 @@ namespace TourNhanh.Repositories.Implementations
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<IEnumerable<Tour>> GetSortedToursAsync(string sortOrder)
+        {
+            var tours = _context.Tours
+                .Include(t => t.Transport)
+                .Include(t => t.Category)
+                .Include(t => t.Reviews)
+                .AsQueryable();
+
+            switch (sortOrder)
+            {
+                case "rating":
+                    tours = tours.OrderByDescending(t => t.Reviews.Any() ? t.Reviews.Average(r => r.Rating) : double.MinValue)
+                                 .ThenByDescending(t => t.Id);
+                    break;
+                case "popular":
+                    tours = tours.OrderByDescending(t => (t.maxParticipants - t.RemainingSlots) > 0 ? (t.maxParticipants - t.RemainingSlots) : int.MinValue)
+                                 .ThenByDescending(t => t.Id);
+                    break;
+                case "newest":
+                    tours = tours.OrderByDescending(t => t.Id);
+                    break;
+                default:
+                    tours = tours.OrderBy(t => t.Name);
+                    break;
+            }
+
+            return await tours.Take(10).ToListAsync();
+        }
     }
 }
