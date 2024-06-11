@@ -18,10 +18,10 @@ namespace TourNhanh.Models
                 .WithMany(u => u.Bookings)
                 .HasForeignKey(b => b.CustomerUserId);
 
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.ContactPerson)
-                .WithMany() // không cần thuộc tính navigation property tương ứng trong AppUser
-                .HasForeignKey(b => b.ContactPersonUserId);
+            //modelBuilder.Entity<Booking>()
+            // .HasOne(b => b.ContactPerson)
+            //  .WithMany() // không cần thuộc tính navigation property tương ứng trong AppUser
+            //   .HasForeignKey(b => b.ContactPersonUserId);
             //comment
 
             /*            modelBuilder.Entity<TourDetail>()

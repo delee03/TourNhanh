@@ -105,9 +105,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Trang chủ</a>
-                    <a asp-controller="Tour" asp-action="Index" class="nav-item nav-link">Tour Trong Nước</a>
-                    <a asp-controller="International" asp-action="Index" class="nav-item nav-link">Tour Nước Ngoài</a>
+                    <a asp-controller="Home" asp-action="Index" id="1" class="nav-item nav-link active">Trang chủ</a>
+                    <a asp-controller="Tour" asp-action="Index" id="2" class="nav-item nav-link">Tour Trong Nước</a>
+                    <a asp-controller="International" asp-action="Index" id="3"  class="nav-item nav-link">Tour Nước Ngoài</a>
                   @*   <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
@@ -122,8 +122,8 @@
                             <a href="#!404.html" class="dropdown-item">404 Page</a>
                         </div>
                     </div> *@
-                    <a asp-controller="Blog" asp-action="Index" class="nav-item nav-link">Bài viết</a>                                    
-                    <a asp-controller="Contact" asp-action="Index" class="nav-item nav-link">Liên hệ</a>
+                    <a asp-controller="Blog" asp-action="Index" id="4" class="nav-item nav-link">Bài viết</a>
+                    <a asp-controller="Contact" asp-action="Index" id="5" class="nav-item nav-link">Liên hệ</a>
                 </div>
                 <a asp-controller="Booking" asp-action="YourTour" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Your Tour</a>
             </div>
@@ -288,10 +288,27 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            // Khi trang tải, đặt navitem "active" dựa trên sessionStorage
+            var activeItem = sessionStorage.getItem('activeItem');
+            if (activeItem) {
+                $(".nav-item").removeClass("active");
+                $(activeItem).addClass("active");
+            }
+
+            $(".nav-item").on("click", function () {
+                // Khi một navitem được nhấp, lưu id của nó vào sessionStorage
+                sessionStorage.setItem('activeItem', '#' + this.id);
+            });
+        });
+    </script>
     <!-- JavaScript Libraries -->
-    <script src="~/js/jquery.min.js"></script>
+   @*  <script src="~/js/jquery.min.js"></script> *@
    @*  <script src="~/js/bootstrap.bundle.min.js"></script> *@
-    <script src="~/js/bootstrap.min.js"></script>
+   @*  <script src="~/js/bootstrap.min.js"></script> *@
     <script src="~/js/easing.min.js"></script>
     <script src="~/js/waypoints.min.js"></script>
     <script src="~/js/owl.carousel.js"></script>
@@ -301,6 +318,8 @@
     <script src="~/js/lightbox.min.js"></script>
     <script src="~/lib/plugin/ckfinder/ckfinder.js"></script>
     <script src="~/lib/plugin/ckeditor/ckeditor.js"></script>
+
+
     <!--Wow js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>

@@ -20,14 +20,16 @@ namespace TourNhanh.Models
         //Quantity
         public int? Quantity { get; set; }
 
+        //User Name
+        public string? FullNameOrder { get; set; }
         //Tour
         public int TourId { get; set; }
         public virtual Tour? Tour { get; set; }
 
         //ContactPerson
-        [ForeignKey("ContactPerson")]
+      /*  [ForeignKey("ContactPerson")]
         public string? ContactPersonUserId { get; set; }
-        public virtual AppUser? ContactPerson { get; set; }
+        public virtual AppUser? ContactPerson { get; set; }*/
 
         //Note
         public string? Note { get; set; }

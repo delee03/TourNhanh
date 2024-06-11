@@ -43,13 +43,14 @@ namespace TourNhanh.Controllers
         public async Task<IActionResult> Create(int tourId, int quantity, string paymentMethod, string note)
         {
             var tour = await _tourRepository.GetByIdAsync(tourId);
+            var user = await _userManager.GetUserAsync(User);
 
             if (tour == null)
             {
                 return NotFound();
             }
 
-            var userId = _userManager.GetUserId(User);
+           var userId = _userManager.GetUserId(User);
             //Chạy thật xóa comment đoạn dưới
             if (userId == null)
             {
@@ -62,12 +63,14 @@ namespace TourNhanh.Controllers
                 BookingDate = DateTime.Now,
                 Quantity = quantity,
                 Amount = quantity * tour.Price,
+                //sửa lại cho thẳng họ tên luôn
                 CustomerUserId = userId,
+                FullNameOrder = user.FullName,
                 /*  CustomerUserId = null,*///Test, chạy thật thì lấy cái trên
                 PaymentDate = null,
                 PaymentMethod = paymentMethod,
                 Note = note,
-                ContactPersonUserId = null,
+              //  ContactPersonUserId = null,
                 isPaymentCompleted = false
             };
 

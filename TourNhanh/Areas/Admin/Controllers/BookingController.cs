@@ -25,7 +25,9 @@ namespace TourNhanh.Areas.Admin.Controllers
         }
 
         public async Task<IActionResult> Index()
-        {
+        { 
+            var user = await _userManager.GetUserAsync(User);
+           // ViewBag.userName = user.FullName;
             return View(await _bookingRepository.GetAllAsync());
         }
 

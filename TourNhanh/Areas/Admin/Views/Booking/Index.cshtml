@@ -14,6 +14,7 @@
                         <table class="table table-1d all-package">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Ngày đặt</th>
                                     <th>Khách hàng</th>
                                     <th>Số người</th>
@@ -31,8 +32,9 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
+                                        <td>@item.Id</td>
                                         <td>@item.BookingDate</td>
-                                        <td>@item.Customer</td>
+                                        <td>@item.FullNameOrder</td>
                                         <td>@item.Quantity</td>
                                         <td>@item.Tour?.Name</td>
                                         @* <td>@item.ContactPerson.Name</td> *@

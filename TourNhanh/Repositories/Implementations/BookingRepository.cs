@@ -57,5 +57,15 @@ namespace TourNhanh.Repositories.Implementations
                 await _context.SaveChangesAsync();
             }
         }
+        //lấy ra tổng đơn và tổng lợi nhuận trong booking
+        public async Task<int> GetTotalBookingsCountAsync()
+        {
+            return await _context.Bookings.CountAsync();
+        }
+
+        public async Task<decimal> GetTotalRevenueAsync()
+        {
+            return await _context.Bookings.SumAsync(o => o.Amount);
+        }
     }
 }
