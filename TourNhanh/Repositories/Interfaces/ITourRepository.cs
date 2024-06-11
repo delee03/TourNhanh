@@ -9,5 +9,7 @@ namespace TourNhanh.Repositories.Interfaces
         Task CreateAsync(Tour tour);
         Task UpdateAsync(Tour tour);
         Task DeleteAsync(int id);
+        Task<IEnumerable<Tour>> GetSortedToursAsync(string sortOrder); 
+
     }
 }
