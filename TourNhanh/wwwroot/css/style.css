@@ -279,7 +279,7 @@ textarea.input {
 .back-to-top {
     position: fixed;
     right: 30px;
-    bottom: 30px;
+    bottom: 25px;
     display: flex;
     width: 45px;
     height: 45px;
