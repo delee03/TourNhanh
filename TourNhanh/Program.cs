@@ -7,6 +7,7 @@ using TourNhanh.Repositories.Interfaces;
 using System.Configuration;
 using Microsoft.Extensions.Options;
 using TourNhanh.Services.VnPay;
+using TourNhanh.ViewModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,7 +49,8 @@ builder.Services.AddScoped<ILikeRepository, EFLikeRepository>();
 
 builder.Services.AddSingleton<IVnPayService, VnPayService>();
 
-
+//Thông tin liên lạc
+builder.Services.Configure<ContactInfo>(builder.Configuration.GetSection("ContactInfo"));
 //login với FACEBOOk
 builder.Services.AddAuthentication().AddFacebook(facebookOptions =>
 {

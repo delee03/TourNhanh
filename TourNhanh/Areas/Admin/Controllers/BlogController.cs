@@ -43,9 +43,8 @@ namespace TourNhanh.Areas.Admin.Controllers
             return View(blogs);
         }
 
-        public async Task<IActionResult> Add()
+        public IActionResult Add()
         {
-
             return View();
         }
 
@@ -82,10 +81,10 @@ namespace TourNhanh.Areas.Admin.Controllers
             return "/img/" + image.FileName;
             //tra ve duong dan tuong doi
         }
-        
 
 
- 
+
+
         public async Task<IActionResult> Display(int id)
         {
             var blogs = await _blogRepository.GetByIdAsync(id);

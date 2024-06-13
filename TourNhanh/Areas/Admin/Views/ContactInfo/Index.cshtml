@@ -1,0 +1,53 @@
+﻿@model TourNhanh.ViewModel.ContactInfo
+@{
+    ViewData["Title"] = "Contact Info";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>Link Zalo</th>
+                                    <th>url Điện thoại</th>
+                                    <th>Điện thoại</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                    <tr>
+
+                                        <td>
+                                            <a>@Model.ZaloUrl</a>
+                                        </td>
+                                        <td>
+                                            <a>@Model.PhoneUrl</a>
+                                        </td>
+                                        <td>
+                                            <a>@Model.PhoneNumber</a>
+                                        </td>
+
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a href="~/Admin/ContactInfo/EditContactInfo/" title="Chỉnh sửa">
+                                                        <span class="lnr lnr-pencil"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
