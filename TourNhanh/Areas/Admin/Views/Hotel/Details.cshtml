@@ -1,0 +1,44 @@
+﻿@model TourNhanh.Models.Hotel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Xem thông tin</h1>
+
+<div>
+    <h4>Khách sạn</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên khách sạn
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Địa chỉ
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-2">
+            Xếp hạng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+        <dt class="col-sm-2">
+            URL Hình ảnh
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.ImageUrl" />
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary text-white" asp-controller="Hotel" asp-action="Edit" asp-area="Admin" asp-route-id="@Model.Id">Chỉnh sửa</a>
+    |
+    <a class="btn btn-outline-primary text-dark" asp-controller="Hotel" asp-action="Index" asp-area="Admin">Trở về</a>
+</div>

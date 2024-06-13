@@ -1,6 +1,37 @@
 ﻿<!-- <body data-new-gr-c-s-check-loaded="14.1061.0" data-gr-ext-installed=""> -->
+@* @model IEnumerable<TourNhanh.Models.Tour> *@
+@model TourNhanh.ViewModel.HomeViewModel
 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+  /*   .phone-bar a, #phone-vr .phone-vr-circle-fill, #phone-vr .phone-vr-img-circle, #phone-vr .phone-bar a {
+        background-color: #dd3333;
+    }
 
+    #phone-vr .phone-vr-circle-fill {
+        opacity: 0.7;
+        box-shadow: 0 0 0 0 #dd3333;
+    }
+
+    #button-contact-vr {
+        bottom: 50px !important;
+    } */
+
+    .owl-carousel .owl-nav.disabled {
+        display: block;
+    }
+
+    .packages-carousel .packages-content .description-tour {
+        min-height: 71px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+</style>
 
 <div class="container-fluid position-relative p-0">
     <!-- Carousel Start -->
@@ -13,57 +44,57 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active carousel-item-start">
-                    <img src="~/img/carousel-2.jpg" class="img-fluid" alt="Image">
+                    <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Image">
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                            <h1 class="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>
+                            <h1 class="display-2 text-capitalize text-white mb-4">Hãy khám phá cả thế giới cùng tôi!</h1>
                             <p class="mb-5 fs-5">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                TourNhanh người bạn đồng hành đáng tin cậy, chúng tôi đã có mặt trên thị trường du lịch Việt Nam hơn 15 năm qua. Hân hạnh được phục vụ bạn
                             </p>
                             <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#!#">Discover Now</a>
+                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#bestRating">Khám phá ngay</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item carousel-item-next carousel-item-start">
-                    <img src="~/img/carousel-1.jpg" class="img-fluid" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                            <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Travel</h1>
-                            <p class="mb-5 fs-5">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            </p>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#!#">Discover Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
                     <img src="~/img/carousel-3.jpg" class="img-fluid" alt="Image">
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                            <h1 class="display-2 text-capitalize text-white mb-4">You Like To Go?</h1>
+                            <h1 class="display-2 text-capitalize text-white mb-4">Tìm cho mình một tour du lịch chất lượng</h1>
                             <p class="mb-5 fs-5">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                TourNhanh người bạn đồng hành đáng tin cậy, chúng tôi đã có mặt trên thị trường du lịch Việt Nam hơn 15 năm qua. Hân hạnh được phục vụ bạn
                             </p>
                             <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#!#">Discover Now</a>
+                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#bestRating">Khám phá ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-item-next">
+                    <img src="https://images.unsplash.com/photo-1576675466684-456bcdeccfbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Tôi luôn bên cạnh bạn</h4>
+                            <h1 class="display-2 text-capitalize text-white mb-4">Bạn muốn đi đâu?</h1>
+                            <p class="mb-5 fs-5">
+                                TourNhanh người bạn đồng hành đáng tin cậy, chúng tôi đã có mặt trên thị trường du lịch Việt Nam hơn 15 năm qua. Hân hạnh được phục vụ bạn
+                            </p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#bestRating">Khám phá ngay</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                <span class="carousel-control-prev-icon btn bg-primary1" aria-hidden="false"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                <span class="carousel-control-next-icon btn bg-primary1" aria-hidden="false"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
@@ -72,9 +103,9 @@
 </div>
 <div class="container-fluid search-bar position-relative" style="top: -50%; transform: translateY(-50%);">
     <div class="container">
-        <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: rgb(62 119 238 / 80%);">
+        <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background-image: linear-gradient(110deg, rgb(0 147 233 / 81%) 0%, rgb(128 208 199 / 82%) 100%);">
             <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
-            <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
+            <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Tìm kiếm</button>
         </div>
     </div>
 </div>
@@ -84,207 +115,79 @@
     <div class="container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-lg-5">
-                <div class="h-100" style="border: 50px solid; border-color: transparent #2567f1 transparent #2567f1;">
+                <div class="h-100" style="border: 50px solid; border-color: transparent var(--bs-linear-color) transparent var(--bs-linear-color);">
                     <img src="~/img/about-2.png" class="img-fluid w-100 h-100" alt="công ty du lịch TourNgay" height="300px">
                 </div>
             </div>
             <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
-                <h5 class="section-about-title pe-3">About Us</h5>
-                <h1 class="mb-4">Welcome to <span class="text-primary">TourNhanh</span></h1>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum, doloribus sunt dicta, officia voluptatibus libero necessitatibus natus impedit quam ullam assumenda? Id atque iste consectetur. Commodi odit ab saepe!</p>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quos voluptatem suscipit neque enim, doloribus ipsum rem eos distinctio, dignissimos nisi saepe nulla? Libero numquam perferendis provident placeat molestiae quia?</p>
+                <h5 class="section-about-title pe-3">Về chúng tôi</h5>
+                <h1 class="mb-4">Chào mừng đến với <span class="text-primary">TourNhanh</span></h1>
+                <p class="mb-4">Công ty du lịch Tour Nhanh là lựa chọn hoàn hảo cho những ai muốn trải nghiệm những chuyến đi khám phá những điểm đến mới mẻ và đáng nhớ. Với đội ngũ nhân viên chuyên nghiệp, giàu kinh nghiệm, Tour Nhanh mang đến cho khách hàng những dịch vụ du lịch tuyệt vời, từ việc lên kế hoạch chi tiết, đặt phòng khách sạn, săn vé máy bay giá rẻ cho đến các hoạt động tham quan, vui chơi trong suốt chuyến đi.</p>
+                <p class="mb-4">Ngoài ra, Tour Nhanh luôn chú trọng đến sự an toàn và trải nghiệm tuyệt vời của khách hàng. Các tour được thiết kế kỹ lưỡng, đảm bảo chất lượng dịch vụ, lịch trình được sắp xếp hợp lý, đồng thời còn có sự hỗ trợ 24/7 từ đội ngũ chăm sóc khách hàng chu đáo. Với những ưu điểm nổi bật này, Tour Nhanh xứng đáng là lựa chọn hàng đầu cho những ai muốn khám phá thế giới, tận hưởng những kỳ nghỉ đáng nhớ.</p>
                 <div class="row gy-2 gx-4 mb-4">
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Các chuyến bay hạng nhất</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Khách sạn tốt nhất</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Các dịch vụ 5 sao</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Phương tiện di chuyển hiện đại nhất</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Có đối tác với hơn 150 điểm du lịch nổi tiếng nhất</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Dịch vụ 24/7</p>
                     </div>
                 </div>
-                <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="#!">Read More</a>
+                <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="#!">Xem thêm</a>
             </div>
         </div>
     </div>
 </div>
 <!-- About End -->
-<!-- Services Start -->
-<div class="container-fluid bg-light service py-5">
-    <div class="container py-5">
-        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Searvices</h5>
-            <h1 class="mb-0">Our Services</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-6">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                            <div class="service-content text-end">
-                                <h5 class="mb-4">WorldWide Tours</h5>
-                                <p class="mb-0">
-                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                            <div class="service-icon p-4">
-                                <i class="fa fa-globe fa-4x text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
-                            <div class="service-content text-end">
-                                <h5 class="mb-4">Hotel Reservation</h5>
-                                <p class="mb-0">
-                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                            <div class="service-icon p-4">
-                                <i class="fa fa-hotel fa-4x text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                            <div class="service-content text-end">
-                                <h5 class="mb-4">Travel Guides</h5>
-                                <p class="mb-0">
-                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                            <div class="service-icon p-4">
-                                <i class="fa fa-user fa-4x text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                            <div class="service-content text-end">
-                                <h5 class="mb-4">Event Management</h5>
-                                <p class="mb-0">
-                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                            <div class="service-icon p-4">
-                                <i class="fa fa-cog fa-4x text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                            <div class="service-icon p-4">
-                                <i class="fa fa-globe fa-4x text-primary"></i>
-                            </div>
-                            <div class="service-content">
-                                <h5 class="mb-4">WorldWide Tours</h5>
-                                <p class="mb-0">
-                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                            <div class="service-icon p-4">
-                                <i class="fa fa-hotel fa-4x text-primary"></i>
-                            </div>
-                            <div class="service-content">
-                                <h5 class="mb-4">Hotel Reservation</h5>
-                                <p class="mb-0">
-                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                            <div class="service-icon p-4">
-                                <i class="fa fa-user fa-4x text-primary"></i>
-                            </div>
-                            <div class="service-content">
-                                <h5 class="mb-4">Travel Guides</h5>
-                                <p class="mb-0">
-                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                            <div class="service-icon p-4">
-                                <i class="fa fa-cog fa-4x text-primary"></i>
-                            </div>
-                            <div class="service-content">
-                                <h5 class="mb-4">Event Management</h5>
-                                <p class="mb-0">
-                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="text-center">
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="#!">Service More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Services End -->
+
 <!-- Destination Start -->
 <div class="container-fluid destination py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Destination</h5>
-            <h1 class="mb-0">Popular Destination</h1>
+            <h5 class="section-title px-3">Điểm đến</h5>
+            <h1 class="mb-0">Điểm đến phổ biến</h1>
         </div>
         <div class="tab-class text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                 <li class="nav-item">
                     <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="https://themewagon.github.io/travela/#tab-1">
-                        <span class="text-dark" style="width: 150px;">All</span>
+                        <span class="text-dark fw-bolder " style="width: 150px;">All</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="https://themewagon.github.io/travela/#tab-2">
-                        <span class="text-dark" style="width: 150px;">USA</span>
+                        <span class="text-dark fw-bolder" style="width: 150px;">USA</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#!#tab-3">
-                        <span class="text-dark" style="width: 150px;">Canada</span>
+                        <span class="text-dark fw-bolder" style="width: 150px;">Canada</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#!#tab-4">
-                        <span class="text-dark" style="width: 150px;">Europe</span>
+                        <span class="text-dark fw-bolder" style="width: 150px;">Europe</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#!#tab-5">
-                        <span class="text-dark" style="width: 150px;">China</span>
+                        <span class="text-dark fw-bolder" style="width: 150px;">China</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#!#tab-6">
-                        <span class="text-dark" style="width: 150px;">Singapore</span>
+                        <span class="text-dark fw-bolder" style="width: 150px;">Singapore</span>
                     </a>
                 </li>
             </ul>
@@ -560,8 +463,8 @@
 <div class="container-fluid ExploreTour py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Explore Tour</h5>
-            <h1 class="mb-4">The World</h1>
+            <h5 class="section-title px-3">Khám phá du lịch</h5>
+            <h1 class="mb-4">Khám phá thế giới</h1>
             <p class="mb-0">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
             </p>
@@ -569,7 +472,7 @@
         <div class="tab-class text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                 <li class="nav-item">
-                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#InternationalTab-1">
+                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#NationalTab-1">
                         <span class="text-dark" style="width: 250px;">National Tour Category</span>
                     </a>
                 </li>
@@ -747,149 +650,206 @@
     </div>
 </div>
 <!-- Explore Tour End -->
+<!--Tour nổi bật-->
 <!-- Packages Start -->
 <div class="container-fluid packages py-5">
     <div class="container py-5">
+
+        <!-- Section for Best Rated Tours -->
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Packages</h5>
-            <h1 class="mb-0">Awesome Packages</h1>
+            <h5 class="section-title px-3">DANH SÁCH TOUR</h5>
+            <h1 id="bestRating" class="mb-0">Tour có đánh giá tốt nhất</h1>
         </div>
-        <div class="packages-carousel owl-carousel">
-            <div class="packages-item">
-                <div class="packages-img">
-                    <img src="~/img/packages-4.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                    </div>
-                    <div class="packages-price py-2 px-4">$349.00</div>
-                </div>
-                <div class="packages-content bg-light">
-                    <div class="p-4 pb-0">
-                        <h5 class="mb-0">Venice - Italy</h5>
-                        <small class="text-uppercase">Hotel Deals</small>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="packages-carousel owl-carousel">
+                    @foreach (var item in Model.ToursByRating)
+                    {
+                        <div class="packages-item">
+                            <div class="packages-img">
+                                <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover" onerror="this.src='/images/default.jpg'; this.onerror=null;">
+                                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
+                                </div>
+                                <div class="packages-price py-2 px-4"> @String.Format("{0:N0} VND", item.Price)</div>
+                            </div>
+                            <div class="packages-content bg-light">
+                                <div class="p-4 pb-0">
+                                    <h5 class="mb-0">@item.Name</h5>
+                                    <small class="text-uppercase">Hot Deals</small>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p class="mb-4 description-tour">@item.Description</p>
+                                </div>
+                                <div class="row bg-primary rounded-bottom mx-0">
+                                    <div class="col-6 text-start px-0">
+                                        <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                                    </div>
+                                    <div class="col-6 text-end px-0">
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Đặt ngay</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                    </div>
-                    <div class="row bg-primary rounded-bottom mx-0">
-                        <div class="col-6 text-start px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                        </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="packages-item">
-                <div class="packages-img">
-                    <img src="~/img/packages-2.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                    </div>
-                    <div class="packages-price py-2 px-4">$449.00</div>
-                </div>
-                <div class="packages-content bg-light">
-                    <div class="p-4 pb-0">
-                        <h5 class="mb-0">The New California</h5>
-                        <small class="text-uppercase">Hotel Deals</small>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                    </div>
-                    <div class="row bg-primary rounded-bottom mx-0">
-                        <div class="col-6 text-start px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                        </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="packages-item">
-                <div class="packages-img">
-                    <img src="~/img/packages-3.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                    </div>
-                    <div class="packages-price py-2 px-4">$549.00</div>
-                </div>
-                <div class="packages-content bg-light">
-                    <div class="p-4 pb-0">
-                        <h5 class="mb-0">Discover Japan</h5>
-                        <small class="text-uppercase">Hotel Deals</small>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                    </div>
-                    <div class="row bg-primary rounded-bottom mx-0">
-                        <div class="col-6 text-start px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                        </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="packages-item">
-                <div class="packages-img">
-                    <img src="~/img/packages-1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>Thayland</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                    </div>
-                    <div class="packages-price py-2 px-4">$649.00</div>
-                </div>
-                <div class="packages-content bg-light">
-                    <div class="p-4 pb-0">
-                        <h5 class="mb-0">Thayland Trip</h5>
-                        <small class="text-uppercase">Hotel Deals</small>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                        </div>
-                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo quia quae illum aperiam fugiat voluptatem repellat</p>
-                    </div>
-                    <div class="row bg-primary rounded-bottom mx-0">
-                        <div class="col-6 text-start px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                        </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
+
+        <!-- Section for Most Popular Tours -->
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h1 class="mb-0">Tour nhiều người đi nhất</h1>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="packages-carousel owl-carousel">
+                    @foreach (var item in Model.ToursByPopularity)
+                    {
+                        <div class="packages-item">
+                            <div class="packages-img">
+                                <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover" onerror="this.src='/images/default.jpg'; this.onerror=null;">
+                                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
+                                </div>
+                                <div class="packages-price py-2 px-4">
+                                    @String.Format("{0:N0} VND", item.Price)
+
+                                </div>
+                            </div>
+                            <div class="packages-content bg-light">
+                                <div class="p-4 pb-0">
+                                    <h5 class="mb-0">@item.Name</h5>
+                                    <small class="text-uppercase">Hot Deals</small>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p class="mb-4 description-tour">@item.Description</p>
+                                </div>
+                                <div class="row bg-primary rounded-bottom mx-0">
+                                    <div class="col-6 text-start px-0">
+                                        <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                                    </div>
+                                    <div class="col-6 text-end px-0">
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Đặt ngay</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Section for Newest Tours -->
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h1 class="mb-0">Tour mới nhất</h1>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="packages-carousel owl-carousel">
+                    @foreach (var item in Model.ToursByNewest)
+                    {
+                        <div class="packages-item">
+                            <div class="packages-img">
+                                <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover" onerror="this.src='/images/default.jpg'; this.onerror=null;">
+                                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
+                                </div>
+                                <div class="packages-price py-2 px-4"> @String.Format("{0:N0} VND", item.Price)</div>
+                            </div>
+                            <div class="packages-content bg-light">
+                                <div class="p-4 pb-0">
+                                    <h5 class="mb-0">@item.Name</h5>
+                                    <small class="text-uppercase">Hot Deals</small>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p class="mb-4 description-tour">@item.Description</p>
+                                </div>
+                                <div class="row bg-primary rounded-bottom mx-0">
+                                    <div class="col-6 text-start px-0">
+                                        <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                                    </div>
+                                    <div class="col-6 text-end px-0">
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Đặt ngay</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
+@* <div class="container-fluid packages py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">DANH SÁCH TOUR</h5>
+            <h1 class="mb-0">Tour Nổi Bật</h1>
+        </div>
+        <div class="packages-carousel owl-carousel">
+          
+           @foreach(var item in Model)
+            {
+                <div class="packages-item">
+                    <div class="packages-img">
+                        <img src="@item.MainImageUrl" class="img-fluid w-100 rounded-top" alt="Image" style="height:257px;object-fit:cover">
+                        <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.Name</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
+                        </div>
+                        <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
+                    </div>
+                    <div class="packages-content bg-light">
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-0">@item.Name</h5>
+                            <small class="text-uppercase">Hot Deals</small>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p class="mb-4 description-tour">@item.Description</p>
+                        </div>
+                        <div class="row bg-primary rounded-bottom mx-0">
+                            <div class="col-6 text-start px-0">
+                                <a asp-controller="Tour"  asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
+                            </div>
+                            <div class="col-6 text-end px-0">
+                                <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" as class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div> *@
 <!-- Packages End -->
 <!-- Gallery Start -->
 <div class="container-fluid gallery py-5 my-5">
@@ -1566,6 +1526,183 @@
     </div>
 </div>
 <!-- Testimonial End -->
+<!-- Services Start -->
+<div class="container-fluid bg-light service py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Searvices</h5>
+            <h1 class="mb-0">Our Services</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">WorldWide Tours</h5>
+                                <p class="mb-0">
+                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-globe fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">Hotel Reservation</h5>
+                                <p class="mb-0">
+                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-hotel fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">Travel Guides</h5>
+                                <p class="mb-0">
+                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-user fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                            <div class="service-content text-end">
+                                <h5 class="mb-4">Event Management</h5>
+                                <p class="mb-0">
+                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                </p>
+                            </div>
+                            <div class="service-icon p-4">
+                                <i class="fa fa-cog fa-4x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                            <div class="service-icon p-4">
+                                <i class="fa fa-globe fa-4x text-primary"></i>
+                            </div>
+                            <div class="service-content">
+                                <h5 class="mb-4">WorldWide Tours</h5>
+                                <p class="mb-0">
+                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                            <div class="service-icon p-4">
+                                <i class="fa fa-hotel fa-4x text-primary"></i>
+                            </div>
+                            <div class="service-content">
+                                <h5 class="mb-4">Hotel Reservation</h5>
+                                <p class="mb-0">
+                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                            <div class="service-icon p-4">
+                                <i class="fa fa-user fa-4x text-primary"></i>
+                            </div>
+                            <div class="service-content">
+                                <h5 class="mb-4">Travel Guides</h5>
+                                <p class="mb-0">
+                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                            <div class="service-icon p-4">
+                                <i class="fa fa-cog fa-4x text-primary"></i>
+                            </div>
+                            <div class="service-content">
+                                <h5 class="mb-4">Event Management</h5>
+                                <p class="mb-0">
+                                    Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="text-center">
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="#!">Service More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- if gom all in one show -->
+<div id="button-contact-vr" class="">
+    <div id="gom-all-in-one">
+        <!-- v3 -->
+        <!-- contact -->
+        <!-- end contact -->
+        <!-- viber -->
+        <!-- end viber -->
+        <!-- zalo -->
+        <div id="zalo-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a target="_blank" href="@Model.ZaloUrl">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
+                    </a>
+                </div>
+                <div class="zalo-bar zalo-bar-n">
+                    <a href="@Model.ZaloUrl">
+                        <span class="text-phone">Gửi yêu cầu tư vấn ngay</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end zalo -->
+        <!-- Phone -->
+        <div id="phone-vr" class="button-contact">
+            <div class="phone-vr">
+                <div class="phone-vr-circle-fill"></div>
+                <div class="phone-vr-img-circle">
+                    <a href="@Model.PhoneUrl">
+                        <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
+                    </a>
+                </div>
+                <div class="phone-bar phone-bar-n">
+                    <a href="@Model.PhoneUrl">
+                        <span class="text-phone">@Model.PhoneNumber</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end phone -->
+    </div><!-- end v3 class gom-all-in-one -->
+
+
+</div>
+<!-- Services End -->
 <!-- <div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image" href="#!"></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image" href="#!"></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div><div id="volume-booster-visusalizer">
             <div class="sound">
                 <div class="sound-icon"></div>

@@ -1,0 +1,50 @@
+﻿@model TourNhanh.Models.Location
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Xem thông tin</h1>
+
+<div>
+    <h4>Địa điểm du lịch</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên địa điểm
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Mô tả
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            Địa chỉ
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-2">
+            Kinh độ
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt class="col-sm-2">
+            Vĩ độ
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary text-white" asp-controller="Location" asp-action="Edit" asp-area="Admin" asp-route-id="@Model.Id">Chỉnh sửa</a>
+    |
+    <a class="btn btn-outline-primary text-dark" asp-controller="Location" asp-action="Index" asp-area="Admin">Trở về</a>
+</div>

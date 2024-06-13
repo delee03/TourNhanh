@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model TourNhanh.Models.Blog
+<form style="margin: 10px" class="border border-2 rounded p-4" asp-action="Update" method="post" enctype="multipart/form-data" novalidate>
+    <h2 class="text-center">Chỉnh sửa bài viết</h2>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label asp-for="Title" class="control-label">Tiêu đề bài viết</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label for="ImageUrl"> Ảnh đại diện</label>
+        <input type="file" id="ImageUrl" name="ImageUrl" class="form-control-file">
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label asp-for="Content" class="control-label">Nội dung bài viết</label>
+        <textarea asp-for="Content" class="form-control" id="editor"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="row mb-4">
+        <div class="col">
+            <button class="btn btn-primary me-3" type="submit">Cập nhật</button>
+        </div>
+        <div class="col text-right">
+            <a href="~/Admin/Blog/Index" class="btn btn-outline-primary" type="reset">Quay lại</a>
+        </div>
+    </div>
+
+
+</form>
+
+@section Scripts {
+    <script>
+        CKEDITOR.replace('editor');
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

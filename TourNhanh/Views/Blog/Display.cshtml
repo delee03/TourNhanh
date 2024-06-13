@@ -1,0 +1,260 @@
+﻿@model TourNhanh.Models.Blog
+
+@{
+	ViewData["Title"] = @Model.Title;
+}
+
+<style>
+	/* Custom styles for comment list */
+	#comment-list {
+		list-style-type: none; /* Bỏ ký hiệu gạch đầu dòng */
+		padding: 0;
+	}
+
+	.comment-item {
+		border-bottom: 1px solid #ddd; /* Đường viền dưới */
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+	}
+
+	.comment-content {
+		background-color: #f9f9f9; /* Màu nền nhạt */
+		border-radius: 5px; /* Bo góc */
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+	}
+
+		.comment-content p {
+			margin: 0; /* Bỏ khoảng cách mặc định */
+			font-size: 1rem; /* Cỡ chữ */
+			color: #333; /* Màu chữ */
+		}
+
+	.comment-author {
+		font-weight: bold; /* Chữ đậm */
+		color: #007bff; /* Màu xanh dương */
+	}
+
+	.comment-timestamp {
+		font-size: 0.875rem; /* Cỡ chữ nhỏ hơn */
+		color: #777; /* Màu xám */
+	}
+	
+	/* Custom styles for textarea */
+	#comment-content {
+		background-color: #e0f7fa; /* Màu xanh dương nhạt */
+		width: 100%; /* Chiều rộng bằng màn hình */
+		border: 1px solid #007bff; /* Viền màu xanh dương */
+		padding: 10px; /* Padding bên trong */
+		border-radius: 5px; /* Bo góc */
+		resize: none; /* Tắt khả năng thay đổi kích thước */
+	}
+
+	#comment-content:focus {
+		outline: none;
+		box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+		border-color: #007bff;
+	}
+
+	/* Custom styles for submit button */
+	#comment-form button[type="submit"] {
+		margin-top: 10px;
+		background-color: #007bff; /* Màu nền xanh dương */
+		border: none; /* Bỏ viền mặc định */
+		color: white; /* Màu chữ trắng */
+		padding: 10px 20px; /* Padding */
+		border-radius: 5px; /* Bo góc */
+		cursor: pointer; /* Con trỏ dạng tay */
+	}
+
+		#comment-form button[type="submit"]:hover {
+			background-color: #0056b3; /* Màu xanh dương đậm hơn khi hover */
+		}
+
+	/* Custom styles for the content container */
+	.content-container {
+		font-family: 'Arial, sans-serif';
+		line-height: 1.6;
+		color: #333;
+	}
+
+		/* Styling paragraphs */
+		.content-container p {
+			margin-bottom: 1em;
+			font-size: 1rem;
+		}
+
+		/* Styling headings */
+		.content-container h1,
+		.content-container h2,
+		.content-container h3,
+		.content-container h4,
+		.content-container h5,
+		.content-container h6 {
+			margin-top: 1.5em;
+			margin-bottom: 0.5em;
+			color: #2c3e50;
+		}
+
+		/* Styling images */
+		.content-container img {
+			max-width: 100%;
+			height: auto;
+			margin: 10px auto;
+			border-radius: 5px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+		}
+
+		/* Styling blockquotes */
+		.content-container blockquote {
+			margin: 1em 0;
+			padding: 0.5em 1em;
+			background-color: #f9f9f9;
+			border-left: 5px solid #ccc;
+			font-style: italic;
+			color: #555;
+		}
+
+		/* Styling lists */
+		.content-container ul,
+		.content-container ol {
+			padding-left: 2em;
+			margin-bottom: 1em;
+		}
+
+		/* Styling links */
+		.content-container a {
+			color: #3498db;
+			text-decoration: none;
+		}
+
+			.content-container a:hover {
+				text-decoration: underline;
+			}
+
+	.blog_detail .title {
+		padding: 50px 0;
+	}
+
+	.blog_detail {
+		padding: 50px 0;
+	}
+
+	.title-gradient{
+		font-weight: 700;
+		background-color: var(--bs-linear-color);
+		background-image: var(--bs-linear-img);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+</style>
+<!-- BREADCRUMB -->
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+	<div class="container text-center py-5" style="max-width: 900px;">
+		<h3 class="text-white display-3 mb-4">
+			Bài viết hữu ích
+		</h3>
+		<ol class="breadcrumb justify-content-center mb-0">
+			<li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+			<li class="breadcrumb-item"><a href="~/Blog/Index/1">Bài viết</a></li>
+			<li class="breadcrumb-item active text-white"><a href="~/Blog/Details/@Model.Id">@Model.Title</a></li>
+		</ol>
+	</div>
+</div>
+<!-- Header End -->
+<!-- /BREADCRUMB -->
+<section class="section blog_detail">
+	<div class="title">
+		<div class="text-center">
+			<h4>Tác giả: @Model.Author  | @Model.CreatedAt  </h4>
+		</div>
+		<div class="text-center title-gradient">
+			<h1>@Model.Title </h1>
+		</div>
+	</div>
+
+	<div class="container">
+		<img class="img-fluid w-100 rounded-top" src="@Model.ImageUrl" alt="Image">
+	</div>
+
+
+	<hr />
+	<div class="container ">
+		<div class="px-3 py-2 content-container">
+			<!-- Lề của phần nội dung -->
+			@Html.Raw(Model.Content)
+		</div>
+	</div>
+	<div id="comments">
+		<!-- Comment form -->
+		<div class="container mt-5">
+			<form id="comment-form" method="post">
+				<textarea id="comment-content" name="content" rows="5" placeholder="Thêm bình luận" required></textarea>
+				<button type="submit" class="btn btn-primary">Đăng</button>
+			</form>
+		</div>
+		<div class="container">
+			<h3 class="my-5">
+				Bình luận
+			</h3>
+
+			<ul id="comment-list">
+				@if (Model.Comments != null && Model.Comments.Any())
+				{
+					foreach (var comment in Model.Comments)
+					{
+						<li class="comment-item">
+							<div class="comment-content px-3 py-2">
+								<p>
+									<span class="comment-author">@comment.Author</span>:
+									@comment.Content
+									<span class="comment-timestamp">| @comment.CreatedAt</span>
+								</p>
+							</div>
+						</li>
+					}
+				}
+			</ul>
+		</div>
+	</div>
+</section>
+@section Scripts {
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#comment-form').submit(function (event) {
+				event.preventDefault();
+
+				var content = $('#comment-content').val();
+				var blogId = @Model.Id; // Assuming you have the blog ID in your model
+
+				$.ajax({
+					url: '@Url.Action("AddComment", "Blog")',
+					type: 'POST',
+					data: { id: blogId, content: content },
+					success: function (response) {
+						if (response.success) {
+							var newComment = '<li class="comment-item">' +
+								'<div class="comment-content px-3 py-2">' +
+								'<p>' + response.author + ': ' + content + ' | Just now</p>' +
+								'</div>' +
+								'</li>';
+
+							// Check if the comment list is empty
+							if ($('#comment-list').children().length === 0) {
+								$('#comment-list').html(newComment); // Use html to replace the content if it was empty
+							} else {
+								$('#comment-list').append(newComment); // Append new comment if there are existing comments
+							}
+
+							$('#comment-content').val(''); // Clear the textarea
+						} else {
+							alert('Error adding comment');
+						}
+					}
+				});
+			});
+		});
+	</script>
+}

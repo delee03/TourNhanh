@@ -1,96 +1,279 @@
-﻿ <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Our Blog</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">Blog</li>
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> UserManager
+@model IEnumerable<TourNhanh.Models.Blog>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-YV55tjJ5zU2x1R25FVbFbjeBYp/+bhz9XrfqpZo5QhOYz+tnnASeJZ4MzPBpNL0u" crossorigin="anonymous">
+<style>
+    .like-button {
+        display: flex;
+        align-items: center;
+    }
 
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Our Blog</h5>
-                    <h1 class="mb-4">Popular Travel Blogs</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti deserunt tenetur sapiente atque. Magni non explicabo beatae sit, vel reiciendis consectetur numquam id similique sunt error obcaecati ducimus officia maiores.
-                    </p>
+        .like-button .btn {
+            margin-right: 10px; /* Khoảng cách giữa các phần tử */
+        }
+
+    .like-checkbox {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .heart-icon {
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+        .heart-icon.liked {
+            display: none;
+        }
+
+    .like-checkbox input:checked ~ .liked {
+        display: inline;
+    }
+
+    .like-checkbox input:checked ~ .far {
+        display: none;
+    }
+
+    .Btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 90px;
+        cursor: pointer;
+        position: fixed;
+        overflow: hidden;
+        transition-duration: .3s;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+        background-color: royalblue;
+        left: 30px;
+        bottom: 30px;
+    }
+
+    /* plus sign */
+    .sign {
+        width: 100%;
+        font-size: 2em;
+        color: white;
+        transition-duration: .3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* text */
+    .text {
+        position: absolute;
+        right: 5%;
+        width: 0%;
+        opacity: 0;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 500;
+        transition-duration: .3s;
+    }
+    /* hover effect on button width */
+    .Btn:hover {
+        width: 200px;
+        border-radius: 10rem;
+        transition-duration: .3s;
+    }
+
+        .Btn:hover .sign {
+            width: 30%;
+            transition-duration: .3s;
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+        /* hover effect button's text */
+        .Btn:hover .text {
+            opacity: 1;
+            width: 70%;
+            transition-duration: .3s;
+            padding-right: 20px;
+        }
+    /* button click effect*/
+    .Btn:active {
+        transform: translate(2px,2px);
+    }
+
+    .blog-content h3 {
+        font-size: 18px;
+        width: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .blog-item .blog-img img{
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
+
+
+
+            <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-white display-3 mb-4">Bài viết bổ ích</h1>
+            <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="~/Home/Index/1">Trang chủ</a></li>
+            <li class="breadcrumb-item active text-white">Bài viết</li>
+            </ol>
+        </div>  
+    </div>
+
+
+  <a href="~/Blog/Add">
+    <button class="Btn">
+        <div class="sign">+</div>
+        <div class="text">Đăng bài viết</div>
+    </button>
+  </a>
+    
+
+   
+<div class="container-fluid blog py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Blog của chúng tôi</h5>
+            <h1 class="mb-4">Các blog về du lịch phổ biến</h1>
+            <p class="mb-0">
+                Là nơi mà mọi người chia sẻ về chuyến đi của họ, những kiến thức, hành trang, mẹo vật là những thứ không thể thiếu trong mỗi chuyến đi của chúng ta đúng không nào? Hãy cũng khám phá nó nhé
+            </p>
+            <form asp-action="Index" method="get" class="form-inline">
+                <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: rgb(62 119 238 / 80%);">
+                    <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" name="title" type="text" placeholder="VD: Trải nghiệm...">
+                    <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
                 </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-1.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-2.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="img/blog-3.jpg" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
-        <!-- Blog End -->
+        <div class="row g-4 justify-content-center">
+            @foreach(var item in Model)
+            {
+                if(item.State != 0)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top avatar_img" src="@item.ImageUrl" alt="Image">
+                                    <div class="blog-icon">
+                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>@item.CreatedAt</small>
+                                    <a class="btn-hover flex-fill text-center text-white border-end py-2">
+                                        <i class="fa-solid fa-heart text-primary me-2"></i>
+                                        <span class="likeCount" data-like-count="@item.Id">@item.Likes</span>
+                                    </a>
+                                    <a class="btn-hover flex-fill text-center text-white py-2">
+                                        <i class="fa fa-comments text-primary me-2"></i>
+
+                                        @if (item.Comments != null)
+                                        {
+                                            <span>@item.Comments.Count()</span>
+                                        }
+                                        else
+                                        {
+                                            <span>0</span>
+                                        }
+
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4 d-flex flex-column align-items-center justify-content-center">
+                                <p class="mb-3">Tác giả: @item.Author </p>
+                                <h3 class="text-center">
+                                    @item.Title
+                                </h3>
+                                @*  <a href="#" class="h4">@item.Title</a> *@
+                                <div class="like-button d-flex align-items-center mt-3">
+                                    <a asp-action="Display" asp-route-id="@item.Id" class="btn btn-primary rounded-pill py-2 px-4 mr-3">Chi tiết</a>
+                                    <div class="like-checkbox">
+                                        <input type="checkbox" id="likeCheckbox-@item.Id" name="heartCheckbox" data-post-id="@item.Id" data-user-id="@UserManager.GetUserId(User)" style="display: none;">
+                                        <label for="likeCheckbox-@item.Id" class="d-flex align-items-center mb-0">
+                                            <i class="far fa-heart heart-icon" style="color: gray;"></i>
+                                            <i class="fas fa-heart heart-icon liked" style="color: red; display: none;"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+@{
+    var userId = ViewBag.UserId;
+}
+<!-- Blog End -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            $('.like-checkbox input[type="checkbox"]').each(function () {
+                var checkbox = $(this);
+                var blogId = checkbox.data('post-id');
+                var userId = checkbox.data('user-id');
+
+                // Gửi yêu cầu AJAX để kiểm tra trạng thái ban đầu của like
+                $.ajax({
+                    url: '/Blog/CheckInitialLikeStatus', // Cập nhật URL của bạn
+                    type: 'GET',
+                    data: { blogId: blogId, userId: userId },
+                    success: function (isLiked) {
+                        if (isLiked) {
+                            checkbox.prop('checked', true);
+                            checkbox.next('label').find('.heart-icon').removeClass('far').addClass('fas').css('color', 'red');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+
+            $('.like-checkbox label').click(function () {
+                var checkbox = $(this).prev('input[type="checkbox"]');
+                var checked = checkbox.prop('checked');
+                var blogId = checkbox.data('post-id');
+                var userId = checkbox.data('user-id');
+
+                $.ajax({
+                    url: '/Blog/LikePost',
+                    type: 'POST',
+                    data: { blogId: blogId, userId: userId },
+                    success: function (newLikeCount) {
+                        $('.likeCount[data-like-count="' + blogId + '"]').text(newLikeCount);
+
+                        if (checked) {
+                            checkbox.prop('checked', false);
+                            checkbox.next('label').find('.heart-icon').removeClass('fas').addClass('far').css('color', 'gray');
+                        } else {
+                            checkbox.prop('checked', true);
+                            checkbox.next('label').find('.heart-icon').removeClass('far').addClass('fas').css('color', 'red');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+<!--------------------------------------------->

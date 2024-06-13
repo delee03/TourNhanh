@@ -1,0 +1,64 @@
+﻿ @model IEnumerable<TourNhanh.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>Loại tour</th>
+                                    <th>Thông tin</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            <a>@item.Name</a>
+                                        </td>
+                                        <td>
+                                            <a>@item.Description</a>
+                                        </td>
+
+
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a href="~/Admin/Category/Details/@item.Id" title="Chi tiết">
+                                                        <span class="lnr lnr-eye"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Category/Edit/@item.Id" title="Chỉnh sửa">
+                                                        <span class="lnr lnr-pencil"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Category/Delete/@item.Id" title="Xóa">
+                                                        <span class="lnr lnr-trash"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<TourNhanh.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Khách hàng</th>
+                                    <th>Số người</th>
+                                    <th>Tour</th>
+                                    @* <th>Người liên hệ</th> *@
+                                    <th>Ghi chú</th>
+                                    <th>Số tiền</th>
+                                    <th>Ngày thanh toán</th>
+                                    <th>Phương thức thanh toán</th>
+                                    <th>Hoàn thành thanh toán</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.BookingDate</td>
+                                        <td>@item.FullNameOrder</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.Tour?.Name</td>
+                                        @* <td>@item.ContactPerson.Name</td> *@
+                                        <td>@item.Note</td>
+                                        <td>@String.Format("{0:N0} VND", item.Amount)</td>
+                                        <td>@item.PaymentDate</td>
+                                        <td>@item.PaymentMethod</td>
+                                        <td>@{
+                                                var isPaymentComplete = item.isPaymentCompleted == true ? "Yes" : "No";
+                                            } @isPaymentComplete</td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a asp-asp-area="Admin" asp-asp-controller="Booking" asp-action="Details" asp-route-bookingId="@item.Id" title="Chi tiết">
+                                                        <span class="lnr lnr-eye"></span>
+                                                    </a>
+                                                </li>
+@*                                                 <li>
+                                                    <a href="~/Admin/Booking/Edit/@item.Id" title="Chỉnh sửa">
+                                                        <span class="lnr lnr-pencil"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Booking/Delete/@item.Id" title="Xóa">
+                                                        <span class="lnr lnr-trash"></span>
+                                                    </a>
+                                                </li> *@
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

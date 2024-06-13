@@ -1,0 +1,81 @@
+﻿@model IEnumerable<TourNhanh.Models.Tour>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>Tên tour</th>
+                                    <th>Loại tour</th>
+                                    <th>Mô tả</th>
+                                    <th>Số lượng người tối đa</th>
+                                    <th>Chỗ còn lại</th>
+                                    <th>Giá</th>
+                                    <th>Phương tiện</th>
+                                    <th>Hình ảnh chính</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>
+                                            @{
+                                                var categoryName = item.Category != null ? item.Category.Name : null;
+                                            }
+                                            @categoryName
+                                        </td>
+                                        <td>@item.Description</td>
+                                        <td>@item.maxParticipants</td>
+                                        <td>@item.RemainingSlots</td>
+                                        <td> @String.Format("{0:N0} VND", item.Price)</td>
+                                        <td>
+                                            @{
+                                                var transportName = item.Transport != null ? item.Transport.Name : null;
+                                            }
+                                            @transportName
+                                        </td>
+                                        <td>
+                                            <img src="@item.MainImageUrl" alt="Main Image" style="width: 100px; height: 100px;" />
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a asp-controller="TourDetail" asp-area="Admin" asp-action="Index" asp-route-tourId="@item.Id" title="Chi tiết">
+                                                        <span class="lnr lnr-eye"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Tour/Edit/@item.Id" title="Chỉnh sửa">
+                                                        <span class="lnr lnr-pencil"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Admin/Tour/Delete/@item.Id" title="Xóa">
+                                                        <span class="lnr lnr-trash"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

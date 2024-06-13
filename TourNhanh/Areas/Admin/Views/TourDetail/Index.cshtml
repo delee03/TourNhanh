@@ -1,0 +1,148 @@
+﻿@model IEnumerable<TourNhanh.Models.TourDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <h2>Danh sách lịch trình của Tour</h2>
+                        <a asp-action="Create" asp-route-tourId="@ViewBag.TourId" asp-area="Admin" asp-controller="TourDetail" class="btn btn-primary">Thêm mới</a>
+                    </div>
+                    <div class="table-responsive table-desi table-product">
+                        <table class="table table-1d all-package">
+                            <thead>
+                                <tr>
+                                    <th>Tour</th>
+                                    <th>Địa điểm</th>
+                                    <th>Thứ tự</th>
+                                    <th>Thời gian bắt đầu</th>
+                                    <th>Thời gian kết thúc</th>
+                                    <th>Khách sạn</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a>@item.Tour.Name</a>
+                                        </td>
+                                        <td>
+                                            <a>@item.Location.Name</a>
+                                        </td>
+                                        <td>
+                                            <a>@item.Order</a>
+                                        </td>
+                                        <td>
+                                            <a>@item.StartTime.ToString("g")</a>
+                                        </td>
+                                        <td>
+                                            <a>@item.EndTime.ToString("g")</a>
+                                        </td>
+                                        <td>
+                                            <a>@item.Hotel.Id</a>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                               @*  <li>
+                                                    <a asp-area="" asp-action="Details" asp-route-id="@item.Id" asp-controller="TourDetail" title="Chi tiết">
+                                                        <span class="lnr lnr-eye"></span>
+                                                    </a>
+                                                </li> *@
+                                                <li>
+                                                    <a asp-action="Edit" asp-route-id="@item.Id" asp-controller="TourDetail" asp-area="Admin" title="Chỉnh sửa">
+                                                        <span class="lnr lnr-pencil"></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a asp-action ="Delete" asp-route-id="@item.Id" asp-controller="TourDetail" asp-area="Admin" title="Xóa">
+                                                        <span class="lnr lnr-trash"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* @model IEnumerable<TourNhanh.Models.TourDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tour.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotel.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@

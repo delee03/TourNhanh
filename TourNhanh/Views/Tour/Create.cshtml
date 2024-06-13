@@ -1,0 +1,116 @@
+﻿@model TourNhanh.Models.Tour
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Tour</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="maxParticipants" class="control-label"></label>
+                <input asp-for="maxParticipants" class="form-control" />
+                <span asp-validation-for="maxParticipants" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="RemainingSlots" class="form-control" value="1" hidden />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control"/>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportId" class="control-label"></label>
+                <select asp-for="TransportId" class="form-control" asp-items="ViewBag.TransportId"></select>
+            </div>
+            @* <div class="form-group">
+                <label for="imageFile" class="control-label">Image</label>
+                <input type="file" id="imageFile" name="imageFile" class="form-control" />
+            </div> *@
+            <div class="form-group">
+                <label for="imageFile" class="control-label">Main Image</label>
+                <input type="file" id="imageFile" name="imageFile" class="form-control" onchange="previewImage(event, 'mainImagePreview')" />
+                <img id="mainImagePreview" src="" alt="Main Image Preview" style="width: 100px; height: 100px;" />
+            </div>
+            <div class="form-group">
+                <label for="additionalImages" class="control-label">Additional Images</label>
+                <input type="file" id="additionalImages" name="additionalImages" multiple class="form-control" onchange="previewImages(event, 'additionalImagesPreview')" />
+                <div id="additionalImagesPreview">
+                    @if (ViewBag.TourImages != null)
+                    {
+                        foreach (var imageUrl in ViewBag.TourImages)
+                        {
+                            <img src="@imageUrl" alt="Additional Image Preview" style="width: 100px; height: 100px;" />
+                        }
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    function previewImage(event, previewElementId) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById(previewElementId);
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function previewImages(event, previewElementId) {
+        var files = event.target.files;
+        var output = document.getElementById(previewElementId);
+        output.innerHTML = ''; // Clear the preview
+
+        for (var i = 0; i < files.length; i++) {
+            var reader = new FileReader();
+            reader.onload = (function (file) {
+                return function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.width = '100px';
+                    img.style.height = '100px';
+                    output.appendChild(img);
+                };
+            })(files[i]);
+            reader.readAsDataURL(files[i]);
+        }
+    }
+</script>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

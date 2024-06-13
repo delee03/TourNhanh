@@ -1,0 +1,137 @@
+﻿@model TourNhanh.Models.TourDetail
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-header-2">
+                            <h5>Thêm chi tiết tour</h5>
+                        </div>
+
+                        <form asp-action="Create" asp-area="Admin" class="theme-form theme-form-2 mega-form" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                @* <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-2 mb-0">Tour</label>
+                                    <div class="col-sm-10">
+                                        <select asp-for="TourId" class="form-control" asp-items="ViewBag.TourId"></select>
+                                        <span asp-validation-for="TourId" class="text-danger"></span>
+                                    </div>
+                                </div> *@
+                                <input type="hidden" asp-for="TourId" />
+                                <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-2 mb-0">Địa điểm</label>
+                                    <div class="col-sm-10">
+                                        <select asp-for="LocationId" class="form-control" asp-items="ViewBag.LocationId"></select>
+                                        <span asp-validation-for="LocationId" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-2 mb-0">Thứ tự</label>
+                                    <div class="col-sm-10">
+                                        <input asp-for="Order" class="form-control" required />
+                                        <span asp-validation-for="Order" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-2 mb-0">Thời gian bắt đầu</label>
+                                    <div class="col-sm-10">
+                                        <input asp-for="StartTime" class="form-control" required />
+                                        <span asp-validation-for="StartTime" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-2 mb-0">Thời gian kết thúc</label>
+                                    <div class="col-sm-10">
+                                        <input asp-for="EndTime" class="form-control" required />
+                                        <span asp-validation-for="EndTime" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4 row align-items-center">
+                                    <label class="form-label-title col-sm-2 mb-0">Khách sạn</label>
+                                    <div class="col-sm-10">
+                                        <select asp-for="HotelId" class="form-control" asp-items="ViewBag.HotelId"></select>
+                                        <span asp-validation-for="HotelId" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer text-end border-0 pt-0">
+                                    <button class="btn btn-primary me-3" type="submit">Thêm</button>
+                                    <button class="btn btn-outline-primary" type="reset">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Quay lại danh sách</a>
+</div>
+
+@* @model TourNhanh.Models.TourDetail
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>TourDetail</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TourId" />
+
+            <div class="form-group">
+                <label asp-for="LocationId" class="control-label"></label>
+                <select asp-for="LocationId" class ="form-control" asp-items="ViewBag.LocationId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order" class="control-label"></label>
+                <input asp-for="Order" class="form-control" />
+                <span asp-validation-for="Order" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndTime" class="control-label"></label>
+                <input asp-for="EndTime" class="form-control" />
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelId" class="control-label"></label>
+                <select asp-for="HotelId" class ="form-control" asp-items="ViewBag.HotelId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+ *@

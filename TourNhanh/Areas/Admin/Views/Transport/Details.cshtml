@@ -1,0 +1,31 @@
+﻿@model TourNhanh.Models.Transport
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Thông tin chi tiết</h1>
+
+<div>
+    <h4>Phương tiện</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên phương tiện
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Mô tả
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary text-white" asp-controller="Transport" asp-action="Edit" asp-area="Admin" asp-route-id="@Model.Id">Chỉnh sửa</a>
+    |
+    <a class="btn btn-outline-primary text-dark" asp-controller="Transport" asp-action="Index" asp-area="Admin">Trở về</a>
+</div>

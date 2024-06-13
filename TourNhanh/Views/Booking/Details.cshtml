@@ -1,0 +1,251 @@
+﻿@model TourNhanh.Models.Booking
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    
+
+}
+
+
+<style>
+    section {
+        padding: 50px 0 100px;
+    }
+
+    .title-gradient-h {
+        font-size: 23px;
+        font-weight: 600;
+        text-transform: uppercase;
+        background-color: #de0004;
+        background-image: linear-gradient(90deg, #f00 0%, #122125 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+/* 
+    .detail-content a.disabled {
+        pointer-events: none;
+        color: gray; /* Optional: Change the color of the disabled link */
+    } */
+
+  
+</style>
+
+<!-- BREADCRUMB START-->
+
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">
+            Booking Tour
+        </h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="~/Tour/Index">Danh sách tour</a></li>
+            <li class="breadcrumb-item active text-white">Trang xem booking</li>
+        </ol>
+    </div>
+</div>
+
+<!-- /BREADCRUMB END -->
+
+<section>  
+    <div class="container">
+        <div class="heading">
+            <h2 class="title-gradient text-center">Xem booking của bạn</h2>
+        </div>
+         <div class="detail-content">
+              <div class="row">          
+                    <div class="col-12 col-lg-6">
+                        <div class="row g-2">
+                             <div class="col-12">
+                                    <div class="form-floating">
+
+                                    <input type="text" disabled class="form-control"
+                                       asp-for="@Model.Id"
+                                           />
+                                        <label >Mã booking</label>
+                                    </div>
+                              </div>
+                             <div class="col-12">
+                                    <div class="form-floating">
+                                    <input type="text" disabled class="form-control"
+                                       asp-for="@Model.Tour.Name"
+                                           />
+                                        <label for="Id">Tour</label>
+                                    </div>
+                              </div>
+                             <div class="col-12">
+                                    <div class="form-floating">
+                                    <input disabled type="text" class="form-control"
+                                       asp-for="@Model.Quantity"
+                                           />
+                                        <label >Số lượng</label>
+                                    </div>
+                              </div>
+                             <div class="col-12">
+                                    <div class="form-floating">
+                                       <input disabled type="text" class="form-control"
+                                       asp-for="@Model.Amount VNĐ"
+                                           />
+                                        <label >Giá</label>
+                                    </div>
+                              </div>
+                             <div class="col-12">
+                                    <div class="form-floating">
+                                     <input disabled type="date" class="form-control"
+                                       asp-for="@Model.BookingDate"
+                                           />
+                                        <label>Ngày đặt</label>
+                                    </div>
+                              </div>
+                             <div class="col-12">
+                                    <div class="form-floating">
+                                     <input disabled type="text" class="form-control"
+                                       asp-for="@Model.PaymentMethod"
+                                           />
+                                        <label>Phương thức thanh toán</label>
+                                    </div>
+                              </div>
+                             @*    <div class="col-12">
+                                    <div class="form-floating">
+                                        <input disabled type="text" class="form-control"
+                                              
+                                               asp-for="@Model.is"/>
+                                        <label>Trạng thái thanh toán</label>
+                                    </div>
+                                </div> *@
+                       
+                            <div class="col-12">
+                               <div class="form-floating">                              
+                                   <textarea disabled asp-for="@Model.Note" class="form-control"  style="height: 80px"></textarea>
+                                     <label for="note">Ghi chú</label>
+                                </div>
+                            </div>
+
+                           <div class="col-12">
+                            @*  asp-controller="Booking" asp-action="ProcessPayment" asp-route-bookingId="@Model.Id" *@
+                            <button class="btn btn-primary w-100 py-2" id="payment" data-is-payment="@Model.isPaymentCompleted"><a asp-controller="Booking" asp-action="ProcessPayment" asp-route-bookingId="@Model.Id">Thanh toán ngay</a></button>
+                           </div>
+                            <div class="col-12">
+                                <button class="btn btn-light  w-100 py-2"><a asp-controller="Booking" asp-action="YourTour">Trở về</a></button>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/iOklTMzdC0xTViILue" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a  loading="lazyload" href="https://giphy.com/gifs/pbskids-sesame-street-pbs-kids-iOklTMzdC0xTViILue"></a></p>
+                        <div class="sub-title">
+                        <h3 class=" title-gradient-h text-center mt-4  animate__animated animate__tada animate__infinite animate__slow">Xách ba lô lên và đi cùng TourNhanh nào</h3>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    
+</section>
+
+<script>
+
+    window.onload = function () {
+        let disableButton = document.getElementById("payment");
+        let isPayment = disableButton.getAttribute('data-is-payment') === 'True';
+        if (isPayment) {
+            disableButton.setAttribute('hidden', 'hidden');        
+        } else {      
+            disableButton.removeAttribute('hidden');
+        }
+    };
+    /*
+    window.onload = function () {
+        let paymentLink = document.querySelector(".payment-link");
+
+        if (@Model.isPaymentCompleted == true) {
+            paymentLink.classList.add('disabled');
+        } else {
+            paymentLink.classList.remove('disabled');
+        }
+    }
+    */
+
+</script>
+
+
+
+
+
+
+
+@* <h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BookingDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tour)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tour.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPerson)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContactPerson.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PaymentDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentMethod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PaymentMethod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.isPaymentCompleted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isPaymentCompleted)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="Booking" asp-action="ProcessPayment" asp-route-bookingId="@Model.Id">Thanh toán ngay</a> |
+
+    <a asp-controller="Tour" asp-action="Index">Trở về danh sách tour</a>
+</div> *@

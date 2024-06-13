@@ -1,0 +1,240 @@
+﻿<style>
+    section {
+        min-height: 500px;
+    }
+
+    .cart--container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 50px;
+        flex-flow: column;
+        align-items: center;
+    }
+
+        .cart--container:first-child {
+            width: 300px;
+        }
+
+        .cart--container .item--cart {
+            /* align-self: flex-end */
+            margin: 0px 0 50px 90px;
+        }
+
+    .title-gradient-h {
+        font-size: 26px;
+        text-transform: uppercase;
+        background-color: #de0004;
+        background-image: linear-gradient(90deg, #f00 0%, #122125 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        .title-gradient
+    }
+
+    .title-gradient {
+        font-size: 26px;   
+        background-color: #efd1ef;
+        background-image: linear-gradient(90deg, #efd1ef 0%, #e3de7c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .success-content {
+        position: absolute;
+        padding: 30px 30px;
+        top: 50%;
+        left: 50%;
+      
+        transform: translate(-50%, -50%);
+        color: #fff;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+   /*  tao lop phu overplay len background */
+    .carousel-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(39, 43, 54, .2);
+    }
+    .carousel-item {
+        height: 100vh;
+    }
+
+    success-content h5 {
+        font-size: 50px;
+        padding: 30px 0;
+    }
+    .success-content p {
+        font-size: 24px; 
+        
+    }
+
+</style>
+
+
+<!-- BREADCRUMB START-->
+
+@* <div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4">
+            Booking Tour
+        </h3>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="~/Tour/Index">Danh sách tour</a></li>
+            <li class="breadcrumb-item active text-white">Kết quả</li>
+        </ol>
+    </div>
+</div> *@
+
+<!-- /BREADCRUMB END -->
+
+<section>
+    <div>
+        <div id="carouselSuccess" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselSuccess" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselSuccess" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselSuccess" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselSuccess" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselSuccess" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
+                    <div class="success-content">
+                        <h2 class="text-white fw-bold">@TempData["Message"]</h2>
+                        <h3 style="max-width: 800px" class="title-gradient"> Tuyệt vời, giờ thì hãy chuẩn bị hành lý đi du lịch thôi nào</h3>
+                        <div>
+                            <button class="btn-action">
+                                <i class="fa-solid fa-arrow-left text-white"></i>
+                                <a asp-action="Index" asp-controller="Tour" class="text-white">                           
+                                       
+                                        Trở về trang chủ                              
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1576675466684-456bcdeccfbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
+                    <div class="success-content">
+                        <h2 class="text-white fw-bold">@TempData["Message"]</h2>
+                        <h3 style="max-width: 800px" class="title-gradient"> Tuyệt vời, giờ thì hãy chuẩn bị hành lý đi du lịch thôi nào</h3>
+                        <div>
+                            <button class="btn-action">
+                                <i class="fa-solid fa-arrow-left text-white"></i>
+                                <a asp-action="Index" asp-controller="Tour" class="text-white">
+
+                                    Trở về trang chủ
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                  @*   <img class="d-block w-100 h-70" src="" alt="..."> *@
+                    <img class="d-block w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1638793772999-8df79f0ef0b8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
+                    <div class="success-content">
+                        <h2 class="text-white fw-bold">@TempData["Message"]</h2>
+                        <h3 style="max-width: 800px" class="title-gradient"> Tuyệt vời, giờ thì hãy chuẩn bị hành lý đi du lịch thôi nào</h3>
+                        <div>
+                            <button class="btn-action">
+                                <i class="fa-solid fa-arrow-left text-white"></i>
+                                <a asp-action="Index" asp-controller="Tour" class="text-white">
+
+                                    Trở về trang chủ
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="carousel-item ">
+                    <img class="d-block w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
+                    <div class="success-content">
+                        <h2 class="text-white fw-bold">@TempData["Message"]</h2>
+                        <h3 style="max-width: 800px" class="title-gradient"> Tuyệt vời, giờ thì hãy chuẩn bị hành lý đi du lịch thôi nào</h3>
+                        <div>
+                            <button class="btn-action">
+                                <i class="fa-solid fa-arrow-left text-white"></i>
+                                <a asp-action="Index" asp-controller="Tour" class="text-white">
+
+                                    Trở về trang chủ
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <img class="d-block w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1516815231560-8f41ec531527?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
+                    <div class="success-content">
+                        <h2 class="text-white fw-bold mb-3">@TempData["Message"]</h2>
+                        <h3 style="max-width: 800px" class="title-gradient"> Tuyệt vời, giờ thì hãy chuẩn bị hành lý đi du lịch thôi nào</h3>
+                        <div>
+                            <button class="btn-action">
+                                <i class="fa-solid fa-arrow-left text-white"></i>
+                                <a asp-action="Index" asp-controller="Tour" class="text-white">
+
+                                    Trở về trang chủ
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+              
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSuccess" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSuccess" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+@* <section class="sucess-section section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="section-title text-center">
+                <h2 style="margin: 20px 0 30px" class="title-gradient-h">Payment Failure</h2>
+
+            </div>
+
+
+            <div class="cart--container">
+                <h2 class="text-danger">@TempData["Message"]</h2>
+                <h3 style="max-width: 800px" class="title-gradient"> Tuyệt vời, cảm ơn bạn đã tin tưởng chúng tôi</h3>
+                <img src="https://plus.unsplash.com/premium_photo-1681923752435-5231d83efbf2?q=80&w=1998&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="auto" height="300px" />
+                <div class="item--cart">
+                    <a asp-action="Index" asp-controller="Tour">
+                        <button class="btn-action" style="margin: 50px 0 50px -90px">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Trở về trang chủ
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+
+        
+</section>
+ *@
