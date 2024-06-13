@@ -1,6 +1,8 @@
 ﻿
 @model IEnumerable<TourNhanh.Models.TourDetail>
 
+
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -249,7 +251,9 @@
                                         <p>@desc </p>
                                     }
                                 </div>
-                            }                                  
+                              
+                            }  
+                           
                         </div>
                         <!-- Lich trinh-->
                         <div class="chitiet_lichtrinh">                     
@@ -272,20 +276,90 @@
                                     <div class="list_lichtrinh_box">
                                         <div class="list_lichtrinh_title">
                                      
-                                            <span>Ngày @item.Order:Điểm đến @item.Location.Address</span>
+                                            <span>Ngày @item.Order: Điểm đến @item.Location.Address</span>
                                         </div>
                                         <div class="list_lichtrinh_content tinymce">
                                             <!--Chi tiết tại từng local trong địa điểm mô tả-->
-                                        @*     @foreach (var part in item.Location.SplitAddress())
-                                            {
-                                               <p> Đi đến @part trưa đén nghỉ ngơi tại @item.Hotel.Name tại @item.Hotel.Address </p>
-                                            } *@
-                                            <p>Điểm đến <span>@text</span> trong hành trình của chúng ta là: &nbsp;<strong>@item.Location.Name</strong></p>
-                                            <img style="width:100%; height: 240px; object-fit: cover;" src="@item.Tour.MainImageUrl" />
+                                     
+                                            <p>Điểm đến <span>@text</span> trong hành trình của chúng ta là: <strong>@item.Location.Name</strong></p>
+                                            <img style="width:100%; height: 350px; object-fit: cover;" src="@item.Tour.MainImageUrl" />
                                             
                                             <figure class="py-3 text-center"> Hình ảnh về địa danh @item.Location.Name</figure>
-                                            <p><strong>Sáng:</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng địa phương @item.Location.SplitAddress().First(). Tự do khám phá Thành phố&nbsp;<strong> @item.Location.SplitAddress().First()</strong>
-                                            <p><strong>Sau đó:</strong> Quý khách về nghỉ ngơi tại khách sạn: @item.Hotel.Name</p>
+
+                                            @if(item.Order == 2 || item.Order == 3)
+                                            {
+                                                <p><strong>Vào lúc @item.StartTime.ToString("HH:mm") giờ: &nbsp;</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển đến địa điểm tiếp theo lịch trình. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng với cảnh làng quê thanh bình qua các tỉnh, thành phố:<strong> @item.Tour.Name</strong></p>
+                                            }
+                                         
+
+                                            <p><strong>Sáng:&nbsp;</strong>Quý khách dùng điểm tâm tại nhà hàng địa phương hoặc tại khách sạn ban tổ chức tour sẽ có thông báo đến quý khách </p>
+                                            <p><strong>Sau đó:</strong>&nbsp;Quý khách di chuyển cùng đoàn tour đi đến tham quan tại <strong>@item.Location.SplitAddress().First()</strong></p>
+                                            <p><strong>Ở @item.Location.SplitAddress().First() có gì&nbsp;:</strong> @item.Location.Desc1</p>
+                                            <p><strong>Trưa:&nbsp;</strong>Quý khách về nghỉ ngơi tại khách sạn <strong>@item.Hotel.Name</strong> </p>
+
+                                            <div class="text-center">
+                                                <img src="@item.Hotel.ImageUrl" />
+                                                <figure class="text-center py-3"> Hình ảnh khách sạn @item.Hotel.Name</figure>
+                                            </div>
+                                            <p>Khách sạn <strong>@item.Hotel.Name</strong> được đánh giá @item.Hotel.Rating sao cung cấp cho quý khách đầy đủ trang thiết bị và dịch vụ tiện ích tốt nhất theo yêu cầu từ tivi, máy lạnh, máy nước nóng lạnh, wifi, thuê xe máy...</p>
+                                            <p>
+                                                <strong>Chiều 13h&nbsp;</strong>Chúng ta sẽ tiếp tục ghé thăm
+                                                @if (item.Location.SplitAddress().Count >= 2)
+                                                {
+                                                    <strong>
+                                                        @item.Location.SplitAddress()[1]
+                                                    </strong>
+                                                } bằng <strong>@item.Tour.Transport.SplitTransport().First()</strong>.
+                                            </p>
+                                            <p><strong>Ở 
+                                                    @if (item.Location.SplitAddress().Count >= 2)
+                                                    {                                                      
+                                                            @item.Location.SplitAddress()[1]                                                                                                           
+                                                    }
+                                                    có gì:&nbsp;
+                                                 </strong> @item.Location.Desc2
+                                             </p>
+
+                                             <p><strong>Tối:</strong>&nbsp;Đoàn sẽ tiếp tục di chuyển khám phá <strong> @item.Location.SplitAddress().Last() </strong></p>
+                                            <p>
+                                                <strong>Ở @item.Location.SplitAddress().Last() có gì:&nbsp;</strong>
+                                                @item.Location.Desc3
+                                            </p>
+                                            <p><strong>Sau khi tham quan xong:</strong> Quý khách dùng bữa tại nhà hàng khách sạn <strong>@item.Hotel.Name</strong></p>
+
+                                            <div id="tour-img" style="margin: 30px 0;">
+
+                                                @if (ViewBag.TourImage != null)
+                                                {
+                                                    foreach (var image in ViewBag.TourImage)
+                                                    {
+                                                        <img class="tour-preview mb-4" src="@image" />
+                                                    }
+                                                }
+                                            </div>
+
+
+                                            <ul>
+                                                <li><strong>Quần thể các địa danh&nbsp;@item.Tour.Name</strong>: @item.Tour.Description </li>
+                                            </ul>
+
+                                            <ul>
+                                                <li>
+                                                Nếu đoàn còn thời gian, Quý khách tham quan, khám phá thêm về văn hóa đời sống con người: như các chợ đêm, bảo tàng, ghé thăm các
+                                                    di tích, viếng chùa tại <strong>@item.Location.Name</strong> kết thúc hành trình trong ngày vào lúc <strong> @item.EndTime.ToString("HH:mm") giờ</strong>
+                                                </li>
+                                            </ul>
+
+
+                                           @*  <div>
+                                                <p>Mọi thông tin chi tiết xin quý khách vui lòng đọc thêm trong <strong>QUY ĐỊNH </strong>của chúng tôi bên dưới hoặc gọi cho nhân viên của chúng tôi bằng<strong> ZALO</strong> hoặc <strong>HOTLINE</strong></p>
+                                            </div> *@
+
+                                           @*  Code cũ *@
+
+                                           @*  <p><strong>Chiều: 13h</strong>&nbsp;Quý khách dùng điểm tâm tại nhà hàng địa phương @item.Location.SplitAddress().First(). Tự do khám phá &nbsp;<strong> @item.Location.SplitAddress().First()</strong>                                                 
+                                                
+                                                <p><strong>Sau đó:</strong> Quý khách về nghỉ ngơi tại khách sạn: @item.Hotel.Name</p>
                                                 <div>
                                                     <img src="@item.Hotel.ImageUrl"/>
                                                     <figure class="text-center py-3"> Hình ảnh khách sạn</figure>
@@ -317,7 +391,8 @@
                                                 }
                                            </div>
                                          
-                                            <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá thêm về văn hóa đời sống con người tại @item.Location.Name kết thúc hành trình trong ngày vào lúc @item.EndTime</p>
+                                            <p>Nếu đoàn còn thời gian, Quý khách tham quan, khám phá thêm về văn hóa đời sống con người: như các chợ đêm, bảo tàng, ghé thăm các
+                                                di tích, viếng chùa tại @item.Location.Name kết thúc hành trình trong ngày vào lúc @item.EndTime</p>
                                             <ul>
                                                 <li><strong>Bảo tàng &nbsp;(Option – Tự túc vé tham quan)</strong>, Quý khách bách bộ qua những lối đi vòng vèo được bao phủ bởi cây xanh và các kiến trúc non bộ đẹp mắt và sau đó là hành trình chinh phục đỉnh núi Hang Múa với 500 bậc đá. Tới đỉnh núi Múa, thu vào trong tầm mắt của Quý khách là tất cả đất trời của mảnh đất @item.Location.SplitAddress().Last()  rộng lớn với vẻ yên bình nhưng lộng lẫy như một bức tranh thủy mặc khiến không ít người chẳng thể kìm lòng mà vỡ òa cảm xúc. Trên hành trình trở lại, Quý khách sẽ ngang qua khu vực Đầm sen nằm giữa những rặng núi đá vôi tạo nên một khung cảnh cực kỳ thơ mộng và cổ trang. Quý khách có thể thuê những bộ đồ cổ trang để chụp hình tại đây.</li>
                                             </ul>
@@ -332,13 +407,11 @@
                                             </div>
                                             <p><strong>Tối:&nbsp;</strong>Quý khách dùng bữa tại nhà hàng khách sạn @item.Hotel.Name &nbsp;<strong>đặc sản vùng đất @if (@item.Location.SplitAddress().Count >= 2) @item.Location.SplitAddress()[1]</strong>
                                              , sau đó là chương trình tự do của quý khách với phố đêm của thành phố  &nbsp; @item.Location.Name.</p>
-                                            <p><strong>@item.StartTime:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển đến địa điểm tiếp theo lịch trình. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng, Trung du, Miền núi với cảnh làng quê thanh bình qua các tỉnh, thành phố, @item.Tour.Name</p>
+                                            <p><strong>@item.StartTime:</strong>&nbsp;Quý khách trả phòng khách sạn. Xe đưa quý khách di chuyển đến địa điểm tiếp theo lịch trình. Trên đường đi Quý khách sẽ được cảm nhận, khám phá cuộc sống, phong cảnh đặc trưng của Đồng bằng, Trung du, Miền núi với cảnh làng quê thanh bình qua các tỉnh, thành phố, @item.Tour.Name</p> *@
                                          </div>
                                     </div>
                                 }
-                                <div>
-                                    <p>Mọi thông tin chi tiết xin quý khách vui lòngđọc thêm trong <strong>QUY ĐỊNH </strong>của chúng tôi bên dưới hoặc gọi cho nhân viên của chúng tôi bằng<strong> ZALO</strong> hoặc <strong>HOTLINE</strong></p>
-                                </div>
+                               
                           
                                 <!--LICH khoi hanh-->
                                 <div class="row" id="row-1517252312">
@@ -353,7 +426,7 @@
                                             </span>
 
                                             <a id="lichkhoihanh" href="#lichkhoihanh"></a>
-                                            <div class="price-list">
+                                        {  @*   <div class="price-list">
                                                 <h3  class="tab_title">
                                                     <span>Lịch khởi hành: từ TPHCM <span>
                                                 </h3>
@@ -901,7 +974,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> *@}
                                         </div>
                                     </div>
                                 </div>
@@ -1162,13 +1235,13 @@
                                 <label>Phương tiện di chuyển: @view.Transport.Name </label>
                                 <div class="product-options d-flex justify-content-flex-start align-items-center">
                                     <label>
-                                        Chọn ngày khởi hành:
+                                        Chọn số lượng người:
                                         <select class="input-select">
-                                            <option value="0">16/6 </option>
-                                            <option value="1">18/6 </option>
-                                            <option value="2">23/6 </option>
-                                            <option value="3">25/6 </option>
-                                            <option value="4">27/6 </option>
+                                            <option value="0">1</option>
+                                            <option value="1">2</option>
+                                            <option value="2">3 </option>
+                                            <option value="3">4</option>
+                                            <option value="4">5</option>
                                         </select>
 
                                     </label>

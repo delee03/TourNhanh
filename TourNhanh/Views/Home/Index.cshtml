@@ -53,7 +53,7 @@
                                 TourNhanh người bạn đồng hành đáng tin cậy, chúng tôi đã có mặt trên thị trường du lịch Việt Nam hơn 15 năm qua. Hân hạnh được phục vụ bạn
                             </p>
                             <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#!#">Discover Now</a>
+                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#bestRating">Khám phá ngay</a>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                                 TourNhanh người bạn đồng hành đáng tin cậy, chúng tôi đã có mặt trên thị trường du lịch Việt Nam hơn 15 năm qua. Hân hạnh được phục vụ bạn
                             </p>
                             <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#!#">Discover Now</a>
+                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#bestRating">Khám phá ngay</a>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                 TourNhanh người bạn đồng hành đáng tin cậy, chúng tôi đã có mặt trên thị trường du lịch Việt Nam hơn 15 năm qua. Hân hạnh được phục vụ bạn
                             </p>
                             <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#!#">Khám phá ngay</a>
+                                <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#bestRating">Khám phá ngay</a>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
     <div class="container">
         <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background-image: linear-gradient(110deg, rgb(0 147 233 / 81%) 0%, rgb(128 208 199 / 82%) 100%);">
             <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
-            <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
+            <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Tìm kiếm</button>
         </div>
     </div>
 </div>
@@ -155,8 +155,8 @@
 <div class="container-fluid destination py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Destination</h5>
-            <h1 class="mb-0">Popular Destination</h1>
+            <h5 class="section-title px-3">Điểm đến</h5>
+            <h1 class="mb-0">Điểm đến phổ biến</h1>
         </div>
         <div class="tab-class text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
@@ -463,8 +463,8 @@
 <div class="container-fluid ExploreTour py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Explore Tour</h5>
-            <h1 class="mb-4">The World</h1>
+            <h5 class="section-title px-3">Khám phá du lịch</h5>
+            <h1 class="mb-4">Khám phá thế giới</h1>
             <p class="mb-0">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
             </p>
@@ -658,7 +658,7 @@
         <!-- Section for Best Rated Tours -->
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">DANH SÁCH TOUR</h5>
-            <h1 class="mb-0">Đánh giá tốt nhất</h1>
+            <h1 id="bestRating" class="mb-0">Tour có đánh giá tốt nhất</h1>
         </div>
         <div class="row mb-5">
             <div class="col-12">
@@ -693,7 +693,7 @@
                                         <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
                                     </div>
                                     <div class="col-6 text-end px-0">
-                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Đặt ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -705,7 +705,7 @@
 
         <!-- Section for Most Popular Tours -->
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h1 class="mb-0">Nhiều người đi nhất</h1>
+            <h1 class="mb-0">Tour nhiều người đi nhất</h1>
         </div>
         <div class="row mb-5">
             <div class="col-12">
@@ -740,7 +740,7 @@
                                         <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
                                     </div>
                                     <div class="col-6 text-end px-0">
-                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Đặt ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -752,7 +752,7 @@
 
         <!-- Section for Newest Tours -->
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h1 class="mb-0">Mới nhất</h1>
+            <h1 class="mb-0">Tour mới nhất</h1>
         </div>
         <div class="row mb-5">
             <div class="col-12">
@@ -787,7 +787,7 @@
                                         <a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Chi tiết</a>
                                     </div>
                                     <div class="col-6 text-end px-0">
-                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@item.Id" class="btn-hover btn text-white py-2 px-4">Đặt ngay</a>
                                     </div>
                                 </div>
                             </div>
