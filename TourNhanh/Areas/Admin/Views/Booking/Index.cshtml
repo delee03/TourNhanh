@@ -39,7 +39,7 @@
                                         <td>@item.Tour?.Name</td>
                                         @* <td>@item.ContactPerson.Name</td> *@
                                         <td>@item.Note</td>
-                                        <td>@item.Amount</td>
+                                        <td>@String.Format("{0:N0} VND", item.Amount)</td>
                                         <td>@item.PaymentDate</td>
                                         <td>@item.PaymentMethod</td>
                                         <td>@{

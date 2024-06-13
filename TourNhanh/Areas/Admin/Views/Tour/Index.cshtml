@@ -40,7 +40,7 @@
                                         <td>@item.Description</td>
                                         <td>@item.maxParticipants</td>
                                         <td>@item.RemainingSlots</td>
-                                        <td>@item.Price</td>
+                                        <td> @String.Format("{0:N0} VND", item.Price)</td>
                                         <td>
                                             @{
                                                 var transportName = item.Transport != null ? item.Transport.Name : null;

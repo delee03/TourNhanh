@@ -242,7 +242,7 @@
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
                         </div>
-                        <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
+                        <div class="packages-price py-2 px-4">@String.Format("{0:N0} VND", item.Price)</div>
                     </div>
                     <div class="packages-content bg-light">
                         <div class="p-4 pb-0">

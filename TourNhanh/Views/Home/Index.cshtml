@@ -673,7 +673,7 @@
                                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
                                     <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
                                 </div>
-                                <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
+                                <div class="packages-price py-2 px-4"> @String.Format("{0:N0} VND", item.Price)</div>
                             </div>
                             <div class="packages-content bg-light">
                                 <div class="p-4 pb-0">
@@ -720,7 +720,10 @@
                                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
                                     <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
                                 </div>
-                                <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
+                                <div class="packages-price py-2 px-4">
+                                    @String.Format("{0:N0} VND", item.Price)
+
+                                </div>
                             </div>
                             <div class="packages-content bg-light">
                                 <div class="p-4 pb-0">
@@ -767,7 +770,7 @@
                                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.Category.Name</small>
                                     <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1 Người</small>
                                 </div>
-                                <div class="packages-price py-2 px-4">@item.Price VNĐ</div>
+                                <div class="packages-price py-2 px-4"> @String.Format("{0:N0} VND", item.Price)</div>
                             </div>
                             <div class="packages-content bg-light">
                                 <div class="p-4 pb-0">
@@ -1664,12 +1667,12 @@
             <div class="phone-vr">
                 <div class="phone-vr-circle-fill"></div>
                 <div class="phone-vr-img-circle">
-                    <a target="_blank" href="https://zalo.me/0931034852">
+                    <a target="_blank" href="@Model.ZaloUrl">
                         <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/zalo.png" />
                     </a>
                 </div>
                 <div class="zalo-bar zalo-bar-n">
-                    <a href="https://zalo.me/0931034852">
+                    <a href="@Model.ZaloUrl">
                         <span class="text-phone">Gửi yêu cầu tư vấn ngay</span>
                     </a>
                 </div>
@@ -1681,13 +1684,13 @@
             <div class="phone-vr">
                 <div class="phone-vr-circle-fill"></div>
                 <div class="phone-vr-img-circle">
-                    <a href="tel:0931034852">
+                    <a href="@Model.PhoneUrl">
                         <img src="https://tourngay.vn/wp-content/plugins/button-contact-vr-master/img/phone.png" />
                     </a>
                 </div>
                 <div class="phone-bar phone-bar-n">
-                    <a href="tel:0931034852">
-                        <span class="text-phone">093.1034.852(a Phát)</span>
+                    <a href="@Model.PhoneUrl">
+                        <span class="text-phone">@Model.PhoneNumber</span>
                     </a>
                 </div>
             </div>

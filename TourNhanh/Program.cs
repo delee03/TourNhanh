@@ -7,6 +7,8 @@ using TourNhanh.Repositories.Interfaces;
 using System.Configuration;
 using Microsoft.Extensions.Options;
 using TourNhanh.Services.VnPay;
+using System.Security.Cryptography.Pkcs;
+using TourNhanh.ViewModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,6 +51,10 @@ builder.Services.AddScoped<ILikeRepository, EFLikeRepository>();
 builder.Services.AddSingleton<IVnPayService, VnPayService>();
 
 
+//Thông tin liên lạc
+builder.Services.Configure<ContactInfo>(builder.Configuration.GetSection("ContactInfo"));
+
+
 //login với FACEBOOk
 builder.Services.AddAuthentication().AddFacebook(facebookOptions =>
 {
@@ -62,6 +68,8 @@ builder.Services.AddAuthentication().AddGoogle(ggOptions =>
     ggOptions.ClientId = configuration["Authentication:Google:ClientId"] ?? throw new InvalidOperationException("Google ClientId is not configured.");
     ggOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"] ?? throw new InvalidOperationException("Google ClientSecret is not configured.");
 });
+
+
 
 
 
